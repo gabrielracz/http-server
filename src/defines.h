@@ -8,9 +8,11 @@
 #include<unistd.h>
 
 #define ERR_FILE stdout
-#define SERV_PORT 3000
+#define SERV_PORT 7120
 #define ACK 200;
 #define SERV_ADDR INADDR_ANY
+
+#define MAXLEN 1024
 
 enum Terminate {
 	EXIT,

@@ -1,17 +1,28 @@
+#include <arpa/inet.h>
 #include<stdio.h>
 #include<stdlib.h>
-#include <string.h>
+#include<string.h>
 #include<strings.h>
+#include<memory.h>
+#include<unistd.h>
+
+#include<pthread.h>
+
 #include<sys/socket.h>
 #include<sys/types.h>  //pid_t
 #include<netinet/in.h> //sockaddr_in, htons, INADDR_ANY
-#include<memory.h>
-#include<unistd.h>
+
 #include"defines.h"
 
+
 int Accept(int listenfd, struct sockaddr_in* cliaddr, socklen_t* clilen);
-int echo_messages(int connectionfd);
+
+/*Thread work*/
+void* process_request(void* connfd);
 int read_message(int connectionfd, char* buffer, size_t buflen);
+int respond(int connectionfd, char* buffer, size_t buflen);
+
+int echo_messages(int connectionfd);
 
 int main(int argc, char** argv){
 	int listenfd;
@@ -39,20 +50,70 @@ int main(int argc, char** argv){
 	if(rc < 0) err("Socket listen", EXIT);
 
 	const char* FIN = "FIN";
-	char store[1024];
-	for( ; ; ) {
-		connectionfd = Accept(listenfd, &cliaddr, &clilen);
-		childpid = fork();
-		if(childpid == 0){
-			close(listenfd);
-			read_message(connectionfd, store, 1024);
-			echo_messages(connectionfd);
-			close(connectionfd);
-			exit(0);
-		}
+	char store[MAXLEN];
+	int server_on = 1;
+
+	int workers = 10;
+	int dispatched = 0;
+	int requets_served = 0;
+	pthread_t* thread_pool[10];
+	for(int i = 0; i < 10; i++){
+		thread_pool[i] = malloc(sizeof(pthread_t));
+	}
+	int thread_index = 0;
+
+
+	while(server_on){
+		int* cfd_ptr;
+		cfd_ptr = malloc(sizeof(cfd_ptr));
+		if(cfd_ptr == NULL) {err("malloc error in serving loop", EXIT);}
+
+		*cfd_ptr = Accept(listenfd, &cliaddr, &clilen);
+
+		/*Dispatch the thread*/
+		int i = thread_index % workers;
+		thread_index++;
+		pthread_t* next_thread = thread_pool[i];
+		pthread_create(next_thread,  NULL, &process_request, (void*) cfd_ptr);
 	}
 
 	return 0;
+}
+
+void* process_request(void* connfd){
+	int connectionfd = *((int*)connfd);
+	free(connfd);
+
+	pthread_detach(pthread_self());
+	char buffer[MAXLEN];
+	size_t buflen;
+	
+	while(1){
+		/*Message msg;*/
+		buflen = read_message(connectionfd, buffer, MAXLEN);
+		if(buflen == 0){
+			printf("Client sent nothing, disconnecting\n");	
+			close(connectionfd);
+			pthread_exit(NULL);
+		}
+		struct sockaddr_in cliaddr;
+		socklen_t clilen = sizeof(cliaddr);
+		getpeername(connectionfd, (struct sockaddr*) &cliaddr, &clilen);
+		char address[MAXLEN];
+		if(inet_ntop(AF_INET,(void*) &cliaddr.sin_addr, address, MAXLEN));
+			printf("REQ: %s:%d\n", address, cliaddr.sin_port);
+		respond(connectionfd, buffer, buflen);
+	}
+
+	close(connectionfd);
+	return 0;
+}
+
+int respond(int connectionfd, char* buffer, size_t buflen) {
+	/*char response[] = "OK";*/
+
+	return send(connectionfd, buffer, buflen, 0);
+
 }
 
 int Accept(int listenfd, struct sockaddr_in* cliaddr, socklen_t* clilen){
@@ -66,18 +127,21 @@ int Accept(int listenfd, struct sockaddr_in* cliaddr, socklen_t* clilen){
 	return connfd;
 }
 
-int read_message(int connectionfd, char* bufer, size_t buflen){
-	printf("%ld %ld %ld", sizeof(size_t), sizeof(pid_t),sizeof(long long));
+int read_message(int connectionfd, char* buffer, size_t buflen){
+	int bytes_read;
+	bzero(buffer, buflen);
+	bytes_read = recv(connectionfd, buffer, buflen, 0);
+	return bytes_read;
 }
 
 int echo_messages(int connectionfd){
 	unsigned char OK = ACK;
-	char store[256];
+	char store[MAXLEN];
 	int bytes_read;
 	while(1) {
-		bzero(store, 256);
+		bzero(store, MAXLEN);
 		printf("[] ");
-		bytes_read = recv(connectionfd, store, 256, 0);
+		bytes_read = recv(connectionfd, store, MAXLEN, 0);
 		if(bytes_read == 0){
 			printf("Client sent nothing, disconnecting\n");
 			return 0;

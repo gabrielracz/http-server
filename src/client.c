@@ -33,6 +33,7 @@ int main(int argc, char* argv[]){
 	rc = inet_pton(AF_INET, input_address, &servaddr.sin_addr);
 	if(rc != 1) err("Incorrect IPaddress", EXIT);
 
+
 	rc = connect(sockfd, (struct sockaddr*) &servaddr, sizeof(servaddr));
 	if(rc < 0) err("Could not connect to server", EXIT);
 	
@@ -40,23 +41,34 @@ int main(int argc, char* argv[]){
 
 	unsigned char OK = ACK;
 	const char* FIN = "FIN";
-	char message_beyond[256];
+	char message[MAXLEN];
+	char response[MAXLEN];
 	int established = 1;
+	size_t bytes_received = 0;
 	while(established) {
 		printf("$ ");
 
-		bzero(message_beyond, 256);
-		if(!fgets(message_beyond, 256, stdin)){ err("read error", EXIT); };
+		bzero(message, MAXLEN);
+		if(!fgets(message, MAXLEN, stdin)){ err("read error", EXIT); };
+		message[strcspn(message, "\n")] = 0;	//remove newline
 
 		int bytes_sent;
-		bytes_sent = send(sockfd, message_beyond,strlen(message_beyond) , 0); 
+		bytes_sent = send(sockfd, message,strlen(message) , 0); 
 		if(bytes_sent == 0){
 			printf("Server sent nothing, closing.");
 			close(sockfd);
 			exit(0);
 		}
 
-		recv(sockfd, &OK, sizeof(OK), 0);
+		size_t l = strlen(response);
+		bzero(response, l);
+		bytes_received = recv(sockfd, response, sizeof(response), 0);
+		if(bytes_received == 0){
+			printf("Received nothing, closing\n");
+			exit(0);
+		}
+
+		printf("%10s\n", response);
 
 	}
 	close(sockfd);
