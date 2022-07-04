@@ -49,8 +49,11 @@ int main(int argc, char* argv[]){
 		printf("$ ");
 
 		bzero(message, MAXLEN);
-		if(!fgets(message, MAXLEN, stdin)){ err("read error", EXIT); };
-		message[strcspn(message, "\n")] = 0;	//remove newline
+		if(!fgets(message, MAXLEN, stdin)){ 
+			close(sockfd);
+			err("read error", EXIT); 
+		};
+		message[strcspn(message, "\n")] = 0;	//remove (first) newline
 
 		int bytes_sent;
 		bytes_sent = send(sockfd, message,strlen(message) , 0); 
