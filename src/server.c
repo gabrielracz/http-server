@@ -1,33 +1,43 @@
-#include <arpa/inet.h>
-#include <asm-generic/socket.h>
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
 #include<strings.h>
-#include<memory.h>
+#include<sys/stat.h>
+
 #include<unistd.h>
+#include<memory.h>
 #include<errno.h>
 
 #include<pthread.h>
 
+#include<signal.h>
+
 #include<sys/socket.h>
 #include<sys/types.h>  //pid_t
+#include<arpa/inet.h>  //inet_ptons
 #include<netinet/in.h> //sockaddr_in, htons, INADDR_ANY
 
+#include"http.h"
 #include "../phttp/picohttpparser.h"
-
-#include"defines.h"
+#include"universal.h"
 
 
 int Accept(int listenfd, struct sockaddr_in* cliaddr, socklen_t* clilen);
 
 /*Thread work*/
 void* process_request(void* connfd);
-size_t read_message(int connectionfd, char* buffer, size_t buflen);
-size_t readmsg(int connectionfd, char* buffer, size_t buflen);
-int respond(int connectionfd, const char* buffer, size_t buflen);
+size_t read_message(int connectionfd, char* rcvbuf, size_t buflen);
+size_t readmsg(int connectionfd, char* rcvbuf, size_t buflen);
+int parsemsg_http(char* rcvbuf, size_t buflen, HTTP_req* request);
+int respond(int connectionfd, const char* rcvbuf, size_t buflen);
 
 int echo_messages(int connectionfd);
+
+enum REQ_TYPES {
+	HTTP,
+	LINK,
+	DLOAD
+};
 
 int main(int argc, char** argv){
 	int listenfd;
@@ -121,61 +131,76 @@ void* process_request(void* connfd){
 	/*if(inet_ntop(AF_INET,(void*) &cliaddr.sin_addr, cliaddr_formatted, MAXLEN))*/
 		/*printf("connected: %s:%d\n", cliaddr_formatted, cliaddr.sin_port);*/
 
-	char buffer[MAXLEN];
+	char rcvbuf[MAXLEN];
 	size_t buflen;
 	const char* min_http_res = "\nHTTP/1.1 200 OK\nContent-Length: 13\nContent-Type: text/plain; charset=utf-8\n\nHello World!";
+	const char* http_head_ok = "\nHTTP/1.1 200 OK\nContent-Length: 150\nContent-Type: text/plain; charset=utf-8\n\n";
 
 	/*http*/
-	int prc;
-	char* method;
-	size_t methodlen;
-	char* path;
-	size_t pathlen;
-	struct phr_header headers[100];
-	size_t num_headers;
-	int minor_version;
-
-	struct {
-		char* method;
-		size_t methodlen;
-		char* path;
-		size_t pathlen;
-		struct phr_header headers[100];
-		size_t num_headers;
-		int minor_version;
-
-	} HTTP;
+	/*int prc;*/
+	/*const char* method;*/
+	/*size_t methodlen;*/
+	/*const char* path;*/
+	/*size_t pathlen;*/
+	/*struct phr_header headers[100];*/
+	/*size_t num_headers;*/
+	/*int minor_version;*/
 
 	while(1){
-		buflen = readmsg(connectionfd, buffer, MAXLEN);
+		buflen = readmsg(connectionfd, rcvbuf, MAXLEN);
 		if(buflen == 0){
 			printf("Client sent nothing, disconnecting\n");	
 			close(connectionfd);
 			pthread_exit(0);
 		}
 		
-		/*parse request*/
-		size_t numhead = sizeof(headers) / sizeof(headers[0]);
-		/*prc */
-		prc = phr_parse_request(buffer, buflen, &method, &methodlen, 
-				&path, &pathlen, &minor_version, headers, &numhead, 0);
+		int prc;
+		HTTP_req htrq;
+		prc = parsemsg_http(rcvbuf, buflen, &htrq);
+		if(prc > 0){
+			printf("HTTP request received:   %s : %d\n", cliaddr_formatted, cliaddr.sin_port);
+			printf("method: %.*s\n", (int) htrq.methodlen, htrq.method);
+			printf("path: %.*s\n", (int) htrq.pathlen, htrq.path);
+			printf("\n");
 
-		if(prc < 0){
-			printf("HTTP parse error: %d\n", prc);
-			pthread_exit(0);
+			char response[8192];
+			build_http_response(&htrq, response, 8192);
+
 		}
 
-		printf("HTTP request received:   %s : %d\n", cliaddr_formatted, cliaddr.sin_port);
-		printf("method: %.*s\n", (int) methodlen, method);
-		printf("path: %.*s\n", (int) pathlen, path);
-		printf("\n");
-		/*printf("path: %s\n", path);*/
-
-		/*Process and serve requested file*/
 
 
-		respond(connectionfd, min_http_res, strlen(min_http_res));
-		/*printf("%s\n", buffer);*/
+		//Create seperate buffer lengths
+		char filepath[MAXLEN];
+		/*strncpy(filepath, path, pathlen );*/
+
+		FILE* sendfp;
+		sendfp = fopen("gsr.html", "r");
+		struct stat send_stats;
+		fseek(sendfp, 0, SEEK_END);
+		size_t filelen = ftell(sendfp);
+		char* filebuf = malloc(filelen + 1);
+		int frc;
+		fseek(sendfp, 0, SEEK_SET);
+		frc = fread(filebuf, filelen, 1, sendfp); //read one filelen sized chunk
+		fclose(sendfp);
+		printf("file read\n");
+
+
+		size_t headerlen = strlen(http_head_ok);
+		char* response = malloc(headerlen + filelen + 1);
+		strncpy(response, http_head_ok, headerlen);
+		strncpy(response + headerlen, filebuf, filelen + 1);
+		/*response[content_length_index]*/
+		char conlenstr[4];
+		snprintf(conlenstr, 4, "%ld", headerlen + filelen + 1);
+		strncpy(&response[content_length_index], conlenstr, 3);
+
+		printf("%s\n", conlenstr);
+
+		respond(connectionfd, response, strlen(response));
+		free(filebuf);
+		free(response);
 	}
 
 	close(connectionfd);
@@ -199,6 +224,21 @@ int Accept(int listenfd, struct sockaddr_in* cliaddr, socklen_t* clilen){
 	return connfd;
 }
 
+
+int parsemsg_http(char* buffer, size_t buflen, HTTP_req* rq){
+	/*parse request*/
+	size_t numhead = sizeof(rq->headers) / sizeof(rq->headers[0]);
+	/*prc */
+	int prc;
+	prc = phr_parse_request(buffer, buflen, &rq->method, &rq->methodlen, 
+			&rq->path, &rq->pathlen, &rq->minor_version, rq->headers, &numhead, 0);
+
+	if(prc < 0){
+		printf("HTTP parse error: %d\n", prc);
+		pthread_exit(0);
+	}
+	return prc;
+}
 
 size_t readmsg(int connectionfd, char* buffer, size_t buflen){
 	return recv(connectionfd, buffer, buflen, 0);

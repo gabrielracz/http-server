@@ -1,11 +1,23 @@
+#ifndef UNIVERSAL_H
+#define UNIVERSAL_H
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<strings.h>
+
+#include<unistd.h>
+#include<memory.h>
+#include<errno.h>
+
+#include<pthread.h>
+
+#include<signal.h>
 #include<sys/socket.h>
 #include<sys/types.h>  //pid_t
+#include<arpa/inet.h>  //inet_ptons
 #include<netinet/in.h> //sockaddr_in, htons, INADDR_ANY
-#include<memory.h>
-#include<unistd.h>
+
+#include "../phttp/picohttpparser.h"
 
 #define ERR_FILE stdout
 #define SERV_PORT 7120
@@ -26,3 +38,5 @@ inline void err(const char* msg, enum Terminate term){
 		case CONTINUE:	return;
 	}
 }
+
+#endif

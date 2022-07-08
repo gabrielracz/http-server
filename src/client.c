@@ -8,7 +8,7 @@
 #include<arpa/inet.h>
 #include<netinet/in.h>
 #include <unistd.h>
-#include"defines.h"
+#include"universal.h"
 
 int main(int argc, char* argv[]){
 	int sockfd;
