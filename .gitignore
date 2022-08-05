@@ -1,4 +1,7 @@
 build/*
 cli
 srv
+.cache
+compile_commands.json
+
 

@@ -1,0 +1,49 @@
+html {
+    font-family: "Tahoma", "Consolas", monospace;
+    color: #E2D6C5;
+    background-color: #181A1B;
+}
+
+body {
+    margin-left: 20px;
+}
+
+p {
+    line-height: 1.5 ;
+    margin-top: 0 ;
+    margin-bottom: 0 ;
+}
+
+canvas {
+    display: block;
+    float:left;
+    background-color: #2A7BDE;
+    width:200px;
+    height:200px;
+}
+
+a:link {
+    color: #2A7BDE; 
+}
+
+a:visited {
+    color: #2A7BDE; 
+}
+
+.hd {
+    font-weight: normal;
+    color: #87FFAF;
+
+    line-height: 1.5 ;
+    margin-top: 0 ;
+    margin-bottom: 0 ;
+}
+
+
+#content{
+    margin: 50px;
+    border: 1px;
+    /* border-style: solid; */
+    /* border-color: #A2734C; */
+    /* background-color: #000000; */
+}
