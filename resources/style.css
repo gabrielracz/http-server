@@ -1,7 +1,8 @@
 html {
-    font-family: "Tahoma", "Consolas", monospace;
+    font-family: monospace;
+	font-size: 17px;
     color: #E2D6C5;
-    background-color: #181A1B;
+    background-color: black;
 }
 
 body {
@@ -12,14 +13,7 @@ p {
     line-height: 1.5 ;
     margin-top: 0 ;
     margin-bottom: 0 ;
-}
-
-canvas {
-    display: block;
-    float:left;
-    background-color: #2A7BDE;
-    width:200px;
-    height:200px;
+	white-space: pre;
 }
 
 a:link {
@@ -32,13 +26,22 @@ a:visited {
 
 .hd {
     font-weight: normal;
-    color: #87FFAF;
+	color: #33D17A;
 
     line-height: 1.5 ;
     margin-top: 0 ;
     margin-bottom: 0 ;
 }
 
+.paragraph {
+	color: #197F50;
+}
+
+#details {
+	/*border-style: solid;*/
+	/*border-width: 2px;*/
+	/*border-color: black;*/
+}
 
 #content{
     margin: 50px;
