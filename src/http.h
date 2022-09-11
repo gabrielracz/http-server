@@ -71,7 +71,7 @@ size_t read_file(const char* filename, char* buf, size_t buflen) {
 	size_t filelen;
 	fp = fopen(filename, "r");
 	if(fp == 0){
-		printf("Couldn't open requested file. errno: %d\n", errno);
+		printf("Couldn't open requested file '%s'. errno: %d\n", filename, errno);
 		return 0;
 	}
 	fseek(fp, 0, SEEK_END);
@@ -196,12 +196,19 @@ size_t http_handle_rq(HTTPrq rq, char* resbuf, size_t reslen) {
 
 	//TODO: sanitize path
 	/*http_sanitize_rq()*/
-	char path[1024] = "resources";
-	strncat(path, rq.path, rq.pathlen);
+	char rqfile[1024] = "resources";
 
-	//big if block for each http route
+	//routing table
+	//TODO: think of some better way to route requests
+	if(strncmp("/", rq.path, rq.pathlen) == 0 || strncmp("/index.html", rq.path, rq.pathlen) == 0) {
+		strcat(rqfile, "/gsr.html");
+	} else {
+		strncat(rqfile, rq.path, rq.pathlen);
+	}
+
+
 	
-	size_t len = http_response(path, strlen(path), resbuf, reslen);
+	size_t len = http_response(rqfile, strlen(rqfile), resbuf, reslen);
 
 	printf("[RESPONSE]\n%s\n", resbuf);
 
