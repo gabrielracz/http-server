@@ -1,0 +1,2607 @@
+Server on...
+HTTP request received:   162.158.126.203:33338
+method: GET
+path: /
+
+[220200960]
+text/html; charset=utf-8 7
+[RESPONSE]
+HTTP/1.1 200 OK
+Content-Length: 6311
+Content-Type: text/html; charset=utf-8;
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>gsracz</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header">
+            <h1 class="hd">Gabriel Racz</h1>
+			<div id="details">
+				<p class="paragraph">Ottawa, ON</p>
+				<p class="paragraph">gabriel.s.racz@gmail.com</p>
+				<p class="paragraph">https://github.com/gabrielracz</p>
+			</div>
+            <br>
+        </div>
+        <div id="content">
+            <div style="margin: 20px;">
+            <p>A very nice song:</p>
+            <br>
+	    <a class="links" href="/MyMyHeyHey.mp3" download>
+		    download link
+	    </a>
+	    <br>
+	    <a class="links" href="/NeilYoung-1968.tar" download>
+		    Neil Young - 1968
+	    </a>
+            <p>A ship in the ocean. Sailing the net, passing unseen in the waves.</p>
+            <br>
+            <p>Web archive. Keeping things real out here...</p>
+			<br>
+			<p>One Ring to rule them</p>
+			<p>    One Ring to find them,</p>
+			<p>One Ring to bring them in,</p>
+			<p>    And in Darknees bind them.</p>
+			<form action="/gsr.html" method="get">
+				<input type="button" value="refresh"></input>
+			</form>
+			<p>
+~~~.....~~~~OOOOOOOOOO~OOOOOOOOOOO~~~~~~~~~~O~~~~~~~~~~~OOOOOOOOOOO~OOOOOOOOOO~~~.....~~~OOOOOOO~~~~
+~~~....~~~OOOOOOOOO~~~~~~~~OOOO~~~~......~~~~~~~.......~~~~~~~~~~~~~~~~OOOOOOOO~~......~~~~~~OOOOOOO
+~~~....~~~~OOOOOOOO~~~~~~~~~~~~~~........~~~~~~~~.....................~~OOOO#OOO~~~~.~~~~~~~~OOOO###
+~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~.........~~~OOO~~~~~............... ...~~OO###OOO~~~~~~~~~~~~OOOO###
+~~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~~......~~~OOOOOOOO~~~~...............~~OOOOOOOOOOOOOOOOOO~~~~~OOO##
+~~~OOO~~~~~~~OOOO##OOOO~~~~~~~~~~~~~~...~~~OOOOOOOOOOO~~~~~~~~~~~~~~~~~OOOOOOOOO~~OOOOOOOO~~~~~~~~OO
+OOOOOOOOOOOOOOO#####OOO~~~~~~OOOOOO~~~~..~~~~~~OOOOOOOOOOO~~~~OOOOOOOOOOOOOOOO~~~~~~~~OO~~~~.....~~~
+OOO###############OOOO~~~~~OOOO##OOO~~~~~.~~~~~~~OOOOOOOOOOOOOOOOOOO######OOO~~~~~~~~~~~~..........~
+OOO############OOOOOO~~~OOOO######OOO~~~~~~~~~~~~~~~OOOOOOOOOOOOO##########OO~~~~..........      ...
+~OO###@@#####OOO~~~~~~~OOO########OOOO~~~~~~~~......~~OOOOOOOOOOOOO####@@###OO~~~..........     ...~
+~OO########OO~~~....~~~OO###@@###OOO~~~OOOOO~~~......~~~OOOOOOOOOOOO###@@@##OO~~~~~~~~~~~~.... ...~~
+~OO######OOO~~.......~~OO##@@###OO~~~~~OOOOOO~~... ...~~OOOOOO~~~~~OO###@@##OO~~~~~~~~~OO~~~......~~
+OO###@###OO~~...  ...~~OO###@###OO~~~~~~OOOOO~~......~~OOOOOO~~~~~~OOO######O~~~~~~~~OOOOOO~~~....~~
+###@@@@##OO~~~..   ..~~OO#######OO~~~~~~~~~~~~~~~~~~~OOOOOOOO~~~~~~~OO####OOO~~....~~OOO##OOO~~~~~~~
+##@@@@@@##OO~~..   ..~~~O#######OOO~~~~~~~~~~~~~OOOOOOOOOOOO~~~~~~~~OO####OO~~......~~OO####OOOO~~~O
+###@@@@@##OO~~... ...~~OO#######OOO~~~....~~~~OOO######OOOO~~....~~~OO####OO~~~......~~OOO##OOOOOOOO
+OO###@@###OO~~.......~~OO#######OOO~~......~~OO#######OOO~~......~~OOO#####OO~~~......~~~OOOOOOOOO~O
+~OO######OO~~~.......~~OO######OO~~~.......~~OO######OOO~~.......~~OO#######OOO~~~.....~~~OOOOO~~~~~
+~~OOOOOOOO~~~........~~OOO#####OOO~~......~~OOO######OO~~.......~~~OO####@####OOO~~~..~~~~~OO~~~~~~~
+~~~~~~~~~~~~.........~~~~OOO##OOOO~~~....~~~OO#######OO~~......~~~OOOO####@#####OO~~~~~~~~~~~~~~~~~~
+~~~~~......~~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~OOO###@###OO~~~..~~~~~OOOOOOO########OOOOOOOO~~~~~~~~~~~~
+O~~.......~~~~OOOOO~~~~~~~~OOOOOOOOO~~~~~~~~OO###@@###OO~~~~~~~OOOOO~~OOOOO##OOOOOOOOOOOOO~~~~~OOOO~
+O~~......~~~OOO###OOOO~~~~~~OOOOOOO~~~....~~~OO#######OO~~~~~~OOOOO~~~~~~OOOOOO~~~OOOOOOO~~~~~~OOOOO
+~~~......~~OOO######OOOOOOO~~~~~~~~~......~~~OO#######OO~~~~~~OOOO~~~~~~~~~~~~~~~~~~OOOOO~~~~~~OOOOO
+O~~......~~OOO######OOOOO~~~~~~~~~~~~....~~~~OO########OOOOOOOO~~~~~..............~~~~~OO~~~~~OOOO~~
+O~~......~~OOO####OOOO~~~~~~~~~~~~~~~~~~~~~OOOO#########OOOOOOO~~~~................~~~~~~~OOOOOOOO~~
+OO~~.....~~~OOOOOOOOO~~~~~~~~~~~~~OOOOOOOOOOOOO#########OOOOOOO~~~~.....  .......~~~~~~~~OOOOOOOOO~~
+O~~~.....~~~OOOOOOOOO~~~~~~~~~~~~OOOOOOOOOOOOOOOO###OOOOOOOOOOOOO~~~~........~~~~~~~~~~~~OOO#####OO~
+~~~......~~OOOO###OOOOOO~~~~~~~~~~OOOOOOOO~~~~OOOOOOOOO~~~~OOOOOOOOO~~~...~~~~OOOO~~~~~~~OOO######OO
+~~...  ...~~OOO########OOOO~~~~~~~OOOOO~~~~~~~~~OOOOO~~~~~~~OOOOOOOOO~~~~~~~~OOOOOOO~~~~~~OO########
+~...    ..~~~OO##########OOO~~~~~OOOOOO~~~~~~~~~OOOOOO~~~~~~~~OOOOOOO~~~~~~~~~OOOOOOOOOO~OOOOO######
+~...    ...~~OO####@#####OOOO~~OOOOOOOO~~~~~~~OOOOOOOOOOOO~~~~~~~~~~~~~~~~~~~~~~OOOOOOOOOOO~~~OOOOO#
+~~...  ...~~~~OO#######OOO~~~~~OOOOOOO~~~~~~~OOOO###OOOOOOO~~~~~~~~~~~~~~~~~~~~~OOO###OOOO~~~~~~~~OO
+~~~......~~~~OOO####OOO~~~~~~~~~~OOOO~~~~~~~~OOO####OOOOOO~~~~~~~~~~OOOOO~~~~~~OOO#####OOO~~......~~
+O~~~...~~~OOOOO###OOO~~~~......~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~~~~OOOOOOOOOOOOOOO######OOO~~..   ...~
+OO~~~~~~~OOOOOOOOOO~~~.........~~~~~~....~~~OOOOOOOOOO~~~~~~~~OOOO#######OOOOOO######OO~~~..      ..
+OOO~~~~~~OOOOOO~~~~..........~~~~~~~....~~~OOOOOOOOOOO~~~~OOOOOO#########OOOOOO####OOO~~....      ..
+OOO~~~~~~OO~~~~~..........~~~~~~~~~~~..~~~~OOOOOOOOOOOOOOOOOOOO########OOOOOOOOOOOOOO~~~............
+OO~~~~~~OO~~~~~......~~~~~OOOOOOOO~~~...~~~OOOOOOOOOOOOOOOOOOOOOOOOOOOO~~~~~~~OOOOOOOO~~~~~~~~....~~
+~~~~~~~OOOOO~~~~~~~~~~OOOOO###OOOO~~......~~~~OOO~~~~~~~~OOOOOO~~~~~~~~~~~~~~~OOOOOOOOOOOOOOO~~~~~~~
+~~~~~~OOOOOOOO~~~~OOOOOOO####OOO~~~.........~~~~~~~~~~~~~~~~~~~~~~~~~~.....~~~~OOOOOOOOOOOOOOOOOOOOO
+~~~~OOOO###OOOOOOOOO#######OOOO~~...      ..~~~~~~~~~~~~~~~~~~~~~~~~........~~~~~~OOOOOOO####OOOOOOO
+O~~OOOOO###OOOOOOOO#####OOOOO~~~~...      ..~~~OOOOOOOOOOOOOOOO~~~~~........~~~~~~~~~~OOOO###OOOO~~~
+OOOOOOOOOOOOOOOOOOOO##OOOO~~~~~~~~...    ..~~~OOO####OOOOOOOOOOOOO~~~~....~~~~~~.....~~~OOOOOOOOO~~~
+O~~~OOOOOOOO~~~~OOOOOOO~~~~~~~~~~~~~.......~~OO######OOOOOOOOOOOOOO~~~~~~~~~~~~~~......~~OOOOOOOO~~~
+~~~~~~OOOOO~~~~~~~OOOO~~~~~~~~OOOOO~~~....~~~OOO####OOO~~~~~OOOOOOO~~~~~~~OOOOOO~~.....~~~OOOOOOOOOO
+~~~~~~~OOOO~~~~~~~~~~~~~~~~~~OO####OOO~~~~~~~OOOOOOOOO~~~~~~~OOOOOO~~~~~~OO#####OO~~...~~~OOOO######
+O~~~~~~~~~~~~~~~~~~~~....~~~OOO#######OOOOOOOOOOOOOOOO~~~~~~~OOOOOO~~~~~OOO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOO~~~~~...~~~~OOO###########OOOOOOOOOOOOO~~~~~~OOOOOO~~~~~~OO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOOOO~~~~~~~~~~~OOOOOO########OO~~~~~OOOOOO~~~~OOOOOOO~~~~~~~OOOOOOOO~~~~~~~~OOO#######
+			</p>
+            </div>
+        </div>
+    </body>
+
+[LOG] sent 6394
+HTTP request received:   162.158.126.143:57439
+method: GET
+path: /style.css
+
+[220200960]
+text/css 3
+[RESPONSE]
+HTTP/1.1 200 OK
+Content-Length: 688
+Content-Type: text/css;
+
+html {
+    font-family: monospace;
+	font-size: 17px;
+    color: #E2D6C5;
+    background-color: black;
+}
+
+body {
+    margin-left: 20px;
+}
+
+p {
+    line-height: 1.5 ;
+    margin-top: 0 ;
+    margin-bottom: 0 ;
+	white-space: pre;
+}
+
+a:link {
+    color: #2A7BDE; 
+}
+
+a:visited {
+    color: #2A7BDE; 
+}
+
+.hd {
+    font-weight: normal;
+	color: #33D17A;
+
+    line-height: 1.5 ;
+    margin-top: 0 ;
+    margin-bottom: 0 ;
+}
+
+.paragraph {
+	color: #197F50;
+}
+
+#details {
+	/*border-style: solid;*/
+	/*border-width: 2px;*/
+	/*border-color: black;*/
+}
+
+#content{
+    margin: 50px;
+    border: 1px;
+    /* border-style: solid; */
+    /* border-color: #A2734C; */
+    /* background-color: #000000; */
+}
+
+[LOG] sent 754
+HTTP request received:   213.207.38.34:37854
+method: GET
+path: /
+
+[220200960]
+text/html; charset=utf-8 7
+[RESPONSE]
+HTTP/1.1 200 OK
+Content-Length: 6311
+Content-Type: text/html; charset=utf-8;
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>gsracz</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header">
+            <h1 class="hd">Gabriel Racz</h1>
+			<div id="details">
+				<p class="paragraph">Ottawa, ON</p>
+				<p class="paragraph">gabriel.s.racz@gmail.com</p>
+				<p class="paragraph">https://github.com/gabrielracz</p>
+			</div>
+            <br>
+        </div>
+        <div id="content">
+            <div style="margin: 20px;">
+            <p>A very nice song:</p>
+            <br>
+	    <a class="links" href="/MyMyHeyHey.mp3" download>
+		    download link
+	    </a>
+	    <br>
+	    <a class="links" href="/NeilYoung-1968.tar" download>
+		    Neil Young - 1968
+	    </a>
+            <p>A ship in the ocean. Sailing the net, passing unseen in the waves.</p>
+            <br>
+            <p>Web archive. Keeping things real out here...</p>
+			<br>
+			<p>One Ring to rule them</p>
+			<p>    One Ring to find them,</p>
+			<p>One Ring to bring them in,</p>
+			<p>    And in Darknees bind them.</p>
+			<form action="/gsr.html" method="get">
+				<input type="button" value="refresh"></input>
+			</form>
+			<p>
+~~~.....~~~~OOOOOOOOOO~OOOOOOOOOOO~~~~~~~~~~O~~~~~~~~~~~OOOOOOOOOOO~OOOOOOOOOO~~~.....~~~OOOOOOO~~~~
+~~~....~~~OOOOOOOOO~~~~~~~~OOOO~~~~......~~~~~~~.......~~~~~~~~~~~~~~~~OOOOOOOO~~......~~~~~~OOOOOOO
+~~~....~~~~OOOOOOOO~~~~~~~~~~~~~~........~~~~~~~~.....................~~OOOO#OOO~~~~.~~~~~~~~OOOO###
+~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~.........~~~OOO~~~~~............... ...~~OO###OOO~~~~~~~~~~~~OOOO###
+~~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~~......~~~OOOOOOOO~~~~...............~~OOOOOOOOOOOOOOOOOO~~~~~OOO##
+~~~OOO~~~~~~~OOOO##OOOO~~~~~~~~~~~~~~...~~~OOOOOOOOOOO~~~~~~~~~~~~~~~~~OOOOOOOOO~~OOOOOOOO~~~~~~~~OO
+OOOOOOOOOOOOOOO#####OOO~~~~~~OOOOOO~~~~..~~~~~~OOOOOOOOOOO~~~~OOOOOOOOOOOOOOOO~~~~~~~~OO~~~~.....~~~
+OOO###############OOOO~~~~~OOOO##OOO~~~~~.~~~~~~~OOOOOOOOOOOOOOOOOOO######OOO~~~~~~~~~~~~..........~
+OOO############OOOOOO~~~OOOO######OOO~~~~~~~~~~~~~~~OOOOOOOOOOOOO##########OO~~~~..........      ...
+~OO###@@#####OOO~~~~~~~OOO########OOOO~~~~~~~~......~~OOOOOOOOOOOOO####@@###OO~~~..........     ...~
+~OO########OO~~~....~~~OO###@@###OOO~~~OOOOO~~~......~~~OOOOOOOOOOOO###@@@##OO~~~~~~~~~~~~.... ...~~
+~OO######OOO~~.......~~OO##@@###OO~~~~~OOOOOO~~... ...~~OOOOOO~~~~~OO###@@##OO~~~~~~~~~OO~~~......~~
+OO###@###OO~~...  ...~~OO###@###OO~~~~~~OOOOO~~......~~OOOOOO~~~~~~OOO######O~~~~~~~~OOOOOO~~~....~~
+###@@@@##OO~~~..   ..~~OO#######OO~~~~~~~~~~~~~~~~~~~OOOOOOOO~~~~~~~OO####OOO~~....~~OOO##OOO~~~~~~~
+##@@@@@@##OO~~..   ..~~~O#######OOO~~~~~~~~~~~~~OOOOOOOOOOOO~~~~~~~~OO####OO~~......~~OO####OOOO~~~O
+###@@@@@##OO~~... ...~~OO#######OOO~~~....~~~~OOO######OOOO~~....~~~OO####OO~~~......~~OOO##OOOOOOOO
+OO###@@###OO~~.......~~OO#######OOO~~......~~OO#######OOO~~......~~OOO#####OO~~~......~~~OOOOOOOOO~O
+~OO######OO~~~.......~~OO######OO~~~.......~~OO######OOO~~.......~~OO#######OOO~~~.....~~~OOOOO~~~~~
+~~OOOOOOOO~~~........~~OOO#####OOO~~......~~OOO######OO~~.......~~~OO####@####OOO~~~..~~~~~OO~~~~~~~
+~~~~~~~~~~~~.........~~~~OOO##OOOO~~~....~~~OO#######OO~~......~~~OOOO####@#####OO~~~~~~~~~~~~~~~~~~
+~~~~~......~~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~OOO###@###OO~~~..~~~~~OOOOOOO########OOOOOOOO~~~~~~~~~~~~
+O~~.......~~~~OOOOO~~~~~~~~OOOOOOOOO~~~~~~~~OO###@@###OO~~~~~~~OOOOO~~OOOOO##OOOOOOOOOOOOO~~~~~OOOO~
+O~~......~~~OOO###OOOO~~~~~~OOOOOOO~~~....~~~OO#######OO~~~~~~OOOOO~~~~~~OOOOOO~~~OOOOOOO~~~~~~OOOOO
+~~~......~~OOO######OOOOOOO~~~~~~~~~......~~~OO#######OO~~~~~~OOOO~~~~~~~~~~~~~~~~~~OOOOO~~~~~~OOOOO
+O~~......~~OOO######OOOOO~~~~~~~~~~~~....~~~~OO########OOOOOOOO~~~~~..............~~~~~OO~~~~~OOOO~~
+O~~......~~OOO####OOOO~~~~~~~~~~~~~~~~~~~~~OOOO#########OOOOOOO~~~~................~~~~~~~OOOOOOOO~~
+OO~~.....~~~OOOOOOOOO~~~~~~~~~~~~~OOOOOOOOOOOOO#########OOOOOOO~~~~.....  .......~~~~~~~~OOOOOOOOO~~
+O~~~.....~~~OOOOOOOOO~~~~~~~~~~~~OOOOOOOOOOOOOOOO###OOOOOOOOOOOOO~~~~........~~~~~~~~~~~~OOO#####OO~
+~~~......~~OOOO###OOOOOO~~~~~~~~~~OOOOOOOO~~~~OOOOOOOOO~~~~OOOOOOOOO~~~...~~~~OOOO~~~~~~~OOO######OO
+~~...  ...~~OOO########OOOO~~~~~~~OOOOO~~~~~~~~~OOOOO~~~~~~~OOOOOOOOO~~~~~~~~OOOOOOO~~~~~~OO########
+~...    ..~~~OO##########OOO~~~~~OOOOOO~~~~~~~~~OOOOOO~~~~~~~~OOOOOOO~~~~~~~~~OOOOOOOOOO~OOOOO######
+~...    ...~~OO####@#####OOOO~~OOOOOOOO~~~~~~~OOOOOOOOOOOO~~~~~~~~~~~~~~~~~~~~~~OOOOOOOOOOO~~~OOOOO#
+~~...  ...~~~~OO#######OOO~~~~~OOOOOOO~~~~~~~OOOO###OOOOOOO~~~~~~~~~~~~~~~~~~~~~OOO###OOOO~~~~~~~~OO
+~~~......~~~~OOO####OOO~~~~~~~~~~OOOO~~~~~~~~OOO####OOOOOO~~~~~~~~~~OOOOO~~~~~~OOO#####OOO~~......~~
+O~~~...~~~OOOOO###OOO~~~~......~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~~~~OOOOOOOOOOOOOOO######OOO~~..   ...~
+OO~~~~~~~OOOOOOOOOO~~~.........~~~~~~....~~~OOOOOOOOOO~~~~~~~~OOOO#######OOOOOO######OO~~~..      ..
+OOO~~~~~~OOOOOO~~~~..........~~~~~~~....~~~OOOOOOOOOOO~~~~OOOOOO#########OOOOOO####OOO~~....      ..
+OOO~~~~~~OO~~~~~..........~~~~~~~~~~~..~~~~OOOOOOOOOOOOOOOOOOOO########OOOOOOOOOOOOOO~~~............
+OO~~~~~~OO~~~~~......~~~~~OOOOOOOO~~~...~~~OOOOOOOOOOOOOOOOOOOOOOOOOOOO~~~~~~~OOOOOOOO~~~~~~~~....~~
+~~~~~~~OOOOO~~~~~~~~~~OOOOO###OOOO~~......~~~~OOO~~~~~~~~OOOOOO~~~~~~~~~~~~~~~OOOOOOOOOOOOOOO~~~~~~~
+~~~~~~OOOOOOOO~~~~OOOOOOO####OOO~~~.........~~~~~~~~~~~~~~~~~~~~~~~~~~.....~~~~OOOOOOOOOOOOOOOOOOOOO
+~~~~OOOO###OOOOOOOOO#######OOOO~~...      ..~~~~~~~~~~~~~~~~~~~~~~~~........~~~~~~OOOOOOO####OOOOOOO
+O~~OOOOO###OOOOOOOO#####OOOOO~~~~...      ..~~~OOOOOOOOOOOOOOOO~~~~~........~~~~~~~~~~OOOO###OOOO~~~
+OOOOOOOOOOOOOOOOOOOO##OOOO~~~~~~~~...    ..~~~OOO####OOOOOOOOOOOOO~~~~....~~~~~~.....~~~OOOOOOOOO~~~
+O~~~OOOOOOOO~~~~OOOOOOO~~~~~~~~~~~~~.......~~OO######OOOOOOOOOOOOOO~~~~~~~~~~~~~~......~~OOOOOOOO~~~
+~~~~~~OOOOO~~~~~~~OOOO~~~~~~~~OOOOO~~~....~~~OOO####OOO~~~~~OOOOOOO~~~~~~~OOOOOO~~.....~~~OOOOOOOOOO
+~~~~~~~OOOO~~~~~~~~~~~~~~~~~~OO####OOO~~~~~~~OOOOOOOOO~~~~~~~OOOOOO~~~~~~OO#####OO~~...~~~OOOO######
+O~~~~~~~~~~~~~~~~~~~~....~~~OOO#######OOOOOOOOOOOOOOOO~~~~~~~OOOOOO~~~~~OOO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOO~~~~~...~~~~OOO###########OOOOOOOOOOOOO~~~~~~OOOOOO~~~~~~OO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOOOO~~~~~~~~~~~OOOOOO########OO~~~~~OOOOOO~~~~OOOOOOO~~~~~~~OOOOOOOO~~~~~~~~OOO#######
+			</p>
+            </div>
+        </div>
+    </body>
+
+[LOG] sent 6394
+Client sent nothing, disconnecting
+Client sent nothing, disconnecting
+Client sent nothing, disconnecting
+HTTP request received:   172.70.111.2:64155
+method: GET
+path: /
+
+[220200960]
+text/html; charset=utf-8 7
+[RESPONSE]
+HTTP/1.1 200 OK
+Content-Length: 6311
+Content-Type: text/html; charset=utf-8;
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>gsracz</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header">
+            <h1 class="hd">Gabriel Racz</h1>
+			<div id="details">
+				<p class="paragraph">Ottawa, ON</p>
+				<p class="paragraph">gabriel.s.racz@gmail.com</p>
+				<p class="paragraph">https://github.com/gabrielracz</p>
+			</div>
+            <br>
+        </div>
+        <div id="content">
+            <div style="margin: 20px;">
+            <p>A very nice song:</p>
+            <br>
+	    <a class="links" href="/MyMyHeyHey.mp3" download>
+		    download link
+	    </a>
+	    <br>
+	    <a class="links" href="/NeilYoung-1968.tar" download>
+		    Neil Young - 1968
+	    </a>
+            <p>A ship in the ocean. Sailing the net, passing unseen in the waves.</p>
+            <br>
+            <p>Web archive. Keeping things real out here...</p>
+			<br>
+			<p>One Ring to rule them</p>
+			<p>    One Ring to find them,</p>
+			<p>One Ring to bring them in,</p>
+			<p>    And in Darknees bind them.</p>
+			<form action="/gsr.html" method="get">
+				<input type="button" value="refresh"></input>
+			</form>
+			<p>
+~~~.....~~~~OOOOOOOOOO~OOOOOOOOOOO~~~~~~~~~~O~~~~~~~~~~~OOOOOOOOOOO~OOOOOOOOOO~~~.....~~~OOOOOOO~~~~
+~~~....~~~OOOOOOOOO~~~~~~~~OOOO~~~~......~~~~~~~.......~~~~~~~~~~~~~~~~OOOOOOOO~~......~~~~~~OOOOOOO
+~~~....~~~~OOOOOOOO~~~~~~~~~~~~~~........~~~~~~~~.....................~~OOOO#OOO~~~~.~~~~~~~~OOOO###
+~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~.........~~~OOO~~~~~............... ...~~OO###OOO~~~~~~~~~~~~OOOO###
+~~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~~......~~~OOOOOOOO~~~~...............~~OOOOOOOOOOOOOOOOOO~~~~~OOO##
+~~~OOO~~~~~~~OOOO##OOOO~~~~~~~~~~~~~~...~~~OOOOOOOOOOO~~~~~~~~~~~~~~~~~OOOOOOOOO~~OOOOOOOO~~~~~~~~OO
+OOOOOOOOOOOOOOO#####OOO~~~~~~OOOOOO~~~~..~~~~~~OOOOOOOOOOO~~~~OOOOOOOOOOOOOOOO~~~~~~~~OO~~~~.....~~~
+OOO###############OOOO~~~~~OOOO##OOO~~~~~.~~~~~~~OOOOOOOOOOOOOOOOOOO######OOO~~~~~~~~~~~~..........~
+OOO############OOOOOO~~~OOOO######OOO~~~~~~~~~~~~~~~OOOOOOOOOOOOO##########OO~~~~..........      ...
+~OO###@@#####OOO~~~~~~~OOO########OOOO~~~~~~~~......~~OOOOOOOOOOOOO####@@###OO~~~..........     ...~
+~OO########OO~~~....~~~OO###@@###OOO~~~OOOOO~~~......~~~OOOOOOOOOOOO###@@@##OO~~~~~~~~~~~~.... ...~~
+~OO######OOO~~.......~~OO##@@###OO~~~~~OOOOOO~~... ...~~OOOOOO~~~~~OO###@@##OO~~~~~~~~~OO~~~......~~
+OO###@###OO~~...  ...~~OO###@###OO~~~~~~OOOOO~~......~~OOOOOO~~~~~~OOO######O~~~~~~~~OOOOOO~~~....~~
+###@@@@##OO~~~..   ..~~OO#######OO~~~~~~~~~~~~~~~~~~~OOOOOOOO~~~~~~~OO####OOO~~....~~OOO##OOO~~~~~~~
+##@@@@@@##OO~~..   ..~~~O#######OOO~~~~~~~~~~~~~OOOOOOOOOOOO~~~~~~~~OO####OO~~......~~OO####OOOO~~~O
+###@@@@@##OO~~... ...~~OO#######OOO~~~....~~~~OOO######OOOO~~....~~~OO####OO~~~......~~OOO##OOOOOOOO
+OO###@@###OO~~.......~~OO#######OOO~~......~~OO#######OOO~~......~~OOO#####OO~~~......~~~OOOOOOOOO~O
+~OO######OO~~~.......~~OO######OO~~~.......~~OO######OOO~~.......~~OO#######OOO~~~.....~~~OOOOO~~~~~
+~~OOOOOOOO~~~........~~OOO#####OOO~~......~~OOO######OO~~.......~~~OO####@####OOO~~~..~~~~~OO~~~~~~~
+~~~~~~~~~~~~.........~~~~OOO##OOOO~~~....~~~OO#######OO~~......~~~OOOO####@#####OO~~~~~~~~~~~~~~~~~~
+~~~~~......~~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~OOO###@###OO~~~..~~~~~OOOOOOO########OOOOOOOO~~~~~~~~~~~~
+O~~.......~~~~OOOOO~~~~~~~~OOOOOOOOO~~~~~~~~OO###@@###OO~~~~~~~OOOOO~~OOOOO##OOOOOOOOOOOOO~~~~~OOOO~
+O~~......~~~OOO###OOOO~~~~~~OOOOOOO~~~....~~~OO#######OO~~~~~~OOOOO~~~~~~OOOOOO~~~OOOOOOO~~~~~~OOOOO
+~~~......~~OOO######OOOOOOO~~~~~~~~~......~~~OO#######OO~~~~~~OOOO~~~~~~~~~~~~~~~~~~OOOOO~~~~~~OOOOO
+O~~......~~OOO######OOOOO~~~~~~~~~~~~....~~~~OO########OOOOOOOO~~~~~..............~~~~~OO~~~~~OOOO~~
+O~~......~~OOO####OOOO~~~~~~~~~~~~~~~~~~~~~OOOO#########OOOOOOO~~~~................~~~~~~~OOOOOOOO~~
+OO~~.....~~~OOOOOOOOO~~~~~~~~~~~~~OOOOOOOOOOOOO#########OOOOOOO~~~~.....  .......~~~~~~~~OOOOOOOOO~~
+O~~~.....~~~OOOOOOOOO~~~~~~~~~~~~OOOOOOOOOOOOOOOO###OOOOOOOOOOOOO~~~~........~~~~~~~~~~~~OOO#####OO~
+~~~......~~OOOO###OOOOOO~~~~~~~~~~OOOOOOOO~~~~OOOOOOOOO~~~~OOOOOOOOO~~~...~~~~OOOO~~~~~~~OOO######OO
+~~...  ...~~OOO########OOOO~~~~~~~OOOOO~~~~~~~~~OOOOO~~~~~~~OOOOOOOOO~~~~~~~~OOOOOOO~~~~~~OO########
+~...    ..~~~OO##########OOO~~~~~OOOOOO~~~~~~~~~OOOOOO~~~~~~~~OOOOOOO~~~~~~~~~OOOOOOOOOO~OOOOO######
+~...    ...~~OO####@#####OOOO~~OOOOOOOO~~~~~~~OOOOOOOOOOOO~~~~~~~~~~~~~~~~~~~~~~OOOOOOOOOOO~~~OOOOO#
+~~...  ...~~~~OO#######OOO~~~~~OOOOOOO~~~~~~~OOOO###OOOOOOO~~~~~~~~~~~~~~~~~~~~~OOO###OOOO~~~~~~~~OO
+~~~......~~~~OOO####OOO~~~~~~~~~~OOOO~~~~~~~~OOO####OOOOOO~~~~~~~~~~OOOOO~~~~~~OOO#####OOO~~......~~
+O~~~...~~~OOOOO###OOO~~~~......~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~~~~OOOOOOOOOOOOOOO######OOO~~..   ...~
+OO~~~~~~~OOOOOOOOOO~~~.........~~~~~~....~~~OOOOOOOOOO~~~~~~~~OOOO#######OOOOOO######OO~~~..      ..
+OOO~~~~~~OOOOOO~~~~..........~~~~~~~....~~~OOOOOOOOOOO~~~~OOOOOO#########OOOOOO####OOO~~....      ..
+OOO~~~~~~OO~~~~~..........~~~~~~~~~~~..~~~~OOOOOOOOOOOOOOOOOOOO########OOOOOOOOOOOOOO~~~............
+OO~~~~~~OO~~~~~......~~~~~OOOOOOOO~~~...~~~OOOOOOOOOOOOOOOOOOOOOOOOOOOO~~~~~~~OOOOOOOO~~~~~~~~....~~
+~~~~~~~OOOOO~~~~~~~~~~OOOOO###OOOO~~......~~~~OOO~~~~~~~~OOOOOO~~~~~~~~~~~~~~~OOOOOOOOOOOOOOO~~~~~~~
+~~~~~~OOOOOOOO~~~~OOOOOOO####OOO~~~.........~~~~~~~~~~~~~~~~~~~~~~~~~~.....~~~~OOOOOOOOOOOOOOOOOOOOO
+~~~~OOOO###OOOOOOOOO#######OOOO~~...      ..~~~~~~~~~~~~~~~~~~~~~~~~........~~~~~~OOOOOOO####OOOOOOO
+O~~OOOOO###OOOOOOOO#####OOOOO~~~~...      ..~~~OOOOOOOOOOOOOOOO~~~~~........~~~~~~~~~~OOOO###OOOO~~~
+OOOOOOOOOOOOOOOOOOOO##OOOO~~~~~~~~...    ..~~~OOO####OOOOOOOOOOOOO~~~~....~~~~~~.....~~~OOOOOOOOO~~~
+O~~~OOOOOOOO~~~~OOOOOOO~~~~~~~~~~~~~.......~~OO######OOOOOOOOOOOOOO~~~~~~~~~~~~~~......~~OOOOOOOO~~~
+~~~~~~OOOOO~~~~~~~OOOO~~~~~~~~OOOOO~~~....~~~OOO####OOO~~~~~OOOOOOO~~~~~~~OOOOOO~~.....~~~OOOOOOOOOO
+~~~~~~~OOOO~~~~~~~~~~~~~~~~~~OO####OOO~~~~~~~OOOOOOOOO~~~~~~~OOOOOO~~~~~~OO#####OO~~...~~~OOOO######
+O~~~~~~~~~~~~~~~~~~~~....~~~OOO#######OOOOOOOOOOOOOOOO~~~~~~~OOOOOO~~~~~OOO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOO~~~~~...~~~~OOO###########OOOOOOOOOOOOO~~~~~~OOOOOO~~~~~~OO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOOOO~~~~~~~~~~~OOOOOO########OO~~~~~OOOOOO~~~~OOOOOOO~~~~~~~OOOOOOOO~~~~~~~~OOO#######
+			</p>
+            </div>
+        </div>
+    </body>
+
+[LOG] sent 6394
+HTTP request received:   172.70.110.171:35966
+method: GET
+path: /style.css
+
+[220200960]
+text/css 3
+[RESPONSE]
+HTTP/1.1 200 OK
+Content-Length: 688
+Content-Type: text/css;
+
+html {
+    font-family: monospace;
+	font-size: 17px;
+    color: #E2D6C5;
+    background-color: black;
+}
+
+body {
+    margin-left: 20px;
+}
+
+p {
+    line-height: 1.5 ;
+    margin-top: 0 ;
+    margin-bottom: 0 ;
+	white-space: pre;
+}
+
+a:link {
+    color: #2A7BDE; 
+}
+
+a:visited {
+    color: #2A7BDE; 
+}
+
+.hd {
+    font-weight: normal;
+	color: #33D17A;
+
+    line-height: 1.5 ;
+    margin-top: 0 ;
+    margin-bottom: 0 ;
+}
+
+.paragraph {
+	color: #197F50;
+}
+
+#details {
+	/*border-style: solid;*/
+	/*border-width: 2px;*/
+	/*border-color: black;*/
+}
+
+#content{
+    margin: 50px;
+    border: 1px;
+    /* border-style: solid; */
+    /* border-color: #A2734C; */
+    /* background-color: #000000; */
+}
+
+[LOG] sent 754
+HTTP request received:   172.70.110.85:7914
+method: GET
+path: /favicon.ico
+
+[220200960]
+image/x-icon 8
+[RESPONSE]
+HTTP/1.1 200 OK
+Content-Length: 3774
+Content-Type: image/x-icon;
+
+
+[LOG] sent 3845
+HTTP request received:   172.70.111.2:64155
+method: GET
+path: /
+
+[220200960]
+text/html; charset=utf-8 7
+[RESPONSE]
+HTTP/1.1 200 OK
+Content-Length: 6311
+Content-Type: text/html; charset=utf-8;
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>gsracz</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header">
+            <h1 class="hd">Gabriel Racz</h1>
+			<div id="details">
+				<p class="paragraph">Ottawa, ON</p>
+				<p class="paragraph">gabriel.s.racz@gmail.com</p>
+				<p class="paragraph">https://github.com/gabrielracz</p>
+			</div>
+            <br>
+        </div>
+        <div id="content">
+            <div style="margin: 20px;">
+            <p>A very nice song:</p>
+            <br>
+	    <a class="links" href="/MyMyHeyHey.mp3" download>
+		    download link
+	    </a>
+	    <br>
+	    <a class="links" href="/NeilYoung-1968.tar" download>
+		    Neil Young - 1968
+	    </a>
+            <p>A ship in the ocean. Sailing the net, passing unseen in the waves.</p>
+            <br>
+            <p>Web archive. Keeping things real out here...</p>
+			<br>
+			<p>One Ring to rule them</p>
+			<p>    One Ring to find them,</p>
+			<p>One Ring to bring them in,</p>
+			<p>    And in Darknees bind them.</p>
+			<form action="/gsr.html" method="get">
+				<input type="button" value="refresh"></input>
+			</form>
+			<p>
+~~~.....~~~~OOOOOOOOOO~OOOOOOOOOOO~~~~~~~~~~O~~~~~~~~~~~OOOOOOOOOOO~OOOOOOOOOO~~~.....~~~OOOOOOO~~~~
+~~~....~~~OOOOOOOOO~~~~~~~~OOOO~~~~......~~~~~~~.......~~~~~~~~~~~~~~~~OOOOOOOO~~......~~~~~~OOOOOOO
+~~~....~~~~OOOOOOOO~~~~~~~~~~~~~~........~~~~~~~~.....................~~OOOO#OOO~~~~.~~~~~~~~OOOO###
+~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~.........~~~OOO~~~~~............... ...~~OO###OOO~~~~~~~~~~~~OOOO###
+~~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~~......~~~OOOOOOOO~~~~...............~~OOOOOOOOOOOOOOOOOO~~~~~OOO##
+~~~OOO~~~~~~~OOOO##OOOO~~~~~~~~~~~~~~...~~~OOOOOOOOOOO~~~~~~~~~~~~~~~~~OOOOOOOOO~~OOOOOOOO~~~~~~~~OO
+OOOOOOOOOOOOOOO#####OOO~~~~~~OOOOOO~~~~..~~~~~~OOOOOOOOOOO~~~~OOOOOOOOOOOOOOOO~~~~~~~~OO~~~~.....~~~
+OOO###############OOOO~~~~~OOOO##OOO~~~~~.~~~~~~~OOOOOOOOOOOOOOOOOOO######OOO~~~~~~~~~~~~..........~
+OOO############OOOOOO~~~OOOO######OOO~~~~~~~~~~~~~~~OOOOOOOOOOOOO##########OO~~~~..........      ...
+~OO###@@#####OOO~~~~~~~OOO########OOOO~~~~~~~~......~~OOOOOOOOOOOOO####@@###OO~~~..........     ...~
+~OO########OO~~~....~~~OO###@@###OOO~~~OOOOO~~~......~~~OOOOOOOOOOOO###@@@##OO~~~~~~~~~~~~.... ...~~
+~OO######OOO~~.......~~OO##@@###OO~~~~~OOOOOO~~... ...~~OOOOOO~~~~~OO###@@##OO~~~~~~~~~OO~~~......~~
+OO###@###OO~~...  ...~~OO###@###OO~~~~~~OOOOO~~......~~OOOOOO~~~~~~OOO######O~~~~~~~~OOOOOO~~~....~~
+###@@@@##OO~~~..   ..~~OO#######OO~~~~~~~~~~~~~~~~~~~OOOOOOOO~~~~~~~OO####OOO~~....~~OOO##OOO~~~~~~~
+##@@@@@@##OO~~..   ..~~~O#######OOO~~~~~~~~~~~~~OOOOOOOOOOOO~~~~~~~~OO####OO~~......~~OO####OOOO~~~O
+###@@@@@##OO~~... ...~~OO#######OOO~~~....~~~~OOO######OOOO~~....~~~OO####OO~~~......~~OOO##OOOOOOOO
+OO###@@###OO~~.......~~OO#######OOO~~......~~OO#######OOO~~......~~OOO#####OO~~~......~~~OOOOOOOOO~O
+~OO######OO~~~.......~~OO######OO~~~.......~~OO######OOO~~.......~~OO#######OOO~~~.....~~~OOOOO~~~~~
+~~OOOOOOOO~~~........~~OOO#####OOO~~......~~OOO######OO~~.......~~~OO####@####OOO~~~..~~~~~OO~~~~~~~
+~~~~~~~~~~~~.........~~~~OOO##OOOO~~~....~~~OO#######OO~~......~~~OOOO####@#####OO~~~~~~~~~~~~~~~~~~
+~~~~~......~~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~OOO###@###OO~~~..~~~~~OOOOOOO########OOOOOOOO~~~~~~~~~~~~
+O~~.......~~~~OOOOO~~~~~~~~OOOOOOOOO~~~~~~~~OO###@@###OO~~~~~~~OOOOO~~OOOOO##OOOOOOOOOOOOO~~~~~OOOO~
+O~~......~~~OOO###OOOO~~~~~~OOOOOOO~~~....~~~OO#######OO~~~~~~OOOOO~~~~~~OOOOOO~~~OOOOOOO~~~~~~OOOOO
+~~~......~~OOO######OOOOOOO~~~~~~~~~......~~~OO#######OO~~~~~~OOOO~~~~~~~~~~~~~~~~~~OOOOO~~~~~~OOOOO
+O~~......~~OOO######OOOOO~~~~~~~~~~~~....~~~~OO########OOOOOOOO~~~~~..............~~~~~OO~~~~~OOOO~~
+O~~......~~OOO####OOOO~~~~~~~~~~~~~~~~~~~~~OOOO#########OOOOOOO~~~~................~~~~~~~OOOOOOOO~~
+OO~~.....~~~OOOOOOOOO~~~~~~~~~~~~~OOOOOOOOOOOOO#########OOOOOOO~~~~.....  .......~~~~~~~~OOOOOOOOO~~
+O~~~.....~~~OOOOOOOOO~~~~~~~~~~~~OOOOOOOOOOOOOOOO###OOOOOOOOOOOOO~~~~........~~~~~~~~~~~~OOO#####OO~
+~~~......~~OOOO###OOOOOO~~~~~~~~~~OOOOOOOO~~~~OOOOOOOOO~~~~OOOOOOOOO~~~...~~~~OOOO~~~~~~~OOO######OO
+~~...  ...~~OOO########OOOO~~~~~~~OOOOO~~~~~~~~~OOOOO~~~~~~~OOOOOOOOO~~~~~~~~OOOOOOO~~~~~~OO########
+~...    ..~~~OO##########OOO~~~~~OOOOOO~~~~~~~~~OOOOOO~~~~~~~~OOOOOOO~~~~~~~~~OOOOOOOOOO~OOOOO######
+~...    ...~~OO####@#####OOOO~~OOOOOOOO~~~~~~~OOOOOOOOOOOO~~~~~~~~~~~~~~~~~~~~~~OOOOOOOOOOO~~~OOOOO#
+~~...  ...~~~~OO#######OOO~~~~~OOOOOOO~~~~~~~OOOO###OOOOOOO~~~~~~~~~~~~~~~~~~~~~OOO###OOOO~~~~~~~~OO
+~~~......~~~~OOO####OOO~~~~~~~~~~OOOO~~~~~~~~OOO####OOOOOO~~~~~~~~~~OOOOO~~~~~~OOO#####OOO~~......~~
+O~~~...~~~OOOOO###OOO~~~~......~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~~~~OOOOOOOOOOOOOOO######OOO~~..   ...~
+OO~~~~~~~OOOOOOOOOO~~~.........~~~~~~....~~~OOOOOOOOOO~~~~~~~~OOOO#######OOOOOO######OO~~~..      ..
+OOO~~~~~~OOOOOO~~~~..........~~~~~~~....~~~OOOOOOOOOOO~~~~OOOOOO#########OOOOOO####OOO~~....      ..
+OOO~~~~~~OO~~~~~..........~~~~~~~~~~~..~~~~OOOOOOOOOOOOOOOOOOOO########OOOOOOOOOOOOOO~~~............
+OO~~~~~~OO~~~~~......~~~~~OOOOOOOO~~~...~~~OOOOOOOOOOOOOOOOOOOOOOOOOOOO~~~~~~~OOOOOOOO~~~~~~~~....~~
+~~~~~~~OOOOO~~~~~~~~~~OOOOO###OOOO~~......~~~~OOO~~~~~~~~OOOOOO~~~~~~~~~~~~~~~OOOOOOOOOOOOOOO~~~~~~~
+~~~~~~OOOOOOOO~~~~OOOOOOO####OOO~~~.........~~~~~~~~~~~~~~~~~~~~~~~~~~.....~~~~OOOOOOOOOOOOOOOOOOOOO
+~~~~OOOO###OOOOOOOOO#######OOOO~~...      ..~~~~~~~~~~~~~~~~~~~~~~~~........~~~~~~OOOOOOO####OOOOOOO
+O~~OOOOO###OOOOOOOO#####OOOOO~~~~...      ..~~~OOOOOOOOOOOOOOOO~~~~~........~~~~~~~~~~OOOO###OOOO~~~
+OOOOOOOOOOOOOOOOOOOO##OOOO~~~~~~~~...    ..~~~OOO####OOOOOOOOOOOOO~~~~....~~~~~~.....~~~OOOOOOOOO~~~
+O~~~OOOOOOOO~~~~OOOOOOO~~~~~~~~~~~~~.......~~OO######OOOOOOOOOOOOOO~~~~~~~~~~~~~~......~~OOOOOOOO~~~
+~~~~~~OOOOO~~~~~~~OOOO~~~~~~~~OOOOO~~~....~~~OOO####OOO~~~~~OOOOOOO~~~~~~~OOOOOO~~.....~~~OOOOOOOOOO
+~~~~~~~OOOO~~~~~~~~~~~~~~~~~~OO####OOO~~~~~~~OOOOOOOOO~~~~~~~OOOOOO~~~~~~OO#####OO~~...~~~OOOO######
+O~~~~~~~~~~~~~~~~~~~~....~~~OOO#######OOOOOOOOOOOOOOOO~~~~~~~OOOOOO~~~~~OOO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOO~~~~~...~~~~OOO###########OOOOOOOOOOOOO~~~~~~OOOOOO~~~~~~OO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOOOO~~~~~~~~~~~OOOOOO########OO~~~~~OOOOOO~~~~OOOOOOO~~~~~~~OOOOOOOO~~~~~~~~OOO#######
+			</p>
+            </div>
+        </div>
+    </body>
+
+[LOG] sent 6394
+HTTP request received:   172.70.111.2:64155
+method: GET
+path: /
+
+[220200960]
+text/html; charset=utf-8 7
+[RESPONSE]
+HTTP/1.1 200 OK
+Content-Length: 6311
+Content-Type: text/html; charset=utf-8;
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>gsracz</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header">
+            <h1 class="hd">Gabriel Racz</h1>
+			<div id="details">
+				<p class="paragraph">Ottawa, ON</p>
+				<p class="paragraph">gabriel.s.racz@gmail.com</p>
+				<p class="paragraph">https://github.com/gabrielracz</p>
+			</div>
+            <br>
+        </div>
+        <div id="content">
+            <div style="margin: 20px;">
+            <p>A very nice song:</p>
+            <br>
+	    <a class="links" href="/MyMyHeyHey.mp3" download>
+		    download link
+	    </a>
+	    <br>
+	    <a class="links" href="/NeilYoung-1968.tar" download>
+		    Neil Young - 1968
+	    </a>
+            <p>A ship in the ocean. Sailing the net, passing unseen in the waves.</p>
+            <br>
+            <p>Web archive. Keeping things real out here...</p>
+			<br>
+			<p>One Ring to rule them</p>
+			<p>    One Ring to find them,</p>
+			<p>One Ring to bring them in,</p>
+			<p>    And in Darknees bind them.</p>
+			<form action="/gsr.html" method="get">
+				<input type="button" value="refresh"></input>
+			</form>
+			<p>
+~~~.....~~~~OOOOOOOOOO~OOOOOOOOOOO~~~~~~~~~~O~~~~~~~~~~~OOOOOOOOOOO~OOOOOOOOOO~~~.....~~~OOOOOOO~~~~
+~~~....~~~OOOOOOOOO~~~~~~~~OOOO~~~~......~~~~~~~.......~~~~~~~~~~~~~~~~OOOOOOOO~~......~~~~~~OOOOOOO
+~~~....~~~~OOOOOOOO~~~~~~~~~~~~~~........~~~~~~~~.....................~~OOOO#OOO~~~~.~~~~~~~~OOOO###
+~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~.........~~~OOO~~~~~............... ...~~OO###OOO~~~~~~~~~~~~OOOO###
+~~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~~......~~~OOOOOOOO~~~~...............~~OOOOOOOOOOOOOOOOOO~~~~~OOO##
+~~~OOO~~~~~~~OOOO##OOOO~~~~~~~~~~~~~~...~~~OOOOOOOOOOO~~~~~~~~~~~~~~~~~OOOOOOOOO~~OOOOOOOO~~~~~~~~OO
+OOOOOOOOOOOOOOO#####OOO~~~~~~OOOOOO~~~~..~~~~~~OOOOOOOOOOO~~~~OOOOOOOOOOOOOOOO~~~~~~~~OO~~~~.....~~~
+OOO###############OOOO~~~~~OOOO##OOO~~~~~.~~~~~~~OOOOOOOOOOOOOOOOOOO######OOO~~~~~~~~~~~~..........~
+OOO############OOOOOO~~~OOOO######OOO~~~~~~~~~~~~~~~OOOOOOOOOOOOO##########OO~~~~..........      ...
+~OO###@@#####OOO~~~~~~~OOO########OOOO~~~~~~~~......~~OOOOOOOOOOOOO####@@###OO~~~..........     ...~
+~OO########OO~~~....~~~OO###@@###OOO~~~OOOOO~~~......~~~OOOOOOOOOOOO###@@@##OO~~~~~~~~~~~~.... ...~~
+~OO######OOO~~.......~~OO##@@###OO~~~~~OOOOOO~~... ...~~OOOOOO~~~~~OO###@@##OO~~~~~~~~~OO~~~......~~
+OO###@###OO~~...  ...~~OO###@###OO~~~~~~OOOOO~~......~~OOOOOO~~~~~~OOO######O~~~~~~~~OOOOOO~~~....~~
+###@@@@##OO~~~..   ..~~OO#######OO~~~~~~~~~~~~~~~~~~~OOOOOOOO~~~~~~~OO####OOO~~....~~OOO##OOO~~~~~~~
+##@@@@@@##OO~~..   ..~~~O#######OOO~~~~~~~~~~~~~OOOOOOOOOOOO~~~~~~~~OO####OO~~......~~OO####OOOO~~~O
+###@@@@@##OO~~... ...~~OO#######OOO~~~....~~~~OOO######OOOO~~....~~~OO####OO~~~......~~OOO##OOOOOOOO
+OO###@@###OO~~.......~~OO#######OOO~~......~~OO#######OOO~~......~~OOO#####OO~~~......~~~OOOOOOOOO~O
+~OO######OO~~~.......~~OO######OO~~~.......~~OO######OOO~~.......~~OO#######OOO~~~.....~~~OOOOO~~~~~
+~~OOOOOOOO~~~........~~OOO#####OOO~~......~~OOO######OO~~.......~~~OO####@####OOO~~~..~~~~~OO~~~~~~~
+~~~~~~~~~~~~.........~~~~OOO##OOOO~~~....~~~OO#######OO~~......~~~OOOO####@#####OO~~~~~~~~~~~~~~~~~~
+~~~~~......~~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~OOO###@###OO~~~..~~~~~OOOOOOO########OOOOOOOO~~~~~~~~~~~~
+O~~.......~~~~OOOOO~~~~~~~~OOOOOOOOO~~~~~~~~OO###@@###OO~~~~~~~OOOOO~~OOOOO##OOOOOOOOOOOOO~~~~~OOOO~
+O~~......~~~OOO###OOOO~~~~~~OOOOOOO~~~....~~~OO#######OO~~~~~~OOOOO~~~~~~OOOOOO~~~OOOOOOO~~~~~~OOOOO
+~~~......~~OOO######OOOOOOO~~~~~~~~~......~~~OO#######OO~~~~~~OOOO~~~~~~~~~~~~~~~~~~OOOOO~~~~~~OOOOO
+O~~......~~OOO######OOOOO~~~~~~~~~~~~....~~~~OO########OOOOOOOO~~~~~..............~~~~~OO~~~~~OOOO~~
+O~~......~~OOO####OOOO~~~~~~~~~~~~~~~~~~~~~OOOO#########OOOOOOO~~~~................~~~~~~~OOOOOOOO~~
+OO~~.....~~~OOOOOOOOO~~~~~~~~~~~~~OOOOOOOOOOOOO#########OOOOOOO~~~~.....  .......~~~~~~~~OOOOOOOOO~~
+O~~~.....~~~OOOOOOOOO~~~~~~~~~~~~OOOOOOOOOOOOOOOO###OOOOOOOOOOOOO~~~~........~~~~~~~~~~~~OOO#####OO~
+~~~......~~OOOO###OOOOOO~~~~~~~~~~OOOOOOOO~~~~OOOOOOOOO~~~~OOOOOOOOO~~~...~~~~OOOO~~~~~~~OOO######OO
+~~...  ...~~OOO########OOOO~~~~~~~OOOOO~~~~~~~~~OOOOO~~~~~~~OOOOOOOOO~~~~~~~~OOOOOOO~~~~~~OO########
+~...    ..~~~OO##########OOO~~~~~OOOOOO~~~~~~~~~OOOOOO~~~~~~~~OOOOOOO~~~~~~~~~OOOOOOOOOO~OOOOO######
+~...    ...~~OO####@#####OOOO~~OOOOOOOO~~~~~~~OOOOOOOOOOOO~~~~~~~~~~~~~~~~~~~~~~OOOOOOOOOOO~~~OOOOO#
+~~...  ...~~~~OO#######OOO~~~~~OOOOOOO~~~~~~~OOOO###OOOOOOO~~~~~~~~~~~~~~~~~~~~~OOO###OOOO~~~~~~~~OO
+~~~......~~~~OOO####OOO~~~~~~~~~~OOOO~~~~~~~~OOO####OOOOOO~~~~~~~~~~OOOOO~~~~~~OOO#####OOO~~......~~
+O~~~...~~~OOOOO###OOO~~~~......~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~~~~OOOOOOOOOOOOOOO######OOO~~..   ...~
+OO~~~~~~~OOOOOOOOOO~~~.........~~~~~~....~~~OOOOOOOOOO~~~~~~~~OOOO#######OOOOOO######OO~~~..      ..
+OOO~~~~~~OOOOOO~~~~..........~~~~~~~....~~~OOOOOOOOOOO~~~~OOOOOO#########OOOOOO####OOO~~....      ..
+OOO~~~~~~OO~~~~~..........~~~~~~~~~~~..~~~~OOOOOOOOOOOOOOOOOOOO########OOOOOOOOOOOOOO~~~............
+OO~~~~~~OO~~~~~......~~~~~OOOOOOOO~~~...~~~OOOOOOOOOOOOOOOOOOOOOOOOOOOO~~~~~~~OOOOOOOO~~~~~~~~....~~
+~~~~~~~OOOOO~~~~~~~~~~OOOOO###OOOO~~......~~~~OOO~~~~~~~~OOOOOO~~~~~~~~~~~~~~~OOOOOOOOOOOOOOO~~~~~~~
+~~~~~~OOOOOOOO~~~~OOOOOOO####OOO~~~.........~~~~~~~~~~~~~~~~~~~~~~~~~~.....~~~~OOOOOOOOOOOOOOOOOOOOO
+~~~~OOOO###OOOOOOOOO#######OOOO~~...      ..~~~~~~~~~~~~~~~~~~~~~~~~........~~~~~~OOOOOOO####OOOOOOO
+O~~OOOOO###OOOOOOOO#####OOOOO~~~~...      ..~~~OOOOOOOOOOOOOOOO~~~~~........~~~~~~~~~~OOOO###OOOO~~~
+OOOOOOOOOOOOOOOOOOOO##OOOO~~~~~~~~...    ..~~~OOO####OOOOOOOOOOOOO~~~~....~~~~~~.....~~~OOOOOOOOO~~~
+O~~~OOOOOOOO~~~~OOOOOOO~~~~~~~~~~~~~.......~~OO######OOOOOOOOOOOOOO~~~~~~~~~~~~~~......~~OOOOOOOO~~~
+~~~~~~OOOOO~~~~~~~OOOO~~~~~~~~OOOOO~~~....~~~OOO####OOO~~~~~OOOOOOO~~~~~~~OOOOOO~~.....~~~OOOOOOOOOO
+~~~~~~~OOOO~~~~~~~~~~~~~~~~~~OO####OOO~~~~~~~OOOOOOOOO~~~~~~~OOOOOO~~~~~~OO#####OO~~...~~~OOOO######
+O~~~~~~~~~~~~~~~~~~~~....~~~OOO#######OOOOOOOOOOOOOOOO~~~~~~~OOOOOO~~~~~OOO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOO~~~~~...~~~~OOO###########OOOOOOOOOOOOO~~~~~~OOOOOO~~~~~~OO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOOOO~~~~~~~~~~~OOOOOO########OO~~~~~OOOOOO~~~~OOOOOOO~~~~~~~OOOOOOOO~~~~~~~~OOO#######
+			</p>
+            </div>
+        </div>
+    </body>
+
+[LOG] sent 6394
+HTTP request received:   172.70.111.2:64155
+method: GET
+path: /
+
+[220200960]
+text/html; charset=utf-8 7
+[RESPONSE]
+HTTP/1.1 200 OK
+Content-Length: 6311
+Content-Type: text/html; charset=utf-8;
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>gsracz</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header">
+            <h1 class="hd">Gabriel Racz</h1>
+			<div id="details">
+				<p class="paragraph">Ottawa, ON</p>
+				<p class="paragraph">gabriel.s.racz@gmail.com</p>
+				<p class="paragraph">https://github.com/gabrielracz</p>
+			</div>
+            <br>
+        </div>
+        <div id="content">
+            <div style="margin: 20px;">
+            <p>A very nice song:</p>
+            <br>
+	    <a class="links" href="/MyMyHeyHey.mp3" download>
+		    download link
+	    </a>
+	    <br>
+	    <a class="links" href="/NeilYoung-1968.tar" download>
+		    Neil Young - 1968
+	    </a>
+            <p>A ship in the ocean. Sailing the net, passing unseen in the waves.</p>
+            <br>
+            <p>Web archive. Keeping things real out here...</p>
+			<br>
+			<p>One Ring to rule them</p>
+			<p>    One Ring to find them,</p>
+			<p>One Ring to bring them in,</p>
+			<p>    And in Darknees bind them.</p>
+			<form action="/gsr.html" method="get">
+				<input type="button" value="refresh"></input>
+			</form>
+			<p>
+~~~.....~~~~OOOOOOOOOO~OOOOOOOOOOO~~~~~~~~~~O~~~~~~~~~~~OOOOOOOOOOO~OOOOOOOOOO~~~.....~~~OOOOOOO~~~~
+~~~....~~~OOOOOOOOO~~~~~~~~OOOO~~~~......~~~~~~~.......~~~~~~~~~~~~~~~~OOOOOOOO~~......~~~~~~OOOOOOO
+~~~....~~~~OOOOOOOO~~~~~~~~~~~~~~........~~~~~~~~.....................~~OOOO#OOO~~~~.~~~~~~~~OOOO###
+~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~.........~~~OOO~~~~~............... ...~~OO###OOO~~~~~~~~~~~~OOOO###
+~~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~~......~~~OOOOOOOO~~~~...............~~OOOOOOOOOOOOOOOOOO~~~~~OOO##
+~~~OOO~~~~~~~OOOO##OOOO~~~~~~~~~~~~~~...~~~OOOOOOOOOOO~~~~~~~~~~~~~~~~~OOOOOOOOO~~OOOOOOOO~~~~~~~~OO
+OOOOOOOOOOOOOOO#####OOO~~~~~~OOOOOO~~~~..~~~~~~OOOOOOOOOOO~~~~OOOOOOOOOOOOOOOO~~~~~~~~OO~~~~.....~~~
+OOO###############OOOO~~~~~OOOO##OOO~~~~~.~~~~~~~OOOOOOOOOOOOOOOOOOO######OOO~~~~~~~~~~~~..........~
+OOO############OOOOOO~~~OOOO######OOO~~~~~~~~~~~~~~~OOOOOOOOOOOOO##########OO~~~~..........      ...
+~OO###@@#####OOO~~~~~~~OOO########OOOO~~~~~~~~......~~OOOOOOOOOOOOO####@@###OO~~~..........     ...~
+~OO########OO~~~....~~~OO###@@###OOO~~~OOOOO~~~......~~~OOOOOOOOOOOO###@@@##OO~~~~~~~~~~~~.... ...~~
+~OO######OOO~~.......~~OO##@@###OO~~~~~OOOOOO~~... ...~~OOOOOO~~~~~OO###@@##OO~~~~~~~~~OO~~~......~~
+OO###@###OO~~...  ...~~OO###@###OO~~~~~~OOOOO~~......~~OOOOOO~~~~~~OOO######O~~~~~~~~OOOOOO~~~....~~
+###@@@@##OO~~~..   ..~~OO#######OO~~~~~~~~~~~~~~~~~~~OOOOOOOO~~~~~~~OO####OOO~~....~~OOO##OOO~~~~~~~
+##@@@@@@##OO~~..   ..~~~O#######OOO~~~~~~~~~~~~~OOOOOOOOOOOO~~~~~~~~OO####OO~~......~~OO####OOOO~~~O
+###@@@@@##OO~~... ...~~OO#######OOO~~~....~~~~OOO######OOOO~~....~~~OO####OO~~~......~~OOO##OOOOOOOO
+OO###@@###OO~~.......~~OO#######OOO~~......~~OO#######OOO~~......~~OOO#####OO~~~......~~~OOOOOOOOO~O
+~OO######OO~~~.......~~OO######OO~~~.......~~OO######OOO~~.......~~OO#######OOO~~~.....~~~OOOOO~~~~~
+~~OOOOOOOO~~~........~~OOO#####OOO~~......~~OOO######OO~~.......~~~OO####@####OOO~~~..~~~~~OO~~~~~~~
+~~~~~~~~~~~~.........~~~~OOO##OOOO~~~....~~~OO#######OO~~......~~~OOOO####@#####OO~~~~~~~~~~~~~~~~~~
+~~~~~......~~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~OOO###@###OO~~~..~~~~~OOOOOOO########OOOOOOOO~~~~~~~~~~~~
+O~~.......~~~~OOOOO~~~~~~~~OOOOOOOOO~~~~~~~~OO###@@###OO~~~~~~~OOOOO~~OOOOO##OOOOOOOOOOOOO~~~~~OOOO~
+O~~......~~~OOO###OOOO~~~~~~OOOOOOO~~~....~~~OO#######OO~~~~~~OOOOO~~~~~~OOOOOO~~~OOOOOOO~~~~~~OOOOO
+~~~......~~OOO######OOOOOOO~~~~~~~~~......~~~OO#######OO~~~~~~OOOO~~~~~~~~~~~~~~~~~~OOOOO~~~~~~OOOOO
+O~~......~~OOO######OOOOO~~~~~~~~~~~~....~~~~OO########OOOOOOOO~~~~~..............~~~~~OO~~~~~OOOO~~
+O~~......~~OOO####OOOO~~~~~~~~~~~~~~~~~~~~~OOOO#########OOOOOOO~~~~................~~~~~~~OOOOOOOO~~
+OO~~.....~~~OOOOOOOOO~~~~~~~~~~~~~OOOOOOOOOOOOO#########OOOOOOO~~~~.....  .......~~~~~~~~OOOOOOOOO~~
+O~~~.....~~~OOOOOOOOO~~~~~~~~~~~~OOOOOOOOOOOOOOOO###OOOOOOOOOOOOO~~~~........~~~~~~~~~~~~OOO#####OO~
+~~~......~~OOOO###OOOOOO~~~~~~~~~~OOOOOOOO~~~~OOOOOOOOO~~~~OOOOOOOOO~~~...~~~~OOOO~~~~~~~OOO######OO
+~~...  ...~~OOO########OOOO~~~~~~~OOOOO~~~~~~~~~OOOOO~~~~~~~OOOOOOOOO~~~~~~~~OOOOOOO~~~~~~OO########
+~...    ..~~~OO##########OOO~~~~~OOOOOO~~~~~~~~~OOOOOO~~~~~~~~OOOOOOO~~~~~~~~~OOOOOOOOOO~OOOOO######
+~...    ...~~OO####@#####OOOO~~OOOOOOOO~~~~~~~OOOOOOOOOOOO~~~~~~~~~~~~~~~~~~~~~~OOOOOOOOOOO~~~OOOOO#
+~~...  ...~~~~OO#######OOO~~~~~OOOOOOO~~~~~~~OOOO###OOOOOOO~~~~~~~~~~~~~~~~~~~~~OOO###OOOO~~~~~~~~OO
+~~~......~~~~OOO####OOO~~~~~~~~~~OOOO~~~~~~~~OOO####OOOOOO~~~~~~~~~~OOOOO~~~~~~OOO#####OOO~~......~~
+O~~~...~~~OOOOO###OOO~~~~......~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~~~~OOOOOOOOOOOOOOO######OOO~~..   ...~
+OO~~~~~~~OOOOOOOOOO~~~.........~~~~~~....~~~OOOOOOOOOO~~~~~~~~OOOO#######OOOOOO######OO~~~..      ..
+OOO~~~~~~OOOOOO~~~~..........~~~~~~~....~~~OOOOOOOOOOO~~~~OOOOOO#########OOOOOO####OOO~~....      ..
+OOO~~~~~~OO~~~~~..........~~~~~~~~~~~..~~~~OOOOOOOOOOOOOOOOOOOO########OOOOOOOOOOOOOO~~~............
+OO~~~~~~OO~~~~~......~~~~~OOOOOOOO~~~...~~~OOOOOOOOOOOOOOOOOOOOOOOOOOOO~~~~~~~OOOOOOOO~~~~~~~~....~~
+~~~~~~~OOOOO~~~~~~~~~~OOOOO###OOOO~~......~~~~OOO~~~~~~~~OOOOOO~~~~~~~~~~~~~~~OOOOOOOOOOOOOOO~~~~~~~
+~~~~~~OOOOOOOO~~~~OOOOOOO####OOO~~~.........~~~~~~~~~~~~~~~~~~~~~~~~~~.....~~~~OOOOOOOOOOOOOOOOOOOOO
+~~~~OOOO###OOOOOOOOO#######OOOO~~...      ..~~~~~~~~~~~~~~~~~~~~~~~~........~~~~~~OOOOOOO####OOOOOOO
+O~~OOOOO###OOOOOOOO#####OOOOO~~~~...      ..~~~OOOOOOOOOOOOOOOO~~~~~........~~~~~~~~~~OOOO###OOOO~~~
+OOOOOOOOOOOOOOOOOOOO##OOOO~~~~~~~~...    ..~~~OOO####OOOOOOOOOOOOO~~~~....~~~~~~.....~~~OOOOOOOOO~~~
+O~~~OOOOOOOO~~~~OOOOOOO~~~~~~~~~~~~~.......~~OO######OOOOOOOOOOOOOO~~~~~~~~~~~~~~......~~OOOOOOOO~~~
+~~~~~~OOOOO~~~~~~~OOOO~~~~~~~~OOOOO~~~....~~~OOO####OOO~~~~~OOOOOOO~~~~~~~OOOOOO~~.....~~~OOOOOOOOOO
+~~~~~~~OOOO~~~~~~~~~~~~~~~~~~OO####OOO~~~~~~~OOOOOOOOO~~~~~~~OOOOOO~~~~~~OO#####OO~~...~~~OOOO######
+O~~~~~~~~~~~~~~~~~~~~....~~~OOO#######OOOOOOOOOOOOOOOO~~~~~~~OOOOOO~~~~~OOO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOO~~~~~...~~~~OOO###########OOOOOOOOOOOOO~~~~~~OOOOOO~~~~~~OO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOOOO~~~~~~~~~~~OOOOOO########OO~~~~~OOOOOO~~~~OOOOOOO~~~~~~~OOOOOOOO~~~~~~~~OOO#######
+			</p>
+            </div>
+        </div>
+    </body>
+
+[LOG] sent 6394
+HTTP request received:   172.70.111.2:64155
+method: GET
+path: /
+
+[220200960]
+text/html; charset=utf-8 7
+[RESPONSE]
+HTTP/1.1 200 OK
+Content-Length: 6311
+Content-Type: text/html; charset=utf-8;
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>gsracz</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header">
+            <h1 class="hd">Gabriel Racz</h1>
+			<div id="details">
+				<p class="paragraph">Ottawa, ON</p>
+				<p class="paragraph">gabriel.s.racz@gmail.com</p>
+				<p class="paragraph">https://github.com/gabrielracz</p>
+			</div>
+            <br>
+        </div>
+        <div id="content">
+            <div style="margin: 20px;">
+            <p>A very nice song:</p>
+            <br>
+	    <a class="links" href="/MyMyHeyHey.mp3" download>
+		    download link
+	    </a>
+	    <br>
+	    <a class="links" href="/NeilYoung-1968.tar" download>
+		    Neil Young - 1968
+	    </a>
+            <p>A ship in the ocean. Sailing the net, passing unseen in the waves.</p>
+            <br>
+            <p>Web archive. Keeping things real out here...</p>
+			<br>
+			<p>One Ring to rule them</p>
+			<p>    One Ring to find them,</p>
+			<p>One Ring to bring them in,</p>
+			<p>    And in Darknees bind them.</p>
+			<form action="/gsr.html" method="get">
+				<input type="button" value="refresh"></input>
+			</form>
+			<p>
+~~~.....~~~~OOOOOOOOOO~OOOOOOOOOOO~~~~~~~~~~O~~~~~~~~~~~OOOOOOOOOOO~OOOOOOOOOO~~~.....~~~OOOOOOO~~~~
+~~~....~~~OOOOOOOOO~~~~~~~~OOOO~~~~......~~~~~~~.......~~~~~~~~~~~~~~~~OOOOOOOO~~......~~~~~~OOOOOOO
+~~~....~~~~OOOOOOOO~~~~~~~~~~~~~~........~~~~~~~~.....................~~OOOO#OOO~~~~.~~~~~~~~OOOO###
+~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~.........~~~OOO~~~~~............... ...~~OO###OOO~~~~~~~~~~~~OOOO###
+~~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~~......~~~OOOOOOOO~~~~...............~~OOOOOOOOOOOOOOOOOO~~~~~OOO##
+~~~OOO~~~~~~~OOOO##OOOO~~~~~~~~~~~~~~...~~~OOOOOOOOOOO~~~~~~~~~~~~~~~~~OOOOOOOOO~~OOOOOOOO~~~~~~~~OO
+OOOOOOOOOOOOOOO#####OOO~~~~~~OOOOOO~~~~..~~~~~~OOOOOOOOOOO~~~~OOOOOOOOOOOOOOOO~~~~~~~~OO~~~~.....~~~
+OOO###############OOOO~~~~~OOOO##OOO~~~~~.~~~~~~~OOOOOOOOOOOOOOOOOOO######OOO~~~~~~~~~~~~..........~
+OOO############OOOOOO~~~OOOO######OOO~~~~~~~~~~~~~~~OOOOOOOOOOOOO##########OO~~~~..........      ...
+~OO###@@#####OOO~~~~~~~OOO########OOOO~~~~~~~~......~~OOOOOOOOOOOOO####@@###OO~~~..........     ...~
+~OO########OO~~~....~~~OO###@@###OOO~~~OOOOO~~~......~~~OOOOOOOOOOOO###@@@##OO~~~~~~~~~~~~.... ...~~
+~OO######OOO~~.......~~OO##@@###OO~~~~~OOOOOO~~... ...~~OOOOOO~~~~~OO###@@##OO~~~~~~~~~OO~~~......~~
+OO###@###OO~~...  ...~~OO###@###OO~~~~~~OOOOO~~......~~OOOOOO~~~~~~OOO######O~~~~~~~~OOOOOO~~~....~~
+###@@@@##OO~~~..   ..~~OO#######OO~~~~~~~~~~~~~~~~~~~OOOOOOOO~~~~~~~OO####OOO~~....~~OOO##OOO~~~~~~~
+##@@@@@@##OO~~..   ..~~~O#######OOO~~~~~~~~~~~~~OOOOOOOOOOOO~~~~~~~~OO####OO~~......~~OO####OOOO~~~O
+###@@@@@##OO~~... ...~~OO#######OOO~~~....~~~~OOO######OOOO~~....~~~OO####OO~~~......~~OOO##OOOOOOOO
+OO###@@###OO~~.......~~OO#######OOO~~......~~OO#######OOO~~......~~OOO#####OO~~~......~~~OOOOOOOOO~O
+~OO######OO~~~.......~~OO######OO~~~.......~~OO######OOO~~.......~~OO#######OOO~~~.....~~~OOOOO~~~~~
+~~OOOOOOOO~~~........~~OOO#####OOO~~......~~OOO######OO~~.......~~~OO####@####OOO~~~..~~~~~OO~~~~~~~
+~~~~~~~~~~~~.........~~~~OOO##OOOO~~~....~~~OO#######OO~~......~~~OOOO####@#####OO~~~~~~~~~~~~~~~~~~
+~~~~~......~~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~OOO###@###OO~~~..~~~~~OOOOOOO########OOOOOOOO~~~~~~~~~~~~
+O~~.......~~~~OOOOO~~~~~~~~OOOOOOOOO~~~~~~~~OO###@@###OO~~~~~~~OOOOO~~OOOOO##OOOOOOOOOOOOO~~~~~OOOO~
+O~~......~~~OOO###OOOO~~~~~~OOOOOOO~~~....~~~OO#######OO~~~~~~OOOOO~~~~~~OOOOOO~~~OOOOOOO~~~~~~OOOOO
+~~~......~~OOO######OOOOOOO~~~~~~~~~......~~~OO#######OO~~~~~~OOOO~~~~~~~~~~~~~~~~~~OOOOO~~~~~~OOOOO
+O~~......~~OOO######OOOOO~~~~~~~~~~~~....~~~~OO########OOOOOOOO~~~~~..............~~~~~OO~~~~~OOOO~~
+O~~......~~OOO####OOOO~~~~~~~~~~~~~~~~~~~~~OOOO#########OOOOOOO~~~~................~~~~~~~OOOOOOOO~~
+OO~~.....~~~OOOOOOOOO~~~~~~~~~~~~~OOOOOOOOOOOOO#########OOOOOOO~~~~.....  .......~~~~~~~~OOOOOOOOO~~
+O~~~.....~~~OOOOOOOOO~~~~~~~~~~~~OOOOOOOOOOOOOOOO###OOOOOOOOOOOOO~~~~........~~~~~~~~~~~~OOO#####OO~
+~~~......~~OOOO###OOOOOO~~~~~~~~~~OOOOOOOO~~~~OOOOOOOOO~~~~OOOOOOOOO~~~...~~~~OOOO~~~~~~~OOO######OO
+~~...  ...~~OOO########OOOO~~~~~~~OOOOO~~~~~~~~~OOOOO~~~~~~~OOOOOOOOO~~~~~~~~OOOOOOO~~~~~~OO########
+~...    ..~~~OO##########OOO~~~~~OOOOOO~~~~~~~~~OOOOOO~~~~~~~~OOOOOOO~~~~~~~~~OOOOOOOOOO~OOOOO######
+~...    ...~~OO####@#####OOOO~~OOOOOOOO~~~~~~~OOOOOOOOOOOO~~~~~~~~~~~~~~~~~~~~~~OOOOOOOOOOO~~~OOOOO#
+~~...  ...~~~~OO#######OOO~~~~~OOOOOOO~~~~~~~OOOO###OOOOOOO~~~~~~~~~~~~~~~~~~~~~OOO###OOOO~~~~~~~~OO
+~~~......~~~~OOO####OOO~~~~~~~~~~OOOO~~~~~~~~OOO####OOOOOO~~~~~~~~~~OOOOO~~~~~~OOO#####OOO~~......~~
+O~~~...~~~OOOOO###OOO~~~~......~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~~~~OOOOOOOOOOOOOOO######OOO~~..   ...~
+OO~~~~~~~OOOOOOOOOO~~~.........~~~~~~....~~~OOOOOOOOOO~~~~~~~~OOOO#######OOOOOO######OO~~~..      ..
+OOO~~~~~~OOOOOO~~~~..........~~~~~~~....~~~OOOOOOOOOOO~~~~OOOOOO#########OOOOOO####OOO~~....      ..
+OOO~~~~~~OO~~~~~..........~~~~~~~~~~~..~~~~OOOOOOOOOOOOOOOOOOOO########OOOOOOOOOOOOOO~~~............
+OO~~~~~~OO~~~~~......~~~~~OOOOOOOO~~~...~~~OOOOOOOOOOOOOOOOOOOOOOOOOOOO~~~~~~~OOOOOOOO~~~~~~~~....~~
+~~~~~~~OOOOO~~~~~~~~~~OOOOO###OOOO~~......~~~~OOO~~~~~~~~OOOOOO~~~~~~~~~~~~~~~OOOOOOOOOOOOOOO~~~~~~~
+~~~~~~OOOOOOOO~~~~OOOOOOO####OOO~~~.........~~~~~~~~~~~~~~~~~~~~~~~~~~.....~~~~OOOOOOOOOOOOOOOOOOOOO
+~~~~OOOO###OOOOOOOOO#######OOOO~~...      ..~~~~~~~~~~~~~~~~~~~~~~~~........~~~~~~OOOOOOO####OOOOOOO
+O~~OOOOO###OOOOOOOO#####OOOOO~~~~...      ..~~~OOOOOOOOOOOOOOOO~~~~~........~~~~~~~~~~OOOO###OOOO~~~
+OOOOOOOOOOOOOOOOOOOO##OOOO~~~~~~~~...    ..~~~OOO####OOOOOOOOOOOOO~~~~....~~~~~~.....~~~OOOOOOOOO~~~
+O~~~OOOOOOOO~~~~OOOOOOO~~~~~~~~~~~~~.......~~OO######OOOOOOOOOOOOOO~~~~~~~~~~~~~~......~~OOOOOOOO~~~
+~~~~~~OOOOO~~~~~~~OOOO~~~~~~~~OOOOO~~~....~~~OOO####OOO~~~~~OOOOOOO~~~~~~~OOOOOO~~.....~~~OOOOOOOOOO
+~~~~~~~OOOO~~~~~~~~~~~~~~~~~~OO####OOO~~~~~~~OOOOOOOOO~~~~~~~OOOOOO~~~~~~OO#####OO~~...~~~OOOO######
+O~~~~~~~~~~~~~~~~~~~~....~~~OOO#######OOOOOOOOOOOOOOOO~~~~~~~OOOOOO~~~~~OOO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOO~~~~~...~~~~OOO###########OOOOOOOOOOOOO~~~~~~OOOOOO~~~~~~OO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOOOO~~~~~~~~~~~OOOOOO########OO~~~~~OOOOOO~~~~OOOOOOO~~~~~~~OOOOOOOO~~~~~~~~OOO#######
+			</p>
+            </div>
+        </div>
+    </body>
+
+[LOG] sent 6394
+HTTP request received:   172.70.111.2:64155
+method: GET
+path: /
+
+[220200960]
+text/html; charset=utf-8 7
+[RESPONSE]
+HTTP/1.1 200 OK
+Content-Length: 6311
+Content-Type: text/html; charset=utf-8;
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>gsracz</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header">
+            <h1 class="hd">Gabriel Racz</h1>
+			<div id="details">
+				<p class="paragraph">Ottawa, ON</p>
+				<p class="paragraph">gabriel.s.racz@gmail.com</p>
+				<p class="paragraph">https://github.com/gabrielracz</p>
+			</div>
+            <br>
+        </div>
+        <div id="content">
+            <div style="margin: 20px;">
+            <p>A very nice song:</p>
+            <br>
+	    <a class="links" href="/MyMyHeyHey.mp3" download>
+		    download link
+	    </a>
+	    <br>
+	    <a class="links" href="/NeilYoung-1968.tar" download>
+		    Neil Young - 1968
+	    </a>
+            <p>A ship in the ocean. Sailing the net, passing unseen in the waves.</p>
+            <br>
+            <p>Web archive. Keeping things real out here...</p>
+			<br>
+			<p>One Ring to rule them</p>
+			<p>    One Ring to find them,</p>
+			<p>One Ring to bring them in,</p>
+			<p>    And in Darknees bind them.</p>
+			<form action="/gsr.html" method="get">
+				<input type="button" value="refresh"></input>
+			</form>
+			<p>
+~~~.....~~~~OOOOOOOOOO~OOOOOOOOOOO~~~~~~~~~~O~~~~~~~~~~~OOOOOOOOOOO~OOOOOOOOOO~~~.....~~~OOOOOOO~~~~
+~~~....~~~OOOOOOOOO~~~~~~~~OOOO~~~~......~~~~~~~.......~~~~~~~~~~~~~~~~OOOOOOOO~~......~~~~~~OOOOOOO
+~~~....~~~~OOOOOOOO~~~~~~~~~~~~~~........~~~~~~~~.....................~~OOOO#OOO~~~~.~~~~~~~~OOOO###
+~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~.........~~~OOO~~~~~............... ...~~OO###OOO~~~~~~~~~~~~OOOO###
+~~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~~......~~~OOOOOOOO~~~~...............~~OOOOOOOOOOOOOOOOOO~~~~~OOO##
+~~~OOO~~~~~~~OOOO##OOOO~~~~~~~~~~~~~~...~~~OOOOOOOOOOO~~~~~~~~~~~~~~~~~OOOOOOOOO~~OOOOOOOO~~~~~~~~OO
+OOOOOOOOOOOOOOO#####OOO~~~~~~OOOOOO~~~~..~~~~~~OOOOOOOOOOO~~~~OOOOOOOOOOOOOOOO~~~~~~~~OO~~~~.....~~~
+OOO###############OOOO~~~~~OOOO##OOO~~~~~.~~~~~~~OOOOOOOOOOOOOOOOOOO######OOO~~~~~~~~~~~~..........~
+OOO############OOOOOO~~~OOOO######OOO~~~~~~~~~~~~~~~OOOOOOOOOOOOO##########OO~~~~..........      ...
+~OO###@@#####OOO~~~~~~~OOO########OOOO~~~~~~~~......~~OOOOOOOOOOOOO####@@###OO~~~..........     ...~
+~OO########OO~~~....~~~OO###@@###OOO~~~OOOOO~~~......~~~OOOOOOOOOOOO###@@@##OO~~~~~~~~~~~~.... ...~~
+~OO######OOO~~.......~~OO##@@###OO~~~~~OOOOOO~~... ...~~OOOOOO~~~~~OO###@@##OO~~~~~~~~~OO~~~......~~
+OO###@###OO~~...  ...~~OO###@###OO~~~~~~OOOOO~~......~~OOOOOO~~~~~~OOO######O~~~~~~~~OOOOOO~~~....~~
+###@@@@##OO~~~..   ..~~OO#######OO~~~~~~~~~~~~~~~~~~~OOOOOOOO~~~~~~~OO####OOO~~....~~OOO##OOO~~~~~~~
+##@@@@@@##OO~~..   ..~~~O#######OOO~~~~~~~~~~~~~OOOOOOOOOOOO~~~~~~~~OO####OO~~......~~OO####OOOO~~~O
+###@@@@@##OO~~... ...~~OO#######OOO~~~....~~~~OOO######OOOO~~....~~~OO####OO~~~......~~OOO##OOOOOOOO
+OO###@@###OO~~.......~~OO#######OOO~~......~~OO#######OOO~~......~~OOO#####OO~~~......~~~OOOOOOOOO~O
+~OO######OO~~~.......~~OO######OO~~~.......~~OO######OOO~~.......~~OO#######OOO~~~.....~~~OOOOO~~~~~
+~~OOOOOOOO~~~........~~OOO#####OOO~~......~~OOO######OO~~.......~~~OO####@####OOO~~~..~~~~~OO~~~~~~~
+~~~~~~~~~~~~.........~~~~OOO##OOOO~~~....~~~OO#######OO~~......~~~OOOO####@#####OO~~~~~~~~~~~~~~~~~~
+~~~~~......~~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~OOO###@###OO~~~..~~~~~OOOOOOO########OOOOOOOO~~~~~~~~~~~~
+O~~.......~~~~OOOOO~~~~~~~~OOOOOOOOO~~~~~~~~OO###@@###OO~~~~~~~OOOOO~~OOOOO##OOOOOOOOOOOOO~~~~~OOOO~
+O~~......~~~OOO###OOOO~~~~~~OOOOOOO~~~....~~~OO#######OO~~~~~~OOOOO~~~~~~OOOOOO~~~OOOOOOO~~~~~~OOOOO
+~~~......~~OOO######OOOOOOO~~~~~~~~~......~~~OO#######OO~~~~~~OOOO~~~~~~~~~~~~~~~~~~OOOOO~~~~~~OOOOO
+O~~......~~OOO######OOOOO~~~~~~~~~~~~....~~~~OO########OOOOOOOO~~~~~..............~~~~~OO~~~~~OOOO~~
+O~~......~~OOO####OOOO~~~~~~~~~~~~~~~~~~~~~OOOO#########OOOOOOO~~~~................~~~~~~~OOOOOOOO~~
+OO~~.....~~~OOOOOOOOO~~~~~~~~~~~~~OOOOOOOOOOOOO#########OOOOOOO~~~~.....  .......~~~~~~~~OOOOOOOOO~~
+O~~~.....~~~OOOOOOOOO~~~~~~~~~~~~OOOOOOOOOOOOOOOO###OOOOOOOOOOOOO~~~~........~~~~~~~~~~~~OOO#####OO~
+~~~......~~OOOO###OOOOOO~~~~~~~~~~OOOOOOOO~~~~OOOOOOOOO~~~~OOOOOOOOO~~~...~~~~OOOO~~~~~~~OOO######OO
+~~...  ...~~OOO########OOOO~~~~~~~OOOOO~~~~~~~~~OOOOO~~~~~~~OOOOOOOOO~~~~~~~~OOOOOOO~~~~~~OO########
+~...    ..~~~OO##########OOO~~~~~OOOOOO~~~~~~~~~OOOOOO~~~~~~~~OOOOOOO~~~~~~~~~OOOOOOOOOO~OOOOO######
+~...    ...~~OO####@#####OOOO~~OOOOOOOO~~~~~~~OOOOOOOOOOOO~~~~~~~~~~~~~~~~~~~~~~OOOOOOOOOOO~~~OOOOO#
+~~...  ...~~~~OO#######OOO~~~~~OOOOOOO~~~~~~~OOOO###OOOOOOO~~~~~~~~~~~~~~~~~~~~~OOO###OOOO~~~~~~~~OO
+~~~......~~~~OOO####OOO~~~~~~~~~~OOOO~~~~~~~~OOO####OOOOOO~~~~~~~~~~OOOOO~~~~~~OOO#####OOO~~......~~
+O~~~...~~~OOOOO###OOO~~~~......~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~~~~OOOOOOOOOOOOOOO######OOO~~..   ...~
+OO~~~~~~~OOOOOOOOOO~~~.........~~~~~~....~~~OOOOOOOOOO~~~~~~~~OOOO#######OOOOOO######OO~~~..      ..
+OOO~~~~~~OOOOOO~~~~..........~~~~~~~....~~~OOOOOOOOOOO~~~~OOOOOO#########OOOOOO####OOO~~....      ..
+OOO~~~~~~OO~~~~~..........~~~~~~~~~~~..~~~~OOOOOOOOOOOOOOOOOOOO########OOOOOOOOOOOOOO~~~............
+OO~~~~~~OO~~~~~......~~~~~OOOOOOOO~~~...~~~OOOOOOOOOOOOOOOOOOOOOOOOOOOO~~~~~~~OOOOOOOO~~~~~~~~....~~
+~~~~~~~OOOOO~~~~~~~~~~OOOOO###OOOO~~......~~~~OOO~~~~~~~~OOOOOO~~~~~~~~~~~~~~~OOOOOOOOOOOOOOO~~~~~~~
+~~~~~~OOOOOOOO~~~~OOOOOOO####OOO~~~.........~~~~~~~~~~~~~~~~~~~~~~~~~~.....~~~~OOOOOOOOOOOOOOOOOOOOO
+~~~~OOOO###OOOOOOOOO#######OOOO~~...      ..~~~~~~~~~~~~~~~~~~~~~~~~........~~~~~~OOOOOOO####OOOOOOO
+O~~OOOOO###OOOOOOOO#####OOOOO~~~~...      ..~~~OOOOOOOOOOOOOOOO~~~~~........~~~~~~~~~~OOOO###OOOO~~~
+OOOOOOOOOOOOOOOOOOOO##OOOO~~~~~~~~...    ..~~~OOO####OOOOOOOOOOOOO~~~~....~~~~~~.....~~~OOOOOOOOO~~~
+O~~~OOOOOOOO~~~~OOOOOOO~~~~~~~~~~~~~.......~~OO######OOOOOOOOOOOOOO~~~~~~~~~~~~~~......~~OOOOOOOO~~~
+~~~~~~OOOOO~~~~~~~OOOO~~~~~~~~OOOOO~~~....~~~OOO####OOO~~~~~OOOOOOO~~~~~~~OOOOOO~~.....~~~OOOOOOOOOO
+~~~~~~~OOOO~~~~~~~~~~~~~~~~~~OO####OOO~~~~~~~OOOOOOOOO~~~~~~~OOOOOO~~~~~~OO#####OO~~...~~~OOOO######
+O~~~~~~~~~~~~~~~~~~~~....~~~OOO#######OOOOOOOOOOOOOOOO~~~~~~~OOOOOO~~~~~OOO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOO~~~~~...~~~~OOO###########OOOOOOOOOOOOO~~~~~~OOOOOO~~~~~~OO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOOOO~~~~~~~~~~~OOOOOO########OO~~~~~OOOOOO~~~~OOOOOOO~~~~~~~OOOOOOOO~~~~~~~~OOO#######
+			</p>
+            </div>
+        </div>
+    </body>
+
+[LOG] sent 6394
+Client sent nothing, disconnecting
+Client sent nothing, disconnecting
+Client sent nothing, disconnecting
+HTTP request received:   165.227.211.106:498
+method: GET
+path: /
+
+[220200960]
+text/html; charset=utf-8 7
+[RESPONSE]
+HTTP/1.1 200 OK
+Content-Length: 6311
+Content-Type: text/html; charset=utf-8;
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>gsracz</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header">
+            <h1 class="hd">Gabriel Racz</h1>
+			<div id="details">
+				<p class="paragraph">Ottawa, ON</p>
+				<p class="paragraph">gabriel.s.racz@gmail.com</p>
+				<p class="paragraph">https://github.com/gabrielracz</p>
+			</div>
+            <br>
+        </div>
+        <div id="content">
+            <div style="margin: 20px;">
+            <p>A very nice song:</p>
+            <br>
+	    <a class="links" href="/MyMyHeyHey.mp3" download>
+		    download link
+	    </a>
+	    <br>
+	    <a class="links" href="/NeilYoung-1968.tar" download>
+		    Neil Young - 1968
+	    </a>
+            <p>A ship in the ocean. Sailing the net, passing unseen in the waves.</p>
+            <br>
+            <p>Web archive. Keeping things real out here...</p>
+			<br>
+			<p>One Ring to rule them</p>
+			<p>    One Ring to find them,</p>
+			<p>One Ring to bring them in,</p>
+			<p>    And in Darknees bind them.</p>
+			<form action="/gsr.html" method="get">
+				<input type="button" value="refresh"></input>
+			</form>
+			<p>
+~~~.....~~~~OOOOOOOOOO~OOOOOOOOOOO~~~~~~~~~~O~~~~~~~~~~~OOOOOOOOOOO~OOOOOOOOOO~~~.....~~~OOOOOOO~~~~
+~~~....~~~OOOOOOOOO~~~~~~~~OOOO~~~~......~~~~~~~.......~~~~~~~~~~~~~~~~OOOOOOOO~~......~~~~~~OOOOOOO
+~~~....~~~~OOOOOOOO~~~~~~~~~~~~~~........~~~~~~~~.....................~~OOOO#OOO~~~~.~~~~~~~~OOOO###
+~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~.........~~~OOO~~~~~............... ...~~OO###OOO~~~~~~~~~~~~OOOO###
+~~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~~......~~~OOOOOOOO~~~~...............~~OOOOOOOOOOOOOOOOOO~~~~~OOO##
+~~~OOO~~~~~~~OOOO##OOOO~~~~~~~~~~~~~~...~~~OOOOOOOOOOO~~~~~~~~~~~~~~~~~OOOOOOOOO~~OOOOOOOO~~~~~~~~OO
+OOOOOOOOOOOOOOO#####OOO~~~~~~OOOOOO~~~~..~~~~~~OOOOOOOOOOO~~~~OOOOOOOOOOOOOOOO~~~~~~~~OO~~~~.....~~~
+OOO###############OOOO~~~~~OOOO##OOO~~~~~.~~~~~~~OOOOOOOOOOOOOOOOOOO######OOO~~~~~~~~~~~~..........~
+OOO############OOOOOO~~~OOOO######OOO~~~~~~~~~~~~~~~OOOOOOOOOOOOO##########OO~~~~..........      ...
+~OO###@@#####OOO~~~~~~~OOO########OOOO~~~~~~~~......~~OOOOOOOOOOOOO####@@###OO~~~..........     ...~
+~OO########OO~~~....~~~OO###@@###OOO~~~OOOOO~~~......~~~OOOOOOOOOOOO###@@@##OO~~~~~~~~~~~~.... ...~~
+~OO######OOO~~.......~~OO##@@###OO~~~~~OOOOOO~~... ...~~OOOOOO~~~~~OO###@@##OO~~~~~~~~~OO~~~......~~
+OO###@###OO~~...  ...~~OO###@###OO~~~~~~OOOOO~~......~~OOOOOO~~~~~~OOO######O~~~~~~~~OOOOOO~~~....~~
+###@@@@##OO~~~..   ..~~OO#######OO~~~~~~~~~~~~~~~~~~~OOOOOOOO~~~~~~~OO####OOO~~....~~OOO##OOO~~~~~~~
+##@@@@@@##OO~~..   ..~~~O#######OOO~~~~~~~~~~~~~OOOOOOOOOOOO~~~~~~~~OO####OO~~......~~OO####OOOO~~~O
+###@@@@@##OO~~... ...~~OO#######OOO~~~....~~~~OOO######OOOO~~....~~~OO####OO~~~......~~OOO##OOOOOOOO
+OO###@@###OO~~.......~~OO#######OOO~~......~~OO#######OOO~~......~~OOO#####OO~~~......~~~OOOOOOOOO~O
+~OO######OO~~~.......~~OO######OO~~~.......~~OO######OOO~~.......~~OO#######OOO~~~.....~~~OOOOO~~~~~
+~~OOOOOOOO~~~........~~OOO#####OOO~~......~~OOO######OO~~.......~~~OO####@####OOO~~~..~~~~~OO~~~~~~~
+~~~~~~~~~~~~.........~~~~OOO##OOOO~~~....~~~OO#######OO~~......~~~OOOO####@#####OO~~~~~~~~~~~~~~~~~~
+~~~~~......~~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~OOO###@###OO~~~..~~~~~OOOOOOO########OOOOOOOO~~~~~~~~~~~~
+O~~.......~~~~OOOOO~~~~~~~~OOOOOOOOO~~~~~~~~OO###@@###OO~~~~~~~OOOOO~~OOOOO##OOOOOOOOOOOOO~~~~~OOOO~
+O~~......~~~OOO###OOOO~~~~~~OOOOOOO~~~....~~~OO#######OO~~~~~~OOOOO~~~~~~OOOOOO~~~OOOOOOO~~~~~~OOOOO
+~~~......~~OOO######OOOOOOO~~~~~~~~~......~~~OO#######OO~~~~~~OOOO~~~~~~~~~~~~~~~~~~OOOOO~~~~~~OOOOO
+O~~......~~OOO######OOOOO~~~~~~~~~~~~....~~~~OO########OOOOOOOO~~~~~..............~~~~~OO~~~~~OOOO~~
+O~~......~~OOO####OOOO~~~~~~~~~~~~~~~~~~~~~OOOO#########OOOOOOO~~~~................~~~~~~~OOOOOOOO~~
+OO~~.....~~~OOOOOOOOO~~~~~~~~~~~~~OOOOOOOOOOOOO#########OOOOOOO~~~~.....  .......~~~~~~~~OOOOOOOOO~~
+O~~~.....~~~OOOOOOOOO~~~~~~~~~~~~OOOOOOOOOOOOOOOO###OOOOOOOOOOOOO~~~~........~~~~~~~~~~~~OOO#####OO~
+~~~......~~OOOO###OOOOOO~~~~~~~~~~OOOOOOOO~~~~OOOOOOOOO~~~~OOOOOOOOO~~~...~~~~OOOO~~~~~~~OOO######OO
+~~...  ...~~OOO########OOOO~~~~~~~OOOOO~~~~~~~~~OOOOO~~~~~~~OOOOOOOOO~~~~~~~~OOOOOOO~~~~~~OO########
+~...    ..~~~OO##########OOO~~~~~OOOOOO~~~~~~~~~OOOOOO~~~~~~~~OOOOOOO~~~~~~~~~OOOOOOOOOO~OOOOO######
+~...    ...~~OO####@#####OOOO~~OOOOOOOO~~~~~~~OOOOOOOOOOOO~~~~~~~~~~~~~~~~~~~~~~OOOOOOOOOOO~~~OOOOO#
+~~...  ...~~~~OO#######OOO~~~~~OOOOOOO~~~~~~~OOOO###OOOOOOO~~~~~~~~~~~~~~~~~~~~~OOO###OOOO~~~~~~~~OO
+~~~......~~~~OOO####OOO~~~~~~~~~~OOOO~~~~~~~~OOO####OOOOOO~~~~~~~~~~OOOOO~~~~~~OOO#####OOO~~......~~
+O~~~...~~~OOOOO###OOO~~~~......~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~~~~OOOOOOOOOOOOOOO######OOO~~..   ...~
+OO~~~~~~~OOOOOOOOOO~~~.........~~~~~~....~~~OOOOOOOOOO~~~~~~~~OOOO#######OOOOOO######OO~~~..      ..
+OOO~~~~~~OOOOOO~~~~..........~~~~~~~....~~~OOOOOOOOOOO~~~~OOOOOO#########OOOOOO####OOO~~....      ..
+OOO~~~~~~OO~~~~~..........~~~~~~~~~~~..~~~~OOOOOOOOOOOOOOOOOOOO########OOOOOOOOOOOOOO~~~............
+OO~~~~~~OO~~~~~......~~~~~OOOOOOOO~~~...~~~OOOOOOOOOOOOOOOOOOOOOOOOOOOO~~~~~~~OOOOOOOO~~~~~~~~....~~
+~~~~~~~OOOOO~~~~~~~~~~OOOOO###OOOO~~......~~~~OOO~~~~~~~~OOOOOO~~~~~~~~~~~~~~~OOOOOOOOOOOOOOO~~~~~~~
+~~~~~~OOOOOOOO~~~~OOOOOOO####OOO~~~.........~~~~~~~~~~~~~~~~~~~~~~~~~~.....~~~~OOOOOOOOOOOOOOOOOOOOO
+~~~~OOOO###OOOOOOOOO#######OOOO~~...      ..~~~~~~~~~~~~~~~~~~~~~~~~........~~~~~~OOOOOOO####OOOOOOO
+O~~OOOOO###OOOOOOOO#####OOOOO~~~~...      ..~~~OOOOOOOOOOOOOOOO~~~~~........~~~~~~~~~~OOOO###OOOO~~~
+OOOOOOOOOOOOOOOOOOOO##OOOO~~~~~~~~...    ..~~~OOO####OOOOOOOOOOOOO~~~~....~~~~~~.....~~~OOOOOOOOO~~~
+O~~~OOOOOOOO~~~~OOOOOOO~~~~~~~~~~~~~.......~~OO######OOOOOOOOOOOOOO~~~~~~~~~~~~~~......~~OOOOOOOO~~~
+~~~~~~OOOOO~~~~~~~OOOO~~~~~~~~OOOOO~~~....~~~OOO####OOO~~~~~OOOOOOO~~~~~~~OOOOOO~~.....~~~OOOOOOOOOO
+~~~~~~~OOOO~~~~~~~~~~~~~~~~~~OO####OOO~~~~~~~OOOOOOOOO~~~~~~~OOOOOO~~~~~~OO#####OO~~...~~~OOOO######
+O~~~~~~~~~~~~~~~~~~~~....~~~OOO#######OOOOOOOOOOOOOOOO~~~~~~~OOOOOO~~~~~OOO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOO~~~~~...~~~~OOO###########OOOOOOOOOOOOO~~~~~~OOOOOO~~~~~~OO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOOOO~~~~~~~~~~~OOOOOO########OO~~~~~OOOOOO~~~~OOOOOOO~~~~~~~OOOOOOOO~~~~~~~~OOO#######
+			</p>
+            </div>
+        </div>
+    </body>
+
+[LOG] sent 6394
+HTTP parse error: -2
+HTTP request received:   80.94.92.231:49841
+method: GET
+path: /
+
+[220200960]
+text/html; charset=utf-8 7
+[RESPONSE]
+HTTP/1.1 200 OK
+Content-Length: 6311
+Content-Type: text/html; charset=utf-8;
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>gsracz</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header">
+            <h1 class="hd">Gabriel Racz</h1>
+			<div id="details">
+				<p class="paragraph">Ottawa, ON</p>
+				<p class="paragraph">gabriel.s.racz@gmail.com</p>
+				<p class="paragraph">https://github.com/gabrielracz</p>
+			</div>
+            <br>
+        </div>
+        <div id="content">
+            <div style="margin: 20px;">
+            <p>A very nice song:</p>
+            <br>
+	    <a class="links" href="/MyMyHeyHey.mp3" download>
+		    download link
+	    </a>
+	    <br>
+	    <a class="links" href="/NeilYoung-1968.tar" download>
+		    Neil Young - 1968
+	    </a>
+            <p>A ship in the ocean. Sailing the net, passing unseen in the waves.</p>
+            <br>
+            <p>Web archive. Keeping things real out here...</p>
+			<br>
+			<p>One Ring to rule them</p>
+			<p>    One Ring to find them,</p>
+			<p>One Ring to bring them in,</p>
+			<p>    And in Darknees bind them.</p>
+			<form action="/gsr.html" method="get">
+				<input type="button" value="refresh"></input>
+			</form>
+			<p>
+~~~.....~~~~OOOOOOOOOO~OOOOOOOOOOO~~~~~~~~~~O~~~~~~~~~~~OOOOOOOOOOO~OOOOOOOOOO~~~.....~~~OOOOOOO~~~~
+~~~....~~~OOOOOOOOO~~~~~~~~OOOO~~~~......~~~~~~~.......~~~~~~~~~~~~~~~~OOOOOOOO~~......~~~~~~OOOOOOO
+~~~....~~~~OOOOOOOO~~~~~~~~~~~~~~........~~~~~~~~.....................~~OOOO#OOO~~~~.~~~~~~~~OOOO###
+~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~.........~~~OOO~~~~~............... ...~~OO###OOO~~~~~~~~~~~~OOOO###
+~~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~~......~~~OOOOOOOO~~~~...............~~OOOOOOOOOOOOOOOOOO~~~~~OOO##
+~~~OOO~~~~~~~OOOO##OOOO~~~~~~~~~~~~~~...~~~OOOOOOOOOOO~~~~~~~~~~~~~~~~~OOOOOOOOO~~OOOOOOOO~~~~~~~~OO
+OOOOOOOOOOOOOOO#####OOO~~~~~~OOOOOO~~~~..~~~~~~OOOOOOOOOOO~~~~OOOOOOOOOOOOOOOO~~~~~~~~OO~~~~.....~~~
+OOO###############OOOO~~~~~OOOO##OOO~~~~~.~~~~~~~OOOOOOOOOOOOOOOOOOO######OOO~~~~~~~~~~~~..........~
+OOO############OOOOOO~~~OOOO######OOO~~~~~~~~~~~~~~~OOOOOOOOOOOOO##########OO~~~~..........      ...
+~OO###@@#####OOO~~~~~~~OOO########OOOO~~~~~~~~......~~OOOOOOOOOOOOO####@@###OO~~~..........     ...~
+~OO########OO~~~....~~~OO###@@###OOO~~~OOOOO~~~......~~~OOOOOOOOOOOO###@@@##OO~~~~~~~~~~~~.... ...~~
+~OO######OOO~~.......~~OO##@@###OO~~~~~OOOOOO~~... ...~~OOOOOO~~~~~OO###@@##OO~~~~~~~~~OO~~~......~~
+OO###@###OO~~...  ...~~OO###@###OO~~~~~~OOOOO~~......~~OOOOOO~~~~~~OOO######O~~~~~~~~OOOOOO~~~....~~
+###@@@@##OO~~~..   ..~~OO#######OO~~~~~~~~~~~~~~~~~~~OOOOOOOO~~~~~~~OO####OOO~~....~~OOO##OOO~~~~~~~
+##@@@@@@##OO~~..   ..~~~O#######OOO~~~~~~~~~~~~~OOOOOOOOOOOO~~~~~~~~OO####OO~~......~~OO####OOOO~~~O
+###@@@@@##OO~~... ...~~OO#######OOO~~~....~~~~OOO######OOOO~~....~~~OO####OO~~~......~~OOO##OOOOOOOO
+OO###@@###OO~~.......~~OO#######OOO~~......~~OO#######OOO~~......~~OOO#####OO~~~......~~~OOOOOOOOO~O
+~OO######OO~~~.......~~OO######OO~~~.......~~OO######OOO~~.......~~OO#######OOO~~~.....~~~OOOOO~~~~~
+~~OOOOOOOO~~~........~~OOO#####OOO~~......~~OOO######OO~~.......~~~OO####@####OOO~~~..~~~~~OO~~~~~~~
+~~~~~~~~~~~~.........~~~~OOO##OOOO~~~....~~~OO#######OO~~......~~~OOOO####@#####OO~~~~~~~~~~~~~~~~~~
+~~~~~......~~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~OOO###@###OO~~~..~~~~~OOOOOOO########OOOOOOOO~~~~~~~~~~~~
+O~~.......~~~~OOOOO~~~~~~~~OOOOOOOOO~~~~~~~~OO###@@###OO~~~~~~~OOOOO~~OOOOO##OOOOOOOOOOOOO~~~~~OOOO~
+O~~......~~~OOO###OOOO~~~~~~OOOOOOO~~~....~~~OO#######OO~~~~~~OOOOO~~~~~~OOOOOO~~~OOOOOOO~~~~~~OOOOO
+~~~......~~OOO######OOOOOOO~~~~~~~~~......~~~OO#######OO~~~~~~OOOO~~~~~~~~~~~~~~~~~~OOOOO~~~~~~OOOOO
+O~~......~~OOO######OOOOO~~~~~~~~~~~~....~~~~OO########OOOOOOOO~~~~~..............~~~~~OO~~~~~OOOO~~
+O~~......~~OOO####OOOO~~~~~~~~~~~~~~~~~~~~~OOOO#########OOOOOOO~~~~................~~~~~~~OOOOOOOO~~
+OO~~.....~~~OOOOOOOOO~~~~~~~~~~~~~OOOOOOOOOOOOO#########OOOOOOO~~~~.....  .......~~~~~~~~OOOOOOOOO~~
+O~~~.....~~~OOOOOOOOO~~~~~~~~~~~~OOOOOOOOOOOOOOOO###OOOOOOOOOOOOO~~~~........~~~~~~~~~~~~OOO#####OO~
+~~~......~~OOOO###OOOOOO~~~~~~~~~~OOOOOOOO~~~~OOOOOOOOO~~~~OOOOOOOOO~~~...~~~~OOOO~~~~~~~OOO######OO
+~~...  ...~~OOO########OOOO~~~~~~~OOOOO~~~~~~~~~OOOOO~~~~~~~OOOOOOOOO~~~~~~~~OOOOOOO~~~~~~OO########
+~...    ..~~~OO##########OOO~~~~~OOOOOO~~~~~~~~~OOOOOO~~~~~~~~OOOOOOO~~~~~~~~~OOOOOOOOOO~OOOOO######
+~...    ...~~OO####@#####OOOO~~OOOOOOOO~~~~~~~OOOOOOOOOOOO~~~~~~~~~~~~~~~~~~~~~~OOOOOOOOOOO~~~OOOOO#
+~~...  ...~~~~OO#######OOO~~~~~OOOOOOO~~~~~~~OOOO###OOOOOOO~~~~~~~~~~~~~~~~~~~~~OOO###OOOO~~~~~~~~OO
+~~~......~~~~OOO####OOO~~~~~~~~~~OOOO~~~~~~~~OOO####OOOOOO~~~~~~~~~~OOOOO~~~~~~OOO#####OOO~~......~~
+O~~~...~~~OOOOO###OOO~~~~......~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~~~~OOOOOOOOOOOOOOO######OOO~~..   ...~
+OO~~~~~~~OOOOOOOOOO~~~.........~~~~~~....~~~OOOOOOOOOO~~~~~~~~OOOO#######OOOOOO######OO~~~..      ..
+OOO~~~~~~OOOOOO~~~~..........~~~~~~~....~~~OOOOOOOOOOO~~~~OOOOOO#########OOOOOO####OOO~~....      ..
+OOO~~~~~~OO~~~~~..........~~~~~~~~~~~..~~~~OOOOOOOOOOOOOOOOOOOO########OOOOOOOOOOOOOO~~~............
+OO~~~~~~OO~~~~~......~~~~~OOOOOOOO~~~...~~~OOOOOOOOOOOOOOOOOOOOOOOOOOOO~~~~~~~OOOOOOOO~~~~~~~~....~~
+~~~~~~~OOOOO~~~~~~~~~~OOOOO###OOOO~~......~~~~OOO~~~~~~~~OOOOOO~~~~~~~~~~~~~~~OOOOOOOOOOOOOOO~~~~~~~
+~~~~~~OOOOOOOO~~~~OOOOOOO####OOO~~~.........~~~~~~~~~~~~~~~~~~~~~~~~~~.....~~~~OOOOOOOOOOOOOOOOOOOOO
+~~~~OOOO###OOOOOOOOO#######OOOO~~...      ..~~~~~~~~~~~~~~~~~~~~~~~~........~~~~~~OOOOOOO####OOOOOOO
+O~~OOOOO###OOOOOOOO#####OOOOO~~~~...      ..~~~OOOOOOOOOOOOOOOO~~~~~........~~~~~~~~~~OOOO###OOOO~~~
+OOOOOOOOOOOOOOOOOOOO##OOOO~~~~~~~~...    ..~~~OOO####OOOOOOOOOOOOO~~~~....~~~~~~.....~~~OOOOOOOOO~~~
+O~~~OOOOOOOO~~~~OOOOOOO~~~~~~~~~~~~~.......~~OO######OOOOOOOOOOOOOO~~~~~~~~~~~~~~......~~OOOOOOOO~~~
+~~~~~~OOOOO~~~~~~~OOOO~~~~~~~~OOOOO~~~....~~~OOO####OOO~~~~~OOOOOOO~~~~~~~OOOOOO~~.....~~~OOOOOOOOOO
+~~~~~~~OOOO~~~~~~~~~~~~~~~~~~OO####OOO~~~~~~~OOOOOOOOO~~~~~~~OOOOOO~~~~~~OO#####OO~~...~~~OOOO######
+O~~~~~~~~~~~~~~~~~~~~....~~~OOO#######OOOOOOOOOOOOOOOO~~~~~~~OOOOOO~~~~~OOO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOO~~~~~...~~~~OOO###########OOOOOOOOOOOOO~~~~~~OOOOOO~~~~~~OO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOOOO~~~~~~~~~~~OOOOOO########OO~~~~~OOOOOO~~~~OOOOOOO~~~~~~~OOOOOOOO~~~~~~~~OOO#######
+			</p>
+            </div>
+        </div>
+    </body>
+
+[LOG] sent 6394
+Client sent nothing, disconnecting
+HTTP request received:   172.70.114.243:61492
+method: GET
+path: /
+
+[220200960]
+text/html; charset=utf-8 7
+[RESPONSE]
+HTTP/1.1 200 OK
+Content-Length: 6311
+Content-Type: text/html; charset=utf-8;
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>gsracz</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header">
+            <h1 class="hd">Gabriel Racz</h1>
+			<div id="details">
+				<p class="paragraph">Ottawa, ON</p>
+				<p class="paragraph">gabriel.s.racz@gmail.com</p>
+				<p class="paragraph">https://github.com/gabrielracz</p>
+			</div>
+            <br>
+        </div>
+        <div id="content">
+            <div style="margin: 20px;">
+            <p>A very nice song:</p>
+            <br>
+	    <a class="links" href="/MyMyHeyHey.mp3" download>
+		    download link
+	    </a>
+	    <br>
+	    <a class="links" href="/NeilYoung-1968.tar" download>
+		    Neil Young - 1968
+	    </a>
+            <p>A ship in the ocean. Sailing the net, passing unseen in the waves.</p>
+            <br>
+            <p>Web archive. Keeping things real out here...</p>
+			<br>
+			<p>One Ring to rule them</p>
+			<p>    One Ring to find them,</p>
+			<p>One Ring to bring them in,</p>
+			<p>    And in Darknees bind them.</p>
+			<form action="/gsr.html" method="get">
+				<input type="button" value="refresh"></input>
+			</form>
+			<p>
+~~~.....~~~~OOOOOOOOOO~OOOOOOOOOOO~~~~~~~~~~O~~~~~~~~~~~OOOOOOOOOOO~OOOOOOOOOO~~~.....~~~OOOOOOO~~~~
+~~~....~~~OOOOOOOOO~~~~~~~~OOOO~~~~......~~~~~~~.......~~~~~~~~~~~~~~~~OOOOOOOO~~......~~~~~~OOOOOOO
+~~~....~~~~OOOOOOOO~~~~~~~~~~~~~~........~~~~~~~~.....................~~OOOO#OOO~~~~.~~~~~~~~OOOO###
+~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~.........~~~OOO~~~~~............... ...~~OO###OOO~~~~~~~~~~~~OOOO###
+~~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~~......~~~OOOOOOOO~~~~...............~~OOOOOOOOOOOOOOOOOO~~~~~OOO##
+~~~OOO~~~~~~~OOOO##OOOO~~~~~~~~~~~~~~...~~~OOOOOOOOOOO~~~~~~~~~~~~~~~~~OOOOOOOOO~~OOOOOOOO~~~~~~~~OO
+OOOOOOOOOOOOOOO#####OOO~~~~~~OOOOOO~~~~..~~~~~~OOOOOOOOOOO~~~~OOOOOOOOOOOOOOOO~~~~~~~~OO~~~~.....~~~
+OOO###############OOOO~~~~~OOOO##OOO~~~~~.~~~~~~~OOOOOOOOOOOOOOOOOOO######OOO~~~~~~~~~~~~..........~
+OOO############OOOOOO~~~OOOO######OOO~~~~~~~~~~~~~~~OOOOOOOOOOOOO##########OO~~~~..........      ...
+~OO###@@#####OOO~~~~~~~OOO########OOOO~~~~~~~~......~~OOOOOOOOOOOOO####@@###OO~~~..........     ...~
+~OO########OO~~~....~~~OO###@@###OOO~~~OOOOO~~~......~~~OOOOOOOOOOOO###@@@##OO~~~~~~~~~~~~.... ...~~
+~OO######OOO~~.......~~OO##@@###OO~~~~~OOOOOO~~... ...~~OOOOOO~~~~~OO###@@##OO~~~~~~~~~OO~~~......~~
+OO###@###OO~~...  ...~~OO###@###OO~~~~~~OOOOO~~......~~OOOOOO~~~~~~OOO######O~~~~~~~~OOOOOO~~~....~~
+###@@@@##OO~~~..   ..~~OO#######OO~~~~~~~~~~~~~~~~~~~OOOOOOOO~~~~~~~OO####OOO~~....~~OOO##OOO~~~~~~~
+##@@@@@@##OO~~..   ..~~~O#######OOO~~~~~~~~~~~~~OOOOOOOOOOOO~~~~~~~~OO####OO~~......~~OO####OOOO~~~O
+###@@@@@##OO~~... ...~~OO#######OOO~~~....~~~~OOO######OOOO~~....~~~OO####OO~~~......~~OOO##OOOOOOOO
+OO###@@###OO~~.......~~OO#######OOO~~......~~OO#######OOO~~......~~OOO#####OO~~~......~~~OOOOOOOOO~O
+~OO######OO~~~.......~~OO######OO~~~.......~~OO######OOO~~.......~~OO#######OOO~~~.....~~~OOOOO~~~~~
+~~OOOOOOOO~~~........~~OOO#####OOO~~......~~OOO######OO~~.......~~~OO####@####OOO~~~..~~~~~OO~~~~~~~
+~~~~~~~~~~~~.........~~~~OOO##OOOO~~~....~~~OO#######OO~~......~~~OOOO####@#####OO~~~~~~~~~~~~~~~~~~
+~~~~~......~~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~OOO###@###OO~~~..~~~~~OOOOOOO########OOOOOOOO~~~~~~~~~~~~
+O~~.......~~~~OOOOO~~~~~~~~OOOOOOOOO~~~~~~~~OO###@@###OO~~~~~~~OOOOO~~OOOOO##OOOOOOOOOOOOO~~~~~OOOO~
+O~~......~~~OOO###OOOO~~~~~~OOOOOOO~~~....~~~OO#######OO~~~~~~OOOOO~~~~~~OOOOOO~~~OOOOOOO~~~~~~OOOOO
+~~~......~~OOO######OOOOOOO~~~~~~~~~......~~~OO#######OO~~~~~~OOOO~~~~~~~~~~~~~~~~~~OOOOO~~~~~~OOOOO
+O~~......~~OOO######OOOOO~~~~~~~~~~~~....~~~~OO########OOOOOOOO~~~~~..............~~~~~OO~~~~~OOOO~~
+O~~......~~OOO####OOOO~~~~~~~~~~~~~~~~~~~~~OOOO#########OOOOOOO~~~~................~~~~~~~OOOOOOOO~~
+OO~~.....~~~OOOOOOOOO~~~~~~~~~~~~~OOOOOOOOOOOOO#########OOOOOOO~~~~.....  .......~~~~~~~~OOOOOOOOO~~
+O~~~.....~~~OOOOOOOOO~~~~~~~~~~~~OOOOOOOOOOOOOOOO###OOOOOOOOOOOOO~~~~........~~~~~~~~~~~~OOO#####OO~
+~~~......~~OOOO###OOOOOO~~~~~~~~~~OOOOOOOO~~~~OOOOOOOOO~~~~OOOOOOOOO~~~...~~~~OOOO~~~~~~~OOO######OO
+~~...  ...~~OOO########OOOO~~~~~~~OOOOO~~~~~~~~~OOOOO~~~~~~~OOOOOOOOO~~~~~~~~OOOOOOO~~~~~~OO########
+~...    ..~~~OO##########OOO~~~~~OOOOOO~~~~~~~~~OOOOOO~~~~~~~~OOOOOOO~~~~~~~~~OOOOOOOOOO~OOOOO######
+~...    ...~~OO####@#####OOOO~~OOOOOOOO~~~~~~~OOOOOOOOOOOO~~~~~~~~~~~~~~~~~~~~~~OOOOOOOOOOO~~~OOOOO#
+~~...  ...~~~~OO#######OOO~~~~~OOOOOOO~~~~~~~OOOO###OOOOOOO~~~~~~~~~~~~~~~~~~~~~OOO###OOOO~~~~~~~~OO
+~~~......~~~~OOO####OOO~~~~~~~~~~OOOO~~~~~~~~OOO####OOOOOO~~~~~~~~~~OOOOO~~~~~~OOO#####OOO~~......~~
+O~~~...~~~OOOOO###OOO~~~~......~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~~~~OOOOOOOOOOOOOOO######OOO~~..   ...~
+OO~~~~~~~OOOOOOOOOO~~~.........~~~~~~....~~~OOOOOOOOOO~~~~~~~~OOOO#######OOOOOO######OO~~~..      ..
+OOO~~~~~~OOOOOO~~~~..........~~~~~~~....~~~OOOOOOOOOOO~~~~OOOOOO#########OOOOOO####OOO~~....      ..
+OOO~~~~~~OO~~~~~..........~~~~~~~~~~~..~~~~OOOOOOOOOOOOOOOOOOOO########OOOOOOOOOOOOOO~~~............
+OO~~~~~~OO~~~~~......~~~~~OOOOOOOO~~~...~~~OOOOOOOOOOOOOOOOOOOOOOOOOOOO~~~~~~~OOOOOOOO~~~~~~~~....~~
+~~~~~~~OOOOO~~~~~~~~~~OOOOO###OOOO~~......~~~~OOO~~~~~~~~OOOOOO~~~~~~~~~~~~~~~OOOOOOOOOOOOOOO~~~~~~~
+~~~~~~OOOOOOOO~~~~OOOOOOO####OOO~~~.........~~~~~~~~~~~~~~~~~~~~~~~~~~.....~~~~OOOOOOOOOOOOOOOOOOOOO
+~~~~OOOO###OOOOOOOOO#######OOOO~~...      ..~~~~~~~~~~~~~~~~~~~~~~~~........~~~~~~OOOOOOO####OOOOOOO
+O~~OOOOO###OOOOOOOO#####OOOOO~~~~...      ..~~~OOOOOOOOOOOOOOOO~~~~~........~~~~~~~~~~OOOO###OOOO~~~
+OOOOOOOOOOOOOOOOOOOO##OOOO~~~~~~~~...    ..~~~OOO####OOOOOOOOOOOOO~~~~....~~~~~~.....~~~OOOOOOOOO~~~
+O~~~OOOOOOOO~~~~OOOOOOO~~~~~~~~~~~~~.......~~OO######OOOOOOOOOOOOOO~~~~~~~~~~~~~~......~~OOOOOOOO~~~
+~~~~~~OOOOO~~~~~~~OOOO~~~~~~~~OOOOO~~~....~~~OOO####OOO~~~~~OOOOOOO~~~~~~~OOOOOO~~.....~~~OOOOOOOOOO
+~~~~~~~OOOO~~~~~~~~~~~~~~~~~~OO####OOO~~~~~~~OOOOOOOOO~~~~~~~OOOOOO~~~~~~OO#####OO~~...~~~OOOO######
+O~~~~~~~~~~~~~~~~~~~~....~~~OOO#######OOOOOOOOOOOOOOOO~~~~~~~OOOOOO~~~~~OOO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOO~~~~~...~~~~OOO###########OOOOOOOOOOOOO~~~~~~OOOOOO~~~~~~OO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOOOO~~~~~~~~~~~OOOOOO########OO~~~~~OOOOOO~~~~OOOOOOO~~~~~~~OOOOOOOO~~~~~~~~OOO#######
+			</p>
+            </div>
+        </div>
+    </body>
+
+[LOG] sent 6394
+Client sent nothing, disconnecting
+HTTP request received:   172.70.178.13:17658
+method: GET
+path: /
+
+[220200960]
+text/html; charset=utf-8 7
+[RESPONSE]
+HTTP/1.1 200 OK
+Content-Length: 6311
+Content-Type: text/html; charset=utf-8;
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>gsracz</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header">
+            <h1 class="hd">Gabriel Racz</h1>
+			<div id="details">
+				<p class="paragraph">Ottawa, ON</p>
+				<p class="paragraph">gabriel.s.racz@gmail.com</p>
+				<p class="paragraph">https://github.com/gabrielracz</p>
+			</div>
+            <br>
+        </div>
+        <div id="content">
+            <div style="margin: 20px;">
+            <p>A very nice song:</p>
+            <br>
+	    <a class="links" href="/MyMyHeyHey.mp3" download>
+		    download link
+	    </a>
+	    <br>
+	    <a class="links" href="/NeilYoung-1968.tar" download>
+		    Neil Young - 1968
+	    </a>
+            <p>A ship in the ocean. Sailing the net, passing unseen in the waves.</p>
+            <br>
+            <p>Web archive. Keeping things real out here...</p>
+			<br>
+			<p>One Ring to rule them</p>
+			<p>    One Ring to find them,</p>
+			<p>One Ring to bring them in,</p>
+			<p>    And in Darknees bind them.</p>
+			<form action="/gsr.html" method="get">
+				<input type="button" value="refresh"></input>
+			</form>
+			<p>
+~~~.....~~~~OOOOOOOOOO~OOOOOOOOOOO~~~~~~~~~~O~~~~~~~~~~~OOOOOOOOOOO~OOOOOOOOOO~~~.....~~~OOOOOOO~~~~
+~~~....~~~OOOOOOOOO~~~~~~~~OOOO~~~~......~~~~~~~.......~~~~~~~~~~~~~~~~OOOOOOOO~~......~~~~~~OOOOOOO
+~~~....~~~~OOOOOOOO~~~~~~~~~~~~~~........~~~~~~~~.....................~~OOOO#OOO~~~~.~~~~~~~~OOOO###
+~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~.........~~~OOO~~~~~............... ...~~OO###OOO~~~~~~~~~~~~OOOO###
+~~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~~......~~~OOOOOOOO~~~~...............~~OOOOOOOOOOOOOOOOOO~~~~~OOO##
+~~~OOO~~~~~~~OOOO##OOOO~~~~~~~~~~~~~~...~~~OOOOOOOOOOO~~~~~~~~~~~~~~~~~OOOOOOOOO~~OOOOOOOO~~~~~~~~OO
+OOOOOOOOOOOOOOO#####OOO~~~~~~OOOOOO~~~~..~~~~~~OOOOOOOOOOO~~~~OOOOOOOOOOOOOOOO~~~~~~~~OO~~~~.....~~~
+OOO###############OOOO~~~~~OOOO##OOO~~~~~.~~~~~~~OOOOOOOOOOOOOOOOOOO######OOO~~~~~~~~~~~~..........~
+OOO############OOOOOO~~~OOOO######OOO~~~~~~~~~~~~~~~OOOOOOOOOOOOO##########OO~~~~..........      ...
+~OO###@@#####OOO~~~~~~~OOO########OOOO~~~~~~~~......~~OOOOOOOOOOOOO####@@###OO~~~..........     ...~
+~OO########OO~~~....~~~OO###@@###OOO~~~OOOOO~~~......~~~OOOOOOOOOOOO###@@@##OO~~~~~~~~~~~~.... ...~~
+~OO######OOO~~.......~~OO##@@###OO~~~~~OOOOOO~~... ...~~OOOOOO~~~~~OO###@@##OO~~~~~~~~~OO~~~......~~
+OO###@###OO~~...  ...~~OO###@###OO~~~~~~OOOOO~~......~~OOOOOO~~~~~~OOO######O~~~~~~~~OOOOOO~~~....~~
+###@@@@##OO~~~..   ..~~OO#######OO~~~~~~~~~~~~~~~~~~~OOOOOOOO~~~~~~~OO####OOO~~....~~OOO##OOO~~~~~~~
+##@@@@@@##OO~~..   ..~~~O#######OOO~~~~~~~~~~~~~OOOOOOOOOOOO~~~~~~~~OO####OO~~......~~OO####OOOO~~~O
+###@@@@@##OO~~... ...~~OO#######OOO~~~....~~~~OOO######OOOO~~....~~~OO####OO~~~......~~OOO##OOOOOOOO
+OO###@@###OO~~.......~~OO#######OOO~~......~~OO#######OOO~~......~~OOO#####OO~~~......~~~OOOOOOOOO~O
+~OO######OO~~~.......~~OO######OO~~~.......~~OO######OOO~~.......~~OO#######OOO~~~.....~~~OOOOO~~~~~
+~~OOOOOOOO~~~........~~OOO#####OOO~~......~~OOO######OO~~.......~~~OO####@####OOO~~~..~~~~~OO~~~~~~~
+~~~~~~~~~~~~.........~~~~OOO##OOOO~~~....~~~OO#######OO~~......~~~OOOO####@#####OO~~~~~~~~~~~~~~~~~~
+~~~~~......~~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~OOO###@###OO~~~..~~~~~OOOOOOO########OOOOOOOO~~~~~~~~~~~~
+O~~.......~~~~OOOOO~~~~~~~~OOOOOOOOO~~~~~~~~OO###@@###OO~~~~~~~OOOOO~~OOOOO##OOOOOOOOOOOOO~~~~~OOOO~
+O~~......~~~OOO###OOOO~~~~~~OOOOOOO~~~....~~~OO#######OO~~~~~~OOOOO~~~~~~OOOOOO~~~OOOOOOO~~~~~~OOOOO
+~~~......~~OOO######OOOOOOO~~~~~~~~~......~~~OO#######OO~~~~~~OOOO~~~~~~~~~~~~~~~~~~OOOOO~~~~~~OOOOO
+O~~......~~OOO######OOOOO~~~~~~~~~~~~....~~~~OO########OOOOOOOO~~~~~..............~~~~~OO~~~~~OOOO~~
+O~~......~~OOO####OOOO~~~~~~~~~~~~~~~~~~~~~OOOO#########OOOOOOO~~~~................~~~~~~~OOOOOOOO~~
+OO~~.....~~~OOOOOOOOO~~~~~~~~~~~~~OOOOOOOOOOOOO#########OOOOOOO~~~~.....  .......~~~~~~~~OOOOOOOOO~~
+O~~~.....~~~OOOOOOOOO~~~~~~~~~~~~OOOOOOOOOOOOOOOO###OOOOOOOOOOOOO~~~~........~~~~~~~~~~~~OOO#####OO~
+~~~......~~OOOO###OOOOOO~~~~~~~~~~OOOOOOOO~~~~OOOOOOOOO~~~~OOOOOOOOO~~~...~~~~OOOO~~~~~~~OOO######OO
+~~...  ...~~OOO########OOOO~~~~~~~OOOOO~~~~~~~~~OOOOO~~~~~~~OOOOOOOOO~~~~~~~~OOOOOOO~~~~~~OO########
+~...    ..~~~OO##########OOO~~~~~OOOOOO~~~~~~~~~OOOOOO~~~~~~~~OOOOOOO~~~~~~~~~OOOOOOOOOO~OOOOO######
+~...    ...~~OO####@#####OOOO~~OOOOOOOO~~~~~~~OOOOOOOOOOOO~~~~~~~~~~~~~~~~~~~~~~OOOOOOOOOOO~~~OOOOO#
+~~...  ...~~~~OO#######OOO~~~~~OOOOOOO~~~~~~~OOOO###OOOOOOO~~~~~~~~~~~~~~~~~~~~~OOO###OOOO~~~~~~~~OO
+~~~......~~~~OOO####OOO~~~~~~~~~~OOOO~~~~~~~~OOO####OOOOOO~~~~~~~~~~OOOOO~~~~~~OOO#####OOO~~......~~
+O~~~...~~~OOOOO###OOO~~~~......~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~~~~OOOOOOOOOOOOOOO######OOO~~..   ...~
+OO~~~~~~~OOOOOOOOOO~~~.........~~~~~~....~~~OOOOOOOOOO~~~~~~~~OOOO#######OOOOOO######OO~~~..      ..
+OOO~~~~~~OOOOOO~~~~..........~~~~~~~....~~~OOOOOOOOOOO~~~~OOOOOO#########OOOOOO####OOO~~....      ..
+OOO~~~~~~OO~~~~~..........~~~~~~~~~~~..~~~~OOOOOOOOOOOOOOOOOOOO########OOOOOOOOOOOOOO~~~............
+OO~~~~~~OO~~~~~......~~~~~OOOOOOOO~~~...~~~OOOOOOOOOOOOOOOOOOOOOOOOOOOO~~~~~~~OOOOOOOO~~~~~~~~....~~
+~~~~~~~OOOOO~~~~~~~~~~OOOOO###OOOO~~......~~~~OOO~~~~~~~~OOOOOO~~~~~~~~~~~~~~~OOOOOOOOOOOOOOO~~~~~~~
+~~~~~~OOOOOOOO~~~~OOOOOOO####OOO~~~.........~~~~~~~~~~~~~~~~~~~~~~~~~~.....~~~~OOOOOOOOOOOOOOOOOOOOO
+~~~~OOOO###OOOOOOOOO#######OOOO~~...      ..~~~~~~~~~~~~~~~~~~~~~~~~........~~~~~~OOOOOOO####OOOOOOO
+O~~OOOOO###OOOOOOOO#####OOOOO~~~~...      ..~~~OOOOOOOOOOOOOOOO~~~~~........~~~~~~~~~~OOOO###OOOO~~~
+OOOOOOOOOOOOOOOOOOOO##OOOO~~~~~~~~...    ..~~~OOO####OOOOOOOOOOOOO~~~~....~~~~~~.....~~~OOOOOOOOO~~~
+O~~~OOOOOOOO~~~~OOOOOOO~~~~~~~~~~~~~.......~~OO######OOOOOOOOOOOOOO~~~~~~~~~~~~~~......~~OOOOOOOO~~~
+~~~~~~OOOOO~~~~~~~OOOO~~~~~~~~OOOOO~~~....~~~OOO####OOO~~~~~OOOOOOO~~~~~~~OOOOOO~~.....~~~OOOOOOOOOO
+~~~~~~~OOOO~~~~~~~~~~~~~~~~~~OO####OOO~~~~~~~OOOOOOOOO~~~~~~~OOOOOO~~~~~~OO#####OO~~...~~~OOOO######
+O~~~~~~~~~~~~~~~~~~~~....~~~OOO#######OOOOOOOOOOOOOOOO~~~~~~~OOOOOO~~~~~OOO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOO~~~~~...~~~~OOO###########OOOOOOOOOOOOO~~~~~~OOOOOO~~~~~~OO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOOOO~~~~~~~~~~~OOOOOO########OO~~~~~OOOOOO~~~~OOOOOOO~~~~~~~OOOOOOOO~~~~~~~~OOO#######
+			</p>
+            </div>
+        </div>
+    </body>
+
+[LOG] sent 6394
+HTTP request received:   172.70.130.121:36580
+method: GET
+path: /
+
+[220200960]
+text/html; charset=utf-8 7
+[RESPONSE]
+HTTP/1.1 200 OK
+Content-Length: 6311
+Content-Type: text/html; charset=utf-8;
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>gsracz</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header">
+            <h1 class="hd">Gabriel Racz</h1>
+			<div id="details">
+				<p class="paragraph">Ottawa, ON</p>
+				<p class="paragraph">gabriel.s.racz@gmail.com</p>
+				<p class="paragraph">https://github.com/gabrielracz</p>
+			</div>
+            <br>
+        </div>
+        <div id="content">
+            <div style="margin: 20px;">
+            <p>A very nice song:</p>
+            <br>
+	    <a class="links" href="/MyMyHeyHey.mp3" download>
+		    download link
+	    </a>
+	    <br>
+	    <a class="links" href="/NeilYoung-1968.tar" download>
+		    Neil Young - 1968
+	    </a>
+            <p>A ship in the ocean. Sailing the net, passing unseen in the waves.</p>
+            <br>
+            <p>Web archive. Keeping things real out here...</p>
+			<br>
+			<p>One Ring to rule them</p>
+			<p>    One Ring to find them,</p>
+			<p>One Ring to bring them in,</p>
+			<p>    And in Darknees bind them.</p>
+			<form action="/gsr.html" method="get">
+				<input type="button" value="refresh"></input>
+			</form>
+			<p>
+~~~.....~~~~OOOOOOOOOO~OOOOOOOOOOO~~~~~~~~~~O~~~~~~~~~~~OOOOOOOOOOO~OOOOOOOOOO~~~.....~~~OOOOOOO~~~~
+~~~....~~~OOOOOOOOO~~~~~~~~OOOO~~~~......~~~~~~~.......~~~~~~~~~~~~~~~~OOOOOOOO~~......~~~~~~OOOOOOO
+~~~....~~~~OOOOOOOO~~~~~~~~~~~~~~........~~~~~~~~.....................~~OOOO#OOO~~~~.~~~~~~~~OOOO###
+~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~.........~~~OOO~~~~~............... ...~~OO###OOO~~~~~~~~~~~~OOOO###
+~~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~~......~~~OOOOOOOO~~~~...............~~OOOOOOOOOOOOOOOOOO~~~~~OOO##
+~~~OOO~~~~~~~OOOO##OOOO~~~~~~~~~~~~~~...~~~OOOOOOOOOOO~~~~~~~~~~~~~~~~~OOOOOOOOO~~OOOOOOOO~~~~~~~~OO
+OOOOOOOOOOOOOOO#####OOO~~~~~~OOOOOO~~~~..~~~~~~OOOOOOOOOOO~~~~OOOOOOOOOOOOOOOO~~~~~~~~OO~~~~.....~~~
+OOO###############OOOO~~~~~OOOO##OOO~~~~~.~~~~~~~OOOOOOOOOOOOOOOOOOO######OOO~~~~~~~~~~~~..........~
+OOO############OOOOOO~~~OOOO######OOO~~~~~~~~~~~~~~~OOOOOOOOOOOOO##########OO~~~~..........      ...
+~OO###@@#####OOO~~~~~~~OOO########OOOO~~~~~~~~......~~OOOOOOOOOOOOO####@@###OO~~~..........     ...~
+~OO########OO~~~....~~~OO###@@###OOO~~~OOOOO~~~......~~~OOOOOOOOOOOO###@@@##OO~~~~~~~~~~~~.... ...~~
+~OO######OOO~~.......~~OO##@@###OO~~~~~OOOOOO~~... ...~~OOOOOO~~~~~OO###@@##OO~~~~~~~~~OO~~~......~~
+OO###@###OO~~...  ...~~OO###@###OO~~~~~~OOOOO~~......~~OOOOOO~~~~~~OOO######O~~~~~~~~OOOOOO~~~....~~
+###@@@@##OO~~~..   ..~~OO#######OO~~~~~~~~~~~~~~~~~~~OOOOOOOO~~~~~~~OO####OOO~~....~~OOO##OOO~~~~~~~
+##@@@@@@##OO~~..   ..~~~O#######OOO~~~~~~~~~~~~~OOOOOOOOOOOO~~~~~~~~OO####OO~~......~~OO####OOOO~~~O
+###@@@@@##OO~~... ...~~OO#######OOO~~~....~~~~OOO######OOOO~~....~~~OO####OO~~~......~~OOO##OOOOOOOO
+OO###@@###OO~~.......~~OO#######OOO~~......~~OO#######OOO~~......~~OOO#####OO~~~......~~~OOOOOOOOO~O
+~OO######OO~~~.......~~OO######OO~~~.......~~OO######OOO~~.......~~OO#######OOO~~~.....~~~OOOOO~~~~~
+~~OOOOOOOO~~~........~~OOO#####OOO~~......~~OOO######OO~~.......~~~OO####@####OOO~~~..~~~~~OO~~~~~~~
+~~~~~~~~~~~~.........~~~~OOO##OOOO~~~....~~~OO#######OO~~......~~~OOOO####@#####OO~~~~~~~~~~~~~~~~~~
+~~~~~......~~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~OOO###@###OO~~~..~~~~~OOOOOOO########OOOOOOOO~~~~~~~~~~~~
+O~~.......~~~~OOOOO~~~~~~~~OOOOOOOOO~~~~~~~~OO###@@###OO~~~~~~~OOOOO~~OOOOO##OOOOOOOOOOOOO~~~~~OOOO~
+O~~......~~~OOO###OOOO~~~~~~OOOOOOO~~~....~~~OO#######OO~~~~~~OOOOO~~~~~~OOOOOO~~~OOOOOOO~~~~~~OOOOO
+~~~......~~OOO######OOOOOOO~~~~~~~~~......~~~OO#######OO~~~~~~OOOO~~~~~~~~~~~~~~~~~~OOOOO~~~~~~OOOOO
+O~~......~~OOO######OOOOO~~~~~~~~~~~~....~~~~OO########OOOOOOOO~~~~~..............~~~~~OO~~~~~OOOO~~
+O~~......~~OOO####OOOO~~~~~~~~~~~~~~~~~~~~~OOOO#########OOOOOOO~~~~................~~~~~~~OOOOOOOO~~
+OO~~.....~~~OOOOOOOOO~~~~~~~~~~~~~OOOOOOOOOOOOO#########OOOOOOO~~~~.....  .......~~~~~~~~OOOOOOOOO~~
+O~~~.....~~~OOOOOOOOO~~~~~~~~~~~~OOOOOOOOOOOOOOOO###OOOOOOOOOOOOO~~~~........~~~~~~~~~~~~OOO#####OO~
+~~~......~~OOOO###OOOOOO~~~~~~~~~~OOOOOOOO~~~~OOOOOOOOO~~~~OOOOOOOOO~~~...~~~~OOOO~~~~~~~OOO######OO
+~~...  ...~~OOO########OOOO~~~~~~~OOOOO~~~~~~~~~OOOOO~~~~~~~OOOOOOOOO~~~~~~~~OOOOOOO~~~~~~OO########
+~...    ..~~~OO##########OOO~~~~~OOOOOO~~~~~~~~~OOOOOO~~~~~~~~OOOOOOO~~~~~~~~~OOOOOOOOOO~OOOOO######
+~...    ...~~OO####@#####OOOO~~OOOOOOOO~~~~~~~OOOOOOOOOOOO~~~~~~~~~~~~~~~~~~~~~~OOOOOOOOOOO~~~OOOOO#
+~~...  ...~~~~OO#######OOO~~~~~OOOOOOO~~~~~~~OOOO###OOOOOOO~~~~~~~~~~~~~~~~~~~~~OOO###OOOO~~~~~~~~OO
+~~~......~~~~OOO####OOO~~~~~~~~~~OOOO~~~~~~~~OOO####OOOOOO~~~~~~~~~~OOOOO~~~~~~OOO#####OOO~~......~~
+O~~~...~~~OOOOO###OOO~~~~......~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~~~~OOOOOOOOOOOOOOO######OOO~~..   ...~
+OO~~~~~~~OOOOOOOOOO~~~.........~~~~~~....~~~OOOOOOOOOO~~~~~~~~OOOO#######OOOOOO######OO~~~..      ..
+OOO~~~~~~OOOOOO~~~~..........~~~~~~~....~~~OOOOOOOOOOO~~~~OOOOOO#########OOOOOO####OOO~~....      ..
+OOO~~~~~~OO~~~~~..........~~~~~~~~~~~..~~~~OOOOOOOOOOOOOOOOOOOO########OOOOOOOOOOOOOO~~~............
+OO~~~~~~OO~~~~~......~~~~~OOOOOOOO~~~...~~~OOOOOOOOOOOOOOOOOOOOOOOOOOOO~~~~~~~OOOOOOOO~~~~~~~~....~~
+~~~~~~~OOOOO~~~~~~~~~~OOOOO###OOOO~~......~~~~OOO~~~~~~~~OOOOOO~~~~~~~~~~~~~~~OOOOOOOOOOOOOOO~~~~~~~
+~~~~~~OOOOOOOO~~~~OOOOOOO####OOO~~~.........~~~~~~~~~~~~~~~~~~~~~~~~~~.....~~~~OOOOOOOOOOOOOOOOOOOOO
+~~~~OOOO###OOOOOOOOO#######OOOO~~...      ..~~~~~~~~~~~~~~~~~~~~~~~~........~~~~~~OOOOOOO####OOOOOOO
+O~~OOOOO###OOOOOOOO#####OOOOO~~~~...      ..~~~OOOOOOOOOOOOOOOO~~~~~........~~~~~~~~~~OOOO###OOOO~~~
+OOOOOOOOOOOOOOOOOOOO##OOOO~~~~~~~~...    ..~~~OOO####OOOOOOOOOOOOO~~~~....~~~~~~.....~~~OOOOOOOOO~~~
+O~~~OOOOOOOO~~~~OOOOOOO~~~~~~~~~~~~~.......~~OO######OOOOOOOOOOOOOO~~~~~~~~~~~~~~......~~OOOOOOOO~~~
+~~~~~~OOOOO~~~~~~~OOOO~~~~~~~~OOOOO~~~....~~~OOO####OOO~~~~~OOOOOOO~~~~~~~OOOOOO~~.....~~~OOOOOOOOOO
+~~~~~~~OOOO~~~~~~~~~~~~~~~~~~OO####OOO~~~~~~~OOOOOOOOO~~~~~~~OOOOOO~~~~~~OO#####OO~~...~~~OOOO######
+O~~~~~~~~~~~~~~~~~~~~....~~~OOO#######OOOOOOOOOOOOOOOO~~~~~~~OOOOOO~~~~~OOO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOO~~~~~...~~~~OOO###########OOOOOOOOOOOOO~~~~~~OOOOOO~~~~~~OO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOOOO~~~~~~~~~~~OOOOOO########OO~~~~~OOOOOO~~~~OOOOOOO~~~~~~~OOOOOOOO~~~~~~~~OOO#######
+			</p>
+            </div>
+        </div>
+    </body>
+
+[LOG] sent 6394
+Client sent nothing, disconnecting
+Client sent nothing, disconnecting
+HTTP request received:   192.241.219.117:62138
+method: GET
+path: /manager/text/list
+
+[220200960]
+Couldn't open requested file 'resources/manager/text/list'. errno: 2
+unsupported content-type request
+[RESPONSE]
+HTTP/1.1 404 Not Found
+Content-Length: 160
+Content-Type: text/plain;
+
+<html>
+<head><title>404 Not Found</title></head>
+<body bgcolor="white">
+<center><h1>404 Not Found</h1></center>
+<hr><center>luna/0.0.1</center>
+</body>
+</html>
+
+[LOG] sent 235
+Client sent nothing, disconnecting
+HTTP request received:   45.184.17.103:42794
+method: GET
+path: /
+
+[220200960]
+text/html; charset=utf-8 7
+[RESPONSE]
+HTTP/1.1 200 OK
+Content-Length: 6311
+Content-Type: text/html; charset=utf-8;
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>gsracz</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header">
+            <h1 class="hd">Gabriel Racz</h1>
+			<div id="details">
+				<p class="paragraph">Ottawa, ON</p>
+				<p class="paragraph">gabriel.s.racz@gmail.com</p>
+				<p class="paragraph">https://github.com/gabrielracz</p>
+			</div>
+            <br>
+        </div>
+        <div id="content">
+            <div style="margin: 20px;">
+            <p>A very nice song:</p>
+            <br>
+	    <a class="links" href="/MyMyHeyHey.mp3" download>
+		    download link
+	    </a>
+	    <br>
+	    <a class="links" href="/NeilYoung-1968.tar" download>
+		    Neil Young - 1968
+	    </a>
+            <p>A ship in the ocean. Sailing the net, passing unseen in the waves.</p>
+            <br>
+            <p>Web archive. Keeping things real out here...</p>
+			<br>
+			<p>One Ring to rule them</p>
+			<p>    One Ring to find them,</p>
+			<p>One Ring to bring them in,</p>
+			<p>    And in Darknees bind them.</p>
+			<form action="/gsr.html" method="get">
+				<input type="button" value="refresh"></input>
+			</form>
+			<p>
+~~~.....~~~~OOOOOOOOOO~OOOOOOOOOOO~~~~~~~~~~O~~~~~~~~~~~OOOOOOOOOOO~OOOOOOOOOO~~~.....~~~OOOOOOO~~~~
+~~~....~~~OOOOOOOOO~~~~~~~~OOOO~~~~......~~~~~~~.......~~~~~~~~~~~~~~~~OOOOOOOO~~......~~~~~~OOOOOOO
+~~~....~~~~OOOOOOOO~~~~~~~~~~~~~~........~~~~~~~~.....................~~OOOO#OOO~~~~.~~~~~~~~OOOO###
+~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~.........~~~OOO~~~~~............... ...~~OO###OOO~~~~~~~~~~~~OOOO###
+~~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~~......~~~OOOOOOOO~~~~...............~~OOOOOOOOOOOOOOOOOO~~~~~OOO##
+~~~OOO~~~~~~~OOOO##OOOO~~~~~~~~~~~~~~...~~~OOOOOOOOOOO~~~~~~~~~~~~~~~~~OOOOOOOOO~~OOOOOOOO~~~~~~~~OO
+OOOOOOOOOOOOOOO#####OOO~~~~~~OOOOOO~~~~..~~~~~~OOOOOOOOOOO~~~~OOOOOOOOOOOOOOOO~~~~~~~~OO~~~~.....~~~
+OOO###############OOOO~~~~~OOOO##OOO~~~~~.~~~~~~~OOOOOOOOOOOOOOOOOOO######OOO~~~~~~~~~~~~..........~
+OOO############OOOOOO~~~OOOO######OOO~~~~~~~~~~~~~~~OOOOOOOOOOOOO##########OO~~~~..........      ...
+~OO###@@#####OOO~~~~~~~OOO########OOOO~~~~~~~~......~~OOOOOOOOOOOOO####@@###OO~~~..........     ...~
+~OO########OO~~~....~~~OO###@@###OOO~~~OOOOO~~~......~~~OOOOOOOOOOOO###@@@##OO~~~~~~~~~~~~.... ...~~
+~OO######OOO~~.......~~OO##@@###OO~~~~~OOOOOO~~... ...~~OOOOOO~~~~~OO###@@##OO~~~~~~~~~OO~~~......~~
+OO###@###OO~~...  ...~~OO###@###OO~~~~~~OOOOO~~......~~OOOOOO~~~~~~OOO######O~~~~~~~~OOOOOO~~~....~~
+###@@@@##OO~~~..   ..~~OO#######OO~~~~~~~~~~~~~~~~~~~OOOOOOOO~~~~~~~OO####OOO~~....~~OOO##OOO~~~~~~~
+##@@@@@@##OO~~..   ..~~~O#######OOO~~~~~~~~~~~~~OOOOOOOOOOOO~~~~~~~~OO####OO~~......~~OO####OOOO~~~O
+###@@@@@##OO~~... ...~~OO#######OOO~~~....~~~~OOO######OOOO~~....~~~OO####OO~~~......~~OOO##OOOOOOOO
+OO###@@###OO~~.......~~OO#######OOO~~......~~OO#######OOO~~......~~OOO#####OO~~~......~~~OOOOOOOOO~O
+~OO######OO~~~.......~~OO######OO~~~.......~~OO######OOO~~.......~~OO#######OOO~~~.....~~~OOOOO~~~~~
+~~OOOOOOOO~~~........~~OOO#####OOO~~......~~OOO######OO~~.......~~~OO####@####OOO~~~..~~~~~OO~~~~~~~
+~~~~~~~~~~~~.........~~~~OOO##OOOO~~~....~~~OO#######OO~~......~~~OOOO####@#####OO~~~~~~~~~~~~~~~~~~
+~~~~~......~~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~OOO###@###OO~~~..~~~~~OOOOOOO########OOOOOOOO~~~~~~~~~~~~
+O~~.......~~~~OOOOO~~~~~~~~OOOOOOOOO~~~~~~~~OO###@@###OO~~~~~~~OOOOO~~OOOOO##OOOOOOOOOOOOO~~~~~OOOO~
+O~~......~~~OOO###OOOO~~~~~~OOOOOOO~~~....~~~OO#######OO~~~~~~OOOOO~~~~~~OOOOOO~~~OOOOOOO~~~~~~OOOOO
+~~~......~~OOO######OOOOOOO~~~~~~~~~......~~~OO#######OO~~~~~~OOOO~~~~~~~~~~~~~~~~~~OOOOO~~~~~~OOOOO
+O~~......~~OOO######OOOOO~~~~~~~~~~~~....~~~~OO########OOOOOOOO~~~~~..............~~~~~OO~~~~~OOOO~~
+O~~......~~OOO####OOOO~~~~~~~~~~~~~~~~~~~~~OOOO#########OOOOOOO~~~~................~~~~~~~OOOOOOOO~~
+OO~~.....~~~OOOOOOOOO~~~~~~~~~~~~~OOOOOOOOOOOOO#########OOOOOOO~~~~.....  .......~~~~~~~~OOOOOOOOO~~
+O~~~.....~~~OOOOOOOOO~~~~~~~~~~~~OOOOOOOOOOOOOOOO###OOOOOOOOOOOOO~~~~........~~~~~~~~~~~~OOO#####OO~
+~~~......~~OOOO###OOOOOO~~~~~~~~~~OOOOOOOO~~~~OOOOOOOOO~~~~OOOOOOOOO~~~...~~~~OOOO~~~~~~~OOO######OO
+~~...  ...~~OOO########OOOO~~~~~~~OOOOO~~~~~~~~~OOOOO~~~~~~~OOOOOOOOO~~~~~~~~OOOOOOO~~~~~~OO########
+~...    ..~~~OO##########OOO~~~~~OOOOOO~~~~~~~~~OOOOOO~~~~~~~~OOOOOOO~~~~~~~~~OOOOOOOOOO~OOOOO######
+~...    ...~~OO####@#####OOOO~~OOOOOOOO~~~~~~~OOOOOOOOOOOO~~~~~~~~~~~~~~~~~~~~~~OOOOOOOOOOO~~~OOOOO#
+~~...  ...~~~~OO#######OOO~~~~~OOOOOOO~~~~~~~OOOO###OOOOOOO~~~~~~~~~~~~~~~~~~~~~OOO###OOOO~~~~~~~~OO
+~~~......~~~~OOO####OOO~~~~~~~~~~OOOO~~~~~~~~OOO####OOOOOO~~~~~~~~~~OOOOO~~~~~~OOO#####OOO~~......~~
+O~~~...~~~OOOOO###OOO~~~~......~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~~~~OOOOOOOOOOOOOOO######OOO~~..   ...~
+OO~~~~~~~OOOOOOOOOO~~~.........~~~~~~....~~~OOOOOOOOOO~~~~~~~~OOOO#######OOOOOO######OO~~~..      ..
+OOO~~~~~~OOOOOO~~~~..........~~~~~~~....~~~OOOOOOOOOOO~~~~OOOOOO#########OOOOOO####OOO~~....      ..
+OOO~~~~~~OO~~~~~..........~~~~~~~~~~~..~~~~OOOOOOOOOOOOOOOOOOOO########OOOOOOOOOOOOOO~~~............
+OO~~~~~~OO~~~~~......~~~~~OOOOOOOO~~~...~~~OOOOOOOOOOOOOOOOOOOOOOOOOOOO~~~~~~~OOOOOOOO~~~~~~~~....~~
+~~~~~~~OOOOO~~~~~~~~~~OOOOO###OOOO~~......~~~~OOO~~~~~~~~OOOOOO~~~~~~~~~~~~~~~OOOOOOOOOOOOOOO~~~~~~~
+~~~~~~OOOOOOOO~~~~OOOOOOO####OOO~~~.........~~~~~~~~~~~~~~~~~~~~~~~~~~.....~~~~OOOOOOOOOOOOOOOOOOOOO
+~~~~OOOO###OOOOOOOOO#######OOOO~~...      ..~~~~~~~~~~~~~~~~~~~~~~~~........~~~~~~OOOOOOO####OOOOOOO
+O~~OOOOO###OOOOOOOO#####OOOOO~~~~...      ..~~~OOOOOOOOOOOOOOOO~~~~~........~~~~~~~~~~OOOO###OOOO~~~
+OOOOOOOOOOOOOOOOOOOO##OOOO~~~~~~~~...    ..~~~OOO####OOOOOOOOOOOOO~~~~....~~~~~~.....~~~OOOOOOOOO~~~
+O~~~OOOOOOOO~~~~OOOOOOO~~~~~~~~~~~~~.......~~OO######OOOOOOOOOOOOOO~~~~~~~~~~~~~~......~~OOOOOOOO~~~
+~~~~~~OOOOO~~~~~~~OOOO~~~~~~~~OOOOO~~~....~~~OOO####OOO~~~~~OOOOOOO~~~~~~~OOOOOO~~.....~~~OOOOOOOOOO
+~~~~~~~OOOO~~~~~~~~~~~~~~~~~~OO####OOO~~~~~~~OOOOOOOOO~~~~~~~OOOOOO~~~~~~OO#####OO~~...~~~OOOO######
+O~~~~~~~~~~~~~~~~~~~~....~~~OOO#######OOOOOOOOOOOOOOOO~~~~~~~OOOOOO~~~~~OOO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOO~~~~~...~~~~OOO###########OOOOOOOOOOOOO~~~~~~OOOOOO~~~~~~OO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOOOO~~~~~~~~~~~OOOOOO########OO~~~~~OOOOOO~~~~OOOOOOO~~~~~~~OOOOOOOO~~~~~~~~OOO#######
+			</p>
+            </div>
+        </div>
+    </body>
+
+[LOG] sent 6394
+Client sent nothing, disconnecting
+HTTP request received:   180.118.141.90:34927
+method: POST
+path: /GponForm/diag_Form?images/
+
+[220200960]
+Couldn't open requested file 'resources/GponForm/diag_Form?images/'. errno: 2
+unsupported content-type request
+[RESPONSE]
+HTTP/1.1 404 Not Found
+Content-Length: 160
+Content-Type: text/plain;
+
+<html>
+<head><title>404 Not Found</title></head>
+<body bgcolor="white">
+<center><h1>404 Not Found</h1></center>
+<hr><center>luna/0.0.1</center>
+</body>
+</html>
+
+[LOG] sent 235
+Client sent nothing, disconnecting
+HTTP parse error: -1
+HTTP request received:   66.42.51.232:40139
+method: GET
+path: /.env
+
+[220200960]
+Couldn't open requested file 'resources/.env'. errno: 2
+unsupported content-type request
+[RESPONSE]
+HTTP/1.1 404 Not Found
+Content-Length: 160
+Content-Type: text/plain;
+
+<html>
+<head><title>404 Not Found</title></head>
+<body bgcolor="white">
+<center><h1>404 Not Found</h1></center>
+<hr><center>luna/0.0.1</center>
+</body>
+</html>
+
+[LOG] sent 235
+Client sent nothing, disconnecting
+HTTP request received:   66.42.51.232:4584
+method: GET
+path: /.env
+
+[220200960]
+Couldn't open requested file 'resources/.env'. errno: 2
+unsupported content-type request
+[RESPONSE]
+HTTP/1.1 404 Not Found
+Content-Length: 160
+Content-Type: text/plain;
+
+<html>
+<head><title>404 Not Found</title></head>
+<body bgcolor="white">
+<center><h1>404 Not Found</h1></center>
+<hr><center>luna/0.0.1</center>
+</body>
+</html>
+
+[LOG] sent 235
+HTTP request received:   66.42.51.232:57542
+method: POST
+path: /
+
+[220200960]
+text/html; charset=utf-8 7
+[RESPONSE]
+HTTP/1.1 200 OK
+Content-Length: 6311
+Content-Type: text/html; charset=utf-8;
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>gsracz</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header">
+            <h1 class="hd">Gabriel Racz</h1>
+			<div id="details">
+				<p class="paragraph">Ottawa, ON</p>
+				<p class="paragraph">gabriel.s.racz@gmail.com</p>
+				<p class="paragraph">https://github.com/gabrielracz</p>
+			</div>
+            <br>
+        </div>
+        <div id="content">
+            <div style="margin: 20px;">
+            <p>A very nice song:</p>
+            <br>
+	    <a class="links" href="/MyMyHeyHey.mp3" download>
+		    download link
+	    </a>
+	    <br>
+	    <a class="links" href="/NeilYoung-1968.tar" download>
+		    Neil Young - 1968
+	    </a>
+            <p>A ship in the ocean. Sailing the net, passing unseen in the waves.</p>
+            <br>
+            <p>Web archive. Keeping things real out here...</p>
+			<br>
+			<p>One Ring to rule them</p>
+			<p>    One Ring to find them,</p>
+			<p>One Ring to bring them in,</p>
+			<p>    And in Darknees bind them.</p>
+			<form action="/gsr.html" method="get">
+				<input type="button" value="refresh"></input>
+			</form>
+			<p>
+~~~.....~~~~OOOOOOOOOO~OOOOOOOOOOO~~~~~~~~~~O~~~~~~~~~~~OOOOOOOOOOO~OOOOOOOOOO~~~.....~~~OOOOOOO~~~~
+~~~....~~~OOOOOOOOO~~~~~~~~OOOO~~~~......~~~~~~~.......~~~~~~~~~~~~~~~~OOOOOOOO~~......~~~~~~OOOOOOO
+~~~....~~~~OOOOOOOO~~~~~~~~~~~~~~........~~~~~~~~.....................~~OOOO#OOO~~~~.~~~~~~~~OOOO###
+~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~.........~~~OOO~~~~~............... ...~~OO###OOO~~~~~~~~~~~~OOOO###
+~~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~~......~~~OOOOOOOO~~~~...............~~OOOOOOOOOOOOOOOOOO~~~~~OOO##
+~~~OOO~~~~~~~OOOO##OOOO~~~~~~~~~~~~~~...~~~OOOOOOOOOOO~~~~~~~~~~~~~~~~~OOOOOOOOO~~OOOOOOOO~~~~~~~~OO
+OOOOOOOOOOOOOOO#####OOO~~~~~~OOOOOO~~~~..~~~~~~OOOOOOOOOOO~~~~OOOOOOOOOOOOOOOO~~~~~~~~OO~~~~.....~~~
+OOO###############OOOO~~~~~OOOO##OOO~~~~~.~~~~~~~OOOOOOOOOOOOOOOOOOO######OOO~~~~~~~~~~~~..........~
+OOO############OOOOOO~~~OOOO######OOO~~~~~~~~~~~~~~~OOOOOOOOOOOOO##########OO~~~~..........      ...
+~OO###@@#####OOO~~~~~~~OOO########OOOO~~~~~~~~......~~OOOOOOOOOOOOO####@@###OO~~~..........     ...~
+~OO########OO~~~....~~~OO###@@###OOO~~~OOOOO~~~......~~~OOOOOOOOOOOO###@@@##OO~~~~~~~~~~~~.... ...~~
+~OO######OOO~~.......~~OO##@@###OO~~~~~OOOOOO~~... ...~~OOOOOO~~~~~OO###@@##OO~~~~~~~~~OO~~~......~~
+OO###@###OO~~...  ...~~OO###@###OO~~~~~~OOOOO~~......~~OOOOOO~~~~~~OOO######O~~~~~~~~OOOOOO~~~....~~
+###@@@@##OO~~~..   ..~~OO#######OO~~~~~~~~~~~~~~~~~~~OOOOOOOO~~~~~~~OO####OOO~~....~~OOO##OOO~~~~~~~
+##@@@@@@##OO~~..   ..~~~O#######OOO~~~~~~~~~~~~~OOOOOOOOOOOO~~~~~~~~OO####OO~~......~~OO####OOOO~~~O
+###@@@@@##OO~~... ...~~OO#######OOO~~~....~~~~OOO######OOOO~~....~~~OO####OO~~~......~~OOO##OOOOOOOO
+OO###@@###OO~~.......~~OO#######OOO~~......~~OO#######OOO~~......~~OOO#####OO~~~......~~~OOOOOOOOO~O
+~OO######OO~~~.......~~OO######OO~~~.......~~OO######OOO~~.......~~OO#######OOO~~~.....~~~OOOOO~~~~~
+~~OOOOOOOO~~~........~~OOO#####OOO~~......~~OOO######OO~~.......~~~OO####@####OOO~~~..~~~~~OO~~~~~~~
+~~~~~~~~~~~~.........~~~~OOO##OOOO~~~....~~~OO#######OO~~......~~~OOOO####@#####OO~~~~~~~~~~~~~~~~~~
+~~~~~......~~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~OOO###@###OO~~~..~~~~~OOOOOOO########OOOOOOOO~~~~~~~~~~~~
+O~~.......~~~~OOOOO~~~~~~~~OOOOOOOOO~~~~~~~~OO###@@###OO~~~~~~~OOOOO~~OOOOO##OOOOOOOOOOOOO~~~~~OOOO~
+O~~......~~~OOO###OOOO~~~~~~OOOOOOO~~~....~~~OO#######OO~~~~~~OOOOO~~~~~~OOOOOO~~~OOOOOOO~~~~~~OOOOO
+~~~......~~OOO######OOOOOOO~~~~~~~~~......~~~OO#######OO~~~~~~OOOO~~~~~~~~~~~~~~~~~~OOOOO~~~~~~OOOOO
+O~~......~~OOO######OOOOO~~~~~~~~~~~~....~~~~OO########OOOOOOOO~~~~~..............~~~~~OO~~~~~OOOO~~
+O~~......~~OOO####OOOO~~~~~~~~~~~~~~~~~~~~~OOOO#########OOOOOOO~~~~................~~~~~~~OOOOOOOO~~
+OO~~.....~~~OOOOOOOOO~~~~~~~~~~~~~OOOOOOOOOOOOO#########OOOOOOO~~~~.....  .......~~~~~~~~OOOOOOOOO~~
+O~~~.....~~~OOOOOOOOO~~~~~~~~~~~~OOOOOOOOOOOOOOOO###OOOOOOOOOOOOO~~~~........~~~~~~~~~~~~OOO#####OO~
+~~~......~~OOOO###OOOOOO~~~~~~~~~~OOOOOOOO~~~~OOOOOOOOO~~~~OOOOOOOOO~~~...~~~~OOOO~~~~~~~OOO######OO
+~~...  ...~~OOO########OOOO~~~~~~~OOOOO~~~~~~~~~OOOOO~~~~~~~OOOOOOOOO~~~~~~~~OOOOOOO~~~~~~OO########
+~...    ..~~~OO##########OOO~~~~~OOOOOO~~~~~~~~~OOOOOO~~~~~~~~OOOOOOO~~~~~~~~~OOOOOOOOOO~OOOOO######
+~...    ...~~OO####@#####OOOO~~OOOOOOOO~~~~~~~OOOOOOOOOOOO~~~~~~~~~~~~~~~~~~~~~~OOOOOOOOOOO~~~OOOOO#
+~~...  ...~~~~OO#######OOO~~~~~OOOOOOO~~~~~~~OOOO###OOOOOOO~~~~~~~~~~~~~~~~~~~~~OOO###OOOO~~~~~~~~OO
+~~~......~~~~OOO####OOO~~~~~~~~~~OOOO~~~~~~~~OOO####OOOOOO~~~~~~~~~~OOOOO~~~~~~OOO#####OOO~~......~~
+O~~~...~~~OOOOO###OOO~~~~......~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~~~~OOOOOOOOOOOOOOO######OOO~~..   ...~
+OO~~~~~~~OOOOOOOOOO~~~.........~~~~~~....~~~OOOOOOOOOO~~~~~~~~OOOO#######OOOOOO######OO~~~..      ..
+OOO~~~~~~OOOOOO~~~~..........~~~~~~~....~~~OOOOOOOOOOO~~~~OOOOOO#########OOOOOO####OOO~~....      ..
+OOO~~~~~~OO~~~~~..........~~~~~~~~~~~..~~~~OOOOOOOOOOOOOOOOOOOO########OOOOOOOOOOOOOO~~~............
+OO~~~~~~OO~~~~~......~~~~~OOOOOOOO~~~...~~~OOOOOOOOOOOOOOOOOOOOOOOOOOOO~~~~~~~OOOOOOOO~~~~~~~~....~~
+~~~~~~~OOOOO~~~~~~~~~~OOOOO###OOOO~~......~~~~OOO~~~~~~~~OOOOOO~~~~~~~~~~~~~~~OOOOOOOOOOOOOOO~~~~~~~
+~~~~~~OOOOOOOO~~~~OOOOOOO####OOO~~~.........~~~~~~~~~~~~~~~~~~~~~~~~~~.....~~~~OOOOOOOOOOOOOOOOOOOOO
+~~~~OOOO###OOOOOOOOO#######OOOO~~...      ..~~~~~~~~~~~~~~~~~~~~~~~~........~~~~~~OOOOOOO####OOOOOOO
+O~~OOOOO###OOOOOOOO#####OOOOO~~~~...      ..~~~OOOOOOOOOOOOOOOO~~~~~........~~~~~~~~~~OOOO###OOOO~~~
+OOOOOOOOOOOOOOOOOOOO##OOOO~~~~~~~~...    ..~~~OOO####OOOOOOOOOOOOO~~~~....~~~~~~.....~~~OOOOOOOOO~~~
+O~~~OOOOOOOO~~~~OOOOOOO~~~~~~~~~~~~~.......~~OO######OOOOOOOOOOOOOO~~~~~~~~~~~~~~......~~OOOOOOOO~~~
+~~~~~~OOOOO~~~~~~~OOOO~~~~~~~~OOOOO~~~....~~~OOO####OOO~~~~~OOOOOOO~~~~~~~OOOOOO~~.....~~~OOOOOOOOOO
+~~~~~~~OOOO~~~~~~~~~~~~~~~~~~OO####OOO~~~~~~~OOOOOOOOO~~~~~~~OOOOOO~~~~~~OO#####OO~~...~~~OOOO######
+O~~~~~~~~~~~~~~~~~~~~....~~~OOO#######OOOOOOOOOOOOOOOO~~~~~~~OOOOOO~~~~~OOO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOO~~~~~...~~~~OOO###########OOOOOOOOOOOOO~~~~~~OOOOOO~~~~~~OO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOOOO~~~~~~~~~~~OOOOOO########OO~~~~~OOOOOO~~~~OOOOOOO~~~~~~~OOOOOOOO~~~~~~~~OOO#######
+			</p>
+            </div>
+        </div>
+    </body>
+
+[LOG] sent 6394
+Client sent nothing, disconnecting
+Client sent nothing, disconnecting
+HTTP request received:   66.42.51.232:4328
+method: POST
+path: /
+
+[220200960]
+text/html; charset=utf-8 7
+[RESPONSE]
+HTTP/1.1 200 OK
+Content-Length: 6311
+Content-Type: text/html; charset=utf-8;
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>gsracz</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header">
+            <h1 class="hd">Gabriel Racz</h1>
+			<div id="details">
+				<p class="paragraph">Ottawa, ON</p>
+				<p class="paragraph">gabriel.s.racz@gmail.com</p>
+				<p class="paragraph">https://github.com/gabrielracz</p>
+			</div>
+            <br>
+        </div>
+        <div id="content">
+            <div style="margin: 20px;">
+            <p>A very nice song:</p>
+            <br>
+	    <a class="links" href="/MyMyHeyHey.mp3" download>
+		    download link
+	    </a>
+	    <br>
+	    <a class="links" href="/NeilYoung-1968.tar" download>
+		    Neil Young - 1968
+	    </a>
+            <p>A ship in the ocean. Sailing the net, passing unseen in the waves.</p>
+            <br>
+            <p>Web archive. Keeping things real out here...</p>
+			<br>
+			<p>One Ring to rule them</p>
+			<p>    One Ring to find them,</p>
+			<p>One Ring to bring them in,</p>
+			<p>    And in Darknees bind them.</p>
+			<form action="/gsr.html" method="get">
+				<input type="button" value="refresh"></input>
+			</form>
+			<p>
+~~~.....~~~~OOOOOOOOOO~OOOOOOOOOOO~~~~~~~~~~O~~~~~~~~~~~OOOOOOOOOOO~OOOOOOOOOO~~~.....~~~OOOOOOO~~~~
+~~~....~~~OOOOOOOOO~~~~~~~~OOOO~~~~......~~~~~~~.......~~~~~~~~~~~~~~~~OOOOOOOO~~......~~~~~~OOOOOOO
+~~~....~~~~OOOOOOOO~~~~~~~~~~~~~~........~~~~~~~~.....................~~OOOO#OOO~~~~.~~~~~~~~OOOO###
+~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~.........~~~OOO~~~~~............... ...~~OO###OOO~~~~~~~~~~~~OOOO###
+~~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~~......~~~OOOOOOOO~~~~...............~~OOOOOOOOOOOOOOOOOO~~~~~OOO##
+~~~OOO~~~~~~~OOOO##OOOO~~~~~~~~~~~~~~...~~~OOOOOOOOOOO~~~~~~~~~~~~~~~~~OOOOOOOOO~~OOOOOOOO~~~~~~~~OO
+OOOOOOOOOOOOOOO#####OOO~~~~~~OOOOOO~~~~..~~~~~~OOOOOOOOOOO~~~~OOOOOOOOOOOOOOOO~~~~~~~~OO~~~~.....~~~
+OOO###############OOOO~~~~~OOOO##OOO~~~~~.~~~~~~~OOOOOOOOOOOOOOOOOOO######OOO~~~~~~~~~~~~..........~
+OOO############OOOOOO~~~OOOO######OOO~~~~~~~~~~~~~~~OOOOOOOOOOOOO##########OO~~~~..........      ...
+~OO###@@#####OOO~~~~~~~OOO########OOOO~~~~~~~~......~~OOOOOOOOOOOOO####@@###OO~~~..........     ...~
+~OO########OO~~~....~~~OO###@@###OOO~~~OOOOO~~~......~~~OOOOOOOOOOOO###@@@##OO~~~~~~~~~~~~.... ...~~
+~OO######OOO~~.......~~OO##@@###OO~~~~~OOOOOO~~... ...~~OOOOOO~~~~~OO###@@##OO~~~~~~~~~OO~~~......~~
+OO###@###OO~~...  ...~~OO###@###OO~~~~~~OOOOO~~......~~OOOOOO~~~~~~OOO######O~~~~~~~~OOOOOO~~~....~~
+###@@@@##OO~~~..   ..~~OO#######OO~~~~~~~~~~~~~~~~~~~OOOOOOOO~~~~~~~OO####OOO~~....~~OOO##OOO~~~~~~~
+##@@@@@@##OO~~..   ..~~~O#######OOO~~~~~~~~~~~~~OOOOOOOOOOOO~~~~~~~~OO####OO~~......~~OO####OOOO~~~O
+###@@@@@##OO~~... ...~~OO#######OOO~~~....~~~~OOO######OOOO~~....~~~OO####OO~~~......~~OOO##OOOOOOOO
+OO###@@###OO~~.......~~OO#######OOO~~......~~OO#######OOO~~......~~OOO#####OO~~~......~~~OOOOOOOOO~O
+~OO######OO~~~.......~~OO######OO~~~.......~~OO######OOO~~.......~~OO#######OOO~~~.....~~~OOOOO~~~~~
+~~OOOOOOOO~~~........~~OOO#####OOO~~......~~OOO######OO~~.......~~~OO####@####OOO~~~..~~~~~OO~~~~~~~
+~~~~~~~~~~~~.........~~~~OOO##OOOO~~~....~~~OO#######OO~~......~~~OOOO####@#####OO~~~~~~~~~~~~~~~~~~
+~~~~~......~~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~OOO###@###OO~~~..~~~~~OOOOOOO########OOOOOOOO~~~~~~~~~~~~
+O~~.......~~~~OOOOO~~~~~~~~OOOOOOOOO~~~~~~~~OO###@@###OO~~~~~~~OOOOO~~OOOOO##OOOOOOOOOOOOO~~~~~OOOO~
+O~~......~~~OOO###OOOO~~~~~~OOOOOOO~~~....~~~OO#######OO~~~~~~OOOOO~~~~~~OOOOOO~~~OOOOOOO~~~~~~OOOOO
+~~~......~~OOO######OOOOOOO~~~~~~~~~......~~~OO#######OO~~~~~~OOOO~~~~~~~~~~~~~~~~~~OOOOO~~~~~~OOOOO
+O~~......~~OOO######OOOOO~~~~~~~~~~~~....~~~~OO########OOOOOOOO~~~~~..............~~~~~OO~~~~~OOOO~~
+O~~......~~OOO####OOOO~~~~~~~~~~~~~~~~~~~~~OOOO#########OOOOOOO~~~~................~~~~~~~OOOOOOOO~~
+OO~~.....~~~OOOOOOOOO~~~~~~~~~~~~~OOOOOOOOOOOOO#########OOOOOOO~~~~.....  .......~~~~~~~~OOOOOOOOO~~
+O~~~.....~~~OOOOOOOOO~~~~~~~~~~~~OOOOOOOOOOOOOOOO###OOOOOOOOOOOOO~~~~........~~~~~~~~~~~~OOO#####OO~
+~~~......~~OOOO###OOOOOO~~~~~~~~~~OOOOOOOO~~~~OOOOOOOOO~~~~OOOOOOOOO~~~...~~~~OOOO~~~~~~~OOO######OO
+~~...  ...~~OOO########OOOO~~~~~~~OOOOO~~~~~~~~~OOOOO~~~~~~~OOOOOOOOO~~~~~~~~OOOOOOO~~~~~~OO########
+~...    ..~~~OO##########OOO~~~~~OOOOOO~~~~~~~~~OOOOOO~~~~~~~~OOOOOOO~~~~~~~~~OOOOOOOOOO~OOOOO######
+~...    ...~~OO####@#####OOOO~~OOOOOOOO~~~~~~~OOOOOOOOOOOO~~~~~~~~~~~~~~~~~~~~~~OOOOOOOOOOO~~~OOOOO#
+~~...  ...~~~~OO#######OOO~~~~~OOOOOOO~~~~~~~OOOO###OOOOOOO~~~~~~~~~~~~~~~~~~~~~OOO###OOOO~~~~~~~~OO
+~~~......~~~~OOO####OOO~~~~~~~~~~OOOO~~~~~~~~OOO####OOOOOO~~~~~~~~~~OOOOO~~~~~~OOO#####OOO~~......~~
+O~~~...~~~OOOOO###OOO~~~~......~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~~~~OOOOOOOOOOOOOOO######OOO~~..   ...~
+OO~~~~~~~OOOOOOOOOO~~~.........~~~~~~....~~~OOOOOOOOOO~~~~~~~~OOOO#######OOOOOO######OO~~~..      ..
+OOO~~~~~~OOOOOO~~~~..........~~~~~~~....~~~OOOOOOOOOOO~~~~OOOOOO#########OOOOOO####OOO~~....      ..
+OOO~~~~~~OO~~~~~..........~~~~~~~~~~~..~~~~OOOOOOOOOOOOOOOOOOOO########OOOOOOOOOOOOOO~~~............
+OO~~~~~~OO~~~~~......~~~~~OOOOOOOO~~~...~~~OOOOOOOOOOOOOOOOOOOOOOOOOOOO~~~~~~~OOOOOOOO~~~~~~~~....~~
+~~~~~~~OOOOO~~~~~~~~~~OOOOO###OOOO~~......~~~~OOO~~~~~~~~OOOOOO~~~~~~~~~~~~~~~OOOOOOOOOOOOOOO~~~~~~~
+~~~~~~OOOOOOOO~~~~OOOOOOO####OOO~~~.........~~~~~~~~~~~~~~~~~~~~~~~~~~.....~~~~OOOOOOOOOOOOOOOOOOOOO
+~~~~OOOO###OOOOOOOOO#######OOOO~~...      ..~~~~~~~~~~~~~~~~~~~~~~~~........~~~~~~OOOOOOO####OOOOOOO
+O~~OOOOO###OOOOOOOO#####OOOOO~~~~...      ..~~~OOOOOOOOOOOOOOOO~~~~~........~~~~~~~~~~OOOO###OOOO~~~
+OOOOOOOOOOOOOOOOOOOO##OOOO~~~~~~~~...    ..~~~OOO####OOOOOOOOOOOOO~~~~....~~~~~~.....~~~OOOOOOOOO~~~
+O~~~OOOOOOOO~~~~OOOOOOO~~~~~~~~~~~~~.......~~OO######OOOOOOOOOOOOOO~~~~~~~~~~~~~~......~~OOOOOOOO~~~
+~~~~~~OOOOO~~~~~~~OOOO~~~~~~~~OOOOO~~~....~~~OOO####OOO~~~~~OOOOOOO~~~~~~~OOOOOO~~.....~~~OOOOOOOOOO
+~~~~~~~OOOO~~~~~~~~~~~~~~~~~~OO####OOO~~~~~~~OOOOOOOOO~~~~~~~OOOOOO~~~~~~OO#####OO~~...~~~OOOO######
+O~~~~~~~~~~~~~~~~~~~~....~~~OOO#######OOOOOOOOOOOOOOOO~~~~~~~OOOOOO~~~~~OOO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOO~~~~~...~~~~OOO###########OOOOOOOOOOOOO~~~~~~OOOOOO~~~~~~OO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOOOO~~~~~~~~~~~OOOOOO########OO~~~~~OOOOOO~~~~OOOOOOO~~~~~~~OOOOOOOO~~~~~~~~OOO#######
+			</p>
+            </div>
+        </div>
+    </body>
+
+[LOG] sent 6394
+HTTP parse error: -1
+HTTP parse error: -1
+HTTP request received:   192.241.219.51:32946
+method: GET
+path: /manager/html
+
+[220200960]
+Couldn't open requested file 'resources/manager/html'. errno: 2
+unsupported content-type request
+[RESPONSE]
+HTTP/1.1 404 Not Found
+Content-Length: 160
+Content-Type: text/plain;
+
+<html>
+<head><title>404 Not Found</title></head>
+<body bgcolor="white">
+<center><h1>404 Not Found</h1></center>
+<hr><center>luna/0.0.1</center>
+</body>
+</html>
+
+[LOG] sent 235
+Client sent nothing, disconnecting
+HTTP request received:   70.45.239.90:40934
+method: GET
+path: /
+
+[220200960]
+text/html; charset=utf-8 7
+[RESPONSE]
+HTTP/1.1 200 OK
+Content-Length: 6311
+Content-Type: text/html; charset=utf-8;
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>gsracz</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header">
+            <h1 class="hd">Gabriel Racz</h1>
+			<div id="details">
+				<p class="paragraph">Ottawa, ON</p>
+				<p class="paragraph">gabriel.s.racz@gmail.com</p>
+				<p class="paragraph">https://github.com/gabrielracz</p>
+			</div>
+            <br>
+        </div>
+        <div id="content">
+            <div style="margin: 20px;">
+            <p>A very nice song:</p>
+            <br>
+	    <a class="links" href="/MyMyHeyHey.mp3" download>
+		    download link
+	    </a>
+	    <br>
+	    <a class="links" href="/NeilYoung-1968.tar" download>
+		    Neil Young - 1968
+	    </a>
+            <p>A ship in the ocean. Sailing the net, passing unseen in the waves.</p>
+            <br>
+            <p>Web archive. Keeping things real out here...</p>
+			<br>
+			<p>One Ring to rule them</p>
+			<p>    One Ring to find them,</p>
+			<p>One Ring to bring them in,</p>
+			<p>    And in Darknees bind them.</p>
+			<form action="/gsr.html" method="get">
+				<input type="button" value="refresh"></input>
+			</form>
+			<p>
+~~~.....~~~~OOOOOOOOOO~OOOOOOOOOOO~~~~~~~~~~O~~~~~~~~~~~OOOOOOOOOOO~OOOOOOOOOO~~~.....~~~OOOOOOO~~~~
+~~~....~~~OOOOOOOOO~~~~~~~~OOOO~~~~......~~~~~~~.......~~~~~~~~~~~~~~~~OOOOOOOO~~......~~~~~~OOOOOOO
+~~~....~~~~OOOOOOOO~~~~~~~~~~~~~~........~~~~~~~~.....................~~OOOO#OOO~~~~.~~~~~~~~OOOO###
+~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~.........~~~OOO~~~~~............... ...~~OO###OOO~~~~~~~~~~~~OOOO###
+~~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~~......~~~OOOOOOOO~~~~...............~~OOOOOOOOOOOOOOOOOO~~~~~OOO##
+~~~OOO~~~~~~~OOOO##OOOO~~~~~~~~~~~~~~...~~~OOOOOOOOOOO~~~~~~~~~~~~~~~~~OOOOOOOOO~~OOOOOOOO~~~~~~~~OO
+OOOOOOOOOOOOOOO#####OOO~~~~~~OOOOOO~~~~..~~~~~~OOOOOOOOOOO~~~~OOOOOOOOOOOOOOOO~~~~~~~~OO~~~~.....~~~
+OOO###############OOOO~~~~~OOOO##OOO~~~~~.~~~~~~~OOOOOOOOOOOOOOOOOOO######OOO~~~~~~~~~~~~..........~
+OOO############OOOOOO~~~OOOO######OOO~~~~~~~~~~~~~~~OOOOOOOOOOOOO##########OO~~~~..........      ...
+~OO###@@#####OOO~~~~~~~OOO########OOOO~~~~~~~~......~~OOOOOOOOOOOOO####@@###OO~~~..........     ...~
+~OO########OO~~~....~~~OO###@@###OOO~~~OOOOO~~~......~~~OOOOOOOOOOOO###@@@##OO~~~~~~~~~~~~.... ...~~
+~OO######OOO~~.......~~OO##@@###OO~~~~~OOOOOO~~... ...~~OOOOOO~~~~~OO###@@##OO~~~~~~~~~OO~~~......~~
+OO###@###OO~~...  ...~~OO###@###OO~~~~~~OOOOO~~......~~OOOOOO~~~~~~OOO######O~~~~~~~~OOOOOO~~~....~~
+###@@@@##OO~~~..   ..~~OO#######OO~~~~~~~~~~~~~~~~~~~OOOOOOOO~~~~~~~OO####OOO~~....~~OOO##OOO~~~~~~~
+##@@@@@@##OO~~..   ..~~~O#######OOO~~~~~~~~~~~~~OOOOOOOOOOOO~~~~~~~~OO####OO~~......~~OO####OOOO~~~O
+###@@@@@##OO~~... ...~~OO#######OOO~~~....~~~~OOO######OOOO~~....~~~OO####OO~~~......~~OOO##OOOOOOOO
+OO###@@###OO~~.......~~OO#######OOO~~......~~OO#######OOO~~......~~OOO#####OO~~~......~~~OOOOOOOOO~O
+~OO######OO~~~.......~~OO######OO~~~.......~~OO######OOO~~.......~~OO#######OOO~~~.....~~~OOOOO~~~~~
+~~OOOOOOOO~~~........~~OOO#####OOO~~......~~OOO######OO~~.......~~~OO####@####OOO~~~..~~~~~OO~~~~~~~
+~~~~~~~~~~~~.........~~~~OOO##OOOO~~~....~~~OO#######OO~~......~~~OOOO####@#####OO~~~~~~~~~~~~~~~~~~
+~~~~~......~~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~OOO###@###OO~~~..~~~~~OOOOOOO########OOOOOOOO~~~~~~~~~~~~
+O~~.......~~~~OOOOO~~~~~~~~OOOOOOOOO~~~~~~~~OO###@@###OO~~~~~~~OOOOO~~OOOOO##OOOOOOOOOOOOO~~~~~OOOO~
+O~~......~~~OOO###OOOO~~~~~~OOOOOOO~~~....~~~OO#######OO~~~~~~OOOOO~~~~~~OOOOOO~~~OOOOOOO~~~~~~OOOOO
+~~~......~~OOO######OOOOOOO~~~~~~~~~......~~~OO#######OO~~~~~~OOOO~~~~~~~~~~~~~~~~~~OOOOO~~~~~~OOOOO
+O~~......~~OOO######OOOOO~~~~~~~~~~~~....~~~~OO########OOOOOOOO~~~~~..............~~~~~OO~~~~~OOOO~~
+O~~......~~OOO####OOOO~~~~~~~~~~~~~~~~~~~~~OOOO#########OOOOOOO~~~~................~~~~~~~OOOOOOOO~~
+OO~~.....~~~OOOOOOOOO~~~~~~~~~~~~~OOOOOOOOOOOOO#########OOOOOOO~~~~.....  .......~~~~~~~~OOOOOOOOO~~
+O~~~.....~~~OOOOOOOOO~~~~~~~~~~~~OOOOOOOOOOOOOOOO###OOOOOOOOOOOOO~~~~........~~~~~~~~~~~~OOO#####OO~
+~~~......~~OOOO###OOOOOO~~~~~~~~~~OOOOOOOO~~~~OOOOOOOOO~~~~OOOOOOOOO~~~...~~~~OOOO~~~~~~~OOO######OO
+~~...  ...~~OOO########OOOO~~~~~~~OOOOO~~~~~~~~~OOOOO~~~~~~~OOOOOOOOO~~~~~~~~OOOOOOO~~~~~~OO########
+~...    ..~~~OO##########OOO~~~~~OOOOOO~~~~~~~~~OOOOOO~~~~~~~~OOOOOOO~~~~~~~~~OOOOOOOOOO~OOOOO######
+~...    ...~~OO####@#####OOOO~~OOOOOOOO~~~~~~~OOOOOOOOOOOO~~~~~~~~~~~~~~~~~~~~~~OOOOOOOOOOO~~~OOOOO#
+~~...  ...~~~~OO#######OOO~~~~~OOOOOOO~~~~~~~OOOO###OOOOOOO~~~~~~~~~~~~~~~~~~~~~OOO###OOOO~~~~~~~~OO
+~~~......~~~~OOO####OOO~~~~~~~~~~OOOO~~~~~~~~OOO####OOOOOO~~~~~~~~~~OOOOO~~~~~~OOO#####OOO~~......~~
+O~~~...~~~OOOOO###OOO~~~~......~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~~~~OOOOOOOOOOOOOOO######OOO~~..   ...~
+OO~~~~~~~OOOOOOOOOO~~~.........~~~~~~....~~~OOOOOOOOOO~~~~~~~~OOOO#######OOOOOO######OO~~~..      ..
+OOO~~~~~~OOOOOO~~~~..........~~~~~~~....~~~OOOOOOOOOOO~~~~OOOOOO#########OOOOOO####OOO~~....      ..
+OOO~~~~~~OO~~~~~..........~~~~~~~~~~~..~~~~OOOOOOOOOOOOOOOOOOOO########OOOOOOOOOOOOOO~~~............
+OO~~~~~~OO~~~~~......~~~~~OOOOOOOO~~~...~~~OOOOOOOOOOOOOOOOOOOOOOOOOOOO~~~~~~~OOOOOOOO~~~~~~~~....~~
+~~~~~~~OOOOO~~~~~~~~~~OOOOO###OOOO~~......~~~~OOO~~~~~~~~OOOOOO~~~~~~~~~~~~~~~OOOOOOOOOOOOOOO~~~~~~~
+~~~~~~OOOOOOOO~~~~OOOOOOO####OOO~~~.........~~~~~~~~~~~~~~~~~~~~~~~~~~.....~~~~OOOOOOOOOOOOOOOOOOOOO
+~~~~OOOO###OOOOOOOOO#######OOOO~~...      ..~~~~~~~~~~~~~~~~~~~~~~~~........~~~~~~OOOOOOO####OOOOOOO
+O~~OOOOO###OOOOOOOO#####OOOOO~~~~...      ..~~~OOOOOOOOOOOOOOOO~~~~~........~~~~~~~~~~OOOO###OOOO~~~
+OOOOOOOOOOOOOOOOOOOO##OOOO~~~~~~~~...    ..~~~OOO####OOOOOOOOOOOOO~~~~....~~~~~~.....~~~OOOOOOOOO~~~
+O~~~OOOOOOOO~~~~OOOOOOO~~~~~~~~~~~~~.......~~OO######OOOOOOOOOOOOOO~~~~~~~~~~~~~~......~~OOOOOOOO~~~
+~~~~~~OOOOO~~~~~~~OOOO~~~~~~~~OOOOO~~~....~~~OOO####OOO~~~~~OOOOOOO~~~~~~~OOOOOO~~.....~~~OOOOOOOOOO
+~~~~~~~OOOO~~~~~~~~~~~~~~~~~~OO####OOO~~~~~~~OOOOOOOOO~~~~~~~OOOOOO~~~~~~OO#####OO~~...~~~OOOO######
+O~~~~~~~~~~~~~~~~~~~~....~~~OOO#######OOOOOOOOOOOOOOOO~~~~~~~OOOOOO~~~~~OOO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOO~~~~~...~~~~OOO###########OOOOOOOOOOOOO~~~~~~OOOOOO~~~~~~OO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOOOO~~~~~~~~~~~OOOOOO########OO~~~~~OOOOOO~~~~OOOOOOO~~~~~~~OOOOOOOO~~~~~~~~OOO#######
+			</p>
+            </div>
+        </div>
+    </body>
+
+[LOG] sent 6394
+Client sent nothing, disconnecting
+HTTP request received:   80.94.92.239:63135
+method: GET
+path: /
+
+[220200960]
+text/html; charset=utf-8 7
+[RESPONSE]
+HTTP/1.1 200 OK
+Content-Length: 6311
+Content-Type: text/html; charset=utf-8;
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>gsracz</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header">
+            <h1 class="hd">Gabriel Racz</h1>
+			<div id="details">
+				<p class="paragraph">Ottawa, ON</p>
+				<p class="paragraph">gabriel.s.racz@gmail.com</p>
+				<p class="paragraph">https://github.com/gabrielracz</p>
+			</div>
+            <br>
+        </div>
+        <div id="content">
+            <div style="margin: 20px;">
+            <p>A very nice song:</p>
+            <br>
+	    <a class="links" href="/MyMyHeyHey.mp3" download>
+		    download link
+	    </a>
+	    <br>
+	    <a class="links" href="/NeilYoung-1968.tar" download>
+		    Neil Young - 1968
+	    </a>
+            <p>A ship in the ocean. Sailing the net, passing unseen in the waves.</p>
+            <br>
+            <p>Web archive. Keeping things real out here...</p>
+			<br>
+			<p>One Ring to rule them</p>
+			<p>    One Ring to find them,</p>
+			<p>One Ring to bring them in,</p>
+			<p>    And in Darknees bind them.</p>
+			<form action="/gsr.html" method="get">
+				<input type="button" value="refresh"></input>
+			</form>
+			<p>
+~~~.....~~~~OOOOOOOOOO~OOOOOOOOOOO~~~~~~~~~~O~~~~~~~~~~~OOOOOOOOOOO~OOOOOOOOOO~~~.....~~~OOOOOOO~~~~
+~~~....~~~OOOOOOOOO~~~~~~~~OOOO~~~~......~~~~~~~.......~~~~~~~~~~~~~~~~OOOOOOOO~~......~~~~~~OOOOOOO
+~~~....~~~~OOOOOOOO~~~~~~~~~~~~~~........~~~~~~~~.....................~~OOOO#OOO~~~~.~~~~~~~~OOOO###
+~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~.........~~~OOO~~~~~............... ...~~OO###OOO~~~~~~~~~~~~OOOO###
+~~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~~......~~~OOOOOOOO~~~~...............~~OOOOOOOOOOOOOOOOOO~~~~~OOO##
+~~~OOO~~~~~~~OOOO##OOOO~~~~~~~~~~~~~~...~~~OOOOOOOOOOO~~~~~~~~~~~~~~~~~OOOOOOOOO~~OOOOOOOO~~~~~~~~OO
+OOOOOOOOOOOOOOO#####OOO~~~~~~OOOOOO~~~~..~~~~~~OOOOOOOOOOO~~~~OOOOOOOOOOOOOOOO~~~~~~~~OO~~~~.....~~~
+OOO###############OOOO~~~~~OOOO##OOO~~~~~.~~~~~~~OOOOOOOOOOOOOOOOOOO######OOO~~~~~~~~~~~~..........~
+OOO############OOOOOO~~~OOOO######OOO~~~~~~~~~~~~~~~OOOOOOOOOOOOO##########OO~~~~..........      ...
+~OO###@@#####OOO~~~~~~~OOO########OOOO~~~~~~~~......~~OOOOOOOOOOOOO####@@###OO~~~..........     ...~
+~OO########OO~~~....~~~OO###@@###OOO~~~OOOOO~~~......~~~OOOOOOOOOOOO###@@@##OO~~~~~~~~~~~~.... ...~~
+~OO######OOO~~.......~~OO##@@###OO~~~~~OOOOOO~~... ...~~OOOOOO~~~~~OO###@@##OO~~~~~~~~~OO~~~......~~
+OO###@###OO~~...  ...~~OO###@###OO~~~~~~OOOOO~~......~~OOOOOO~~~~~~OOO######O~~~~~~~~OOOOOO~~~....~~
+###@@@@##OO~~~..   ..~~OO#######OO~~~~~~~~~~~~~~~~~~~OOOOOOOO~~~~~~~OO####OOO~~....~~OOO##OOO~~~~~~~
+##@@@@@@##OO~~..   ..~~~O#######OOO~~~~~~~~~~~~~OOOOOOOOOOOO~~~~~~~~OO####OO~~......~~OO####OOOO~~~O
+###@@@@@##OO~~... ...~~OO#######OOO~~~....~~~~OOO######OOOO~~....~~~OO####OO~~~......~~OOO##OOOOOOOO
+OO###@@###OO~~.......~~OO#######OOO~~......~~OO#######OOO~~......~~OOO#####OO~~~......~~~OOOOOOOOO~O
+~OO######OO~~~.......~~OO######OO~~~.......~~OO######OOO~~.......~~OO#######OOO~~~.....~~~OOOOO~~~~~
+~~OOOOOOOO~~~........~~OOO#####OOO~~......~~OOO######OO~~.......~~~OO####@####OOO~~~..~~~~~OO~~~~~~~
+~~~~~~~~~~~~.........~~~~OOO##OOOO~~~....~~~OO#######OO~~......~~~OOOO####@#####OO~~~~~~~~~~~~~~~~~~
+~~~~~......~~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~OOO###@###OO~~~..~~~~~OOOOOOO########OOOOOOOO~~~~~~~~~~~~
+O~~.......~~~~OOOOO~~~~~~~~OOOOOOOOO~~~~~~~~OO###@@###OO~~~~~~~OOOOO~~OOOOO##OOOOOOOOOOOOO~~~~~OOOO~
+O~~......~~~OOO###OOOO~~~~~~OOOOOOO~~~....~~~OO#######OO~~~~~~OOOOO~~~~~~OOOOOO~~~OOOOOOO~~~~~~OOOOO
+~~~......~~OOO######OOOOOOO~~~~~~~~~......~~~OO#######OO~~~~~~OOOO~~~~~~~~~~~~~~~~~~OOOOO~~~~~~OOOOO
+O~~......~~OOO######OOOOO~~~~~~~~~~~~....~~~~OO########OOOOOOOO~~~~~..............~~~~~OO~~~~~OOOO~~
+O~~......~~OOO####OOOO~~~~~~~~~~~~~~~~~~~~~OOOO#########OOOOOOO~~~~................~~~~~~~OOOOOOOO~~
+OO~~.....~~~OOOOOOOOO~~~~~~~~~~~~~OOOOOOOOOOOOO#########OOOOOOO~~~~.....  .......~~~~~~~~OOOOOOOOO~~
+O~~~.....~~~OOOOOOOOO~~~~~~~~~~~~OOOOOOOOOOOOOOOO###OOOOOOOOOOOOO~~~~........~~~~~~~~~~~~OOO#####OO~
+~~~......~~OOOO###OOOOOO~~~~~~~~~~OOOOOOOO~~~~OOOOOOOOO~~~~OOOOOOOOO~~~...~~~~OOOO~~~~~~~OOO######OO
+~~...  ...~~OOO########OOOO~~~~~~~OOOOO~~~~~~~~~OOOOO~~~~~~~OOOOOOOOO~~~~~~~~OOOOOOO~~~~~~OO########
+~...    ..~~~OO##########OOO~~~~~OOOOOO~~~~~~~~~OOOOOO~~~~~~~~OOOOOOO~~~~~~~~~OOOOOOOOOO~OOOOO######
+~...    ...~~OO####@#####OOOO~~OOOOOOOO~~~~~~~OOOOOOOOOOOO~~~~~~~~~~~~~~~~~~~~~~OOOOOOOOOOO~~~OOOOO#
+~~...  ...~~~~OO#######OOO~~~~~OOOOOOO~~~~~~~OOOO###OOOOOOO~~~~~~~~~~~~~~~~~~~~~OOO###OOOO~~~~~~~~OO
+~~~......~~~~OOO####OOO~~~~~~~~~~OOOO~~~~~~~~OOO####OOOOOO~~~~~~~~~~OOOOO~~~~~~OOO#####OOO~~......~~
+O~~~...~~~OOOOO###OOO~~~~......~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~~~~OOOOOOOOOOOOOOO######OOO~~..   ...~
+OO~~~~~~~OOOOOOOOOO~~~.........~~~~~~....~~~OOOOOOOOOO~~~~~~~~OOOO#######OOOOOO######OO~~~..      ..
+OOO~~~~~~OOOOOO~~~~..........~~~~~~~....~~~OOOOOOOOOOO~~~~OOOOOO#########OOOOOO####OOO~~....      ..
+OOO~~~~~~OO~~~~~..........~~~~~~~~~~~..~~~~OOOOOOOOOOOOOOOOOOOO########OOOOOOOOOOOOOO~~~............
+OO~~~~~~OO~~~~~......~~~~~OOOOOOOO~~~...~~~OOOOOOOOOOOOOOOOOOOOOOOOOOOO~~~~~~~OOOOOOOO~~~~~~~~....~~
+~~~~~~~OOOOO~~~~~~~~~~OOOOO###OOOO~~......~~~~OOO~~~~~~~~OOOOOO~~~~~~~~~~~~~~~OOOOOOOOOOOOOOO~~~~~~~
+~~~~~~OOOOOOOO~~~~OOOOOOO####OOO~~~.........~~~~~~~~~~~~~~~~~~~~~~~~~~.....~~~~OOOOOOOOOOOOOOOOOOOOO
+~~~~OOOO###OOOOOOOOO#######OOOO~~...      ..~~~~~~~~~~~~~~~~~~~~~~~~........~~~~~~OOOOOOO####OOOOOOO
+O~~OOOOO###OOOOOOOO#####OOOOO~~~~...      ..~~~OOOOOOOOOOOOOOOO~~~~~........~~~~~~~~~~OOOO###OOOO~~~
+OOOOOOOOOOOOOOOOOOOO##OOOO~~~~~~~~...    ..~~~OOO####OOOOOOOOOOOOO~~~~....~~~~~~.....~~~OOOOOOOOO~~~
+O~~~OOOOOOOO~~~~OOOOOOO~~~~~~~~~~~~~.......~~OO######OOOOOOOOOOOOOO~~~~~~~~~~~~~~......~~OOOOOOOO~~~
+~~~~~~OOOOO~~~~~~~OOOO~~~~~~~~OOOOO~~~....~~~OOO####OOO~~~~~OOOOOOO~~~~~~~OOOOOO~~.....~~~OOOOOOOOOO
+~~~~~~~OOOO~~~~~~~~~~~~~~~~~~OO####OOO~~~~~~~OOOOOOOOO~~~~~~~OOOOOO~~~~~~OO#####OO~~...~~~OOOO######
+O~~~~~~~~~~~~~~~~~~~~....~~~OOO#######OOOOOOOOOOOOOOOO~~~~~~~OOOOOO~~~~~OOO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOO~~~~~...~~~~OOO###########OOOOOOOOOOOOO~~~~~~OOOOOO~~~~~~OO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOOOO~~~~~~~~~~~OOOOOO########OO~~~~~OOOOOO~~~~OOOOOOO~~~~~~~OOOOOOOO~~~~~~~~OOO#######
+			</p>
+            </div>
+        </div>
+    </body>
+
+[LOG] sent 6394
+Client sent nothing, disconnecting
+HTTP request received:   172.70.111.56:14497
+method: GET
+path: /
+
+[220200960]
+text/html; charset=utf-8 7
+[RESPONSE]
+HTTP/1.1 200 OK
+Content-Length: 6311
+Content-Type: text/html; charset=utf-8;
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>gsracz</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header">
+            <h1 class="hd">Gabriel Racz</h1>
+			<div id="details">
+				<p class="paragraph">Ottawa, ON</p>
+				<p class="paragraph">gabriel.s.racz@gmail.com</p>
+				<p class="paragraph">https://github.com/gabrielracz</p>
+			</div>
+            <br>
+        </div>
+        <div id="content">
+            <div style="margin: 20px;">
+            <p>A very nice song:</p>
+            <br>
+	    <a class="links" href="/MyMyHeyHey.mp3" download>
+		    download link
+	    </a>
+	    <br>
+	    <a class="links" href="/NeilYoung-1968.tar" download>
+		    Neil Young - 1968
+	    </a>
+            <p>A ship in the ocean. Sailing the net, passing unseen in the waves.</p>
+            <br>
+            <p>Web archive. Keeping things real out here...</p>
+			<br>
+			<p>One Ring to rule them</p>
+			<p>    One Ring to find them,</p>
+			<p>One Ring to bring them in,</p>
+			<p>    And in Darknees bind them.</p>
+			<form action="/gsr.html" method="get">
+				<input type="button" value="refresh"></input>
+			</form>
+			<p>
+~~~.....~~~~OOOOOOOOOO~OOOOOOOOOOO~~~~~~~~~~O~~~~~~~~~~~OOOOOOOOOOO~OOOOOOOOOO~~~.....~~~OOOOOOO~~~~
+~~~....~~~OOOOOOOOO~~~~~~~~OOOO~~~~......~~~~~~~.......~~~~~~~~~~~~~~~~OOOOOOOO~~......~~~~~~OOOOOOO
+~~~....~~~~OOOOOOOO~~~~~~~~~~~~~~........~~~~~~~~.....................~~OOOO#OOO~~~~.~~~~~~~~OOOO###
+~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~.........~~~OOO~~~~~............... ...~~OO###OOO~~~~~~~~~~~~OOOO###
+~~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~~......~~~OOOOOOOO~~~~...............~~OOOOOOOOOOOOOOOOOO~~~~~OOO##
+~~~OOO~~~~~~~OOOO##OOOO~~~~~~~~~~~~~~...~~~OOOOOOOOOOO~~~~~~~~~~~~~~~~~OOOOOOOOO~~OOOOOOOO~~~~~~~~OO
+OOOOOOOOOOOOOOO#####OOO~~~~~~OOOOOO~~~~..~~~~~~OOOOOOOOOOO~~~~OOOOOOOOOOOOOOOO~~~~~~~~OO~~~~.....~~~
+OOO###############OOOO~~~~~OOOO##OOO~~~~~.~~~~~~~OOOOOOOOOOOOOOOOOOO######OOO~~~~~~~~~~~~..........~
+OOO############OOOOOO~~~OOOO######OOO~~~~~~~~~~~~~~~OOOOOOOOOOOOO##########OO~~~~..........      ...
+~OO###@@#####OOO~~~~~~~OOO########OOOO~~~~~~~~......~~OOOOOOOOOOOOO####@@###OO~~~..........     ...~
+~OO########OO~~~....~~~OO###@@###OOO~~~OOOOO~~~......~~~OOOOOOOOOOOO###@@@##OO~~~~~~~~~~~~.... ...~~
+~OO######OOO~~.......~~OO##@@###OO~~~~~OOOOOO~~... ...~~OOOOOO~~~~~OO###@@##OO~~~~~~~~~OO~~~......~~
+OO###@###OO~~...  ...~~OO###@###OO~~~~~~OOOOO~~......~~OOOOOO~~~~~~OOO######O~~~~~~~~OOOOOO~~~....~~
+###@@@@##OO~~~..   ..~~OO#######OO~~~~~~~~~~~~~~~~~~~OOOOOOOO~~~~~~~OO####OOO~~....~~OOO##OOO~~~~~~~
+##@@@@@@##OO~~..   ..~~~O#######OOO~~~~~~~~~~~~~OOOOOOOOOOOO~~~~~~~~OO####OO~~......~~OO####OOOO~~~O
+###@@@@@##OO~~... ...~~OO#######OOO~~~....~~~~OOO######OOOO~~....~~~OO####OO~~~......~~OOO##OOOOOOOO
+OO###@@###OO~~.......~~OO#######OOO~~......~~OO#######OOO~~......~~OOO#####OO~~~......~~~OOOOOOOOO~O
+~OO######OO~~~.......~~OO######OO~~~.......~~OO######OOO~~.......~~OO#######OOO~~~.....~~~OOOOO~~~~~
+~~OOOOOOOO~~~........~~OOO#####OOO~~......~~OOO######OO~~.......~~~OO####@####OOO~~~..~~~~~OO~~~~~~~
+~~~~~~~~~~~~.........~~~~OOO##OOOO~~~....~~~OO#######OO~~......~~~OOOO####@#####OO~~~~~~~~~~~~~~~~~~
+~~~~~......~~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~OOO###@###OO~~~..~~~~~OOOOOOO########OOOOOOOO~~~~~~~~~~~~
+O~~.......~~~~OOOOO~~~~~~~~OOOOOOOOO~~~~~~~~OO###@@###OO~~~~~~~OOOOO~~OOOOO##OOOOOOOOOOOOO~~~~~OOOO~
+O~~......~~~OOO###OOOO~~~~~~OOOOOOO~~~....~~~OO#######OO~~~~~~OOOOO~~~~~~OOOOOO~~~OOOOOOO~~~~~~OOOOO
+~~~......~~OOO######OOOOOOO~~~~~~~~~......~~~OO#######OO~~~~~~OOOO~~~~~~~~~~~~~~~~~~OOOOO~~~~~~OOOOO
+O~~......~~OOO######OOOOO~~~~~~~~~~~~....~~~~OO########OOOOOOOO~~~~~..............~~~~~OO~~~~~OOOO~~
+O~~......~~OOO####OOOO~~~~~~~~~~~~~~~~~~~~~OOOO#########OOOOOOO~~~~................~~~~~~~OOOOOOOO~~
+OO~~.....~~~OOOOOOOOO~~~~~~~~~~~~~OOOOOOOOOOOOO#########OOOOOOO~~~~.....  .......~~~~~~~~OOOOOOOOO~~
+O~~~.....~~~OOOOOOOOO~~~~~~~~~~~~OOOOOOOOOOOOOOOO###OOOOOOOOOOOOO~~~~........~~~~~~~~~~~~OOO#####OO~
+~~~......~~OOOO###OOOOOO~~~~~~~~~~OOOOOOOO~~~~OOOOOOOOO~~~~OOOOOOOOO~~~...~~~~OOOO~~~~~~~OOO######OO
+~~...  ...~~OOO########OOOO~~~~~~~OOOOO~~~~~~~~~OOOOO~~~~~~~OOOOOOOOO~~~~~~~~OOOOOOO~~~~~~OO########
+~...    ..~~~OO##########OOO~~~~~OOOOOO~~~~~~~~~OOOOOO~~~~~~~~OOOOOOO~~~~~~~~~OOOOOOOOOO~OOOOO######
+~...    ...~~OO####@#####OOOO~~OOOOOOOO~~~~~~~OOOOOOOOOOOO~~~~~~~~~~~~~~~~~~~~~~OOOOOOOOOOO~~~OOOOO#
+~~...  ...~~~~OO#######OOO~~~~~OOOOOOO~~~~~~~OOOO###OOOOOOO~~~~~~~~~~~~~~~~~~~~~OOO###OOOO~~~~~~~~OO
+~~~......~~~~OOO####OOO~~~~~~~~~~OOOO~~~~~~~~OOO####OOOOOO~~~~~~~~~~OOOOO~~~~~~OOO#####OOO~~......~~
+O~~~...~~~OOOOO###OOO~~~~......~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~~~~OOOOOOOOOOOOOOO######OOO~~..   ...~
+OO~~~~~~~OOOOOOOOOO~~~.........~~~~~~....~~~OOOOOOOOOO~~~~~~~~OOOO#######OOOOOO######OO~~~..      ..
+OOO~~~~~~OOOOOO~~~~..........~~~~~~~....~~~OOOOOOOOOOO~~~~OOOOOO#########OOOOOO####OOO~~....      ..
+OOO~~~~~~OO~~~~~..........~~~~~~~~~~~..~~~~OOOOOOOOOOOOOOOOOOOO########OOOOOOOOOOOOOO~~~............
+OO~~~~~~OO~~~~~......~~~~~OOOOOOOO~~~...~~~OOOOOOOOOOOOOOOOOOOOOOOOOOOO~~~~~~~OOOOOOOO~~~~~~~~....~~
+~~~~~~~OOOOO~~~~~~~~~~OOOOO###OOOO~~......~~~~OOO~~~~~~~~OOOOOO~~~~~~~~~~~~~~~OOOOOOOOOOOOOOO~~~~~~~
+~~~~~~OOOOOOOO~~~~OOOOOOO####OOO~~~.........~~~~~~~~~~~~~~~~~~~~~~~~~~.....~~~~OOOOOOOOOOOOOOOOOOOOO
+~~~~OOOO###OOOOOOOOO#######OOOO~~...      ..~~~~~~~~~~~~~~~~~~~~~~~~........~~~~~~OOOOOOO####OOOOOOO
+O~~OOOOO###OOOOOOOO#####OOOOO~~~~...      ..~~~OOOOOOOOOOOOOOOO~~~~~........~~~~~~~~~~OOOO###OOOO~~~
+OOOOOOOOOOOOOOOOOOOO##OOOO~~~~~~~~...    ..~~~OOO####OOOOOOOOOOOOO~~~~....~~~~~~.....~~~OOOOOOOOO~~~
+O~~~OOOOOOOO~~~~OOOOOOO~~~~~~~~~~~~~.......~~OO######OOOOOOOOOOOOOO~~~~~~~~~~~~~~......~~OOOOOOOO~~~
+~~~~~~OOOOO~~~~~~~OOOO~~~~~~~~OOOOO~~~....~~~OOO####OOO~~~~~OOOOOOO~~~~~~~OOOOOO~~.....~~~OOOOOOOOOO
+~~~~~~~OOOO~~~~~~~~~~~~~~~~~~OO####OOO~~~~~~~OOOOOOOOO~~~~~~~OOOOOO~~~~~~OO#####OO~~...~~~OOOO######
+O~~~~~~~~~~~~~~~~~~~~....~~~OOO#######OOOOOOOOOOOOOOOO~~~~~~~OOOOOO~~~~~OOO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOO~~~~~...~~~~OOO###########OOOOOOOOOOOOO~~~~~~OOOOOO~~~~~~OO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOOOO~~~~~~~~~~~OOOOOO########OO~~~~~OOOOOO~~~~OOOOOOO~~~~~~~OOOOOOOO~~~~~~~~OOO#######
+			</p>
+            </div>
+        </div>
+    </body>
+
+[LOG] sent 6394
+HTTP request received:   172.70.110.171:59057
+method: GET
+path: /style.css
+
+[220200960]
+text/css 3
+[RESPONSE]
+HTTP/1.1 200 OK
+Content-Length: 688
+Content-Type: text/css;
+
+html {
+    font-family: monospace;
+	font-size: 17px;
+    color: #E2D6C5;
+    background-color: black;
+}
+
+body {
+    margin-left: 20px;
+}
+
+p {
+    line-height: 1.5 ;
+    margin-top: 0 ;
+    margin-bottom: 0 ;
+	white-space: pre;
+}
+
+a:link {
+    color: #2A7BDE; 
+}
+
+a:visited {
+    color: #2A7BDE; 
+}
+
+.hd {
+    font-weight: normal;
+	color: #33D17A;
+
+    line-height: 1.5 ;
+    margin-top: 0 ;
+    margin-bottom: 0 ;
+}
+
+.paragraph {
+	color: #197F50;
+}
+
+#details {
+	/*border-style: solid;*/
+	/*border-width: 2px;*/
+	/*border-color: black;*/
+}
+
+#content{
+    margin: 50px;
+    border: 1px;
+    /* border-style: solid; */
+    /* border-color: #A2734C; */
+    /* background-color: #000000; */
+}
+
+[LOG] sent 754
+HTTP request received:   172.70.110.245:15452
+method: GET
+path: /MyMyHeyHey.mp3
+
+[220200960]
+audio/mpeg 10
+[RESPONSE]
+HTTP/1.1 200 OK
+Content-Length: 9360557
+Content-Type: audio/mpeg;
+
+ID3
+[LOG] sent 9360629
+Client sent nothing, disconnecting
+Client sent nothing, disconnecting
+Client sent nothing, disconnecting
+HTTP request received:   80.94.92.231:22761
+method: GET
+path: /
+
+[220200960]
+text/html; charset=utf-8 7
+[RESPONSE]
+HTTP/1.1 200 OK
+Content-Length: 6311
+Content-Type: text/html; charset=utf-8;
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>gsracz</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header">
+            <h1 class="hd">Gabriel Racz</h1>
+			<div id="details">
+				<p class="paragraph">Ottawa, ON</p>
+				<p class="paragraph">gabriel.s.racz@gmail.com</p>
+				<p class="paragraph">https://github.com/gabrielracz</p>
+			</div>
+            <br>
+        </div>
+        <div id="content">
+            <div style="margin: 20px;">
+            <p>A very nice song:</p>
+            <br>
+	    <a class="links" href="/MyMyHeyHey.mp3" download>
+		    download link
+	    </a>
+	    <br>
+	    <a class="links" href="/NeilYoung-1968.tar" download>
+		    Neil Young - 1968
+	    </a>
+            <p>A ship in the ocean. Sailing the net, passing unseen in the waves.</p>
+            <br>
+            <p>Web archive. Keeping things real out here...</p>
+			<br>
+			<p>One Ring to rule them</p>
+			<p>    One Ring to find them,</p>
+			<p>One Ring to bring them in,</p>
+			<p>    And in Darknees bind them.</p>
+			<form action="/gsr.html" method="get">
+				<input type="button" value="refresh"></input>
+			</form>
+			<p>
+~~~.....~~~~OOOOOOOOOO~OOOOOOOOOOO~~~~~~~~~~O~~~~~~~~~~~OOOOOOOOOOO~OOOOOOOOOO~~~.....~~~OOOOOOO~~~~
+~~~....~~~OOOOOOOOO~~~~~~~~OOOO~~~~......~~~~~~~.......~~~~~~~~~~~~~~~~OOOOOOOO~~......~~~~~~OOOOOOO
+~~~....~~~~OOOOOOOO~~~~~~~~~~~~~~........~~~~~~~~.....................~~OOOO#OOO~~~~.~~~~~~~~OOOO###
+~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~.........~~~OOO~~~~~............... ...~~OO###OOO~~~~~~~~~~~~OOOO###
+~~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~~......~~~OOOOOOOO~~~~...............~~OOOOOOOOOOOOOOOOOO~~~~~OOO##
+~~~OOO~~~~~~~OOOO##OOOO~~~~~~~~~~~~~~...~~~OOOOOOOOOOO~~~~~~~~~~~~~~~~~OOOOOOOOO~~OOOOOOOO~~~~~~~~OO
+OOOOOOOOOOOOOOO#####OOO~~~~~~OOOOOO~~~~..~~~~~~OOOOOOOOOOO~~~~OOOOOOOOOOOOOOOO~~~~~~~~OO~~~~.....~~~
+OOO###############OOOO~~~~~OOOO##OOO~~~~~.~~~~~~~OOOOOOOOOOOOOOOOOOO######OOO~~~~~~~~~~~~..........~
+OOO############OOOOOO~~~OOOO######OOO~~~~~~~~~~~~~~~OOOOOOOOOOOOO##########OO~~~~..........      ...
+~OO###@@#####OOO~~~~~~~OOO########OOOO~~~~~~~~......~~OOOOOOOOOOOOO####@@###OO~~~..........     ...~
+~OO########OO~~~....~~~OO###@@###OOO~~~OOOOO~~~......~~~OOOOOOOOOOOO###@@@##OO~~~~~~~~~~~~.... ...~~
+~OO######OOO~~.......~~OO##@@###OO~~~~~OOOOOO~~... ...~~OOOOOO~~~~~OO###@@##OO~~~~~~~~~OO~~~......~~
+OO###@###OO~~...  ...~~OO###@###OO~~~~~~OOOOO~~......~~OOOOOO~~~~~~OOO######O~~~~~~~~OOOOOO~~~....~~
+###@@@@##OO~~~..   ..~~OO#######OO~~~~~~~~~~~~~~~~~~~OOOOOOOO~~~~~~~OO####OOO~~....~~OOO##OOO~~~~~~~
+##@@@@@@##OO~~..   ..~~~O#######OOO~~~~~~~~~~~~~OOOOOOOOOOOO~~~~~~~~OO####OO~~......~~OO####OOOO~~~O
+###@@@@@##OO~~... ...~~OO#######OOO~~~....~~~~OOO######OOOO~~....~~~OO####OO~~~......~~OOO##OOOOOOOO
+OO###@@###OO~~.......~~OO#######OOO~~......~~OO#######OOO~~......~~OOO#####OO~~~......~~~OOOOOOOOO~O
+~OO######OO~~~.......~~OO######OO~~~.......~~OO######OOO~~.......~~OO#######OOO~~~.....~~~OOOOO~~~~~
+~~OOOOOOOO~~~........~~OOO#####OOO~~......~~OOO######OO~~.......~~~OO####@####OOO~~~..~~~~~OO~~~~~~~
+~~~~~~~~~~~~.........~~~~OOO##OOOO~~~....~~~OO#######OO~~......~~~OOOO####@#####OO~~~~~~~~~~~~~~~~~~
+~~~~~......~~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~OOO###@###OO~~~..~~~~~OOOOOOO########OOOOOOOO~~~~~~~~~~~~
+O~~.......~~~~OOOOO~~~~~~~~OOOOOOOOO~~~~~~~~OO###@@###OO~~~~~~~OOOOO~~OOOOO##OOOOOOOOOOOOO~~~~~OOOO~
+O~~......~~~OOO###OOOO~~~~~~OOOOOOO~~~....~~~OO#######OO~~~~~~OOOOO~~~~~~OOOOOO~~~OOOOOOO~~~~~~OOOOO
+~~~......~~OOO######OOOOOOO~~~~~~~~~......~~~OO#######OO~~~~~~OOOO~~~~~~~~~~~~~~~~~~OOOOO~~~~~~OOOOO
+O~~......~~OOO######OOOOO~~~~~~~~~~~~....~~~~OO########OOOOOOOO~~~~~..............~~~~~OO~~~~~OOOO~~
+O~~......~~OOO####OOOO~~~~~~~~~~~~~~~~~~~~~OOOO#########OOOOOOO~~~~................~~~~~~~OOOOOOOO~~
+OO~~.....~~~OOOOOOOOO~~~~~~~~~~~~~OOOOOOOOOOOOO#########OOOOOOO~~~~.....  .......~~~~~~~~OOOOOOOOO~~
+O~~~.....~~~OOOOOOOOO~~~~~~~~~~~~OOOOOOOOOOOOOOOO###OOOOOOOOOOOOO~~~~........~~~~~~~~~~~~OOO#####OO~
+~~~......~~OOOO###OOOOOO~~~~~~~~~~OOOOOOOO~~~~OOOOOOOOO~~~~OOOOOOOOO~~~...~~~~OOOO~~~~~~~OOO######OO
+~~...  ...~~OOO########OOOO~~~~~~~OOOOO~~~~~~~~~OOOOO~~~~~~~OOOOOOOOO~~~~~~~~OOOOOOO~~~~~~OO########
+~...    ..~~~OO##########OOO~~~~~OOOOOO~~~~~~~~~OOOOOO~~~~~~~~OOOOOOO~~~~~~~~~OOOOOOOOOO~OOOOO######
+~...    ...~~OO####@#####OOOO~~OOOOOOOO~~~~~~~OOOOOOOOOOOO~~~~~~~~~~~~~~~~~~~~~~OOOOOOOOOOO~~~OOOOO#
+~~...  ...~~~~OO#######OOO~~~~~OOOOOOO~~~~~~~OOOO###OOOOOOO~~~~~~~~~~~~~~~~~~~~~OOO###OOOO~~~~~~~~OO
+~~~......~~~~OOO####OOO~~~~~~~~~~OOOO~~~~~~~~OOO####OOOOOO~~~~~~~~~~OOOOO~~~~~~OOO#####OOO~~......~~
+O~~~...~~~OOOOO###OOO~~~~......~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~~~~OOOOOOOOOOOOOOO######OOO~~..   ...~
+OO~~~~~~~OOOOOOOOOO~~~.........~~~~~~....~~~OOOOOOOOOO~~~~~~~~OOOO#######OOOOOO######OO~~~..      ..
+OOO~~~~~~OOOOOO~~~~..........~~~~~~~....~~~OOOOOOOOOOO~~~~OOOOOO#########OOOOOO####OOO~~....      ..
+OOO~~~~~~OO~~~~~..........~~~~~~~~~~~..~~~~OOOOOOOOOOOOOOOOOOOO########OOOOOOOOOOOOOO~~~............
+OO~~~~~~OO~~~~~......~~~~~OOOOOOOO~~~...~~~OOOOOOOOOOOOOOOOOOOOOOOOOOOO~~~~~~~OOOOOOOO~~~~~~~~....~~
+~~~~~~~OOOOO~~~~~~~~~~OOOOO###OOOO~~......~~~~OOO~~~~~~~~OOOOOO~~~~~~~~~~~~~~~OOOOOOOOOOOOOOO~~~~~~~
+~~~~~~OOOOOOOO~~~~OOOOOOO####OOO~~~.........~~~~~~~~~~~~~~~~~~~~~~~~~~.....~~~~OOOOOOOOOOOOOOOOOOOOO
+~~~~OOOO###OOOOOOOOO#######OOOO~~...      ..~~~~~~~~~~~~~~~~~~~~~~~~........~~~~~~OOOOOOO####OOOOOOO
+O~~OOOOO###OOOOOOOO#####OOOOO~~~~...      ..~~~OOOOOOOOOOOOOOOO~~~~~........~~~~~~~~~~OOOO###OOOO~~~
+OOOOOOOOOOOOOOOOOOOO##OOOO~~~~~~~~...    ..~~~OOO####OOOOOOOOOOOOO~~~~....~~~~~~.....~~~OOOOOOOOO~~~
+O~~~OOOOOOOO~~~~OOOOOOO~~~~~~~~~~~~~.......~~OO######OOOOOOOOOOOOOO~~~~~~~~~~~~~~......~~OOOOOOOO~~~
+~~~~~~OOOOO~~~~~~~OOOO~~~~~~~~OOOOO~~~....~~~OOO####OOO~~~~~OOOOOOO~~~~~~~OOOOOO~~.....~~~OOOOOOOOOO
+~~~~~~~OOOO~~~~~~~~~~~~~~~~~~OO####OOO~~~~~~~OOOOOOOOO~~~~~~~OOOOOO~~~~~~OO#####OO~~...~~~OOOO######
+O~~~~~~~~~~~~~~~~~~~~....~~~OOO#######OOOOOOOOOOOOOOOO~~~~~~~OOOOOO~~~~~OOO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOO~~~~~...~~~~OOO###########OOOOOOOOOOOOO~~~~~~OOOOOO~~~~~~OO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOOOO~~~~~~~~~~~OOOOOO########OO~~~~~OOOOOO~~~~OOOOOOO~~~~~~~OOOOOOOO~~~~~~~~OOO#######
+			</p>
+            </div>
+        </div>
+    </body>
+
+[LOG] sent 6394
+Client sent nothing, disconnecting
+HTTP request received:   172.70.93.49:46782
+method: GET
+path: /
+
+[220200960]
+text/html; charset=utf-8 7
+[RESPONSE]
+HTTP/1.1 200 OK
+Content-Length: 6311
+Content-Type: text/html; charset=utf-8;
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>gsracz</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header">
+            <h1 class="hd">Gabriel Racz</h1>
+			<div id="details">
+				<p class="paragraph">Ottawa, ON</p>
+				<p class="paragraph">gabriel.s.racz@gmail.com</p>
+				<p class="paragraph">https://github.com/gabrielracz</p>
+			</div>
+            <br>
+        </div>
+        <div id="content">
+            <div style="margin: 20px;">
+            <p>A very nice song:</p>
+            <br>
+	    <a class="links" href="/MyMyHeyHey.mp3" download>
+		    download link
+	    </a>
+	    <br>
+	    <a class="links" href="/NeilYoung-1968.tar" download>
+		    Neil Young - 1968
+	    </a>
+            <p>A ship in the ocean. Sailing the net, passing unseen in the waves.</p>
+            <br>
+            <p>Web archive. Keeping things real out here...</p>
+			<br>
+			<p>One Ring to rule them</p>
+			<p>    One Ring to find them,</p>
+			<p>One Ring to bring them in,</p>
+			<p>    And in Darknees bind them.</p>
+			<form action="/gsr.html" method="get">
+				<input type="button" value="refresh"></input>
+			</form>
+			<p>
+~~~.....~~~~OOOOOOOOOO~OOOOOOOOOOO~~~~~~~~~~O~~~~~~~~~~~OOOOOOOOOOO~OOOOOOOOOO~~~.....~~~OOOOOOO~~~~
+~~~....~~~OOOOOOOOO~~~~~~~~OOOO~~~~......~~~~~~~.......~~~~~~~~~~~~~~~~OOOOOOOO~~......~~~~~~OOOOOOO
+~~~....~~~~OOOOOOOO~~~~~~~~~~~~~~........~~~~~~~~.....................~~OOOO#OOO~~~~.~~~~~~~~OOOO###
+~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~.........~~~OOO~~~~~............... ...~~OO###OOO~~~~~~~~~~~~OOOO###
+~~~~~~~~~~~~~~OOOOOOO~~~~~~~~~~~~~......~~~OOOOOOOO~~~~...............~~OOOOOOOOOOOOOOOOOO~~~~~OOO##
+~~~OOO~~~~~~~OOOO##OOOO~~~~~~~~~~~~~~...~~~OOOOOOOOOOO~~~~~~~~~~~~~~~~~OOOOOOOOO~~OOOOOOOO~~~~~~~~OO
+OOOOOOOOOOOOOOO#####OOO~~~~~~OOOOOO~~~~..~~~~~~OOOOOOOOOOO~~~~OOOOOOOOOOOOOOOO~~~~~~~~OO~~~~.....~~~
+OOO###############OOOO~~~~~OOOO##OOO~~~~~.~~~~~~~OOOOOOOOOOOOOOOOOOO######OOO~~~~~~~~~~~~..........~
+OOO############OOOOOO~~~OOOO######OOO~~~~~~~~~~~~~~~OOOOOOOOOOOOO##########OO~~~~..........      ...
+~OO###@@#####OOO~~~~~~~OOO########OOOO~~~~~~~~......~~OOOOOOOOOOOOO####@@###OO~~~..........     ...~
+~OO########OO~~~....~~~OO###@@###OOO~~~OOOOO~~~......~~~OOOOOOOOOOOO###@@@##OO~~~~~~~~~~~~.... ...~~
+~OO######OOO~~.......~~OO##@@###OO~~~~~OOOOOO~~... ...~~OOOOOO~~~~~OO###@@##OO~~~~~~~~~OO~~~......~~
+OO###@###OO~~...  ...~~OO###@###OO~~~~~~OOOOO~~......~~OOOOOO~~~~~~OOO######O~~~~~~~~OOOOOO~~~....~~
+###@@@@##OO~~~..   ..~~OO#######OO~~~~~~~~~~~~~~~~~~~OOOOOOOO~~~~~~~OO####OOO~~....~~OOO##OOO~~~~~~~
+##@@@@@@##OO~~..   ..~~~O#######OOO~~~~~~~~~~~~~OOOOOOOOOOOO~~~~~~~~OO####OO~~......~~OO####OOOO~~~O
+###@@@@@##OO~~... ...~~OO#######OOO~~~....~~~~OOO######OOOO~~....~~~OO####OO~~~......~~OOO##OOOOOOOO
+OO###@@###OO~~.......~~OO#######OOO~~......~~OO#######OOO~~......~~OOO#####OO~~~......~~~OOOOOOOOO~O
+~OO######OO~~~.......~~OO######OO~~~.......~~OO######OOO~~.......~~OO#######OOO~~~.....~~~OOOOO~~~~~
+~~OOOOOOOO~~~........~~OOO#####OOO~~......~~OOO######OO~~.......~~~OO####@####OOO~~~..~~~~~OO~~~~~~~
+~~~~~~~~~~~~.........~~~~OOO##OOOO~~~....~~~OO#######OO~~......~~~OOOO####@#####OO~~~~~~~~~~~~~~~~~~
+~~~~~......~~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~OOO###@###OO~~~..~~~~~OOOOOOO########OOOOOOOO~~~~~~~~~~~~
+O~~.......~~~~OOOOO~~~~~~~~OOOOOOOOO~~~~~~~~OO###@@###OO~~~~~~~OOOOO~~OOOOO##OOOOOOOOOOOOO~~~~~OOOO~
+O~~......~~~OOO###OOOO~~~~~~OOOOOOO~~~....~~~OO#######OO~~~~~~OOOOO~~~~~~OOOOOO~~~OOOOOOO~~~~~~OOOOO
+~~~......~~OOO######OOOOOOO~~~~~~~~~......~~~OO#######OO~~~~~~OOOO~~~~~~~~~~~~~~~~~~OOOOO~~~~~~OOOOO
+O~~......~~OOO######OOOOO~~~~~~~~~~~~....~~~~OO########OOOOOOOO~~~~~..............~~~~~OO~~~~~OOOO~~
+O~~......~~OOO####OOOO~~~~~~~~~~~~~~~~~~~~~OOOO#########OOOOOOO~~~~................~~~~~~~OOOOOOOO~~
+OO~~.....~~~OOOOOOOOO~~~~~~~~~~~~~OOOOOOOOOOOOO#########OOOOOOO~~~~.....  .......~~~~~~~~OOOOOOOOO~~
+O~~~.....~~~OOOOOOOOO~~~~~~~~~~~~OOOOOOOOOOOOOOOO###OOOOOOOOOOOOO~~~~........~~~~~~~~~~~~OOO#####OO~
+~~~......~~OOOO###OOOOOO~~~~~~~~~~OOOOOOOO~~~~OOOOOOOOO~~~~OOOOOOOOO~~~...~~~~OOOO~~~~~~~OOO######OO
+~~...  ...~~OOO########OOOO~~~~~~~OOOOO~~~~~~~~~OOOOO~~~~~~~OOOOOOOOO~~~~~~~~OOOOOOO~~~~~~OO########
+~...    ..~~~OO##########OOO~~~~~OOOOOO~~~~~~~~~OOOOOO~~~~~~~~OOOOOOO~~~~~~~~~OOOOOOOOOO~OOOOO######
+~...    ...~~OO####@#####OOOO~~OOOOOOOO~~~~~~~OOOOOOOOOOOO~~~~~~~~~~~~~~~~~~~~~~OOOOOOOOOOO~~~OOOOO#
+~~...  ...~~~~OO#######OOO~~~~~OOOOOOO~~~~~~~OOOO###OOOOOOO~~~~~~~~~~~~~~~~~~~~~OOO###OOOO~~~~~~~~OO
+~~~......~~~~OOO####OOO~~~~~~~~~~OOOO~~~~~~~~OOO####OOOOOO~~~~~~~~~~OOOOO~~~~~~OOO#####OOO~~......~~
+O~~~...~~~OOOOO###OOO~~~~......~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~~~~OOOOOOOOOOOOOOO######OOO~~..   ...~
+OO~~~~~~~OOOOOOOOOO~~~.........~~~~~~....~~~OOOOOOOOOO~~~~~~~~OOOO#######OOOOOO######OO~~~..      ..
+OOO~~~~~~OOOOOO~~~~..........~~~~~~~....~~~OOOOOOOOOOO~~~~OOOOOO#########OOOOOO####OOO~~....      ..
+OOO~~~~~~OO~~~~~..........~~~~~~~~~~~..~~~~OOOOOOOOOOOOOOOOOOOO########OOOOOOOOOOOOOO~~~............
+OO~~~~~~OO~~~~~......~~~~~OOOOOOOO~~~...~~~OOOOOOOOOOOOOOOOOOOOOOOOOOOO~~~~~~~OOOOOOOO~~~~~~~~....~~
+~~~~~~~OOOOO~~~~~~~~~~OOOOO###OOOO~~......~~~~OOO~~~~~~~~OOOOOO~~~~~~~~~~~~~~~OOOOOOOOOOOOOOO~~~~~~~
+~~~~~~OOOOOOOO~~~~OOOOOOO####OOO~~~.........~~~~~~~~~~~~~~~~~~~~~~~~~~.....~~~~OOOOOOOOOOOOOOOOOOOOO
+~~~~OOOO###OOOOOOOOO#######OOOO~~...      ..~~~~~~~~~~~~~~~~~~~~~~~~........~~~~~~OOOOOOO####OOOOOOO
+O~~OOOOO###OOOOOOOO#####OOOOO~~~~...      ..~~~OOOOOOOOOOOOOOOO~~~~~........~~~~~~~~~~OOOO###OOOO~~~
+OOOOOOOOOOOOOOOOOOOO##OOOO~~~~~~~~...    ..~~~OOO####OOOOOOOOOOOOO~~~~....~~~~~~.....~~~OOOOOOOOO~~~
+O~~~OOOOOOOO~~~~OOOOOOO~~~~~~~~~~~~~.......~~OO######OOOOOOOOOOOOOO~~~~~~~~~~~~~~......~~OOOOOOOO~~~
+~~~~~~OOOOO~~~~~~~OOOO~~~~~~~~OOOOO~~~....~~~OOO####OOO~~~~~OOOOOOO~~~~~~~OOOOOO~~.....~~~OOOOOOOOOO
+~~~~~~~OOOO~~~~~~~~~~~~~~~~~~OO####OOO~~~~~~~OOOOOOOOO~~~~~~~OOOOOO~~~~~~OO#####OO~~...~~~OOOO######
+O~~~~~~~~~~~~~~~~~~~~....~~~OOO#######OOOOOOOOOOOOOOOO~~~~~~~OOOOOO~~~~~OOO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOO~~~~~...~~~~OOO###########OOOOOOOOOOOOO~~~~~~OOOOOO~~~~~~OO######OO~~...~~~OO#######
+OOOOOO~~~~~OOOOOOO~~~~~~~~~~~OOOOOO########OO~~~~~OOOOOO~~~~OOOOOOO~~~~~~~OOOOOOOO~~~~~~~~OOO#######
+			</p>
+            </div>
+        </div>
+    </body>
+
+[LOG] sent 6394
+HTTP request received:   172.70.93.49:46782
+method: GET
+path: //wp-includes/wlwmanifest.xml
+
+[220200960]
+Couldn't open r
