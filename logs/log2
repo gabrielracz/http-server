@@ -1,18 +1,32 @@
+Server on...
+HTTP request received:   172.70.230.115:8387
+method: GET
+path: /
+
+[220200960]
+text/html; charset=utf-8 7
+[RESPONSE]
+HTTP/1.1 200 OK
+Content-Length: 6311
+Content-Type: text/html; charset=utf-8;
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>gsracz</title>
-        <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div id="header">
-            <h1 class="hd">gsr</h1>
+            <h1 class="hd">Gabriel Racz</h1>
 			<div id="details">
+				<p class="paragraph">Ottawa, ON</p>
+				<p class="paragraph">gabriel.s.racz@gmail.com</p>
+				<p class="paragraph">https://github.com/gabrielracz</p>
 			</div>
             <br>
         </div>
-        <a class="links" href="/classics.html">Classics</a>
         <div id="content">
             <div style="margin: 20px;">
             <p>A very nice song:</p>
@@ -28,6 +42,10 @@
             <br>
             <p>Web archive. Keeping things real out here...</p>
 			<br>
+			<p>One Ring to rule them</p>
+			<p>    One Ring to find them,</p>
+			<p>One Ring to bring them in,</p>
+			<p>    And in Darknees bind them.</p>
 			<form action="/gsr.html" method="get">
 				<input type="button" value="refresh"></input>
 			</form>
@@ -58,31 +76,4 @@ O~~......~~~OOO###OOOO~~~~~~OOOOOOO~~~....~~~OO#######OO~~~~~~OOOOO~~~~~~OOOOOO~
 ~~~......~~OOO######OOOOOOO~~~~~~~~~......~~~OO#######OO~~~~~~OOOO~~~~~~~~~~~~~~~~~~OOOOO~~~~~~OOOOO
 O~~......~~OOO######OOOOO~~~~~~~~~~~~....~~~~OO########OOOOOOOO~~~~~..............~~~~~OO~~~~~OOOO~~
 O~~......~~OOO####OOOO~~~~~~~~~~~~~~~~~~~~~OOOO#########OOOOOOO~~~~................~~~~~~~OOOOOOOO~~
-OO~~.....~~~OOOOOOOOO~~~~~~~~~~~~~OOOOOOOOOOOOO#########OOOOOOO~~~~.....  .......~~~~~~~~OOOOOOOOO~~
-O~~~.....~~~OOOOOOOOO~~~~~~~~~~~~OOOOOOOOOOOOOOOO###OOOOOOOOOOOOO~~~~........~~~~~~~~~~~~OOO#####OO~
-~~~......~~OOOO###OOOOOO~~~~~~~~~~OOOOOOOO~~~~OOOOOOOOO~~~~OOOOOOOOO~~~...~~~~OOOO~~~~~~~OOO######OO
-~~...  ...~~OOO########OOOO~~~~~~~OOOOO~~~~~~~~~OOOOO~~~~~~~OOOOOOOOO~~~~~~~~OOOOOOO~~~~~~OO########
-~...    ..~~~OO##########OOO~~~~~OOOOOO~~~~~~~~~OOOOOO~~~~~~~~OOOOOOO~~~~~~~~~OOOOOOOOOO~OOOOO######
-~...    ...~~OO####@#####OOOO~~OOOOOOOO~~~~~~~OOOOOOOOOOOO~~~~~~~~~~~~~~~~~~~~~~OOOOOOOOOOO~~~OOOOO#
-~~...  ...~~~~OO#######OOO~~~~~OOOOOOO~~~~~~~OOOO###OOOOOOO~~~~~~~~~~~~~~~~~~~~~OOO###OOOO~~~~~~~~OO
-~~~......~~~~OOO####OOO~~~~~~~~~~OOOO~~~~~~~~OOO####OOOOOO~~~~~~~~~~OOOOO~~~~~~OOO#####OOO~~......~~
-O~~~...~~~OOOOO###OOO~~~~......~~~~~~~~~~~~~~OOOOOOOOO~~~~~~~~~~~OOOOOOOOOOOOOOO######OOO~~..   ...~
-OO~~~~~~~OOOOOOOOOO~~~.........~~~~~~....~~~OOOOOOOOOO~~~~~~~~OOOO#######OOOOOO######OO~~~..      ..
-OOO~~~~~~OOOOOO~~~~..........~~~~~~~....~~~OOOOOOOOOOO~~~~OOOOOO#########OOOOOO####OOO~~....      ..
-OOO~~~~~~OO~~~~~..........~~~~~~~~~~~..~~~~OOOOOOOOOOOOOOOOOOOO########OOOOOOOOOOOOOO~~~............
-OO~~~~~~OO~~~~~......~~~~~OOOOOOOO~~~...~~~OOOOOOOOOOOOOOOOOOOOOOOOOOOO~~~~~~~OOOOOOOO~~~~~~~~....~~
-~~~~~~~OOOOO~~~~~~~~~~OOOOO###OOOO~~......~~~~OOO~~~~~~~~OOOOOO~~~~~~~~~~~~~~~OOOOOOOOOOOOOOO~~~~~~~
-~~~~~~OOOOOOOO~~~~OOOOOOO####OOO~~~.........~~~~~~~~~~~~~~~~~~~~~~~~~~.....~~~~OOOOOOOOOOOOOOOOOOOOO
-~~~~OOOO###OOOOOOOOO#######OOOO~~...      ..~~~~~~~~~~~~~~~~~~~~~~~~........~~~~~~OOOOOOO####OOOOOOO
-O~~OOOOO###OOOOOOOO#####OOOOO~~~~...      ..~~~OOOOOOOOOOOOOOOO~~~~~........~~~~~~~~~~OOOO###OOOO~~~
-OOOOOOOOOOOOOOOOOOOO##OOOO~~~~~~~~...    ..~~~OOO####OOOOOOOOOOOOO~~~~....~~~~~~.....~~~OOOOOOOOO~~~
-O~~~OOOOOOOO~~~~OOOOOOO~~~~~~~~~~~~~.......~~OO######OOOOOOOOOOOOOO~~~~~~~~~~~~~~......~~OOOOOOOO~~~
-~~~~~~OOOOO~~~~~~~OOOO~~~~~~~~OOOOO~~~....~~~OOO####OOO~~~~~OOOOOOO~~~~~~~OOOOOO~~.....~~~OOOOOOOOOO
-~~~~~~~OOOO~~~~~~~~~~~~~~~~~~OO####OOO~~~~~~~OOOOOOOOO~~~~~~~OOOOOO~~~~~~OO#####OO~~...~~~OOOO######
-O~~~~~~~~~~~~~~~~~~~~....~~~OOO#######OOOOOOOOOOOOOOOO~~~~~~~OOOOOO~~~~~OOO######OO~~...~~~OO#######
-OOOOOO~~~~~OOOOO~~~~~...~~~~OOO###########OOOOOOOOOOOOO~~~~~~OOOOOO~~~~~~OO######OO~~...~~~OO#######
-OOOOOO~~~~~OOOOOOO~~~~~~~~~~~OOOOOO########OO~~~~~OOOOOO~~~~OOOOOOO~~~~~~~OOOOOOOO~~~~~~~~OOO#######
-			</p>
-            </div>
-        </div>
-    </body>
+OO~~.....~~~OOOOOOOOO~~~~~~~~~~~~~OOOOOOOOOOOOO#####

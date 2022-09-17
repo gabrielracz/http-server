@@ -3,5 +3,5 @@ cli
 srv
 .cache
 compile_commands.json
-
+resources/data/*
 

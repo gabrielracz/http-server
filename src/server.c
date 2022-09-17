@@ -43,7 +43,8 @@ int main(int argc, char** argv){
 	memset(&servaddr, 0, sizeof(servaddr));
 	servaddr.sin_family = AF_INET;
 	servaddr.sin_addr.s_addr = SERV_ADDR;
-	servaddr.sin_port = htons(SERV_PORT);
+	//inet_aton("149.248.59.171", &servaddr.sin_addr.s_addr);
+	servaddr.sin_port = htons(7120);
 
 
 	/* Prepare the socket */
@@ -130,8 +131,9 @@ void* process_request(void* connfd){
 	char rcvbuf[8192];
 
 	size_t reslen;
-	size_t resbuflen = 400 * 1000;
-	char resbuf[resbuflen];
+	size_t resbuflen = 210 * 1024 * 1024;
+	//char resbuf[resbuflen];
+	char* resbuf = malloc(resbuflen);
 
 	while(1){
 		rcvlen = readmsg(connectionfd, rcvbuf, MAXLEN);
@@ -163,6 +165,7 @@ void* process_request(void* connfd){
 		bsent = send(connectionfd, resbuf, reslen, 0);
 		printf("[LOG] sent %zu\n", bsent);
 	}
+	free(resbuf);
 
 	close(connectionfd);
 	return 0;

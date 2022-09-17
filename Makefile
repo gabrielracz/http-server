@@ -1,5 +1,5 @@
 all: phttp/picohttpparser.o srv cli 
-CFLAGS= -g
+CFLAGS= -g -Wall -fsanitize=address
 LIBS= -lpthread
 
 srv: src/server.c src/universal.h src/http.h
