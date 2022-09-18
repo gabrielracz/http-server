@@ -107,7 +107,6 @@ int main(int argc, char** argv){
 		pthread_t* next_thread = thread_pool[i];
 		pthread_create(next_thread,  NULL, &process_request, (void*) cfd_ptr);
 	}
-
 	return 0;
 }
 
@@ -129,18 +128,19 @@ void* process_request(void* connfd){
 
 	size_t rcvlen;
 	char rcvbuf[8192];
+    struct static_buffer rcv_buffer;
 
 	size_t reslen;
 	size_t resbuflen = 210 * 1024 * 1024;
 	//char resbuf[resbuflen];
 	char* resbuf = malloc(resbuflen);
+    struct static_buffer resp_buffer = {resbuf, resbuflen};
 
 	while(1){
 		rcvlen = readmsg(connectionfd, rcvbuf, MAXLEN);
 		if(rcvlen == 0){
 			printf("Client sent nothing, disconnecting\n");	
-			close(connectionfd);
-			pthread_exit(0);
+			break;
 		}
 		
 		/*attempt http parse*/
@@ -166,8 +166,8 @@ void* process_request(void* connfd){
 		printf("[LOG] sent %zu\n", bsent);
 	}
 	free(resbuf);
-
 	close(connectionfd);
+    pthread_exit(0);
 	return 0;
 }
 

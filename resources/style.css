@@ -21,7 +21,8 @@ table {
 }
 
 td {
-    border-right: 1px solid #E2D6C5;
+    /* border-right: 1px solid #E2D6C5; */
+    border-bottom: 1px solid #E2D6C5;
 }
 
 p {

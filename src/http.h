@@ -79,7 +79,7 @@ size_t read_file(const char *filename, char *buf, size_t buflen)
     FILE *fp;
     size_t filelen;
     fp = fopen(filename, "r");
-    if (fp == 0)
+    if (fp == NULL)
     {
         printf("Couldn't open requested file '%s'. errno: %d\n", filename, errno);
         return 0;
@@ -126,12 +126,7 @@ static const mime_type filetypes[] = {
 
 int http_get_content_type(const char *filename, size_t len)
 {
-    // search from behind until hit a period.
-    // binary search the fieltypes
-    // return the mime type for the request.
-
-    // get the file type
-    //
+    //get . index and binary search the filetypes for corresponding mime_type
     int first = 0;
     int last = sizeof(filetypes) / sizeof(filetypes[0]);
     int t;
@@ -175,23 +170,26 @@ size_t http_not_found(char *buf)
     return strlen(buf);
 }
 
-int http_response(const char *path, size_t pathlen, char *buf, size_t buflen)
+struct static_buffer {
+    const char* data;
+    size_t size;
+};
+
+int http_serv_file(const char *path, size_t pathlen, char *buf, size_t buflen)
 {
-    char header[1024];
+    char header[8192];
     size_t content_len = 400;
     int status_code = 200;
-    // printf("[%zu]\n", buflen);
     const char *content_type;
 
-    // read file
     size_t filelen;
-    char *message = calloc(buflen - 200, 1);
-    if ((filelen = read_file(path, message, buflen - 200)) == 0)
+    char* file_contents = calloc(buflen - 200, 1);
+    if ((filelen = read_file(path, file_contents, buflen - 200)) == 0)
     { // Couldn't open requested file
-        filelen = read_file("web/404.html", message, buflen - 200);
+        filelen = read_file("web/404.html", file_contents, buflen - 200);
         content_type = "text/html";
         goto header;
-        return http_not_found(buf);
+        // return http_not_found(buf);
     }
 
     /*construct header*/
@@ -211,7 +209,8 @@ header:
     sprintf(header,
             "HTTP/1.1 %s\r\n"
             "Content-Length: %ld\r\n"
-            "Content-Type: %s;\r\n\r\n",
+            "Content-Type: %s;\r\n"
+            "Connection: close\r\n\r\n",
             http_status_code(status_code),
             filelen,
             content_type);
@@ -220,11 +219,13 @@ header:
     if (responselen > buflen)
     {
         printf("response len exceeds buffer len\n");
+        free(file_contents);
         return 0;
     }
 
     memcpy(buf, header, headerlen);
-    memcpy(buf + headerlen, message, filelen + 1);
+    memcpy(buf + headerlen, file_contents, filelen + 1);
+    free(file_contents);
     return responselen;
 }
 
@@ -237,7 +238,7 @@ size_t http_handle_rq(HTTPrq rq, char *resbuf, size_t reslen)
 
     // TODO: sanitize path
     /*http_sanitize_rq()*/
-    char rqfile[1024] = "web";
+    char rqfile[1024] = "resources";
 
     // routing table
     // TODO: think of some better way to route requests
@@ -262,7 +263,7 @@ size_t http_handle_rq(HTTPrq rq, char *resbuf, size_t reslen)
     }
 
     size_t len;
-    len = http_response(rqfile, strlen(rqfile), resbuf, reslen);
+    len = http_serv_file(rqfile, strlen(rqfile), resbuf, reslen);
     //     switch(route) {
     //         case FILE:
     //             len = http_response(rqfile, strlen(rqfile), resbuf, reslen);
