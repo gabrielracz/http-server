@@ -43,7 +43,6 @@ int main(int argc, char** argv){
 	memset(&servaddr, 0, sizeof(servaddr));
 	servaddr.sin_family = AF_INET;
 	servaddr.sin_addr.s_addr = SERV_ADDR;
-	//inet_aton("149.248.59.171", &servaddr.sin_addr.s_addr);
 	servaddr.sin_port = htons(7120);
 
 
@@ -54,7 +53,7 @@ int main(int argc, char** argv){
 
 	int rc;
 	while ((rc = bind(listenfd, (struct sockaddr*) &servaddr, sizeof(servaddr)))){
-		printf("waiting for port...\n");
+		printf("bind failed: errno %d\n", errno);
 		sleep(1);
 		/*if(rc) err("Socket bind", EXIT);*/
 	}
@@ -75,7 +74,7 @@ int main(int argc, char** argv){
 
 	int workers = 10;
 	int dispatched = 0;
-	int requets_served = 0;
+	int requests_served = 0;
 	pthread_t* thread_pool[10];
 	for(int i = 0; i < 10; i++){
 		thread_pool[i] = malloc(sizeof(pthread_t));

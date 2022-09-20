@@ -182,5 +182,6 @@ void sha256(uint8_t* buffer, size_t buflen, char* output){
 		compression(message_schedule);
 	}
 	produce_digest(output);
+    free(message);
 }
 

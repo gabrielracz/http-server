@@ -1,28 +1,52 @@
+:root{
+	--white: #E2D6C5;
+	--bg: black;
+	--blue: #87AFAF;
+	--gasoline: #87FFAF;
+	--fontsize: 18px;
+
+}
+
 html {
     font-family: monospace;
-	font-size: 17px;
-    color: #E2D6C5;
-    background-color: black;
+	font-size: var(--fontsize);
+    color: var(--white);
+    background-color: var(--bg);
 }
 
 body {
+-webkit-text-size-adjust: none;
+   -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+        text-size-adjust: none;
+
     margin-left: 20px;
+}
+
+#header {
+	margin-left: 20px;
+}
+
+#logo {
+	font-weight: bold;
+	color: var(--white)
+}
+
+.links {
+	margin-right: 10px;
+	font-size: var(--fontsize);
+	text-decoration: underline;
 }
 
 .table-header{
 	text-align: left;
-	color: #33D17A;
+	border-bottom: 1px solid #E2D6C5;
 }
 
 
 table {
     border: 1px solid #E2D6C5;
     width: 100%;
-}
-
-td {
-    /* border-right: 1px solid #E2D6C5; */
-    border-bottom: 1px solid #E2D6C5;
 }
 
 p {
@@ -33,11 +57,11 @@ p {
 }
 
 a:link {
-    color: #2A7BDE; 
+    color: var(--blue);
 }
 
 a:visited {
-    color: #2A7BDE; 
+    color: var(--blue); 
 }
 
 .hd {
@@ -52,6 +76,7 @@ a:visited {
 .paragraph {
 	color: #197F50;
 }
+
 
 #content{
     margin: 50px;

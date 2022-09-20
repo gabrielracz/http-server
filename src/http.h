@@ -29,9 +29,10 @@ typedef struct
 const char *http_min_res = "\nHTTP/1.1 200 OK\nContent-Length: 13\nContent-Type: text/plain; charset=utf-8\n\nHello World!";
 const char *http_head_ok = "\nHTTP/1.1 200 OK\nContent-Length: 150\nContent-Type: text/plain; charset=utf-8\n\n";
 
-char *http_status_code(int code);
+char* http_status_code(int code);
+int http_build_header(char* header, size_t header_size, int status_code, size_t content_len, const char* content_type, char** additional, int num_adds);
 int http_parse_request(char *req, size_t size);
-size_t http_handle_rq(HTTPrq rq, char *resbuf, size_t reslen);
+size_t http_handle_rq(HTTPrq rq, char *resbuf, size_t rslen);
 int http_parse(char *buffer, size_t buflen, HTTPrq *rq);
 int http_sanitize_rq(HTTPrq *rq, char *filename, size_t len);
 
@@ -48,8 +49,7 @@ int http_parse(char *buffer, size_t buflen, HTTPrq *rq)
     prc = phr_parse_request(buffer, buflen, &rq->method, &rq->methodlen,
                             &rq->path, &rq->pathlen, &rq->minor_version, rq->headers, &rq->num_headers, 0);
 
-    if (prc < 0)
-    {
+    if (prc < 0){
         printf("HTTP parse error: %d\n", prc);
         pthread_exit(0);
     }
@@ -162,7 +162,7 @@ size_t http_not_found(char *buf)
     const char *not_found =
         "HTTP/1.1 404 Not Found\r\n"
         "Connection: close\r\n"
-        "Content-type: text/html\r\n"
+        "Content-type: text/html\r\n\r\n"
         "<head><title>404</title></head>\n"
         "<body>Document Not Found</body>\n";
 
@@ -175,49 +175,75 @@ struct static_buffer {
     size_t size;
 };
 
+static const int default_header_size = 8192;
+int http_build_header(char* header, size_t header_size, int status_code, size_t content_len, const char* content_type, char** options, int num_opts) {
+
+
+    sprintf(header,
+            "HTTP/1.1 %s\r\n"
+            "Content-Length: %ld\r\n"
+            "Content-Type: %s;\r\n",
+            http_status_code(status_code),
+            content_len,
+            content_type);
+
+	int n = strlen(header);
+	char* c = &header[n];
+
+	//append all options to header followed by an extra \r\n
+	for(int i = 0; i < num_opts; i++) {
+		int opt_size = strlen(options[i]);
+		n += opt_size + 2;
+		if(n >= header_size) {
+			printf("Header options would overflow buffer, discarding past %s\n", options[i]);
+			break;
+		}
+		memcpy(c, options[i], opt_size);
+		c += opt_size;
+		*(c++) = '\r';
+		*(c++) = '\n';
+	}
+
+	*(c++) = '\r';
+	*(c++) = '\n';
+	n += 2;
+
+	return n;
+}
+
+const char* resources_dir = "resources";
+#define RESOURCES "resources"
+
 int http_serv_file(const char *path, size_t pathlen, char *buf, size_t buflen)
 {
-    char header[8192];
+
+    char header[default_header_size];
     size_t content_len = 400;
     int status_code = 200;
     const char *content_type;
 
     size_t filelen;
-    char* file_contents = calloc(buflen - 200, 1);
-    if ((filelen = read_file(path, file_contents, buflen - 200)) == 0)
-    { // Couldn't open requested file
-        filelen = read_file("web/404.html", file_contents, buflen - 200);
-        content_type = "text/html";
-        goto header;
-        // return http_not_found(buf);
+    char* file_contents = (char*) calloc(buflen, 1);
+    if ((filelen = read_file(path, file_contents, buflen - 200)) == 0) { // Couldn't open requested file
+		filelen = read_file( RESOURCES"/404.html", file_contents, buflen - 200);
+		content_type = "text/html";
+        //return http_not_found(buf);
+    }else {
+        int mimdex = http_get_content_type(path, pathlen);
+        if (mimdex < 0){
+            printf("unsupported content-type request\n");
+            content_type = "text/plain";
+        }
+        else{
+            content_type = filetypes[mimdex].mime_type;
+            printf("%s %d\n", content_type, mimdex);
+        }
     }
 
-    /*construct header*/
-    int mimdex = http_get_content_type(path, pathlen);
-    if (mimdex < 0)
-    {
-        printf("unsupported content-type request\n");
-        content_type = "text/plain";
-    }
-    else
-    {
-        content_type = filetypes[mimdex].mime_type;
-        printf("%s %d\n", content_type, mimdex);
-    }
-
-header:
-    sprintf(header,
-            "HTTP/1.1 %s\r\n"
-            "Content-Length: %ld\r\n"
-            "Content-Type: %s;\r\n"
-            "Connection: close\r\n\r\n",
-            http_status_code(status_code),
-            filelen,
-            content_type);
-    size_t headerlen = strlen(header);
+	char* options[] = {"Connection: close"};
+	size_t headerlen = http_build_header(header, default_header_size, 200, filelen, content_type, options, 1);
     size_t responselen = headerlen + filelen + 1;
-    if (responselen > buflen)
-    {
+    if (responselen > buflen) {
         printf("response len exceeds buffer len\n");
         free(file_contents);
         return 0;
@@ -229,8 +255,12 @@ header:
     return responselen;
 }
 
-size_t http_handle_rq(HTTPrq rq, char *resbuf, size_t reslen)
-{
+enum ResponseTypes {
+    DISK,
+    PERLIN
+};
+
+size_t http_handle_rq(HTTPrq rq, char *resbuf, size_t reslen) {
     printf("HTTP request received:   %s:%d\n", rq.addr_str, rq.addr.sin_port);
     printf("method: %.*s\n", (int)rq.methodlen, rq.method);
     printf("path: %.*s\n", (int)rq.pathlen, rq.path);
@@ -240,22 +270,12 @@ size_t http_handle_rq(HTTPrq rq, char *resbuf, size_t reslen)
     /*http_sanitize_rq()*/
     char rqfile[1024] = "resources";
 
-    // routing table
-    // TODO: think of some better way to route requests
 
-    enum response
-    {
-        FILE,
-        PERLIN
-    };
-
-    enum response route = FILE;
-    if (strncmp("/", rq.path, rq.pathlen) == 0 || strncmp("/index.html", rq.path, rq.pathlen) == 0)
-    {
+    int route = DISK;
+    if (strncmp("/", rq.path, rq.pathlen) == 0 || strncmp("/index.html", rq.path, rq.pathlen) == 0){
         strcat(rqfile, "/gsr.html");
     }
-    else if (strncmp("/perlin.html", rq.path, rq.pathlen) == 0)
-    {
+    else if (strncmp("/perlin.html", rq.path, rq.pathlen) == 0){
         route = PERLIN;
     }
     else{
@@ -263,18 +283,21 @@ size_t http_handle_rq(HTTPrq rq, char *resbuf, size_t reslen)
     }
 
     size_t len;
-    len = http_serv_file(rqfile, strlen(rqfile), resbuf, reslen);
-    //     switch(route) {
-    //         case FILE:
-    //             len = http_response(rqfile, strlen(rqfile), resbuf, reslen);
-    //             break;
-    //         case PERLIN:
-    // 	    break;
-    // 	default:
-    // 	    break;
-    //    }
+    switch(route) {
+        case DISK:
+            len = http_serv_file(rqfile, strlen(rqfile), resbuf, reslen);
+            break;
+        case PERLIN:
+            // int perlin_sample_grid(char* buffer, size_t buflen, int width, int height, float startx, float starty, float zoom );
 
-    	// printf("[RESPONSE]\n%s\n", resbuf);
+            len = perlin_sample_grid(resbuf, reslen, 15, 15, 13.0, 17.0, 0.25);
+            break;
+        break;
+    default:
+        break;
+    }
+
+	printf("[RESPONSE]\n%s\n", resbuf);
     return len;
 }
 
