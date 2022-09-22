@@ -8,7 +8,10 @@
 #include<arpa/inet.h>
 #include<netinet/in.h>
 #include <unistd.h>
-#include"universal.h"
+
+#define MAXLEN 8192
+#define ACK 200
+#define SERV_PORT 7120
 
 int main(int argc, char* argv[]){
 	int sockfd;
@@ -25,17 +28,23 @@ int main(int argc, char* argv[]){
 	}
 
 	sockfd = socket(AF_INET, SOCK_STREAM, 0);
-	if(sockfd < 0) err("Socket initializtion error", EXIT);
+	if(sockfd < 0){
+		perror("socket");
+		return 1;
+	}
 
 	bzero(&servaddr, sizeof(servaddr));
 	servaddr.sin_family = AF_INET;
 	servaddr.sin_port = htons(SERV_PORT);
 	rc = inet_pton(AF_INET, input_address, &servaddr.sin_addr);
-	if(rc != 1) err("Incorrect IPaddress", EXIT);
-
+	if(rc != 1) {
+		perror("inet_pton");
+	}
 
 	rc = connect(sockfd, (struct sockaddr*) &servaddr, sizeof(servaddr));
-	if(rc < 0) err("Could not connect to server", EXIT);
+	if(rc < 0) {
+		perror("connect");
+	}
 	
 	printf("[CONNECTION ESTABLISHED]\n");
 
@@ -50,8 +59,8 @@ int main(int argc, char* argv[]){
 
 		bzero(message, MAXLEN);
 		if(!fgets(message, MAXLEN, stdin)){ 
-			close(sockfd);
-			err("read error", EXIT); 
+			perror("fgets");
+			break;
 		};
 		message[strcspn(message, "\n")] = 0;	//remove (first) newline
 

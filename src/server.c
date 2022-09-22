@@ -18,14 +18,13 @@
 #include<netinet/in.h> //sockaddr_in, htons, INADDR_ANY
 
 #include"http.h"
-#include "../phttp/picohttpparser.h"
+#include "../http-parser/picohttpparser.h"
 #include "../libsha256/libsha.h"
-#include"universal.h"
 
 
 /*Thread work*/
-void* process_request(void* connfd);
-size_t readmsg(int connectionfd, char* buffer, size_t buflen);
+static void* process_request(void* connfd);
+static size_t readmsg(int connectionfd, char* buffer, size_t buflen);
 
 enum REQ_TYPES {
 	HTTP,
@@ -33,7 +32,8 @@ enum REQ_TYPES {
 	DLOAD
 };
 
-int main(int argc, char** argv){
+/*int main(int argc, char** argv){*/
+int server_on(){
 	int connectionfd;
 	pid_t childpid;
 	socklen_t clilen;
@@ -42,25 +42,29 @@ int main(int argc, char** argv){
 	/*bzero(&servaddr, sizeof(servaddr));*/
 	memset(&servaddr, 0, sizeof(servaddr));
 	servaddr.sin_family = AF_INET;
-	servaddr.sin_addr.s_addr = SERV_ADDR;
+	servaddr.sin_addr.s_addr = INADDR_ANY;
 	servaddr.sin_port = htons(7120);
 
 
 	/* Prepare the socket */
 	int listenfd;
 	listenfd = socket(AF_INET, SOCK_STREAM, 0);
-	if(listenfd < 0) err("Socket initialization", EXIT);
+	if(listenfd < 0){
+		perror("socket");
+		return 1;
+	}
 
 	int rc;
 	while ((rc = bind(listenfd, (struct sockaddr*) &servaddr, sizeof(servaddr)))){
-		printf("bind failed: errno %d\n", errno);
+		perror("bind");
 		sleep(1);
-		/*if(rc) err("Socket bind", EXIT);*/
 	}
 
 	rc = listen(listenfd, 15);
-	if(rc < 0) err("Socket listen", EXIT);
-
+	if(rc < 0) {
+		perror("listen");
+		return 3;
+	}
 
 	//try to stop server from waiting on port
 	int en;
@@ -87,7 +91,10 @@ int main(int argc, char** argv){
 	while(server_on){
 		int* cfd_ptr;
 		cfd_ptr = malloc(sizeof(cfd_ptr));
-		if(cfd_ptr == NULL) {err("malloc error in serving loop", EXIT);}
+		if(cfd_ptr == NULL) {
+			perror("cfd malloc");
+			return 4;
+		}
 
 		clilen = sizeof(cliaddr);
 		connectionfd = accept(listenfd, (struct sockaddr*) &cliaddr, &clilen);
@@ -95,7 +102,7 @@ int main(int argc, char** argv){
 			if(errno == EINTR)
 				continue;
 			else{
-				err("accept error", EXIT);
+				perror("accept");
 			}
 		}
 		*cfd_ptr = connectionfd;
@@ -110,7 +117,7 @@ int main(int argc, char** argv){
 }
 
 /*Thread Main*/
-void* process_request(void* connfd){
+static void* process_request(void* connfd){
 	/*thread init*/
 	int connectionfd = *((int*)connfd);
 	free(connfd);
@@ -121,7 +128,7 @@ void* process_request(void* connfd){
 	socklen_t clilen = sizeof(cliaddr);
 	getpeername(connectionfd, (struct sockaddr*) &cliaddr, &clilen);
 	char cliaddr_str[INET_ADDRSTRLEN];
-	if(inet_ntop(AF_INET,(void*) &cliaddr.sin_addr, cliaddr_str, MAXLEN)){
+	if(inet_ntop(AF_INET,(void*) &cliaddr.sin_addr, cliaddr_str, INET_ADDRSTRLEN)){
 		/*printf("connected: %s:%d\n", cliaddr_str, cliaddr.sin_port);*/
 	}
 
@@ -136,7 +143,7 @@ void* process_request(void* connfd){
     struct static_buffer resp_buffer = {resbuf, resbuflen};
 
 	while(1){
-		rcvlen = readmsg(connectionfd, rcvbuf, MAXLEN);
+		rcvlen = readmsg(connectionfd, rcvbuf, 8192);
 		if(rcvlen == 0){
 			printf("Client sent nothing, disconnecting\n");	
 			break;
@@ -148,12 +155,13 @@ void* process_request(void* connfd){
 		HTTPrq rq;
 		prc = http_parse(rcvbuf, rcvlen, &rq);
 		if(prc > 0){
+			//http success
 			rq.addr = cliaddr;
 			strncpy(rq.addr_str, cliaddr_str, INET_ADDRSTRLEN);
 			reslen = http_handle_rq(rq, resbuf, resbuflen);
 			if(reslen == 0) {
-				/*reslen = 0;*/
-				//Handle file open errors
+				
+				break;
 			}
 		}else{
 			memcpy(resbuf, rcvbuf, rcvlen);
@@ -170,7 +178,7 @@ void* process_request(void* connfd){
 	return 0;
 }
 
-size_t readmsg(int connectionfd, char* buffer, size_t buflen){
+static size_t readmsg(int connectionfd, char* buffer, size_t buflen){
 	return recv(connectionfd, buffer, buflen, 0);
 }
 
