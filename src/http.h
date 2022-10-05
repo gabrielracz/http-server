@@ -1,12 +1,14 @@
 #ifndef HTTP_H
 #define HTTP_H
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 #include <memory.h>
 #include <stdint.h>
 #include <netinet/in.h> //sockaddr_in, htons, INADDR_ANY
 #include <errno.h>
+#include <pthread.h>
 
 #include "../http-parser/picohttpparser.h"
 #include "perlin.h"
@@ -26,10 +28,10 @@ typedef struct
 
 } HTTPrq;
 
-const char *http_min_res = "\nHTTP/1.1 200 OK\nContent-Length: 13\nContent-Type: text/plain; charset=utf-8\n\nHello World!";
-const char *http_head_ok = "\nHTTP/1.1 200 OK\nContent-Length: 150\nContent-Type: text/plain; charset=utf-8\n\n";
+static const char *http_min_res = "\nHTTP/1.1 200 OK\nContent-Length: 13\nContent-Type: text/plain; charset=utf-8\n\nHello World!";
+static const char *http_head_ok = "\nHTTP/1.1 200 OK\nContent-Length: 150\nContent-Type: text/plain; charset=utf-8\n\n";
 
-char* http_status_code(int code);
+const char* http_status_code(int code);
 int http_build_header(char* header, size_t header_size, int status_code, size_t content_len, const char* content_type, char** additional, int num_adds);
 int http_parse_request(char *req, size_t size);
 size_t http_handle_rq(HTTPrq rq, char *resbuf, size_t rslen);
@@ -38,7 +40,7 @@ int http_sanitize_rq(HTTPrq *rq, char *filename, size_t len);
 
 int http_init()
 {
-    // perlinit(1337);
+	 perlinit(rand());
 }
 
 int http_parse(char *buffer, size_t buflen, HTTPrq *rq)
@@ -81,7 +83,7 @@ size_t read_file(const char *filename, char *buf, size_t buflen)
     fp = fopen(filename, "r");
     if (fp == NULL)
     {
-        printf("Couldn't open requested file '%s'. errno: %d\n", filename, errno);
+        perror("http_read_file, could not open requested file");
         return 0;
     }
     fseek(fp, 0, SEEK_END);
@@ -213,6 +215,52 @@ int http_build_header(char* header, size_t header_size, int status_code, size_t 
 
 const char* resources_dir = "resources";
 #define RESOURCES "resources"
+#define randf(lim) (((float)rand()/(float)(RAND_MAX)) * lim)
+int http_serv_perlin(char *buf, size_t buflen)
+{
+
+    char header[default_header_size];
+    size_t content_len = 400;
+    int status_code = 200;
+    const char *content_type = "text/html; charset=utf-8";
+
+	const char* html_head = 
+		"<!DOCTYPE html>"
+		"<html lang=\"en\">"
+		"<head>"
+        "<meta charset=\"UTF-8\">"
+		"<title>perlin</title>"
+        "<link rel=\"stylesheet\" href=\"/style.css\">"
+		"</head>"
+		"<body>\n"
+		"<p style=\"white-space: pre;\"> \n";
+	const int html_head_len = strlen(html_head);
+		
+	//FIXME UNSAFE
+
+    size_t len;
+	int w = 250;
+	int h = 100;
+	size_t n = PGRIDSIZE(w,h);
+	char* perlin_contents = (char*) malloc(n);
+	len = perlin_sample_grid(perlin_contents, n, w, h, 
+						randf(200.0f), randf(200.0f), randf(0.19f));
+
+	char* options[] = {"Connection: close"};
+	size_t headerlen = http_build_header(header, default_header_size, 200, len, content_type, options, 1);
+    size_t responselen = headerlen + html_head_len + len + 1;
+    if (responselen > buflen) {
+        printf("response len %zu exceeds buffer len %zu\n", responselen, buflen);
+		free(perlin_contents);
+        return 0;
+    }
+
+    memcpy(buf, header, headerlen);
+	strcpy(buf + headerlen, html_head);
+    memcpy(buf + headerlen + html_head_len, perlin_contents, len + 1);
+	free(perlin_contents);
+    return responselen;
+}
 
 int http_serv_file(const char *path, size_t pathlen, char *buf, size_t buflen)
 {
@@ -241,7 +289,8 @@ int http_serv_file(const char *path, size_t pathlen, char *buf, size_t buflen)
     }
 
 	char* options[] = {"Connection: close"};
-	size_t headerlen = http_build_header(header, default_header_size, 200, filelen, content_type, options, 1);
+	//char* options[] = {"Connection: close", "Transfer-Encoding: chunked"};
+	size_t headerlen = http_build_header(header, default_header_size, 200, filelen, content_type, options, sizeof(options)/sizeof(options[0]));
     size_t responselen = headerlen + filelen + 1;
     if (responselen > buflen) {
         printf("response len exceeds buffer len\n");
@@ -288,9 +337,7 @@ size_t http_handle_rq(HTTPrq rq, char *resbuf, size_t reslen) {
             len = http_serv_file(rqfile, strlen(rqfile), resbuf, reslen);
             break;
         case PERLIN:
-            // int perlin_sample_grid(char* buffer, size_t buflen, int width, int height, float startx, float starty, float zoom );
-
-            len = perlin_sample_grid(resbuf, reslen, 15, 15, 13.0, 17.0, 0.25);
+			len = http_serv_perlin(resbuf, reslen);
             break;
         break;
     default:
@@ -301,7 +348,7 @@ size_t http_handle_rq(HTTPrq rq, char *resbuf, size_t reslen) {
     return len;
 }
 
-char *http_status_code(int code)
+const char* http_status_code(int code)
 {
     switch (code)
     {

@@ -32,15 +32,22 @@ u + o --> Translate Z position
 //  -Reduce copy pasted code in loop function
 //  -Combine all transformationManager matricies into one matrix that performs them all
 //  -Create HUD elements on webpage indicating position, model name, color, ...
-//  -Create file parser that interprets object files from real modelling programs
 
 var g_VariableStrokeIntensity = true;        //Wireframe mode
 var g_WireFrame = false;
 var g_Angle;
+
+var DISPLAYMODE = 0;
+var RENDERTYPE = [
+    "Normal",
+    "Wireframe",
+    "Mesh"
+]
+
 const COLORS = [
     [237, 40, 76],
     [255, 136, 0],
-    [40, 237, 149],
+    [135, 255, 175],
     [49, 192, 224],
     [85, 0, 255],
     [140, 255, 0],
@@ -49,7 +56,7 @@ const COLORS = [
     [60, 56, 54]
 ];
 
-const PRED      = -1; 
+const PRED      = 0; 
 const AMBER     = 1;
 const GREEN     = 2;
 const LBLUE     = 3;
@@ -227,8 +234,8 @@ function DrawMesh(mesh, triangles, camera, ctx, fill_colour = [200, 200, 200], s
         proj.push(PerspectiveProjection(mesh[i], camera[2]));
     }
 
-    let sorted_triangles = triangles;
-    sorted_triangles.sort(function(a, b){
+    // let triangles = triangles;
+    triangles.sort(function(a, b){
             let zavga = (mesh[a[0]][2] + mesh[a[1]][2] + mesh[a[2]][2])/3;
             let zavgb = (mesh[b[0]][2] + mesh[b[1]][2] + mesh[b[2]][2])/3;
             return zavga - zavgb;
@@ -236,9 +243,10 @@ function DrawMesh(mesh, triangles, camera, ctx, fill_colour = [200, 200, 200], s
     );
 
     ctx.beginPath();
+    let drawcount = 0;
     //ctx.strokeStyle = stroke_colour;
-    for(let i = 0; i < sorted_triangles.length; i++){
-        let t = sorted_triangles[i];                        //current triangle
+    for(let i = 0; i < triangles.length; i++){
+        let t = triangles[i];                        //current triangle
         let normal = CalculateNormal(t, mesh);              //Normal that points outwards
 
         //Dot product represents the difference between the two angles formed by the triangle and the camera (-1 to 1)
@@ -249,9 +257,10 @@ function DrawMesh(mesh, triangles, camera, ctx, fill_colour = [200, 200, 200], s
         
         let camera_line = Vector_Sub(mesh[t[0]], camera);
         let dotProduct = DotProduct(normal, camera_line);
-
+        
         //When the dot product is positive, the normal is pointed towards the camera's line of sight and the triangle should be drawn
-        if(dotProduct > 0){
+        if(dotProduct > 0 || DISPLAYMODE == 2){
+            drawcount++;
             let path =  new Path2D();
 
             //Line to each triangle vertex
@@ -260,23 +269,25 @@ function DrawMesh(mesh, triangles, camera, ctx, fill_colour = [200, 200, 200], s
             path.lineTo(proj[t[2]][0] + screen_width/2, proj[t[2]][1] + screen_height/2);
             path.lineTo(proj[t[0]][0] + screen_width/2, proj[t[0]][1] + screen_height/2);
 
-            if(g_WireFrame){
-                ctx.fillStyle = "rgb(0, 0, 0)";
-                ctx.fill(path);
-                ctx.strokeStyle = "rgb(" + stroke_colour[0] + ", " + stroke_colour[1] + ", " + stroke_colour[2] + ", 255)";
-                ctx.stroke(path);
-                continue;
+            switch(DISPLAYMODE){
+                case 0:
+                    ctx.fillStyle = "rgb(" + light_intensity*fill_colour[0] + ", " + light_intensity*fill_colour[1] + ", " + light_intensity*fill_colour[2] + ", 255)";
+                    ctx.strokeStyle = "rgb(" + light_intensity*stroke_colour[0] + ", " + light_intensity*stroke_colour[1] + ", " + light_intensity*stroke_colour[2] + ", 255)";
+                    ctx.fill(path);
+                    ctx.stroke(path);
+                    break;
+                case 1:
+                    ctx.fillStyle = "rgb(0, 0, 0)";
+                    ctx.strokeStyle = "rgb(" + stroke_colour[0] + ", " + stroke_colour[1] + ", " + stroke_colour[2] + ", 255)";
+                    ctx.fill(path);
+                    ctx.stroke(path);
+                    break;
+                case 2:
+                    // ctx.strokeStyle = "rgb(" + light_intensity*stroke_colour[0] + ", " + light_intensity*stroke_colour[1] + ", " + light_intensity*stroke_colour[2] + ", 255)";
+                    ctx.strokeStyle = "rgb(" + stroke_colour[0] + ", " + stroke_colour[1] + ", " + stroke_colour[2] + ", 255)";
+                    ctx.stroke(path);
+                    break;           
             }
-
-            ctx.fillStyle = "rgb(" + light_intensity*fill_colour[0] + ", " + light_intensity*fill_colour[1] + ", " + light_intensity*fill_colour[2] + ", 255)";
-            if(g_VariableStrokeIntensity){
-                ctx.strokeStyle = "rgb(" + light_intensity*stroke_colour[0] + ", " + light_intensity*stroke_colour[1] + ", " + light_intensity*stroke_colour[2] + ", 255)";
-            }else{
-                ctx.strokeStyle = "rgb(" + stroke_colour[0] + ", " + stroke_colour[1] + ", " + stroke_colour[2] + ", 255)";
-            }
-            ctx.fill(path);
-            ctx.stroke(path);
-
         }
     }
 }
@@ -752,7 +763,8 @@ function addKeydownHandler(canvas, modelManager, transformationManager, colorMan
                 modelManager.value = 6;
                 break;
             case ']':
-                g_WireFrame = (g_WireFrame + 1) % 2;
+                DISPLAYMODE = (DISPLAYMODE + 1) % 3
+                document.getElementById("display-mode").innerHTML = RENDERTYPE[DISPLAYMODE];
                 break;
             case '[':
                 colorManager.index = (colorManager.index + 1) % COLORS.length;

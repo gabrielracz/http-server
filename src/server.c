@@ -18,7 +18,6 @@
 #include<netinet/in.h> //sockaddr_in, htons, INADDR_ANY
 
 #include"http.h"
-#include "../http-parser/picohttpparser.h"
 #include "../libsha256/libsha.h"
 
 
@@ -32,7 +31,7 @@ enum REQ_TYPES {
 	DLOAD
 };
 
-/*int main(int argc, char** argv){*/
+
 int server_on(){
 	int connectionfd;
 	pid_t childpid;
@@ -85,6 +84,7 @@ int server_on(){
 	}
 	int thread_index = 0;
 
+	http_init();
 
 	int server_on = 1;
 	printf("Server on...\n");
@@ -150,11 +150,10 @@ static void* process_request(void* connfd){
 		}
 		
 		/*attempt http parse*/
-		int prc;
 		int htrc;
 		HTTPrq rq;
-		prc = http_parse(rcvbuf, rcvlen, &rq);
-		if(prc > 0){
+		htrc = http_parse(rcvbuf, rcvlen, &rq);
+		if(htrc > 0){
 			//http success
 			rq.addr = cliaddr;
 			strncpy(rq.addr_str, cliaddr_str, INET_ADDRSTRLEN);

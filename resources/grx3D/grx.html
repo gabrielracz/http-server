@@ -7,7 +7,7 @@
     </head>
     <body>
         <div class="column-left">
-            <h1 class=header><u>GRX3D Rendering Engine</u></h1>
+            <h1 class=header>GRX3D Rendering Engine</h1>
             <label><b>CONTROLS</b></label><hr class=".menu-line">
             <label>Rotations</label><br>
             <label class="control-label">w + s --> X axis</label><br>
@@ -21,23 +21,24 @@
 
             <label>Rendering</label><br>
             <label class="control-label"> [ --> Cycle colors</label><br>
-            <label class="control-label"> ] --> Toggle wireframe</label><br><br>
+            <label class="control-label"> ] --> Cycle render modes</label><br><br>
 
-            <label>Models</label><br>
+            <label>Primitives</label><br>
             <label class="control-label"> 1 --> Tetrahedron</label><br>
             <label class="control-label"> 2 --> Pyramid</label><br>
             <label class="control-label"> 3 --> Octahedron</label><br>
             <label class="control-label"> 4 --> Cube</label><br>
             <label class="control-label"> 5 --> Icosahedron</label><br>
             <br>
-            <label> UPLOAD </label><hr class="menu-line">
+            <label> UPLOAD OBJ FILE</label><hr class="menu-line">
             <input id="fileupload" type="file" accept=".obj" style="color: #E2D6C5;"></input>
         </div>
         <div class="column-right">
             <br><br>
-            <label>Verticies: </label><label id="vertex-count"></label><br>
-            <label>Triangles: </label><label id="triangle-count"></label>
+            <label class="info">Verticies: </label><label id="vertex-count"></label><br>
+            <label class="info">Triangles: </label><label id="triangle-count"></label>
             <canvas id="canvas" tabindex="1"></canvas>
+            <label class="info">Render Mode: </label><label id="display-mode">Normal</label>
         </div>
         <script onload src="graphics.js"></script>
     </body>

@@ -57,3 +57,7 @@ body {
 .menu-line {
     border-top: 1px solid lightgray;
 }
+
+.info {
+    color: #87FFAF;
+}

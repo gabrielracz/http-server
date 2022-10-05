@@ -60,14 +60,13 @@ v2 rg2(int ix, int iy) {
     return v;
 }
 
-#define PGRIDSIZE(x, y) ((x+1)*y + 1) //\n and nullterm
 const char* charshader = "@#O~. ";
 
 int perlin_sample_grid(char* buffer, size_t buflen, int width, int height, float startx, float starty, float zoom ){ 
 
 	int diff = buflen - PGRIDSIZE(width, height); 
 	if(diff < 0){
-        printf("Perlin: buffer too small. Try %d\n", PGRIDSIZE(width,height));
+        printf("Perlin: buffer too small. Try using PGRIDSIZE %d\n", PGRIDSIZE(width,height));
         return 0;
 	}
 
