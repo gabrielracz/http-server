@@ -12,6 +12,7 @@
 
 #include "../http-parser/picohttpparser.h"
 #include "perlin.h"
+#include "logger.h"
 
 typedef struct
 {
@@ -52,7 +53,7 @@ int http_parse(char *buffer, size_t buflen, HTTPrq *rq)
                             &rq->path, &rq->pathlen, &rq->minor_version, rq->headers, &rq->num_headers, 0);
 
     if (prc < 0){
-        printf("HTTP parse error: %d\n", prc);
+        log_error("HTTP parse error: %d", prc);
         pthread_exit(0);
     }
 
@@ -83,7 +84,7 @@ size_t read_file(const char *filename, char *buf, size_t buflen)
     fp = fopen(filename, "r");
     if (fp == NULL)
     {
-        perror("http_read_file, could not open requested file");
+        log_perror("http_read_file, could not open requested file");
         return 0;
     }
     fseek(fp, 0, SEEK_END);
@@ -92,7 +93,7 @@ size_t read_file(const char *filename, char *buf, size_t buflen)
 
     if (filelen > buflen)
     {
-        printf("http_read_file error. filelen:%zu exceed buflen:%zu\n", filelen, buflen);
+        log_error("http_read_file error. filelen:%zu exceed buflen:%zu", filelen, buflen);
         fclose(fp);
         return 0;
     }
@@ -198,7 +199,7 @@ int http_build_header(char* header, size_t header_size, int status_code, size_t 
 		int opt_size = strlen(options[i]);
 		n += opt_size + 2;
 		if(n >= header_size) {
-			printf("Header options would overflow buffer, discarding past %s\n", options[i]);
+			log_error("Header options would overflow buffer, discarding past %s", options[i]);
 			break;
 		}
 		memcpy(c, options[i], opt_size);
@@ -251,7 +252,7 @@ int http_serv_perlin(char *buf, size_t buflen)
 	size_t headerlen = http_build_header(header, default_header_size, 200, len, content_type, options, 1);
     size_t responselen = headerlen + html_head_len + len + 1;
     if (responselen > buflen) {
-        printf("response len %zu exceeds buffer len %zu\n", responselen, buflen);
+        log_error("response len %zu exceeds buffer len %zu", responselen, buflen);
 		free(perlin_contents);
         return 0;
     }
@@ -275,26 +276,28 @@ int http_serv_file(const char *path, size_t pathlen, char *buf, size_t buflen)
     char* file_contents = (char*) calloc(buflen, 1);
     if ((filelen = read_file(path, file_contents, buflen - 200)) == 0) { // Couldn't open requested file
 		filelen = read_file( RESOURCES"/404.html", file_contents, buflen - 200);
+		log_info("404 for %s", path);
 		content_type = "text/html";
+		status_code = 404;
         //return http_not_found(buf);
     }else {
         int mimdex = http_get_content_type(path, pathlen);
         if (mimdex < 0){
-            printf("unsupported content-type request\n");
+			log_error("unsupported content-type request for %s", path);
             content_type = "text/plain";
         }
         else{
             content_type = filetypes[mimdex].mime_type;
-            printf("%s %d\n", content_type, mimdex);
+            //printf("%s %d\n", content_type, mimdex);
         }
     }
 
 	char* options[] = {"Connection: close"};
 	//char* options[] = {"Connection: close", "Transfer-Encoding: chunked"};
-	size_t headerlen = http_build_header(header, default_header_size, 200, filelen, content_type, options, sizeof(options)/sizeof(options[0]));
+	size_t headerlen = http_build_header(header, default_header_size, status_code, filelen, content_type, options, sizeof(options)/sizeof(options[0]));
     size_t responselen = headerlen + filelen + 1;
     if (responselen > buflen) {
-        printf("response len exceeds buffer len\n");
+        log_error("response len exceeds buffer len");
         free(file_contents);
         return 0;
     }
@@ -311,10 +314,9 @@ enum ResponseTypes {
 };
 
 size_t http_handle_rq(HTTPrq rq, char *resbuf, size_t reslen) {
-    printf("HTTP request received:   %s:%d\n", rq.addr_str, rq.addr.sin_port);
-    printf("method: %.*s\n", (int)rq.methodlen, rq.method);
-    printf("path: %.*s\n", (int)rq.pathlen, rq.path);
-    printf("\n");
+    log_info("HTTP request received:  %s:%d", rq.addr_str, rq.addr.sin_port);
+    log_info("Method:                 %.*s", (int)rq.methodlen, rq.method);
+    log_info("Path:                   %.*s", (int)rq.pathlen, rq.path);
 
     // TODO: sanitize path
     /*http_sanitize_rq()*/
@@ -345,7 +347,7 @@ size_t http_handle_rq(HTTPrq rq, char *resbuf, size_t reslen) {
         break;
     }
 
-	printf("[RESPONSE]\n%s\n", resbuf);
+	//printf("[RESPONSE]\n%s\n", resbuf);
     return len;
 }
 

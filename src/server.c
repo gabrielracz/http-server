@@ -51,7 +51,7 @@ int server_on(){
 	int listenfd;
 	listenfd = socket(AF_INET, SOCK_STREAM, 0);
 	if(listenfd < 0){
-		perror("socket");
+		log_perror("socket");
 		return 1;
 	}
 
@@ -63,7 +63,7 @@ int server_on(){
 
 	rc = listen(listenfd, 15);
 	if(rc < 0) {
-		perror("listen");
+		log_perror("listen");
 		return 3;
 	}
 
@@ -89,13 +89,13 @@ int server_on(){
 	http_init();
 
 	int server_on = 1;
-	/*printf("Server on...\n");*/
 	log_info("Server on...");
+	log_break();
 	while(server_on){
 		int* cfd_ptr;
 		cfd_ptr = malloc(sizeof(cfd_ptr));
 		if(cfd_ptr == NULL) {
-			perror("cfd malloc");
+			log_perror("cfd malloc");
 			return 4;
 		}
 
@@ -105,7 +105,7 @@ int server_on(){
 			if(errno == EINTR)
 				continue;
 			else{
-				perror("accept");
+				log_perror("accept");
 			}
 		}
 		*cfd_ptr = connectionfd;
@@ -148,7 +148,8 @@ static void* process_request(void* connfd){
 	while(1){
 		rcvlen = readmsg(connectionfd, rcvbuf, 8192);
 		if(rcvlen == 0){
-			printf("Client sent nothing, disconnecting\n");	
+			log_info("Client disconnected     %s", cliaddr_str);	
+			log_break();
 			break;
 		}
 		
@@ -172,7 +173,7 @@ static void* process_request(void* connfd){
 
 		size_t bsent;
 		bsent = send(connectionfd, resbuf, reslen, 0);
-		printf("[LOG] sent %zu\n", bsent);
+		log_info("Sent %zu               %s", bsent, cliaddr_str);
 	}
 	free(resbuf);
 	close(connectionfd);

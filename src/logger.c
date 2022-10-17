@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
+#include <string.h>
 #include <time.h>
 #include <errno.h>
 #include "logger.h"
@@ -18,8 +19,8 @@ void timestamp() {
 
 void log_perror(const char* msg) {
 	timestamp();
-	printf("ERR: ");
-	perror(msg);
+	printf("ERR: %s  %s", msg, strerror(errno));
+	putchar('\n');
 }
 
 void log_error(const char* fmt, ...) {
@@ -40,4 +41,8 @@ void log_info(const char* fmt, ...) {
     vprintf(fmt, args);
 	putchar('\n');
     va_end(args);
+}
+
+void log_break(){
+	putchar('\n');
 }
