@@ -13,6 +13,7 @@ out = open(os.path.join(__location__, "links.html"), "w")
 out.write(header.read())
 
 line = links.readline()
+# state
 state = "TITLE"
 while(line):
     print(line, end="")

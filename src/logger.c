@@ -7,32 +7,37 @@
 static time_t unixtime;
 static struct tm * timeinfo;
 
-static const char* timestamp() {
+
+void timestamp() {
 	time(&unixtime);
 	timeinfo = localtime(&unixtime);
-	//potentially need to clear this
-	static char buf[32];
-	strftime(buf, 32, "%T %D ", timeinfo);
-	return buf;
+	char timestr[32];
+	strftime(timestr, 32, "[%T %D]", timeinfo);
+	printf("%s ", timestr);
 }
 
 void log_perror(const char* msg) {
-	puts(timestamp());
+	timestamp();
+	printf("ERR: ");
 	perror(msg);
 }
 
 void log_error(const char* fmt, ...) {
     va_list args;
     va_start(args, fmt);
-	puts(timestamp());
+	timestamp();
+	printf("ERR: ");
     vprintf(fmt, args);
+	putchar('\n');
     va_end(args);
 }
 
 void log_info(const char* fmt, ...) {
     va_list args;
     va_start(args, fmt);
-	puts(timestamp());
+	timestamp();
+	printf("LOG: ");
     vprintf(fmt, args);
+	putchar('\n');
     va_end(args);
 }

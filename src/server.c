@@ -17,8 +17,10 @@
 #include<arpa/inet.h>  //inet_ptons
 #include<netinet/in.h> //sockaddr_in, htons, INADDR_ANY
 
-#include"http.h"
+#include "http.h"
+#include "logger.h"
 #include "../libsha256/libsha.h"
+
 
 
 /*Thread work*/
@@ -55,7 +57,7 @@ int server_on(){
 
 	int rc;
 	while ((rc = bind(listenfd, (struct sockaddr*) &servaddr, sizeof(servaddr)))){
-		perror("bind");
+		log_perror("bind");
 		sleep(1);
 	}
 
@@ -87,7 +89,8 @@ int server_on(){
 	http_init();
 
 	int server_on = 1;
-	printf("Server on...\n");
+	/*printf("Server on...\n");*/
+	log_info("Server on...");
 	while(server_on){
 		int* cfd_ptr;
 		cfd_ptr = malloc(sizeof(cfd_ptr));

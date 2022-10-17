@@ -122,6 +122,7 @@ static const mime_type filetypes[] = {
     {"ico", "image/x-icon"},
     {"jpg", "image/jpeg"},
     {"mp3", "audio/mpeg"},
+    {"pdf", "application/pdf"},
     {"png", "image/png"},
     {"tar", "application/x-tar"},
     {"txt", "text/plain"}};
