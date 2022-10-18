@@ -5,27 +5,57 @@ import os
 __location__ = os.path.realpath(
     os.path.join(os.getcwd(), os.path.dirname(__file__)))
 
+links = open(os.path.join(__location__, "links.txt"), "r")
+
 header = open(os.path.join(__location__, "header.html"), "r")
 footer = open(os.path.join(__location__, "footer.html"), "r")
-links = open(os.path.join(__location__, "links.txt"), "r")
 out = open(os.path.join(__location__, "links.html"), "w")
 
 out.write(header.read())
 
 line = links.readline()
+
 # state
-state = "TITLE"
+NONE = 0
+TITLE = 1
+NAME = 2
+URL = 3
+
+state_graph = {
+    '#': TITLE,
+    '[': NAME,
+    ']': NONE,
+    '(': URL,
+    ')': NONE
+}
+
+closing_pairs = {
+    '{':'}',
+    '[':']',
+    '(':')'
+}
+
+state = NONE
+url_name = ""
 while(line):
-    print(line, end="")
-    if state == "TITLE":
-        out.write("<p>" + line + "</p>\n")
-        state = "LINKS"
-    elif state == "LINKS":
-        if line == "\n":
-            state = "TITLE"
-            out.write("<br>\n")
-        else:
-            out.write("<a class=\"links\" href=\"" + line + "\">" + line + "</a><br>\n")
+    if line[0] == '#':
+        out.write("</div><br><br>")
+
+    for c in closing_pairs:
+        i = line.find(c)
+        if i > -1:
+            j = line.find(closing_pairs[c])
+            if(c == -1): 
+                quit()
+
+            content = line[i+1:j]
+            if c == '{':
+                out.write(  "<div class=\"link-block\">"
+                            "<p><b>" + content + "</b></p>\n")
+            elif c == '[':
+                url_name = content
+            elif c == '(':
+                out.write("<a class=\"links\" href=\"" + content + "\">" + url_name + "</a><br>\n")
 
     line = links.readline()
 

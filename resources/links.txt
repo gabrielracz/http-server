@@ -1,74 +1,125 @@
-AES resources
-https://nvlpubs.nist.gov/nistpubs/fips/nist.fips.197.pdf
-https://www.kavaliro.com/wp-content/uploads/2014/03/AES.pdf
-https://en.wikipedia.org/wiki/Advanced_Encryption_Standard
-https://en.wikipedia.org/wiki/AES_key_schedule
-https://en.wikipedia.org/wiki/Rijndael_MixColumns
-https://en.wikipedia.org/wiki/Finite_field_arithmetic#Multiplication
-https://en.wikipedia.org/wiki/Multiplication_algorithm#Russian_peasant_multiplication
-https://www.highgo.ca/2019/08/08/the-difference-in-five-modes-in-the-aes-encryption-algorithm/
+{AES}
+[The Standard]
+(https://nvlpubs.nist.gov/nistpubs/fips/nist.fips.197.pdf)
 
-Cool fonts
-https://www.nerdfonts.com/
+[Example solution]
+(https://www.kavaliro.com/wp-content/uploads/2014/03/AES.pdf)
 
-Linux Device Drivers, Third Edition
-https://lwn.net/Kernel/LDD3/
+[Algorithm description Wikipedia]
+(https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)
 
-OS dev books:
-https://wiki.osdev.org/Books
+[Key Schedule]
+(https://en.wikipedia.org/wiki/AES_key_schedule)
 
-Game Programming Patterns
-http://gameprogrammingpatterns.com/contents.html
+[MixColumns]
+(https://en.wikipedia.org/wiki/Rijndael_MixColumns)
 
-OpenGl bible
-https://learnopengl.com/
+[Finite field arithmetic]
+(https://en.wikipedia.org/wiki/Finite_field_arithmetic#Multiplication)
 
-Labs for 'Computer Systems: A Programmer's Perspective'
-http://csapp.cs.cmu.edu/3e/labs.html
+[Russian peasant multiplication]
+(https://en.wikipedia.org/wiki/Multiplication_algorithm#Russian_peasant_multiplication)
 
-CS online curriculum:
-http://blog.agupieware.com/2014/05/online-learning-bachelors-level.html
+[AES modes]
+(https://www.highgo.ca/2019/08/08/the-difference-in-five-modes-in-the-aes-encryption-algorithm/)
+#
 
-Computer Architecture Introduction
-ComputerOrganizationAndDesign.pdf
+{Books}
 
-Raspberry Pi Camera
-https://forums.raspberrypi.com/viewtopic.php?t=284909#:~:text=the%20quality%20decreased.-,It's%20a%20bit%20strange%20that%20the%20Raspberry%20pi%20has%20claimed,only%20encode%201080%2030p%208bit.
-https://forums.raspberrypi.com/viewtopic.php?f=43&t=284937
+[Linux Device Drivers, Third Edition]
+(https://lwn.net/Kernel/LDD3/)
 
-Image Dithering
-https://ditheringapi.herokuapp.com/
+[OSDev book list]
+(https://wiki.osdev.org/Books)
 
-World heightmap
-https://tangrams.github.io/heightmapper/#4.60054/25.245/-69.056
+[Game Programming Patterns]
+(http://gameprogrammingpatterns.com/contents.html)
 
-Canada weather data
-https://dd.weather.gc.ca/
-https://climate.weather.gc.ca/radar/index_e.html
+[Physically Based Rendering]
+(https://pbr-book.org/)
 
-Neural Implicit Surfaces:
-https://dl.acm.org/doi/pdf/10.1145/3528223.3530155
+[Labs for 'Computer Systems: A Programmer's Perspective']
+(http://csapp.cs.cmu.edu/3e/labs.html)
 
-Streaming Computation of Delaunay Triangulations
-http://www.cs.unc.edu/~isenburg/sd/
+[Computer Organization and Design]
+(ComputerOrganizationAndDesign.pdf)
+#
 
-Wholesome cloud storage
-https://www.rsync.net/cloudstorage.html
+{Apps and Resources}
+[Image Dithering]
+(https://ditheringapi.herokuapp.com/)
 
-C opengl engine with ECS
-https://github.com/jdah/minecraft-weekend/tree/master/src
+[World heightmap]
+(https://tangrams.github.io/heightmapper/)
 
-Game Development with SDL2:
-https://www.youtube.com/watch?v=MeMPCSqQ-34
+[Cool fonts]
+(https://www.nerdfonts.com/)
 
-C Data Structure library
-https://github.com/manvscode/libcollections
+[Wholesome cloud storage]
+(https://www.rsync.net/cloudstorage.html)
 
-Pure class
-http://www.openssh.com/
+[Canada weather radar]
+(https://climate.weather.gc.ca/radar/index_e.html)
 
-C dev blog: 
-https://nullprogram.com/
+[Canada weather data]
+(https://dd.weather.gc.ca/)
 
-Lattice Bolzmann Explanation
-https://nickmcd.me/2022/10/01/procedural-wind-and-clouds-using-gpu-accelerated-lattice-boltzmann-method/
+[C Data Structure library]
+(https://github.com/manvscode/libcollections)
+
+[C OpenGl ECS engine]
+(https://github.com/jdah/minecraft-weekend/tree/master/src)
+#
+
+{Videos}
+
+[Ken Thompson interviewed by Brian Kernighan]
+(https://www.youtube.com/watch?v=EY6q5dv_B-o&list=LL&index=46)
+
+[FABRIK - inverse kinematics]
+(https://www.youtube.com/watch?v=UNoX65PRehA&list=LL&index=68)
+#
+
+{Courses}
+
+[CS online curriculum]
+(http://blog.agupieware.com/2014/05/online-learning-bachelors-level.html)
+
+[Constraint Programming]
+(https://people.eng.unimelb.edu.au/pstuckey/book/course.html)
+
+[Constraint Programming online guide]
+(http://ktiml.mff.cuni.cz/~bartak/constraints/)
+#
+
+{Forums and Interesting Sites}
+
+[C dev blog]
+(https://nullprogram.com/)
+
+[OpenSSH]
+(http://www.openssh.com/)
+
+[Raspberry Pi camera discussion 1]
+(https://forums.raspberrypi.com/viewtopic.php?t=284909#:~:text=the%20quality%20decreased.-,It's%20a%20bit%20strange%20that%20the%20Raspberry%20pi%20has%20claimed,only%20encode%201080%2030p%208bit.)
+
+[Raspberry Pi camera discussion 2]
+(https://forums.raspberrypi.com/viewtopic.php?f=43&t=284937)
+#
+
+{Papers}
+
+[Neural Implicit Surfaces]
+(https://dl.acm.org/doi/pdf/10.1145/3528223.3530155)
+
+[Streaming Computation of Delaunay Triangulations]
+(http://www.cs.unc.edu/~isenburg/sd/)
+
+[Lattice Bolzmann Explanation]
+(https://nickmcd.me/2022/10/01/procedural-wind-and-clouds-using-gpu-accelerated-lattice-boltzmann-method/)
+#
+
+
+
+
+

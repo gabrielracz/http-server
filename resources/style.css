@@ -1,7 +1,12 @@
 :root{
 	--white: #E2D6C5;
+	--dark_amber: #FFB000;
+	--light_amber: #FFCC00;
+	--text: var(--white);
 	--bg: black;
 	--blue: #87AFAF;
+	--green: #AFAF00;
+	--red: #FF0000;
 	--gasoline: #87FFAF;
 	--fontsize: 20px;
 
@@ -10,7 +15,7 @@
 html {
     font-family: monospace;
 	font-size: var(--fontsize);
-    color: var(--white);
+    color: var(--text);
     background-color: var(--bg);
 }
 
@@ -37,10 +42,13 @@ table {
 }
 
 a:link {
-    color: var(--blue);
+	color: var(--blue);
 }
 a:visited {
-    color: var(--blue); 
+	color: var(--blue); 
+}
+a:active {
+	color: var(--red)
 }
 
 #header {
@@ -49,7 +57,7 @@ a:visited {
 
 #logo {
 	font-weight: bold;
-	color: var(--white)
+	color: var(--text)
 }
 
 #content{
@@ -63,6 +71,11 @@ a:visited {
 	margin-right: 10px;
 	font-size: var(--fontsize);
 	text-decoration: underline;
+}
+.link-block {
+	border: 1px solid var(--text);
+	padding: 15px;
+	display: inline-block;
 }
 
 .table-header{
