@@ -1,9 +1,7 @@
 #ifndef LOG_H
 #define LOG_H
 
-//typedef struct {
-	//char timestamp_buf[32];
-//} Logger;
+#define LOGGING 1
 
 void log_init();
 void log_perror(const char* msg);

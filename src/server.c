@@ -21,7 +21,7 @@
 #include "logger.h"
 #include "../libsha256/libsha.h"
 
-
+#define LOGGING 1
 
 /*Thread work*/
 static void* process_request(void* connfd);
@@ -77,14 +77,15 @@ int server_on(){
 	lin.l_linger = 0;
 	setsockopt(listenfd, SOL_SOCKET, SO_LINGER, (const char*)&lin, sizeof(int));
 
-	int workers = 10;
+	int num_workers = 10;
 	int dispatched = 0;
-	int requests_served = 0;
-	pthread_t* thread_pool[10];
-	for(int i = 0; i < 10; i++){
+	int request_count = 0;
+	pthread_t* thread_pool[num_workers];
+	for(int i = 0; i < num_workers; i++){
 		thread_pool[i] = malloc(sizeof(pthread_t));
 	}
 	int thread_index = 0;
+
 
 	http_init();
 
@@ -111,8 +112,8 @@ int server_on(){
 		*cfd_ptr = connectionfd;
 
 		/*Dispatch the thread*/
-		int i = thread_index % workers;
-		thread_index++;
+		int i = thread_index++ % num_workers;
+		request_count++;
 		pthread_t* next_thread = thread_pool[i];
 		pthread_create(next_thread,  NULL, &process_request, (void*) cfd_ptr);
 	}
@@ -140,7 +141,7 @@ static void* process_request(void* connfd){
     struct static_buffer rcv_buffer;
 
 	size_t reslen;
-	size_t resbuflen = 210 * 1024 * 1024;
+	size_t resbuflen = 300 * 1024 * 1024;
 	//char resbuf[resbuflen];
 	char* resbuf = malloc(resbuflen);
     struct static_buffer resp_buffer = {resbuf, resbuflen};

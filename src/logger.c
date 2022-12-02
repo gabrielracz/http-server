@@ -2,14 +2,16 @@
 #include <stdarg.h>
 #include <string.h>
 #include <time.h>
+#include <sys/time.h>
 #include <errno.h>
 #include "logger.h"
 
-static time_t unixtime;
-static struct tm * timeinfo;
+#if LOGGING == 1
 
+void unix_timestamp() {
+	time_t unixtime;
+	struct tm* timeinfo;
 
-void timestamp() {
 	time(&unixtime);
 	timeinfo = localtime(&unixtime);
 	char timestr[32];
@@ -17,10 +19,24 @@ void timestamp() {
 	printf("%s ", timestr);
 }
 
+void timestamp() {
+	struct timeval tv;
+	struct tm* timeinfo;
+	gettimeofday(&tv, NULL);
+	if((timeinfo = localtime(&tv.tv_sec))){
+		char fmt[64];
+		char timestr[64];
+		strftime(fmt, 64, "[%D %H:%M:%S.%%03lu]", timeinfo);
+		snprintf(timestr, sizeof(timestr), fmt, tv.tv_usec/1000);
+		printf("%s ", timestr);
+	}
+}
+
 void log_perror(const char* msg) {
 	timestamp();
 	printf("ERR: %s  %s", msg, strerror(errno));
 	putchar('\n');
+	fflush(stdout);
 }
 
 void log_error(const char* fmt, ...) {
@@ -31,6 +47,7 @@ void log_error(const char* fmt, ...) {
     vprintf(fmt, args);
 	putchar('\n');
     va_end(args);
+	fflush(stdout);
 }
 
 void log_info(const char* fmt, ...) {
@@ -41,8 +58,20 @@ void log_info(const char* fmt, ...) {
     vprintf(fmt, args);
 	putchar('\n');
     va_end(args);
+	fflush(stdout);
 }
 
 void log_break(){
 	putchar('\n');
+	fflush(stdout);
 }
+
+#else
+
+void log_init();
+void log_perror(const char* msg){}
+void log_error(const char* fmt, ...){}
+void log_info(const char* fmt, ...){}
+void log_break(){}
+
+#endif

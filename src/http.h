@@ -54,25 +54,7 @@ int http_parse(char *buffer, size_t buflen, HTTPrq *rq)
 
     if (prc < 0){
         log_error("HTTP parse error: %d", prc);
-        pthread_exit(0);
     }
-
-    // headers
-    // size_t h0namelen = rq->headers[0].name_len;
-    // char* h0name = malloc(h0namelen + 1);
-    // strncpy(h0name, rq->headers[0].name, h0namelen);
-    // h0name[h0namelen] = '\0';
-
-    // size_t h0valuelen = rq->headers[0].value_len;
-    // char* h0value = malloc(h0valuelen + 1);
-    // strncpy(h0value, rq->headers[0].value, h0valuelen);
-    // h0value[h0valuelen] = '\0';
-
-    // printf("%s : %s\n", h0name, h0value);
-
-    ////for(int i = 0; i < rq->num_headers; i++){
-    ////printf("%*s - %*s\n", (int)rq->headers[i].name_len, rq->headers[i].name, (int)rq->headers[i].value_len, rq->headers[i].value);
-    ////}
 
     return prc;
 }
@@ -102,6 +84,7 @@ size_t read_file(const char *filename, char *buf, size_t buflen)
     bytes_read = fread(buf, 1, filelen, fp);
     buf[filelen] = '\0';
     fclose(fp);
+	log_info("file read complete");
     return filelen;
 }
 
@@ -112,6 +95,7 @@ typedef struct
 } mime_type;
 
 static const mime_type filetypes[] = {
+    {"3GP", "video/3gpp"},
     {"c", "text/plain"},
     {"cc", "text/plain"},
     {"cpp", "text/plain"},
@@ -123,10 +107,13 @@ static const mime_type filetypes[] = {
     {"ico", "image/x-icon"},
     {"jpg", "image/jpeg"},
     {"mp3", "audio/mpeg"},
+    {"ogg", "audio/ogg"},
     {"pdf", "application/pdf"},
     {"png", "image/png"},
     {"tar", "application/x-tar"},
-    {"txt", "text/plain"}};
+    {"txt", "text/plain"},
+    {"wav", "audio/wav"}
+};
 
 int http_get_content_type(const char *filename, size_t len)
 {
