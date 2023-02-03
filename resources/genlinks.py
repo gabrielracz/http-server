@@ -38,6 +38,11 @@ closing_pairs = {
 state = NONE
 url_name = ""
 while(line):
+
+    if line[0] == '~':
+        line = links.readline()
+        continue
+
     if line[0] == '#':
         out.write("</div><br><br>")
 

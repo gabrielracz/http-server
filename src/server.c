@@ -68,7 +68,7 @@ int server_on(){
 	}
 
 	//try to stop server from waiting on port
-	int en;
+	int en = 1;
 	setsockopt(listenfd, SOL_SOCKET, SO_REUSEADDR, (const char*)&en, sizeof(int));
 	setsockopt(listenfd, SOL_SOCKET, SO_REUSEPORT, (const char*)&en, sizeof(int));
 
@@ -76,6 +76,11 @@ int server_on(){
 	lin.l_onoff = 0;
 	lin.l_linger = 0;
 	setsockopt(listenfd, SOL_SOCKET, SO_LINGER, (const char*)&lin, sizeof(int));
+
+	struct timeval tv;
+	tv.tv_sec = 15;
+	tv.tv_usec = 0;
+	setsockopt(listenfd, SOL_SOCKET, SO_RCVTIMEO, (const char*)&tv, sizeof(tv));
 
 	int num_workers = 10;
 	int dispatched = 0;
@@ -158,16 +163,16 @@ static void* process_request(void* connfd){
 		int htrc;
 		HTTPrq rq;
 		htrc = http_parse(rcvbuf, rcvlen, &rq);
-		if(htrc > 0){
+		if(htrc > -1){
 			//http success
 			rq.addr = cliaddr;
 			strncpy(rq.addr_str, cliaddr_str, INET_ADDRSTRLEN);
 			reslen = http_handle_rq(rq, resbuf, resbuflen);
 			if(reslen == 0) {
-				
 				break;
 			}
 		}else{
+			break;
 			memcpy(resbuf, rcvbuf, rcvlen);
 			reslen = rcvlen;
 		}
