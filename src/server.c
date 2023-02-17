@@ -108,9 +108,10 @@ int server_on(){
 		clilen = sizeof(cliaddr);
 		connectionfd = accept(listenfd, (struct sockaddr*) &cliaddr, &clilen);
 		if(connectionfd < 0){
-			if(errno == EINTR)
+			if(errno == EINTR || errno == EAGAIN){
+				free(cfd_ptr);
 				continue;
-			else{
+			}else{
 				log_perror("accept");
 			}
 		}

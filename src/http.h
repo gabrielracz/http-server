@@ -9,6 +9,7 @@
 #include <netinet/in.h> //sockaddr_in, htons, INADDR_ANY
 #include <errno.h>
 #include <pthread.h>
+#include <ctype.h>
 
 #include "../http-parser/picohttpparser.h"
 #include "perlin.h"
@@ -95,7 +96,7 @@ typedef struct
 } mime_type;
 
 static const mime_type filetypes[] = {
-    {"3GP", "video/3gpp"},
+    {"3gp", "video/3gpp"},
     {"c", "text/plain"},
     {"cc", "text/plain"},
     {"cpp", "text/plain"},
@@ -112,7 +113,8 @@ static const mime_type filetypes[] = {
     {"png", "image/png"},
     {"tar", "application/x-tar"},
     {"txt", "text/plain"},
-    {"wav", "audio/wav"}
+    {"wav", "audio/wav"},
+	{"zip", "application/zip"}
 };
 
 int http_get_content_type(const char *filename, size_t len)
@@ -122,9 +124,8 @@ int http_get_content_type(const char *filename, size_t len)
     int last = sizeof(filetypes) / sizeof(filetypes[0]);
     int t;
     for (t = len - 1; t > 0 && filename[t] != '.'; t--)
-    {
-    }
-    // i is the index of the dot
+    {}
+    // t is the index of the dot
     const char *inp = &filename[t + 1];
     int cmp;
     int i;
