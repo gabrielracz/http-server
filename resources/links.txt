@@ -1,0 +1,259 @@
+{General}
+
+[Linux Kernel PWM - THEY NEED HELP!]
+(https://www.kernel.org/doc/html/latest/driver-api/pwm.html)
+
+[HTTP authentication built-in]
+(https://en.wikipedia.org/wiki/Digest_access_authentication)
+
+[Linux ALSA sound code example]
+(https://www.linuxjournal.com/article/6735)
+
+[PortAudio soundlib]
+(http://www.portaudio.com/)
+
+[AMD OpenCL Ubuntu 22.04]
+(https://github.com/RadeonOpenCompute/ROCm/issues/1730)
+
+[Firmware hacking]
+(https://serhack.me/articles/introduction-firmware-analysis-ip-camera-reolink/?utm_source=abyteofcodingnewsletter)
+
+[Hash Randomart]
+(/drunken_bishop.pdf)
+#
+
+{Flight Sim}
+
+[Real-time modeling of agile fixed-wing UAV aerodynamics]
+(/AerodynamicModeling.pdf)
+
+[Flight Simulation Dynamic Modeling - Quaternion vs Euler]
+(FlightSimulationDynamicModeling.pdf)
+
+[Forum on Quaternion vs Euler vs Incremental]
+(https://gamedev.net/forums/topic/456740-flight-sim-plane-rotation-question/4014078/)
+
+[Metrics for various aircraft]
+(https://jsbsim.sourceforge.net/MassProps.html)
+
+[NACA Airfoil Data]
+(/NACA-airfoils.pdf)
+~(https://ntrs.nasa.gov/api/citations/19930090976/downloads/19930090976.pdf)
+
+[Coefficients of lift and drag post-stall]
+(https://aviation.stackexchange.com/questions/64490/is-there-a-simple-relationship-between-angle-of-attack-and-lift-coefficient)
+
+[Control Surface approximate equation]
+(https://aviation.stackexchange.com/questions/8645/how-should-control-surfaces-be-modeled-in-simulations)
+
+[Rigid Body Dynamics]
+(http://www.chrishecker.com/Rigid_Body_Dynamics)
+
+[Rotation of Rigid Bodies]
+(https://www2.tntech.edu/leap/murdock/books/v2chap1.pdf)
+
+[Rotation Rigid Texbook]
+(https://www.marianopolis.edu/wp-content/uploads/2019/04/4-Rigid-Bodies.pdf)
+
+[Physically Based Motion: Principles and Practice]
+(https://www.cs.cmu.edu/~baraff/sigcourse)
+
+#
+{Robot}
+[C write to serial device]
+(https://blog.mbedded.ninja/programming/operating-systems/linux/linux-serial-ports-using-c-cpp/)
+
+[CGLM - fast pure-C lin alg]
+(https://github.com/recp/cglm)
+
+[Write a network device driver]
+(https://tldp.org/LDP/LG/issue93/bhaskaran.html)
+
+[Video For Linux - v4l2 driver - API]
+(https://www.kernel.org/doc/html/v4.9/media/uapi/v4l/v4l2.html)
+
+[v4l2 old example]
+(https://www.linuxtv.org/downloads/v4l-dvb-apis-old/v4l2grab-example.html)
+
+[v4l2 forum post]
+(https://forums.gentoo.org/viewtopic-t-836218-start-0.html)
+
+[mplayer view /dev/video stream]
+(http://brightedges.blogspot.com/2008/06/webcam-and-mplayer.html)
+
+[Raspberry Pi camera discussion 1]
+(https://forums.raspberrypi.com/viewtopic.php?t=284909#:~:text=the%20quality%20decreased.-,It's%20a%20bit%20strange%20that%20the%20Raspberry%20pi%20has%20claimed,only%20encode%201080%2030p%208bit.)
+
+[Raspberry Pi camera discussion 2]
+(https://forums.raspberrypi.com/viewtopic.php?f=43&t=284937)
+#
+
+{AES}
+[Advanced Encryption Standard]
+(https://nvlpubs.nist.gov/nistpubs/fips/nist.fips.197.pdf)
+
+[Example solution]
+(https://www.kavaliro.com/wp-content/uploads/2014/03/AES.pdf)
+
+[Algorithm description Wikipedia]
+(https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)
+
+[Key Schedule]
+(https://en.wikipedia.org/wiki/AES_key_schedule)
+
+[MixColumns]
+(https://en.wikipedia.org/wiki/Rijndael_MixColumns)
+
+[Finite field arithmetic]
+(https://en.wikipedia.org/wiki/Finite_field_arithmetic#Multiplication)
+
+[Russian peasant multiplication]
+(https://en.wikipedia.org/wiki/Multiplication_algorithm#Russian_peasant_multiplication)
+
+[AES modes]
+(https://www.highgo.ca/2019/08/08/the-difference-in-five-modes-in-the-aes-encryption-algorithm/)
+#
+
+{Books}
+
+[Linux Device Drivers, Third Edition]
+(https://lwn.net/Kernel/LDD3/)
+
+[OSDev book list]
+(https://wiki.osdev.org/Books)
+
+[Game Programming Patterns]
+(http://gameprogrammingpatterns.com/contents.html)
+
+[Physically Based Rendering]
+(https://pbr-book.org/)
+
+[Computer Systems: A Programmer's Perspective]
+(https://github.com/Sorosliu1029/CSAPP-Labs/blob/master/Computer%20Systems%20A%20Programmers%20Perspective%20(3rd).pdf)
+
+[Labs for 'Computer Systems: A Programmer's Perspective']
+(http://csapp.cs.cmu.edu/3e/labs.html)
+
+[Computer Organization and Design]
+(ComputerOrganizationAndDesign.pdf)
+#
+
+{Apps and Resources}
+[Image Dithering]
+(https://ditheringapi.herokuapp.com/)
+
+[World heightmap]
+(https://tangrams.github.io/heightmapper/)
+
+[16colors - ASCII Art]
+(https://16colo.rs/)
+
+[Wholesome cloud storage]
+(https://www.rsync.net/cloudstorage.html)
+
+[Canada weather radar]
+(https://climate.weather.gc.ca/radar/index_e.html)
+
+[Canada weather data]
+(https://dd.weather.gc.ca/)
+
+[C Data Structure library]
+(https://github.com/manvscode/libcollections)
+
+[C OpenGl ECS engine]
+(https://github.com/jdah/minecraft-weekend/tree/master/src)
+
+[Cool fonts]
+(https://www.nerdfonts.com/)
+
+[Bitmap fonts]
+(https://github.com/addy-dclxvi/bitmap-font-collections)
+
+[Terminal Grotesque]
+(https://velvetyne.fr/fonts/terminal-grotesque/)
+
+[terminal.sexy]
+(https://terminal.sexy/)
+
+
+#
+
+{Videos}
+
+[Ken Thompson interviewed by Brian Kernighan ***]
+(https://www.youtube.com/watch?v=EY6q5dv_B-o&list=LL&index=46)
+
+["The Early Days of id Software: Programming Principles" by John Romero]
+(https://www.youtube.com/watch?v=IzqdZAYcwfY)
+
+[The Website is Down]
+(http://www.thewebsiteisdown.com/)
+
+[FABRIK - inverse kinematics]
+(https://www.youtube.com/watch?v=UNoX65PRehA&list=LL&index=68)
+#
+
+{Courses}
+
+[CS online curriculum]
+(http://blog.agupieware.com/2014/05/online-learning-bachelors-level.html)
+
+[Teach Yourself CS]
+(https://teachyourselfcs.com/)
+
+[Constraint Programming]
+(https://people.eng.unimelb.edu.au/pstuckey/book/course.html)
+
+[Constraint Programming online guide]
+(http://ktiml.mff.cuni.cz/~bartak/constraints/)
+
+[Parellel Programming for Clusters and Multi-Core Processors]
+(https://dehne73176131.wordpress.com/teaching/comp-4009/)
+
+#
+
+{Forums and Interesting Sites}
+
+[C dev blog]
+(https://nullprogram.com/)
+
+[How to Shoot Yourself in the Foot]
+(https://www-users.cs.york.ac.uk/susan/joke/foot.htm)
+
+
+[The Speed Up Loop]
+(https://thedailywtf.com/articles/The-Speedup-Loop)
+
+[OpenSSH]
+(http://www.openssh.com/)
+
+#
+
+{Misc}
+[Trance reddit list]
+(https://www.reddit.com/r/trance/comments/ux8ahw/what_remix_really_took_a_song_in_a_different_but/)
+
+[Spotify AES key dump]
+(https://www.reddit.com/r/netsec/comments/jq7az2/dump_aes_keys_for_spotify_songs_from_a_compatible/)
+#
+
+
+{To Research}
+
+[Discrete Cosine Transform]
+(https://en.wikipedia.org/wiki/Discrete_cosine_transform)
+
+[Neural Implicit Surfaces]
+(https://dl.acm.org/doi/pdf/10.1145/3528223.3530155)
+
+[Streaming Computation of Delaunay Triangulations]
+(http://www.cs.unc.edu/~isenburg/sd/)
+
+[Lattice Bolzmann Explanation]
+(https://nickmcd.me/2022/10/01/procedural-wind-and-clouds-using-gpu-accelerated-lattice-boltzmann-method/)
+#
+
+
+
+
+

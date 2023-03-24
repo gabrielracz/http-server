@@ -1,15 +1,25 @@
-all: phttp/picohttpparser.o srv cli 
-CFLAGS= -g -Wall -fsanitize=address
-LIBS= -lpthread
+OBJECTS= build/server.o build/perlin.o build/picohttpparser.o build/logger.o
+all: srv cli ${OBJECTS}
+CFLAGS= -O2 -static
+LIBS= -lpthread -lm
 
-srv: src/server.c src/universal.h src/http.h
-	gcc ${CFLAGS} -o srv src/server.c phttp/picohttpparser.o ${LIBS}
+build/perlin.o: src/perlin.c src/perlin.h
+	gcc ${CFLAGS} -c src/perlin.c -o build/perlin.o
+
+build/picohttpparser.o: http-parser/picohttpparser.c http-parser/picohttpparser.h
+	gcc ${CFLAGS} -c http-parser/picohttpparser.c -o build/picohttpparser.o
+
+build/logger.o: src/logger.c src/logger.h
+	gcc ${CFLAGS} -c src/logger.c -o build/logger.o
+
+build/server.o: src/server.c src/http.h src/perlin.o
+	gcc ${CFLAGS} -c src/server.c -o build/server.o
+
+srv: ${OBJECTS}
+	gcc ${CFLAGS} -o srv src/main.c ${OBJECTS} ${LIBS}
 
 cli: src/client.c src/universal.h
 	gcc ${CFLAGS} -o cli src/client.c ${LIBS}
 
-phttp/picohttpparser.o: phttp/picohttpparser.c phttp/picohttpparser.h
-	gcc ${CFLAGS} -c phttp/picohttpparser.c -o phttp/picohttpparser.o
-
 clean:
-	rm build/* cli srv
+	rm cli srv build/*

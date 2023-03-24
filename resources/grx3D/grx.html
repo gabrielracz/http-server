@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="g.css">
+        <title>3D Renderer</title>
+    </head>
+    <body>
+        <div class="column-left">
+            <h1 class=header>GRX3D Rendering Engine</h1>
+            <label><b>CONTROLS</b></label><hr class=".menu-line">
+            <label>Rotations</label><br>
+            <label class="control-label">w + s --> X axis</label><br>
+            <label class="control-label">a + d --> Y axis</label><br>
+            <label class="control-label">q + e --> Z axis</label><br><br>
+
+            <label>Translations</label><br>
+            <label class="control-label">i + k --> Y position</label><br>
+            <label class="control-label">j + l --> X position</label><br>
+            <label class="control-label">u + o --> Z position</label><br><br>
+
+            <label>Rendering</label><br>
+            <label class="control-label"> [ --> Cycle colors</label><br>
+            <label class="control-label"> ] --> Cycle render modes</label><br><br>
+
+            <label>Primitives</label><br>
+            <label class="control-label"> 1 --> Tetrahedron</label><br>
+            <label class="control-label"> 2 --> Pyramid</label><br>
+            <label class="control-label"> 3 --> Octahedron</label><br>
+            <label class="control-label"> 4 --> Cube</label><br>
+            <label class="control-label"> 5 --> Icosahedron</label><br>
+            <br>
+            <label> UPLOAD OBJ FILE</label><hr class="menu-line">
+            <input id="fileupload" type="file" accept=".obj" style="color: #E2D6C5;"></input>
+        </div>
+        <div class="column-right">
+            <br><br>
+            <label class="info">Verticies: </label><label id="vertex-count"></label><br>
+            <label class="info">Triangles: </label><label id="triangle-count"></label>
+            <canvas id="canvas" tabindex="1"></canvas>
+            <label class="info">Render Mode: </label><label id="display-mode">Normal</label>
+        </div>
+        <script onload src="graphics.js"></script>
+    </body>
+</html>

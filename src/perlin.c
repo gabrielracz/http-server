@@ -60,6 +60,38 @@ v2 rg2(int ix, int iy) {
     return v;
 }
 
+const char* charshader = "@#O~. ";
+
+int perlin_sample_grid(char* buffer, size_t buflen, int width, int height, float startx, float starty, float zoom ){ 
+
+	int diff = buflen - PGRIDSIZE(width, height); 
+	if(diff < 0){
+        printf("Perlin: buffer too small. Try using PGRIDSIZE %d\n", PGRIDSIZE(width,height));
+        return 0;
+	}
+
+	float p;
+	size_t encoder_len = strlen(charshader);
+	int index;
+	unsigned int cnt = 0;
+		for(int y = 0; y < height; y++) {
+			for(int x = 0; x < width; x++) {
+				p = perlin(x*zoom+startx, y*2.0f*zoom+starty);
+
+				p = (p+1.0f)/2.0f; //[-1,1] -> [0,1]
+
+				index = (int)floor(p*encoder_len);
+				char c = charshader[index];
+
+				buffer[cnt++] = c;
+			}
+			buffer[cnt++] = '\n';
+		}
+	buffer[cnt] = 0;
+	return cnt;
+}
+
+
 float sample_grid(int gridx, int gridy, float samplex, float sampley) {
 	v2 samplegradient = gradients[255*gridy+gridx];
 	float dx = samplex - (float)gridx;
