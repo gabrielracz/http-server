@@ -10,6 +10,7 @@
 #include <errno.h>
 #include <pthread.h>
 #include <ctype.h>
+#include <stdbool.h>
 
 #include "../http-parser/picohttpparser.h"
 #include "perlin.h"
@@ -296,10 +297,14 @@ int http_serv_file(const char *path, size_t pathlen, char *buf, size_t buflen)
     return responselen;
 }
 
-enum ResponseTypes {
-    DISK,
-    PERLIN
-};
+// enum ResponseTypes {
+//     DISK,
+//     PERLIN
+// };
+
+//seperate the connection from the request
+
+
 
 size_t http_handle_rq(HTTPrq rq, char *resbuf, size_t reslen) {
     log_info("HTTP request received:  %s:%d", rq.addr_str, rq.addr.sin_port);
@@ -311,7 +316,7 @@ size_t http_handle_rq(HTTPrq rq, char *resbuf, size_t reslen) {
     char rqfile[1024] = "resources";
 
 
-    int route = DISK;
+    HttpRoute route = DISK;
     if (strncmp("/", rq.path, rq.pathlen) == 0 || strncmp("/index.html", rq.path, rq.pathlen) == 0){
         strcat(rqfile, "/gsr.html");
     }
