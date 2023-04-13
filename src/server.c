@@ -44,7 +44,7 @@ int server_on(){
 	memset(&servaddr, 0, sizeof(servaddr));
 	servaddr.sin_family = AF_INET;
 	servaddr.sin_addr.s_addr = INADDR_ANY;
-	servaddr.sin_port = htons(7120);
+	servaddr.sin_port = htons(8000);
 
 
 	/* Prepare the socket */
@@ -144,40 +144,34 @@ static void* process_request(void* connfd) {
 	}
 
     char* r = malloc(16384);
-    Buffer rcv_buffer = {r, 16384};
+    Buffer rcv_buffer = {.ptr=r, .len=0, .size=16384};
 
-	size_t max_response_len = 100 * 1024 * 1024;
-	r = malloc(max_response_len);
-    Buffer res_buffer = {r, max_response_len};
-    HttpResponse response = {.body = res_buffer};
-	while(1){
-		rcv_buffer.len = readmsg(connectionfd, rcv_buffer.ptr, rcv_buffer.size);
+	// while(1){
+		rcv_buffer.len = recv(connectionfd, rcv_buffer.ptr, rcv_buffer.size, 0);
 		if(rcv_buffer.len == 0){
 			log_info("Client disconnected     %s", cliaddr_str);	
 			log_break();
-			break;
+			goto connection_exit;
 		}
 		
-		/*attempt http parse*/
-		HttpRequest rq;
-        rq.raw_request.ptr = rcv_buffer.ptr;
-        rq.raw_request.len = rcv_buffer.len;
-        strncpy(rq.addr, cliaddr_str, INET_ADDRSTRLEN);
-		http_parse(&rq);
-		if(rq.err == HTTP_OK){
-			response = http_handle_request(&rq);
-			if(response.body.len == 0) {
-				break;
+		HttpRequest* rq = http_create_request(rcv_buffer, cliaddr_str);
+        // while(!rq->done) {
+            HttpResponse* res = http_create_response();
+			http_handle_request(rq, res);
+			if(res->body.len == 0) {
+                http_destroy_request(rq);
+				goto connection_exit;
 			}
-		} else {
-            break;
-        }
 
-		size_t bsent;
-		bsent = sendmsg(connectionfd, &response.msg, 0) ;
-		log_info("Sent %zu               %s", bsent, cliaddr_str);
-	}
-	free(response.body.ptr);
+            size_t bytes_sent;
+            bytes_sent = sendmsg(connectionfd, &res->msg, 0) ;
+            log_info("Sent %zu               %s", bytes_sent, cliaddr_str);
+
+            http_destroy_response(res);
+        // }
+	// }
+
+connection_exit:
 	free(rcv_buffer.ptr);
 	close(connectionfd);
     pthread_exit(0);

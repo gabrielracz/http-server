@@ -3,12 +3,28 @@
 #include <stddef.h>
 #include <netinet/in.h>
 #include "../http-parser/picohttpparser.h"
+#include <stdbool.h>
+
+#define RESPONSE_BUFFER_SIZE 1024 * 1024
+#define HEADER_BUFFER_SIZE 8192
 
 typedef struct {
     char* ptr;
     size_t len;
     size_t size;
 } Buffer;
+
+typedef struct {
+    char ptr[RESPONSE_BUFFER_SIZE];
+    size_t len;
+    size_t size;
+} StaticResponseBuffer;
+
+typedef struct {
+    char ptr[HEADER_BUFFER_SIZE];
+    size_t len;
+    size_t size;
+} StaticHeaderBuffer;
 
 typedef struct {
     const char* ptr;
@@ -28,14 +44,16 @@ enum HttpError {
     HTTP_NOT_FOUND,
     HTTP_BAD_REQUEST,
     HTTP_FORBIDDEN,
-    HTTP_METHOD_NOT_ALLOWED
+    HTTP_METHOD_NOT_ALLOWED,
+    HTTP_SERVER_ERROR
 };
 
 enum HttpRoute {
-    DISK = 0,
-    PERLIN,
-    SPOTIFY_ARCHIVER,
-    N_ROUTES
+    ROUTE_DISK = 0,
+    ROUTE_ERROR,
+    ROUTE_PERLIN,
+    ROUTE_SPOTIFY_ARCHIVER,
+    ROUTE_N_ROUTES
 };
 
 typedef struct  {
@@ -44,45 +62,52 @@ typedef struct  {
 } HttpVariable;
 
 typedef struct {
+    enum HttpError err;
+    char content_type[64];
     Buffer header;
     Buffer body;
     struct msghdr msg;
-}HttpResponse;
+    struct iovec iov[2];    //vector of io blocks to be stitched together by 'sendmsg()'
+} HttpResponse;
 
 typedef struct
 {
     enum HttpMethod method;
     enum HttpRoute route;
-    enum HttpError err;
     HttpVariable variables[16];
 
     StringView raw_request;
     StringView path;
     StringView body;
 
-    Buffer output;
+    bool translated;
+    char translated_path[256];
 
     struct phr_header headers[100];
     size_t num_headers;
-    char content_type[64];
 
     int minor_version;
     int major_version;
 
+    bool parsed;
+    bool done;
+
     char addr[INET_ADDRSTRLEN];
 } HttpRequest;
 
-inline int min(int a, int b) {
-    return a < b ? a : b;
-}
+int min(int a, int b);
 
-inline int max(int a, int b) {
-    return a > b ? a : b;
-}
+int max(int a, int b);
 
 int http_init();
-void http_parse(HttpRequest* rq);
-HttpResponse http_handle_request(HttpRequest* rq);
+HttpResponse* http_create_response();
+HttpRequest* http_create_request(Buffer request_buffer, const char* client_address);
+void http_destroy_request(HttpRequest* rq);
+void http_destroy_response(HttpResponse* res);
+
+void http_handle_request(HttpRequest* rq, HttpResponse* res);
 void http_free(HttpRequest* rq);
+
+const char* http_status_code(HttpResponse* res);
 
 #endif
