@@ -45,6 +45,7 @@ enum HttpError {
     HTTP_BAD_REQUEST,
     HTTP_FORBIDDEN,
     HTTP_METHOD_NOT_ALLOWED,
+    HTTP_CONTENT_TOO_LARGE,
     HTTP_SERVER_ERROR
 };
 
@@ -79,6 +80,7 @@ typedef struct
     StringView raw_request;
     StringView path;
     StringView body;
+    StringView method_str;
 
     bool translated;
     char translated_path[256];

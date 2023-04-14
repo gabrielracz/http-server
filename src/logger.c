@@ -21,13 +21,15 @@ void unix_timestamp() {
 
 void timestamp() {
 	struct timeval tv;
-	struct tm* timeinfo;
+	struct tm timeinfo;
 	gettimeofday(&tv, NULL);
-	if((timeinfo = localtime(&tv.tv_sec))){
+	if((localtime_r(&tv.tv_sec, &timeinfo))){
 		char fmt[64];
 		char timestr[64];
-		strftime(fmt, 64, "[%D %H:%M:%S.%%03lu]", timeinfo);
-		snprintf(timestr, sizeof(timestr), fmt, tv.tv_usec/1000);
+		// strftime(fmt, 64, "[%d/%b/%y %H:%M:%S.%%03lu]", &timeinfo);
+        // snprintf(timestr, sizeof(timestr), fmt, tv.tv_usec/1000);
+		strftime(fmt, 64, "[%d/%b/%y %H:%M:%S]", &timeinfo);
+        strcpy(timestr, fmt);
 		printf("%s ", timestr);
 	}
 }
@@ -54,7 +56,7 @@ void log_info(const char* fmt, ...) {
     va_list args;
     va_start(args, fmt);
 	timestamp();
-	printf("LOG: ");
+	// printf("LOG: ");
     vprintf(fmt, args);
 	putchar('\n');
     va_end(args);

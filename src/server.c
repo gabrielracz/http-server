@@ -96,7 +96,7 @@ int server_on(){
 	http_init();
 
 	int server_on = 1;
-	log_info("Server on...");
+	log_info("server on...");
 	log_break();
 	while(server_on){
 		int* cfd_ptr;
@@ -149,7 +149,7 @@ static void* process_request(void* connfd) {
 	// while(1){
 		rcv_buffer.len = recv(connectionfd, rcv_buffer.ptr, rcv_buffer.size, 0);
 		if(rcv_buffer.len == 0){
-			log_info("Client disconnected     %s", cliaddr_str);	
+			// log_info("Client disconnected     %s", cliaddr_str);	
 			log_break();
 			goto connection_exit;
 		}
@@ -165,7 +165,9 @@ static void* process_request(void* connfd) {
 
             size_t bytes_sent;
             bytes_sent = sendmsg(connectionfd, &res->msg, 0) ;
-            log_info("Sent %zu               %s", bytes_sent, cliaddr_str);
+            // log_info("Sent %zu               %s", bytes_sent, cliaddr_str);
+            log_info("\"%.*s %.*s HTTP/1.%d\" %.3s %zu - %s", 
+                     rq->method_str.len, rq->method_str.ptr, rq->path.len, rq->path.ptr, rq->minor_version, http_status_code(res), bytes_sent, rq->addr);
 
             http_destroy_response(res);
         // }

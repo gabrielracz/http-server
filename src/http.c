@@ -201,23 +201,22 @@ static void http_parse(HttpRequest* rq, HttpResponse* res) {
     /*parse request*/
     rq->num_headers = 100;
     int prc;
-    const char* method_str;
     size_t method_len;
 
     prc = phr_parse_request(rq->raw_request.ptr, rq->raw_request.len, 
-                            &method_str, &method_len,
+                            &rq->method_str.ptr, &rq->method_str.len,
                             &rq->path.ptr, &rq->path.len, 
                             &rq->minor_version, 
                             rq->headers, &rq->num_headers, 0);
     if (prc < 0){
-        log_error("HTTP parse error: %d", prc);
+        // log_error("HTTP parse error: %d", prc);
         res->err = HTTP_BAD_REQUEST;
     }
 
     /* Get the method */
-    if(strncmp("GET", method_str, method_len) == 0) {
+    if(strncmp("GET", rq->method_str.ptr, rq->method_str.len) == 0) {
         rq->method = GET;
-    } else if (strncmp("POST", method_str, method_len) == 0) {
+    } else if (strncmp("POST", rq->method_str.ptr, rq->method_str.len) == 0) {
         rq->method = POST;
     } else {
         res->err = HTTP_METHOD_NOT_ALLOWED;
@@ -295,6 +294,8 @@ const char* http_status_code(HttpResponse* res) {
             return "404 Not Found";
         case HTTP_METHOD_NOT_ALLOWED:
             return "405 Method Not Allowed";
+        case HTTP_CONTENT_TOO_LARGE:
+            return "413 Content Too Large";
         case HTTP_SERVER_ERROR:
             return "500 Server Error";
     }

@@ -15,7 +15,7 @@ void content_read_file(HttpRequest* rq, HttpResponse* res)
 
     fp = fopen(path, "r");
     if (fp == NULL) {
-        log_perror("http_read_file, could not open requested file");
+        // log_perror("http_read_file, could not open requested file");
         res->err = HTTP_NOT_FOUND;
         content_error(rq, res);
         return;
@@ -27,8 +27,7 @@ void content_read_file(HttpRequest* rq, HttpResponse* res)
 
     if (filelen > res->body.size) {
         //Transfer encoding chunked support goes here
-        res->err = HTTP_NOT_FOUND;
-        log_error("http_read_file error. filelen:%zu exceed buflen:%zu", filelen, res->body.size);
+        res->err = HTTP_CONTENT_TOO_LARGE;
         fclose(fp);
         return;
     }
