@@ -34,7 +34,7 @@ enum REQ_TYPES {
 };
 
 
-int server_on(){
+int server_on(int port){
 	int connectionfd;
 	pid_t childpid;
 	socklen_t clilen;
@@ -44,7 +44,7 @@ int server_on(){
 	memset(&servaddr, 0, sizeof(servaddr));
 	servaddr.sin_family = AF_INET;
 	servaddr.sin_addr.s_addr = INADDR_ANY;
-	servaddr.sin_port = htons(7120);
+	servaddr.sin_port = htons(port);
 
 
 	/* Prepare the socket */
