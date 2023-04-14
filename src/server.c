@@ -44,7 +44,7 @@ int server_on(){
 	memset(&servaddr, 0, sizeof(servaddr));
 	servaddr.sin_family = AF_INET;
 	servaddr.sin_addr.s_addr = INADDR_ANY;
-	servaddr.sin_port = htons(7120);
+	servaddr.sin_port = htons(8000);
 
 
 	/* Prepare the socket */
@@ -53,7 +53,8 @@ int server_on(){
 	if(listenfd < 0){
 		log_perror("socket");
 		return 1;
-	}
+    }
+	
 
 	int rc;
 	while ((rc = bind(listenfd, (struct sockaddr*) &servaddr, sizeof(servaddr)))){
@@ -127,7 +128,7 @@ int server_on(){
 }
 
 /*Thread Main*/
-static void* process_request(void* connfd){
+static void* process_request(void* connfd) {
 	/*thread init*/
 	int connectionfd = *((int*)connfd);
 	free(connfd);
@@ -142,47 +143,36 @@ static void* process_request(void* connfd){
 		/*printf("connected: %s:%d\n", cliaddr_str, cliaddr.sin_port);*/
 	}
 
-	size_t rcvlen;
-	char rcvbuf[8192];
-    struct static_buffer rcv_buffer;
+    char* r = malloc(16384);
+    Buffer rcv_buffer = {.ptr=r, .len=0, .size=16384};
 
-	size_t reslen;
-	size_t resbuflen = 300 * 1024 * 1024;
-	//char resbuf[resbuflen];
-	char* resbuf = malloc(resbuflen);
-    struct static_buffer resp_buffer = {resbuf, resbuflen};
-
-	while(1){
-		rcvlen = readmsg(connectionfd, rcvbuf, 8192);
-		if(rcvlen == 0){
+	// while(1){
+		rcv_buffer.len = recv(connectionfd, rcv_buffer.ptr, rcv_buffer.size, 0);
+		if(rcv_buffer.len == 0){
 			log_info("Client disconnected     %s", cliaddr_str);	
 			log_break();
-			break;
+			goto connection_exit;
 		}
 		
-		/*attempt http parse*/
-		int htrc;
-		HTTPrq rq;
-		htrc = http_parse(rcvbuf, rcvlen, &rq);
-		if(htrc > -1){
-			//http success
-			rq.addr = cliaddr;
-			strncpy(rq.addr_str, cliaddr_str, INET_ADDRSTRLEN);
-			reslen = http_handle_rq(rq, resbuf, resbuflen);
-			if(reslen == 0) {
-				break;
+		HttpRequest* rq = http_create_request(rcv_buffer, cliaddr_str);
+        // while(!rq->done) {
+            HttpResponse* res = http_create_response();
+			http_handle_request(rq, res);
+			if(res->body.len == 0) {
+                http_destroy_request(rq);
+				goto connection_exit;
 			}
-		}else{
-			break;
-			memcpy(resbuf, rcvbuf, rcvlen);
-			reslen = rcvlen;
-		}
 
-		size_t bsent;
-		bsent = send(connectionfd, resbuf, reslen, 0);
-		log_info("Sent %zu               %s", bsent, cliaddr_str);
-	}
-	free(resbuf);
+            size_t bytes_sent;
+            bytes_sent = sendmsg(connectionfd, &res->msg, 0) ;
+            log_info("Sent %zu               %s", bytes_sent, cliaddr_str);
+
+            http_destroy_response(res);
+        // }
+	// }
+
+connection_exit:
+	free(rcv_buffer.ptr);
 	close(connectionfd);
     pthread_exit(0);
 	return 0;
@@ -191,4 +181,3 @@ static void* process_request(void* connfd){
 static size_t readmsg(int connectionfd, char* buffer, size_t buflen){
 	return recv(connectionfd, buffer, buflen, 0);
 }
-

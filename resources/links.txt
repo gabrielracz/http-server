@@ -1,3 +1,13 @@
+
+{Bookmarks}
+
+[Firefox Bookmarks]
+(bookmarks.html)
+
+[Import file]
+(bookmarks.jsonlz4)
+#
+
 {General}
 
 [Linux Kernel PWM - THEY NEED HELP!]
@@ -20,6 +30,29 @@
 
 [Hash Randomart]
 (/drunken_bishop.pdf)
+
+[QOI - simple and fast compression algorithm]
+(https://qoiformat.org/)
+
+[Ellipsoid triangle collision]
+(http://www.peroxide.dk/papers/collision/collision.pdf)
+
+[More collisions]
+(https://www.cs.cmu.edu/~baraff/sigcourse/notesd2.pdf)
+
+[Travelling Salesman Solutions]
+(https://www.math.uwaterloo.ca/tsp/pubs/)
+[Rust - The Book]
+(https://doc.rust-lang.org/book/title-page.html)
+
+[Rust - learning repo small]
+(https://gist.github.com/noxasaxon/7bf5ebf930e281529161e51cd221cf8a)
+
+[Rust - learning repo comprehensive]
+(https://github.com/ctjhoa/rust-learning)
+
+[Bayer Ordered Dithering]
+(https://en.wikipedia.org/wiki/Ordered_dithering)
 #
 
 {Flight Sim}
@@ -45,6 +78,9 @@
 
 [Control Surface approximate equation]
 (https://aviation.stackexchange.com/questions/8645/how-should-control-surfaces-be-modeled-in-simulations)
+
+[Propellor force equation]
+(https://www.grc.nasa.gov/www/k-12/airplane/propth.html)
 
 [Rigid Body Dynamics]
 (http://www.chrishecker.com/Rigid_Body_Dynamics)
@@ -136,6 +172,12 @@
 
 [Computer Organization and Design]
 (ComputerOrganizationAndDesign.pdf)
+
+[The Interpreter Book]
+(https://interpreterbook.com)
+
+[The Art of HPC]
+(https://theartofhpc.com)
 #
 
 {Apps and Resources}
