@@ -60,8 +60,7 @@ v2 rg2(int ix, int iy) {
     return v;
 }
 
-const char* charshader = "@#O~. ";
-
+const char* charshader = "@#O+-.  ";
 int perlin_sample_grid(char* buffer, size_t buflen, int width, int height, float startx, float starty, float zoom ){ 
 
 	int diff = buflen - PGRIDSIZE(width, height); 

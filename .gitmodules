@@ -1,3 +1,6 @@
 [submodule "phttp"]
 	path = phttp
 	url = https://github.com/h2o/picohttpparser.git
+[submodule "tools/spotify-archiver"]
+	path = tools/spotify-archiver
+	url = https://github.com/gabrielracz/spotify-archiver/
