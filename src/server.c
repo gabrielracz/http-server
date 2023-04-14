@@ -166,8 +166,8 @@ static void* process_request(void* connfd) {
             size_t bytes_sent;
             bytes_sent = sendmsg(connectionfd, &res->msg, 0) ;
             // log_info("Sent %zu               %s", bytes_sent, cliaddr_str);
-            log_info("\"%.*s %.*s HTTP/1.%d\" %.3s %zu - %s", 
-                     rq->method_str.len, rq->method_str.ptr, rq->path.len, rq->path.ptr, rq->minor_version, http_status_code(res), bytes_sent, rq->addr);
+            log_info("%-7.*s%-40.*s%.3s %-10zu - %s", 
+                     rq->method_str.len, rq->method_str.ptr, rq->path.len, rq->path.ptr, http_status_code(res), bytes_sent, rq->addr);
 
             http_destroy_response(res);
         // }
