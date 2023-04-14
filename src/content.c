@@ -3,11 +3,13 @@
 #include "http.h"
 #include "logger.h"
 #include "content.h"
+#include "perlin.h"
+#include "util.h"
 
 
 void content_read_file(HttpRequest* rq, HttpResponse* res)
 {
-    FILE *fp;
+    FILE* fp;
     char path[1024] = "resources/";
     strncat(path, rq->path.ptr, rq->path.len);
 
@@ -37,7 +39,6 @@ void content_read_file(HttpRequest* rq, HttpResponse* res)
     res->body.len = bytes_read;
     rq->done = true;
     fclose(fp);
-    return;
 }
 
 void content_error(HttpRequest* rq, HttpResponse* res) {
@@ -53,9 +54,37 @@ void content_error(HttpRequest* rq, HttpResponse* res) {
            status_code_str,
            status_code_str);
     strcpy(res->content_type, "text/html");
-    res->body.len = strlen(res->body.ptr);
 }
 
-// void content_not_found(HttpRequest *rq, HttpResponse *res) {
+const char html_plaintext_wrapper[] =
+    "<!DOCTYPE html>"
+    "<html lang=\"en\">"
+    "<head>"
+    "<meta charset=\"UTF-8\">"
+    "<title>perlin</title>"
+    "<link rel=\"stylesheet\" href=\"/style.css\">"
+    "</head>"
+    "<body>\n"
+    "<pre class=\"plaintext\">";
 
-// }
+const size_t html_plaintext_wrapper_size = sizeof(html_plaintext_wrapper)-1;
+void content_perlin(HttpRequest* rq, HttpResponse* res) {
+
+    //make it html
+    strncpy(res->body.ptr, html_plaintext_wrapper, html_plaintext_wrapper_size);
+    res->body.len = html_plaintext_wrapper_size;
+
+	int w = 250;
+	int h = 100;
+	size_t n = PGRIDSIZE(w,h);
+    if(n > res->body.size - res->body.len) {
+        res->err = HTTP_BAD_REQUEST;
+        content_error(rq, res);
+        return;
+    }
+	res->body.len += perlin_sample_grid(res->body.ptr + res->body.len, res->body.size-res->body.len, w, h, 
+						randf(200.0f), randf(200.0f), randf(0.1f));
+    strcpy(res->body.ptr + res->body.len, "</pre>");
+    res->body.len += 6;
+    strcpy(res->content_type, "text/html");
+}

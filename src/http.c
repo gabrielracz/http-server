@@ -11,18 +11,13 @@
 #include "http.h"
 #include "content.h"
 #include "logger.h"
+#include "util.h"
+#include "perlin.h"
 
 const char index_path[] = "/gsr.html";
 
-int min(int a, int b) {
-    return a < b ? a : b;
-}
-
-int max(int a, int b) {
-    return a > b ? a : b;
-}
-
 int http_init() {
+    perlinit(1337);
     return 0;
 }
 
@@ -246,8 +241,8 @@ static const struct {
     const char* path;
     enum HttpRoute route;
 } routes[] = {
-    {"perlin", ROUTE_PERLIN},
-    {"spotify-archiver", ROUTE_SPOTIFY_ARCHIVER}
+    {"/perlin", ROUTE_PERLIN},
+    {"/spotify-archiver", ROUTE_SPOTIFY_ARCHIVER}
 };
 
 static void http_route(HttpRequest* rq, HttpResponse* res) {
@@ -259,8 +254,10 @@ static void http_route(HttpRequest* rq, HttpResponse* res) {
 
     int n_routes = sizeof(routes)/sizeof(routes[0]);
     for(int i = 0; i < n_routes; i++) {
-        int route_len = sizeof(routes[i].path);
-        if(strncmp(rq->path.ptr, routes[i].path, min(rq->path.len, route_len)) == 0) {
+        int route_len = sizeof(routes[i].path)-1;
+        char rqp[64];
+        strncpy(rqp, rq->path.ptr, rq->path.len);
+        if(route_len == rq->path.len &&strncmp(rq->path.ptr, routes[i].path, route_len) == 0) {
             rq->route = routes[i].route;
             return;
         }
@@ -275,7 +272,9 @@ static void http_fill_body(HttpRequest* rq, HttpResponse* res) {
             break;
         case ROUTE_ERROR:
             content_error(rq, res);
+            break;
         case ROUTE_PERLIN:
+            content_perlin(rq, res);
             break;
         case ROUTE_SPOTIFY_ARCHIVER:
             break;

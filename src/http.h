@@ -95,10 +95,6 @@ typedef struct
     char addr[INET_ADDRSTRLEN];
 } HttpRequest;
 
-int min(int a, int b);
-
-int max(int a, int b);
-
 int http_init();
 HttpResponse* http_create_response();
 HttpRequest* http_create_request(Buffer request_buffer, const char* client_address);
