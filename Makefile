@@ -1,6 +1,6 @@
 OBJECTS= build/http.o build/server.o build/perlin.o build/picohttpparser.o build/logger.o build/content.o
 all: srv ${OBJECTS}
-CFLAGS= -g -static
+CFLAGS= -O2 -static
 LIBS= -lpthread -lm
 
 

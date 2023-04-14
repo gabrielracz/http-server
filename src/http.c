@@ -118,7 +118,7 @@ static const struct {
     { "mp2",        3, "audio/mpeg"                             , sizeof("audio/mpeg"                  )},
     { "mp2",        3, "video/mpeg"                             , sizeof("video/mpeg"                  )},
     { "mp3",        3, "audio/mpeg"                             , sizeof("audio/mpeg"                  )},
-    { "mp4",        3, "video/mpeg"                             , sizeof("video/mpeg"                  )},
+    { "mp4",        3, "video/mp4"                             , sizeof("video/mp4"                  )},
     { "mpeg",       4, "video/mpeg"                             , sizeof("video/mpeg"                  )},
     { "mpe",        3, "video/mpeg"                             , sizeof("video/mpeg"                  )},
     { "mpga",       4, "audio/mpeg"                             , sizeof("audio/mpeg"                  )},

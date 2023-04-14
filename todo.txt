@@ -1,0 +1,25 @@
+
+Reorganize resources directory structure
+
+Parsing variables in POST body and GET URLs.
+    - Spotify Archiver
+        fork process and redirect stdout into the output.
+    - Perlin customize output
+    - sha256
+    
+Transfer-encoding: chunked
+    send large files in chunks (>RAM (1G))
+    send video segments to allow buffered playback
+    read vs mmap?
+
+Server-side includes
+    Insert header into html files that <!-- #include:header.html -->
+    Insert arbitrary file contents in place of the incldue comment (not necessarily at beginning)
+
+Static file caching
+    Cache files, have a thread watch for updates. When file is changed,
+    reload the shared memory
+
+Theadpool vs Thread-per-connection
+    Spawn a worker threadpool that works on HttpRequests as they arrive
+
