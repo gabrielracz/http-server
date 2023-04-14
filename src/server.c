@@ -44,7 +44,7 @@ int server_on(){
 	memset(&servaddr, 0, sizeof(servaddr));
 	servaddr.sin_family = AF_INET;
 	servaddr.sin_addr.s_addr = INADDR_ANY;
-	servaddr.sin_port = htons(8000);
+	servaddr.sin_port = htons(7120);
 
 
 	/* Prepare the socket */
