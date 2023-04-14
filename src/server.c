@@ -160,6 +160,7 @@ static void* process_request(void* connfd) {
 			http_handle_request(rq, res);
 			if(res->body.len == 0) {
                 http_destroy_request(rq);
+		http_destroy_response(res);
 				goto connection_exit;
 			}
 
