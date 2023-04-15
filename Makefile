@@ -1,8 +1,15 @@
 OBJECTS= build/http.o build/server.o build/perlin.o build/picohttpparser.o build/logger.o build/content.o
-all: srv ${OBJECTS}
-CFLAGS= -g -static
+CFLAGS= -static
 LIBS= -lpthread -lm
+all: srv ${OBJECTS}
 
+RELEASE=
+
+ifdef RELEASE
+    CFLAGS+=-O2
+else
+    CFLAGS+=-g
+endif
 
 build/content.o: src/content.c src/content.h
 	gcc ${CFLAGS} -c src/content.c -o build/content.o
