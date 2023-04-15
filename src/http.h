@@ -7,6 +7,7 @@
 
 #define RESPONSE_BUFFER_SIZE 300 * 1024 * 1024
 #define HEADER_BUFFER_SIZE 8192
+#define MAX_VARIABLES 16
 
 typedef struct {
     char* ptr;
@@ -75,7 +76,8 @@ typedef struct
 {
     enum HttpMethod method;
     enum HttpRoute route;
-    HttpVariable variables[16];
+    HttpVariable variables[MAX_VARIABLES];
+    int n_variables;
 
     StringView raw_request;
     StringView path;

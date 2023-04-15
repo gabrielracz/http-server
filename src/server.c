@@ -143,7 +143,7 @@ static void* process_request(void* connfd) {
 		/*printf("connected: %s:%d\n", cliaddr_str, cliaddr.sin_port);*/
 	}
 
-    char* r = malloc(16384);
+    char* r = calloc(1, 16384);
     Buffer rcv_buffer = {.ptr=r, .len=0, .size=16384};
 
 	// while(1){

@@ -1,6 +1,6 @@
 OBJECTS= build/http.o build/server.o build/perlin.o build/picohttpparser.o build/logger.o build/content.o
 all: srv ${OBJECTS}
-CFLAGS= -O2 -static
+CFLAGS= -g -static
 LIBS= -lpthread -lm
 
 
@@ -26,4 +26,4 @@ srv: ${OBJECTS}
 	gcc ${CFLAGS} -o srv src/main.c ${OBJECTS} ${LIBS}
 
 clean:
-	rm cli srv build/*
+	rm srv build/*

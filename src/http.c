@@ -30,6 +30,8 @@ HttpRequest* http_create_request(Buffer request_buffer, const char *client_addre
     rq->parsed = false;
     rq->done = false;
     rq->translated = false;
+
+    rq->n_variables = 0;
     return rq;
 }
 
@@ -53,6 +55,33 @@ void http_destroy_response(HttpResponse* res) {
     free(res->body.ptr);
     free(res->header.ptr);
     free(res);
+}
+
+static void http_parse_variables(HttpRequest* rq, HttpResponse* res) {
+    if(rq->body.len <= 0) {return;}
+    int i = 0;
+    const char* current = rq->body.ptr;
+    
+    for(int i =0; i < MAX_VARIABLES; i++) {
+        rq->n_variables++;
+        rq->variables[i].key.ptr = current;
+        const char* equals = strchr(current, '=');
+        if(equals == NULL) { //couldnt find equals
+            res->err = HTTP_BAD_REQUEST;
+            return;
+        }
+        rq->variables[i].key.len = equals - rq->variables[i].key.ptr;
+        rq->variables[i].value.ptr = equals + 1;
+
+        char* and = strchr(rq->variables[i].value.ptr, '&');
+        if(and == NULL) {
+            rq->variables[i].value.len = rq->body.len - (rq->variables[i].value.ptr - rq->body.ptr);
+            return;
+        } else {
+            rq->variables[i].value.len = and - rq->variables[i].value.ptr;
+            current = and + 1;
+        }
+    }
 }
 
 static void http_translate_path(HttpRequest* rq) {
@@ -180,8 +209,7 @@ static const struct {
 
 static void http_set_content_type(HttpRequest* rq, HttpResponse* res) {
     int dot;
-    for(dot = rq->path.len - 1; dot > 0 && rq->path.ptr[dot] != '.'; dot--) {}
-    /* i holds the index of the dot */
+    for(dot = rq->path.len - 1; dot > 0 && rq->path.ptr[dot] != '.'; dot--) {/* find the index of the '.' */}
     const char* rq_suffix = rq->path.ptr + dot + 1;
     int rq_suffix_len = rq->path.len - dot - 1;
     for(int m = 0; m < sizeof(content_types)/sizeof(content_types[0]); m++) {
@@ -201,7 +229,6 @@ static void http_parse(HttpRequest* rq, HttpResponse* res) {
     /*parse request*/
     rq->num_headers = 100;
     int prc;
-    size_t method_len;
 
     prc = phr_parse_request(rq->raw_request.ptr, rq->raw_request.len, 
                             &rq->method_str.ptr, &rq->method_str.len,
@@ -209,8 +236,11 @@ static void http_parse(HttpRequest* rq, HttpResponse* res) {
                             &rq->minor_version, 
                             rq->headers, &rq->num_headers, 0);
     if (prc < 0){
-        // log_error("HTTP parse error: %d", prc);
         res->err = HTTP_BAD_REQUEST;
+    } else {
+        /* prc (# bytes consumed) indicates first character of request body */
+        rq->body.ptr = rq->raw_request.ptr + prc;
+        rq->body.len = rq->raw_request.len - prc;
     }
 
     /* Get the method */
@@ -222,6 +252,9 @@ static void http_parse(HttpRequest* rq, HttpResponse* res) {
         res->err = HTTP_METHOD_NOT_ALLOWED;
     }
 
+    http_parse_variables(rq, res);
+    for(int i = 0; i < rq->n_variables; i++) {
+    }
     http_translate_path(rq);
     http_set_content_type(rq, res);
 }
@@ -240,12 +273,11 @@ static const struct {
     const char* path;
     enum HttpRoute route;
 } routes[] = {
-    {"/perlin", ROUTE_PERLIN},
+    {"/perlin"          , ROUTE_PERLIN          },
     {"/spotify-archiver", ROUTE_SPOTIFY_ARCHIVER}
 };
 
 static void http_route(HttpRequest* rq, HttpResponse* res) {
-    /* translate '/' and 'index.html'*/
     if(res->err != HTTP_OK) {
         rq->route = ROUTE_ERROR;
         return;
@@ -253,10 +285,8 @@ static void http_route(HttpRequest* rq, HttpResponse* res) {
 
     int n_routes = sizeof(routes)/sizeof(routes[0]);
     for(int i = 0; i < n_routes; i++) {
-        int route_len = sizeof(routes[i].path)-1;
-        char rqp[64];
-        strncpy(rqp, rq->path.ptr, rq->path.len);
-        if(route_len == rq->path.len &&strncmp(rq->path.ptr, routes[i].path, route_len) == 0) {
+        int route_len = strlen(routes[i].path);
+        if(route_len == rq->path.len && strncmp(rq->path.ptr, routes[i].path, route_len) == 0) {
             rq->route = routes[i].route;
             return;
         }
@@ -276,6 +306,7 @@ static void http_fill_body(HttpRequest* rq, HttpResponse* res) {
             content_perlin(rq, res);
             break;
         case ROUTE_SPOTIFY_ARCHIVER:
+            content_archiver(rq, res);
             break;
         default:
             break;

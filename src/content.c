@@ -1,11 +1,37 @@
 #include <string.h>
 #include <stdio.h>
+#include <unistd.h>
+#include <sys/wait.h>
+
 #include "http.h"
 #include "logger.h"
 #include "content.h"
 #include "perlin.h"
 #include "util.h"
 
+
+const char html_plaintext_wrapper[] =
+    "<!DOCTYPE html>"
+    "<html lang=\"en\">"
+    "<head>"
+    "<meta charset=\"UTF-8\">"
+    "<title>perlin</title>"
+    "<link rel=\"stylesheet\" href=\"/style.css\">"
+    "</head>"
+    "<body>\n"
+    "<pre class=\"plaintext\">";
+const size_t html_plaintext_wrapper_size = sizeof(html_plaintext_wrapper)-1;
+
+static void content_begin_plaintext_wrap(HttpResponse* res) {
+    strncpy(res->body.ptr, html_plaintext_wrapper, html_plaintext_wrapper_size);
+    res->body.len = html_plaintext_wrapper_size;
+}
+
+static void content_end_plaintext_wrap(HttpResponse* res) {
+    strcpy(res->body.ptr + res->body.len, "</pre>");
+    res->body.len += 6;
+    strcpy(res->content_type, "text/html");
+}
 
 void content_read_file(HttpRequest* rq, HttpResponse* res)
 {
@@ -15,7 +41,7 @@ void content_read_file(HttpRequest* rq, HttpResponse* res)
 
     fp = fopen(path, "r");
     if (fp == NULL) {
-        // log_perror("http_read_file, could not open requested file");
+        // perror("http_read_file, could not open requested file");
         res->err = HTTP_NOT_FOUND;
         content_error(rq, res);
         return;
@@ -55,24 +81,9 @@ void content_error(HttpRequest* rq, HttpResponse* res) {
     strcpy(res->content_type, "text/html");
 }
 
-const char html_plaintext_wrapper[] =
-    "<!DOCTYPE html>"
-    "<html lang=\"en\">"
-    "<head>"
-    "<meta charset=\"UTF-8\">"
-    "<title>perlin</title>"
-    "<link rel=\"stylesheet\" href=\"/style.css\">"
-    "</head>"
-    "<body>\n"
-    "<pre class=\"plaintext\">";
-
-const size_t html_plaintext_wrapper_size = sizeof(html_plaintext_wrapper)-1;
 void content_perlin(HttpRequest* rq, HttpResponse* res) {
-
+    content_begin_plaintext_wrap(res);
     //make it html
-    strncpy(res->body.ptr, html_plaintext_wrapper, html_plaintext_wrapper_size);
-    res->body.len = html_plaintext_wrapper_size;
-
 	int w = 250;
 	int h = 100;
 	size_t n = PGRIDSIZE(w,h);
@@ -83,7 +94,123 @@ void content_perlin(HttpRequest* rq, HttpResponse* res) {
     }
 	res->body.len += perlin_sample_grid(res->body.ptr + res->body.len, res->body.size-res->body.len, w, h, 
 						randf(200.0f), randf(200.0f), randf(0.1f));
-    strcpy(res->body.ptr + res->body.len, "</pre>");
-    res->body.len += 6;
-    strcpy(res->content_type, "text/html");
+    content_end_plaintext_wrap(res);
+}
+
+enum VariableType {
+    INT,
+    FLOAT,
+    BOOL,
+    STRING
+};
+
+#define VARIABLE_LEN 128
+void content_archiver(HttpRequest* rq, HttpResponse* res) {
+
+    content_begin_plaintext_wrap(res);
+    int fd[2];
+    pid_t pid;
+    int bytes_read;
+
+    char username[VARIABLE_LEN];
+    char playlist_name[VARIABLE_LEN];
+    bool show_albums = false;
+    bool list_playlists = false;
+
+    for(int i = 0; i < rq->n_variables; i++) {
+        const StringView key = rq->variables[i].key;
+        const StringView value = rq->variables[i].value;
+        int len = min(value.len, VARIABLE_LEN);
+        if(strncmp("username", key.ptr, key.len) == 0) {
+            strncpy(username, value.ptr, len);
+            username[len] = '\0';
+        } else if (strncmp("playlist_name", key.ptr, key.len) == 0) {
+            strncpy(playlist_name, value.ptr, len);
+            playlist_name[len] = '\0';
+        } else if (strncmp("list_playlists", key.ptr, key.len) == 0) {
+            list_playlists = true;
+        } else if (strncmp("show_albums", key.ptr, key.len) == 0) {
+            show_albums = true;
+        } 
+    }
+
+    if (pipe(fd) == -1) {
+        perror("pipe");
+        res->err = HTTP_SERVER_ERROR;
+        content_error(rq, res);
+        return;
+    }
+
+    pid = fork();
+
+    if (pid == -1) {
+        perror("fork");
+        res->err = HTTP_SERVER_ERROR;
+        content_error(rq, res);
+        return;
+    } else if (pid == 0) {
+        // Child process
+        close(fd[0]); // Close the read end of the pipe
+
+        // Redirect standard output to the write end of the pipe
+        if (dup2(fd[1], STDOUT_FILENO) == -1) {
+            perror("dup2");
+            res->err = HTTP_SERVER_ERROR;
+            content_error(rq, res);
+            return;
+        }
+        if (dup2(fd[1], STDERR_FILENO) == -1) {
+            perror("dup2");
+            res->err = HTTP_SERVER_ERROR;
+            content_error(rq, res);
+            return;
+        }
+
+        // Execute the
+        char* args[7] = { NULL };
+        args[0] = "node";
+        args[1] = "tools/spotify-archiver/spotify-archiver.js";
+        args[2] = username;
+
+        if(list_playlists) {
+            args[3] = "--list";
+        } else {
+            args[3] = playlist_name;
+            if(show_albums) {
+                args[4] = "--albums";
+            }
+        }
+
+        if (execvp("node", args) == -1) {
+            perror("execlp");
+            res->err = HTTP_SERVER_ERROR;
+            content_error(rq, res);
+            return;
+        }
+
+    } else {
+        // Parent process
+        close(fd[1]); // Close the write end of the pipe
+
+        // Read from the pipe until the end of file
+        while (( bytes_read = read(fd[0], res->body.ptr + res->body.len, res->body.size - res->body.len)) != 0) {
+            if (bytes_read == -1) {
+                perror("read");
+                res->err = HTTP_SERVER_ERROR;
+                content_error(rq, res);
+                return;
+            }
+            res->body.len += bytes_read;
+        }
+
+        // Wait for the child process to exit and collect its exit status
+        int status;
+        if (waitpid(pid, &status, 0) == -1) {
+            perror("waitpid");
+            res->err = HTTP_SERVER_ERROR;
+            content_error(rq, res);
+            return;
+        }
+        content_end_plaintext_wrap(res);
+    }
 }
