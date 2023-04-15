@@ -57,32 +57,130 @@ void http_destroy_response(HttpResponse* res) {
     free(res);
 }
 
+/* https://stackoverflow.com/questions/2673207/c-c-url-decode-library */
+static void http_url_decode(char *dst, const char *src, int len)
+{
+        char a, b;
+        int i = 0;
+        while (*src && i < len) {
+                if ((*src == '%') &&
+                    ((a = src[1]) && (b = src[2])) &&
+                    (isxdigit(a) && isxdigit(b))) {
+                        if (a >= 'a')
+                                a -= 'a'-'A';
+                        if (a >= 'A')
+                                a -= ('A' - 10);
+                        else
+                                a -= '0';
+                        if (b >= 'a')
+                                b -= 'a'-'A';
+                        if (b >= 'A')
+                                b -= ('A' - 10);
+                        else
+                                b -= '0';
+                        *dst++ = 16*a+b;
+                        src+=3;
+                } else if (*src == '+') {
+                        *dst++ = ' ';
+                        src++;
+                } else {
+                        *dst++ = *src++;
+                }
+                i++;
+        }
+        *dst++ = '\0';
+}
 static void http_parse_variables(HttpRequest* rq, HttpResponse* res) {
     if(rq->body.len <= 0) {return;}
+    // printf("Request Body: %.*s\n", rq->body.len, rq->body.ptr);
     int i = 0;
-    const char* current = rq->body.ptr;
+    const char* begin = rq->body.ptr;
     
     for(int i =0; i < MAX_VARIABLES; i++) {
-        rq->n_variables++;
-        rq->variables[i].key.ptr = current;
-        const char* equals = strchr(current, '=');
-        if(equals == NULL) { //couldnt find equals
+        const char* end = strchr(begin, '&');
+        if(!end) {
+            end = rq->body.ptr + rq->body.len;
+        }
+
+        const char* eq = strchr(begin, '=');
+        if(!eq) {
             res->err = HTTP_BAD_REQUEST;
             return;
         }
-        rq->variables[i].key.len = equals - rq->variables[i].key.ptr;
-        rq->variables[i].value.ptr = equals + 1;
 
-        char* and = strchr(rq->variables[i].value.ptr, '&');
-        if(and == NULL) {
-            rq->variables[i].value.len = rq->body.len - (rq->variables[i].value.ptr - rq->body.ptr);
+        const char* key_begin = begin;
+        int key_len = eq - begin;
+        http_url_decode(rq->variables[i].key.ptr, key_begin, key_len);
+        rq->variables[i].key.len = key_len;
+
+        const char* value_begin = eq+1;
+        int value_len = end - (eq+1);
+        http_url_decode(rq->variables[i].value.ptr, value_begin, value_len);
+        rq->variables[i].value.len = value_len;
+
+        rq->n_variables++;
+
+        if(end + 1 > rq->body.ptr + rq->body.len) {
             return;
-        } else {
-            rq->variables[i].value.len = and - rq->variables[i].value.ptr;
-            current = and + 1;
         }
+        begin = end + 1;
     }
 }
+
+
+// static void http_parse_variables(HttpRequest* rq, HttpResponse* res) {
+//     if(rq->body.len <= 0) {return;}
+//     printf("Request Body: %.*s\n", rq->body.len, rq->body.ptr);
+//     int i = 0;
+//     const char* current = rq->body.ptr;
+    
+//     for(int i =0; i < MAX_VARIABLES; i++) {
+//         rq->variables[i].key.ptr = current;
+//         const char* equals = strchr(current, '=');
+//         if(equals == NULL) { //couldnt find equals
+//             res->err = HTTP_BAD_REQUEST;
+//             return;
+//         }
+//         rq->variables[i].key.len = equals - rq->variables[i].key.ptr;
+//         if(equals + 1 > rq->body.ptr + rq->body.len) {
+//             printf("equals\n");
+//             break;
+//         }
+//         rq->variables[i].value.ptr = equals + 1;
+
+//         char* and = strchr(rq->variables[i].value.ptr, '&');
+//         if(and == NULL) {
+//             rq->variables[i].value.len = rq->body.len - (rq->variables[i].value.ptr - rq->body.ptr);
+//             return;
+//         } else {
+//             rq->variables[i].value.len = and - rq->variables[i].value.ptr;
+//             current = and + 1;
+//             if(and + 1 > rq->body.ptr + rq->body.len) {
+//                 break;
+//             }
+//         }
+//         rq->n_variables++;
+//     }
+// }
+
+// static void http_parse_variables(HttpRequest* rq, HttpResponse* res) {
+//     char* query = strndup (rq->body.ptr, rq->body.len);  /* duplicate array, &array is not char** */
+//     char* tokens = query;
+//     char* p = query;
+//     while ((p = strsep (&tokens, "&\n"))) {
+//         char *var = strtok (p, "="),
+//              *val = NULL;
+//         if (var && (val = strtok (NULL, "="))) {
+//             strcpy(rq->variables[rq->n_variables++].key.ptr, var);
+//             strcpy(rq->variables[rq->n_variables].value.ptr, val);
+//         }else {
+//             strcpy(rq->variables[rq->n_variables++].key.ptr, var);
+//             rq->variables[rq->n_variables].value.ptr[0] = '\0';
+//         }
+//     }
+
+// }
+
 
 static void http_translate_path(HttpRequest* rq) {
     if(rq->path.len == 1 && strncmp("/"          , rq->path.ptr, rq->path.len) == 0 ||
@@ -253,8 +351,6 @@ static void http_parse(HttpRequest* rq, HttpResponse* res) {
     }
 
     http_parse_variables(rq, res);
-    for(int i = 0; i < rq->n_variables; i++) {
-    }
     http_translate_path(rq);
     http_set_content_type(rq, res);
 }

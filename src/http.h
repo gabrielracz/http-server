@@ -16,6 +16,12 @@ typedef struct {
 } Buffer;
 
 typedef struct {
+    char ptr[128];
+    size_t len;
+    size_t size;
+} StaticVariableBuffer;
+
+typedef struct {
     char ptr[RESPONSE_BUFFER_SIZE];
     size_t len;
     size_t size;
@@ -59,8 +65,8 @@ enum HttpRoute {
 };
 
 typedef struct  {
-    StringView key;
-    StringView value;
+    StaticVariableBuffer key;
+    StaticVariableBuffer value;
 } HttpVariable;
 
 typedef struct {
@@ -109,5 +115,6 @@ void http_handle_request(HttpRequest* rq, HttpResponse* res);
 void http_free(HttpRequest* rq);
 
 const char* http_status_code(HttpResponse* res);
+void http_urldecode(char *dst, const char *src, int len);
 
 #endif

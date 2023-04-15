@@ -112,24 +112,24 @@ void content_archiver(HttpRequest* rq, HttpResponse* res) {
     pid_t pid;
     int bytes_read;
 
-    char username[VARIABLE_LEN];
-    char playlist_name[VARIABLE_LEN];
+    // char username[VARIABLE_LEN] = "";
+    char* username = "";
+    // char playlist_name[VARIABLE_LEN] = "";
+    char* playlist_name = "";
     bool show_albums = false;
     bool list_playlists = false;
 
     for(int i = 0; i < rq->n_variables; i++) {
-        const StringView key = rq->variables[i].key;
-        const StringView value = rq->variables[i].value;
-        int len = min(value.len, VARIABLE_LEN);
-        if(strncmp("username", key.ptr, key.len) == 0) {
-            strncpy(username, value.ptr, len);
-            username[len] = '\0';
-        } else if (strncmp("playlist_name", key.ptr, key.len) == 0) {
-            strncpy(playlist_name, value.ptr, len);
-            playlist_name[len] = '\0';
-        } else if (strncmp("list_playlists", key.ptr, key.len) == 0) {
+
+        int len = min(rq->variables[i].value.len, VARIABLE_LEN);
+        if(rq->variables[i].value.len == 0) {continue;}
+        if(strncmp("username", rq->variables[i].key.ptr, rq->variables[i].key.len) == 0) {
+            username = rq->variables[i].value.ptr;
+        } else if (strncmp("playlist_name", rq->variables[i].key.ptr, rq->variables[i].key.len) == 0) {
+            playlist_name = rq->variables[i].value.ptr;
+        } else if (strncmp("list_playlists", rq->variables[i].key.ptr, rq->variables[i].key.len) == 0) {
             list_playlists = true;
-        } else if (strncmp("show_albums", key.ptr, key.len) == 0) {
+        } else if (strncmp("show_albums", rq->variables[i].key.ptr, rq->variables[i].key.len) == 0) {
             show_albums = true;
         } 
     }
