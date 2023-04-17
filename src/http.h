@@ -90,31 +90,33 @@ typedef struct
     StringView body;
     StringView method_str;
 
-    bool translated;
-    char translated_path[256];
+    size_t content_length;
 
     struct phr_header headers[100];
-    size_t num_headers;
+    size_t n_headers;
 
     int minor_version;
     int major_version;
 
     bool parsed;
     bool done;
+    bool wait_for_body;
 
     char addr[INET_ADDRSTRLEN];
 } HttpRequest;
 
 int http_init();
-HttpResponse* http_create_response();
+
 HttpRequest* http_create_request(Buffer request_buffer, const char* client_address);
 void http_destroy_request(HttpRequest* rq);
+
+HttpResponse* http_create_response();
 void http_destroy_response(HttpResponse* res);
 
+void http_parse(HttpRequest* rq, HttpResponse* res);
+void http_parse_body(HttpRequest* rq, HttpResponse* res);
 void http_handle_request(HttpRequest* rq, HttpResponse* res);
-void http_free(HttpRequest* rq);
 
 const char* http_status_code(HttpResponse* res);
-void http_urldecode(char *dst, const char *src, int len);
 
 #endif

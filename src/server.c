@@ -146,35 +146,34 @@ static void* process_request(void* connfd) {
     char* r = calloc(1, 16384);
     Buffer rcv_buffer = {.ptr=r, .len=0, .size=16384};
 
-	// while(1){
-		rcv_buffer.len = recv(connectionfd, rcv_buffer.ptr, rcv_buffer.size, 0);
-		if(rcv_buffer.len == 0){
-			// log_info("Client disconnected     %s", cliaddr_str);	
-			log_break();
-			goto connection_exit;
-		}
-		
-		HttpRequest* rq = http_create_request(rcv_buffer, cliaddr_str);
-        // while(!rq->done) {
-            HttpResponse* res = http_create_response();
-			http_handle_request(rq, res);
-			if(res->body.len == 0) {
-                http_destroy_request(rq);
-		http_destroy_response(res);
-				goto connection_exit;
-			}
+    int flags = 0;
 
-            size_t bytes_sent;
-            bytes_sent = sendmsg(connectionfd, &res->msg, 0) ;
-            // log_info("Sent %zu               %s", bytes_sent, cliaddr_str);
-            log_info("%-7.*s%-40.*s%.3s %-10zu - %s", 
-                     rq->method_str.len, rq->method_str.ptr, rq->path.len, rq->path.ptr, http_status_code(res), bytes_sent, rq->addr);
+    // look into MSG_DONTWAIT for nonblocking
+    rcv_buffer.len =  recv(connectionfd, rcv_buffer.ptr, rcv_buffer.size, 0);
+    if(rcv_buffer.len == 0){
+        goto connection_exit; //client disconnect
+    }
+    
+    HttpRequest* rq = http_create_request(rcv_buffer, cliaddr_str);
+    HttpResponse* res = http_create_response();
 
-            http_destroy_response(res);
-        // }
-	// }
+    http_parse(rq, res);
+    if(rq->wait_for_body) { // TODO: abstract this better
+        rcv_buffer.len +=  recv(connectionfd, rcv_buffer.ptr + rcv_buffer.len, rcv_buffer.size - rcv_buffer.len, 0);
+        if(rcv_buffer.len == 0){goto connection_exit;}
+        rq->body.len = rcv_buffer.len;
+        http_parse_body(rq, res);
+    }
+
+    http_handle_request(rq, res);
+
+    size_t bytes_sent = sendmsg(connectionfd, &res->msg, 0) ;
+    log_info("%-7.*s%-40.*s%.3s %-10zu - %s", 
+                rq->method_str.len, rq->method_str.ptr, rq->path.len, rq->path.ptr, http_status_code(res), bytes_sent, rq->addr);
 
 connection_exit:
+	http_destroy_request(rq);
+    http_destroy_response(res);
 	free(rcv_buffer.ptr);
 	close(connectionfd);
     pthread_exit(0);

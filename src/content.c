@@ -15,7 +15,7 @@ const char html_plaintext_wrapper[] =
     "<html lang=\"en\">"
     "<head>"
     "<meta charset=\"UTF-8\">"
-    "<title>perlin</title>"
+    "<title>gsracz</title>"
     "<link rel=\"stylesheet\" href=\"/style.css\">"
     "</head>"
     "<body>\n"
@@ -28,8 +28,8 @@ static void content_begin_plaintext_wrap(HttpResponse* res) {
 }
 
 static void content_end_plaintext_wrap(HttpResponse* res) {
-    strcpy(res->body.ptr + res->body.len, "</pre>");
-    res->body.len += 6;
+    strcpy(res->body.ptr + res->body.len, "</pre></body>");
+    res->body.len += 14;
     strcpy(res->content_type, "text/html");
 }
 
@@ -120,9 +120,10 @@ void content_archiver(HttpRequest* rq, HttpResponse* res) {
     bool list_playlists = false;
 
     for(int i = 0; i < rq->n_variables; i++) {
+		// printf("%.*s : %.*s\n", rq->variables[i].key.len, rq->variables[i].key.ptr, rq->variables[i].value.len, rq->variables[i].value.ptr);
 
         int len = min(rq->variables[i].value.len, VARIABLE_LEN);
-        if(rq->variables[i].value.len == 0) {continue;}
+        //if(rq->variables[i].value.len == 0) {continue;}
         if(strncmp("username", rq->variables[i].key.ptr, rq->variables[i].key.len) == 0) {
             username = rq->variables[i].value.ptr;
         } else if (strncmp("playlist_name", rq->variables[i].key.ptr, rq->variables[i].key.len) == 0) {

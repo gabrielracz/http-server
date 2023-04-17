@@ -7,6 +7,7 @@
 #include <netinet/in.h> //sockaddr_in, htons, INADDR_ANY
 #include <ctype.h>
 #include <stdbool.h>
+#include <errno.h>
 
 #include "http.h"
 #include "content.h"
@@ -27,9 +28,15 @@ HttpRequest* http_create_request(Buffer request_buffer, const char *client_addre
     rq->raw_request.len = request_buffer.len;
     strncpy(rq->addr, client_address, INET_ADDRSTRLEN);
 
+    rq->path.len = 0;
+    rq->body.len = 0;
+    rq->method_str.len = 0;
+
+    rq->content_length = 0;
+
     rq->parsed = false;
     rq->done = false;
-    rq->translated = false;
+    rq->wait_for_body = false;
 
     rq->n_variables = 0;
     return rq;
@@ -90,9 +97,12 @@ static void http_url_decode(char *dst, const char *src, int len)
         }
         *dst++ = '\0';
 }
-static void http_parse_variables(HttpRequest* rq, HttpResponse* res) {
-    if(rq->body.len <= 0) {return;}
-    // printf("Request Body: %.*s\n", rq->body.len, rq->body.ptr);
+
+void http_parse_body(HttpRequest* rq, HttpResponse* res) {
+    if(rq->body.len <= 0) { //no body
+		return;
+	}
+
     int i = 0;
     const char* begin = rq->body.ptr;
     
@@ -126,61 +136,6 @@ static void http_parse_variables(HttpRequest* rq, HttpResponse* res) {
         begin = end + 1;
     }
 }
-
-
-// static void http_parse_variables(HttpRequest* rq, HttpResponse* res) {
-//     if(rq->body.len <= 0) {return;}
-//     printf("Request Body: %.*s\n", rq->body.len, rq->body.ptr);
-//     int i = 0;
-//     const char* current = rq->body.ptr;
-    
-//     for(int i =0; i < MAX_VARIABLES; i++) {
-//         rq->variables[i].key.ptr = current;
-//         const char* equals = strchr(current, '=');
-//         if(equals == NULL) { //couldnt find equals
-//             res->err = HTTP_BAD_REQUEST;
-//             return;
-//         }
-//         rq->variables[i].key.len = equals - rq->variables[i].key.ptr;
-//         if(equals + 1 > rq->body.ptr + rq->body.len) {
-//             printf("equals\n");
-//             break;
-//         }
-//         rq->variables[i].value.ptr = equals + 1;
-
-//         char* and = strchr(rq->variables[i].value.ptr, '&');
-//         if(and == NULL) {
-//             rq->variables[i].value.len = rq->body.len - (rq->variables[i].value.ptr - rq->body.ptr);
-//             return;
-//         } else {
-//             rq->variables[i].value.len = and - rq->variables[i].value.ptr;
-//             current = and + 1;
-//             if(and + 1 > rq->body.ptr + rq->body.len) {
-//                 break;
-//             }
-//         }
-//         rq->n_variables++;
-//     }
-// }
-
-// static void http_parse_variables(HttpRequest* rq, HttpResponse* res) {
-//     char* query = strndup (rq->body.ptr, rq->body.len);  /* duplicate array, &array is not char** */
-//     char* tokens = query;
-//     char* p = query;
-//     while ((p = strsep (&tokens, "&\n"))) {
-//         char *var = strtok (p, "="),
-//              *val = NULL;
-//         if (var && (val = strtok (NULL, "="))) {
-//             strcpy(rq->variables[rq->n_variables++].key.ptr, var);
-//             strcpy(rq->variables[rq->n_variables].value.ptr, val);
-//         }else {
-//             strcpy(rq->variables[rq->n_variables++].key.ptr, var);
-//             rq->variables[rq->n_variables].value.ptr[0] = '\0';
-//         }
-//     }
-
-// }
-
 
 static void http_translate_path(HttpRequest* rq) {
     if(rq->path.len == 1 && strncmp("/"          , rq->path.ptr, rq->path.len) == 0 ||
@@ -323,24 +278,20 @@ static void http_set_content_type(HttpRequest* rq, HttpResponse* res) {
     res->content_type[sizeof("text/plain")-1] = '\0';
 }
 
-static void http_parse(HttpRequest* rq, HttpResponse* res) {
-    /*parse request*/
-    rq->num_headers = 100;
-    int prc;
-
-    prc = phr_parse_request(rq->raw_request.ptr, rq->raw_request.len, 
-                            &rq->method_str.ptr, &rq->method_str.len,
-                            &rq->path.ptr, &rq->path.len, 
-                            &rq->minor_version, 
-                            rq->headers, &rq->num_headers, 0);
-    if (prc < 0){
-        res->err = HTTP_BAD_REQUEST;
-    } else {
-        /* prc (# bytes consumed) indicates first character of request body */
-        rq->body.ptr = rq->raw_request.ptr + prc;
-        rq->body.len = rq->raw_request.len - prc;
+static void http_parse_headers(HttpRequest* rq, HttpResponse* res) {
+    //potential skip for GET, etc.
+    for(int i = 0; i < rq->n_headers; i++) {
+        if(strncmp("Content-Length", rq->headers[i].name, rq->headers[i].name_len) == 0) {
+            rq->content_length = strtol(rq->headers[i].value, NULL, 10);
+            if( errno == EINVAL || errno == ERANGE) {
+                res->err = HTTP_BAD_REQUEST;
+                return;
+            }
+        }
     }
+}
 
+static void http_parse_method(HttpRequest* rq, HttpResponse* res) {
     /* Get the method */
     if(strncmp("GET", rq->method_str.ptr, rq->method_str.len) == 0) {
         rq->method = GET;
@@ -349,10 +300,37 @@ static void http_parse(HttpRequest* rq, HttpResponse* res) {
     } else {
         res->err = HTTP_METHOD_NOT_ALLOWED;
     }
+}
 
-    http_parse_variables(rq, res);
+void http_parse(HttpRequest* rq, HttpResponse* res) {
+    /*parse request*/
+    rq->n_headers = 100;
+    int prc;
+    prc = phr_parse_request(rq->raw_request.ptr, rq->raw_request.len, 
+                            &rq->method_str.ptr, &rq->method_str.len,
+                            &rq->path.ptr, &rq->path.len, 
+                            &rq->minor_version, 
+                            rq->headers, &rq->n_headers, 0);
+    if (prc < 0){
+        res->err = HTTP_BAD_REQUEST;
+        return;
+    } 
+
+    /* prc (# bytes consumed) indicates first character of request body */
+    rq->body.ptr = rq->raw_request.ptr + prc;
+    rq->body.len = rq->raw_request.len - prc;
+
+    http_parse_method(rq, res);
     http_translate_path(rq);
     http_set_content_type(rq, res);
+    http_parse_headers(rq, res);
+
+    if(rq->content_length > 0 && rq->body.len < rq->content_length) {
+        printf("Waiting for body\n");
+        rq->wait_for_body = true;
+    } else {
+        http_parse_body(rq, res);
+    }
 }
 
 static void http_validate(HttpRequest* rq, HttpResponse* res) {
@@ -460,7 +438,6 @@ static void http_format_response(HttpResponse* res) {
 }
 
 void http_handle_request(HttpRequest* rq, HttpResponse* res) {
-    http_parse(rq, res);
     http_validate(rq, res);
     http_translate_path(rq);
     http_route(rq, res);
