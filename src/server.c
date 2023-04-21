@@ -159,8 +159,9 @@ static void* process_request(void* connfd) {
 
     http_parse(rq, res);
     if(rq->wait_for_body) { // TODO: abstract this better
-        rcv_buffer.len +=  recv(connectionfd, rcv_buffer.ptr + rcv_buffer.len, rcv_buffer.size - rcv_buffer.len, 0);
-        if(rcv_buffer.len == 0){goto connection_exit;}
+        size_t bytes_recv =  recv(connectionfd, rcv_buffer.ptr + rcv_buffer.len, rcv_buffer.size - rcv_buffer.len, 0);
+        if(bytes_recv == 0) {goto connection_destroy;}
+        rcv_buffer.len += bytes_recv;
         rq->body.len = rcv_buffer.len;
         http_parse_body(rq, res);
     }
@@ -171,9 +172,10 @@ static void* process_request(void* connfd) {
     log_info("%-7.*s%-40.*s%.3s %-10zu - %s", 
                 rq->method_str.len, rq->method_str.ptr, rq->path.len, rq->path.ptr, http_status_code(res), bytes_sent, rq->addr);
 
-connection_exit:
+connection_destroy:
 	http_destroy_request(rq);
     http_destroy_response(res);
+connection_exit:
 	free(rcv_buffer.ptr);
 	close(connectionfd);
     pthread_exit(0);

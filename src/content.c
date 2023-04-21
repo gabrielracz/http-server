@@ -186,9 +186,8 @@ void content_archiver(HttpRequest* rq, HttpResponse* res) {
             perror("execlp");
             res->err = HTTP_SERVER_ERROR;
             content_error(rq, res);
-            return;
         }
-
+        close(fd[1]);
     } else {
         // Parent process
         close(fd[1]); // Close the write end of the pipe
@@ -210,8 +209,12 @@ void content_archiver(HttpRequest* rq, HttpResponse* res) {
             perror("waitpid");
             res->err = HTTP_SERVER_ERROR;
             content_error(rq, res);
-            return;
+        } else if (WEXITSTATUS(status)) {
+            res->err = HTTP_SERVER_ERROR;
+            content_error(rq, res);
+        } else {
+            content_end_plaintext_wrap(res);
         }
-        content_end_plaintext_wrap(res);
+        close(fd[0]);
     }
 }

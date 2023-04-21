@@ -5,7 +5,7 @@
 #include "../http-parser/picohttpparser.h"
 #include <stdbool.h>
 
-#define RESPONSE_BUFFER_SIZE 300 * 1024 * 1024
+#define RESPONSE_BUFFER_SIZE 30 * 1024 * 1024
 #define HEADER_BUFFER_SIZE 8192
 #define MAX_VARIABLES 16
 
