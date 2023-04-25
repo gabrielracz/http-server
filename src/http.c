@@ -195,6 +195,7 @@ static const struct {
     { "mid",        3, "audio/midi"                             , sizeof("audio/midi"                  )},
     { "midi",       4, "audio/midi"                             , sizeof("audio/midi"                  )},
     { "mime",       4, "www/mime"                               , sizeof("www/mime"                    )},
+    { "mkv",        3, "video/x-matroska"                       , sizeof("video/x-matroska"                    )},
     { "movie",      5, "video/x-sgi-movie"                      , sizeof("video/x-sgi-movie"           )},
     { "mov",        3, "video/quicktime"                        , sizeof("video/quicktime"             )},
     { "mp2",        3, "audio/mpeg"                             , sizeof("audio/mpeg"                  )},
