@@ -15,26 +15,24 @@
 #include "util.h"
 #include "perlin.h"
 
-const char index_path[] = "/gsr.html";
+#define HELLO 123
 
-int http_init() {
-    perlinit(1337);
-    return 0;
-}
+const char index_path[] = "/gsr.html";
 
 HttpRequest* http_create_request(Buffer request_buffer, const char *client_address) {
     HttpRequest* rq = malloc(sizeof(HttpRequest));
     rq->raw_request.ptr = request_buffer.ptr;
     rq->raw_request.len = request_buffer.len;
     strncpy(rq->addr, client_address, INET_ADDRSTRLEN);
-
+    
+    rq->parse_status = PARSE_HEADERS;
     rq->path.len = 0;
     rq->body.len = 0;
     rq->method_str.len = 0;
+    rq->n_headers = 100;
 
     rq->content_length = 0;
 
-    rq->parsed = false;
     rq->done = false;
     rq->wait_for_body = false;
 
@@ -279,7 +277,7 @@ static void http_set_content_type(HttpRequest* rq, HttpResponse* res) {
     res->content_type[sizeof("text/plain")-1] = '\0';
 }
 
-static void http_parse_headers(HttpRequest* rq, HttpResponse* res) {
+static void http_interpret_headers(HttpRequest* rq, HttpResponse* res) {
     //potential skip for GET, etc.
     for(int i = 0; i < rq->n_headers; i++) {
         if(strncmp("Content-Length", rq->headers[i].name, rq->headers[i].name_len) == 0) {
@@ -303,34 +301,45 @@ static void http_parse_method(HttpRequest* rq, HttpResponse* res) {
     }
 }
 
+void http_update_request_buffer(HttpRequest* rq, Buffer request_buffer) {
+    if(rq->parse_status == PARSE_COMPLETE) {return;} // shouldn't reach
+    rq->raw_request.ptr = request_buffer.ptr;
+    rq->raw_request.len = request_buffer.len;
+}
+
 void http_parse(HttpRequest* rq, HttpResponse* res) {
     /*parse request*/
-    rq->n_headers = 100;
     int prc;
-    prc = phr_parse_request(rq->raw_request.ptr, rq->raw_request.len, 
-                            &rq->method_str.ptr, &rq->method_str.len,
-                            &rq->path.ptr, &rq->path.len, 
-                            &rq->minor_version, 
-                            rq->headers, &rq->n_headers, 0);
-    if (prc < 0){
-        res->err = HTTP_BAD_REQUEST;
-        return;
-    } 
+    switch(rq->parse_status) {
+        case PARSE_HEADERS:
+            prc = phr_parse_request(rq->raw_request.ptr, rq->raw_request.len, 
+                                    &rq->method_str.ptr, &rq->method_str.len,
+                                    &rq->path.ptr, &rq->path.len, 
+                                    &rq->minor_version, 
+                                    rq->headers, &rq->n_headers, 0);
 
-    /* prc (# bytes consumed) indicates first character of request body */
-    rq->body.ptr = rq->raw_request.ptr + prc;
-    rq->body.len = rq->raw_request.len - prc;
-
-    http_parse_method(rq, res);
-    http_translate_path(rq);
-    http_set_content_type(rq, res);
-    http_parse_headers(rq, res);
-
-    if(rq->content_length > 0 && rq->body.len < rq->content_length) {
-        printf("Waiting for body\n");
-        rq->wait_for_body = true;
-    } else {
-        http_parse_body(rq, res);
+            if(prc == -2) { // incomplete header parse, wait for more
+                return;
+            } else if(prc == -1) { //header parse error, skip and send error
+                res->err = HTTP_BAD_REQUEST;
+                return;
+            }
+            http_parse_method(rq, res);
+            http_translate_path(rq);
+            http_set_content_type(rq, res);
+            http_interpret_headers(rq, res);
+            rq->parse_status++;
+        case PARSE_BODY:
+            /* prc (# bytes consumed) indicates first character of request body */
+            rq->body.ptr = rq->raw_request.ptr + prc;
+            rq->body.len = rq->raw_request.len - prc;
+            if(rq->content_length > 0 && rq->body.len < rq->content_length) {
+                return; //not ready yet, need more data
+            }
+            http_parse_body(rq, res);
+            rq->parse_status++;
+        default:
+            break;
     }
 }
 

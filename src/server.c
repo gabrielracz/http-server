@@ -18,6 +18,7 @@
 #include<netinet/in.h> //sockaddr_in, htons, INADDR_ANY
 
 #include "http.h"
+#include "content.h"
 #include "logger.h"
 #include "../libsha256/libsha.h"
 
@@ -93,7 +94,7 @@ int server_on(int port){
 	int thread_index = 0;
 
 
-	http_init();
+    content_init();
 
 	int server_on = 1;
 	log_info("server on...");
@@ -146,36 +147,27 @@ static void* process_request(void* connfd) {
     char* r = calloc(1, 16384);
     Buffer rcv_buffer = {.ptr=r, .len=0, .size=16384};
 
-    int flags = 0;
-
-    // look into MSG_DONTWAIT for nonblocking
-    rcv_buffer.len =  recv(connectionfd, rcv_buffer.ptr, rcv_buffer.size, 0);
-    if(rcv_buffer.len == 0){
-        goto connection_exit; //client disconnect
-    }
-    
     HttpRequest* rq = http_create_request(rcv_buffer, cliaddr_str);
     HttpResponse* res = http_create_response();
 
-    http_parse(rq, res);
-    if(rq->wait_for_body) { // TODO: abstract this better
-        size_t bytes_recv =  recv(connectionfd, rcv_buffer.ptr + rcv_buffer.len, rcv_buffer.size - rcv_buffer.len, 0);
-        if(bytes_recv == 0) {goto connection_destroy;}
-        rcv_buffer.len += bytes_recv;
-        rq->body.len = rcv_buffer.len;
-        http_parse_body(rq, res);
+    while(rq->parse_status != PARSE_COMPLETE) {
+        int bytes_received =  recv(connectionfd, rcv_buffer.ptr, rcv_buffer.size, 0);
+        if(bytes_received == 0){ goto connection_exit; } //client disconnect
+        rcv_buffer.len += bytes_received;
+        http_update_request_buffer(rq, rcv_buffer);
+        http_parse(rq, res);
     }
 
     http_handle_request(rq, res);
 
     size_t bytes_sent = sendmsg(connectionfd, &res->msg, 0) ;
     log_info("%-7.*s%-40.*s%.3s %-10zu - %s", 
-                rq->method_str.len, rq->method_str.ptr, rq->path.len, rq->path.ptr, http_status_code(res), bytes_sent, rq->addr);
+              rq->method_str.len, rq->method_str.ptr, rq->path.len, rq->path.ptr, 
+              http_status_code(res), bytes_sent, rq->addr);
 
-connection_destroy:
+connection_exit:
 	http_destroy_request(rq);
     http_destroy_response(res);
-connection_exit:
 	free(rcv_buffer.ptr);
 	close(connectionfd);
     pthread_exit(0);

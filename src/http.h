@@ -2,7 +2,7 @@
 #define HTTP_H
 #include <stddef.h>
 #include <netinet/in.h>
-#include "../http-parser/picohttpparser.h"
+#include "picohttpparser.h"
 #include <stdbool.h>
 
 #define RESPONSE_BUFFER_SIZE 30 * 1024 * 1024
@@ -69,6 +69,12 @@ typedef struct  {
     StaticVariableBuffer value;
 } HttpVariable;
 
+enum ParseIndex {
+    PARSE_HEADERS = 0,
+    PARSE_BODY,
+    PARSE_COMPLETE
+};
+
 typedef struct {
     enum HttpError err;
     char content_type[64];
@@ -84,6 +90,7 @@ typedef struct
     enum HttpRoute route;
     HttpVariable variables[MAX_VARIABLES];
     int n_variables;
+    enum ParseIndex parse_status;
 
     StringView raw_request;
     StringView path;
@@ -105,14 +112,13 @@ typedef struct
     char addr[INET_ADDRSTRLEN];
 } HttpRequest;
 
-int http_init();
-
 HttpRequest* http_create_request(Buffer request_buffer, const char* client_address);
 void http_destroy_request(HttpRequest* rq);
 
 HttpResponse* http_create_response();
 void http_destroy_response(HttpResponse* res);
 
+void http_update_request_buffer(HttpRequest* rq, Buffer request_buffer);
 void http_parse(HttpRequest* rq, HttpResponse* res);
 void http_parse_body(HttpRequest* rq, HttpResponse* res);
 void http_handle_request(HttpRequest* rq, HttpResponse* res);

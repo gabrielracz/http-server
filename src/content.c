@@ -9,6 +9,9 @@
 #include "perlin.h"
 #include "util.h"
 
+void content_init() {
+    perlinit(1337);
+}
 
 const char html_plaintext_wrapper[] =
     "<!DOCTYPE html>"
@@ -55,6 +58,7 @@ void content_read_file(HttpRequest* rq, HttpResponse* res)
         //Transfer encoding chunked support goes here
         res->err = HTTP_CONTENT_TOO_LARGE;
         fclose(fp);
+        content_error(rq, res);
         return;
     }
 
