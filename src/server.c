@@ -20,7 +20,6 @@
 #include "http.h"
 #include "content.h"
 #include "logger.h"
-#include "../libsha256/libsha.h"
 
 #define LOGGING 1
 
@@ -150,6 +149,7 @@ static void* process_request(void* connfd) {
     HttpRequest* rq = http_create_request(rcv_buffer, cliaddr_str);
     HttpResponse* res = http_create_response();
 
+	int i = 0; 
     while(rq->parse_status != PARSE_COMPLETE) {
         int bytes_received =  recv(connectionfd, rcv_buffer.ptr + rcv_buffer.len, rcv_buffer.size - rcv_buffer.len, 0);
         if(bytes_received == 0){ goto connection_exit; } //client disconnect

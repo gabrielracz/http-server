@@ -303,6 +303,8 @@ static void http_parse_method(HttpRequest* rq, HttpResponse* res) {
 
 void http_update_request_buffer(HttpRequest* rq, Buffer request_buffer) {
     if(rq->parse_status == PARSE_COMPLETE) {return;} // shouldn't reach
+
+    rq->body.len += request_buffer.len - rq->raw_request.len;
     rq->raw_request.ptr = request_buffer.ptr;
     rq->raw_request.len = request_buffer.len;
 }
@@ -328,11 +330,12 @@ void http_parse(HttpRequest* rq, HttpResponse* res) {
             http_translate_path(rq);
             http_set_content_type(rq, res);
             http_interpret_headers(rq, res);
-            rq->parse_status++;
-        case PARSE_BODY:
             /* prc (# bytes consumed) indicates first character of request body */
             rq->body.ptr = rq->raw_request.ptr + prc;
             rq->body.len = rq->raw_request.len - prc;
+
+            rq->parse_status++;
+        case PARSE_BODY:
             if(rq->content_length > 0 && rq->body.len < rq->content_length) {
                 return; //not ready yet, need more data
             }
