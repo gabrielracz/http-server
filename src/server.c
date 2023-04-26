@@ -151,7 +151,7 @@ static void* process_request(void* connfd) {
     HttpResponse* res = http_create_response();
 
     while(rq->parse_status != PARSE_COMPLETE) {
-        int bytes_received =  recv(connectionfd, rcv_buffer.ptr, rcv_buffer.size, 0);
+        int bytes_received =  recv(connectionfd, rcv_buffer.ptr + rcv_buffer.len, rcv_buffer.size - rcv_buffer.len, 0);
         if(bytes_received == 0){ goto connection_exit; } //client disconnect
         rcv_buffer.len += bytes_received;
         http_update_request_buffer(rq, rcv_buffer);
