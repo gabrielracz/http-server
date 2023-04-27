@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/wait.h>
+#include <sys/stat.h>
 
 #include "http.h"
 #include "logger.h"
@@ -36,41 +37,54 @@ static void content_end_plaintext_wrap(HttpResponse* res) {
     strcpy(res->content_type, "text/html");
 }
 
-void content_read_file(HttpRequest* rq, HttpResponse* res)
+size_t content_read_file(HttpRequest* rq, HttpResponse* res)
 {
     FILE* fp;
-    char path[1024] = "resources/";
-    strncat(path, rq->path.ptr, rq->path.len);
+    char filename[1024] = "resources/";
+    strncat(filename, rq->path.ptr, rq->path.len);
 
-    fp = fopen(path, "r");
-    if (fp == NULL) {
-        // perror("http_read_file, could not open requested file");
-        res->err = HTTP_NOT_FOUND;
-        content_error(rq, res);
-        return;
+    struct stat fstat;
+    if(stat(filename, &fstat) == -1) {
+        res->err = HTTP_SERVER_ERROR;
+        log_perror("stat");
+        return content_error(rq, res);
     }
 
-    fseek(fp, 0, SEEK_END);
-    size_t filelen = ftell(fp);
-    fseek(fp, 0, SEEK_SET);
+    if(!S_ISREG(fstat.st_mode)) { // we don't allow directory listing atm.
+        res->err = HTTP_FORBIDDEN;
+        return content_error(rq, res);
+    }
 
-    if (filelen > res->body.size) {
+    size_t file_length = fstat.st_size;
+    rq->target_output_length = file_length;
+
+    fp = fopen(filename, "r");
+    if (fp == NULL) {
+        res->err = HTTP_NOT_FOUND;
+        log_perror("fopen");
+        return content_error(rq, res);
+    }
+
+
+    if (file_length > res->body.size) {
+        // if(file_length > )
+        //
         //Transfer encoding chunked support goes here
         res->err = HTTP_CONTENT_TOO_LARGE;
         fclose(fp);
-        content_error(rq, res);
-        return;
+        return content_error(rq, res);
     }
 
     size_t bytes_read;
-    bytes_read = fread(res->body.ptr, 1, filelen, fp);
+    bytes_read = fread(res->body.ptr, 1, file_length, fp);
+
     res->body.ptr[bytes_read] = '\0';
     res->body.len = bytes_read;
-    rq->done = true;
     fclose(fp);
+    return bytes_read;
 }
 
-void content_error(HttpRequest* rq, HttpResponse* res) {
+size_t content_error(HttpRequest* rq, HttpResponse* res) {
     const char* status_code_str = http_status_code(res);
     res->body.len = sprintf(res->body.ptr,
            "<html>"
@@ -83,9 +97,10 @@ void content_error(HttpRequest* rq, HttpResponse* res) {
            status_code_str,
            status_code_str);
     strcpy(res->content_type, "text/html");
+    return res->body.len;
 }
 
-void content_perlin(HttpRequest* rq, HttpResponse* res) {
+size_t content_perlin(HttpRequest* rq, HttpResponse* res) {
     content_begin_plaintext_wrap(res);
     //make it html
 	int w = 250;
@@ -93,12 +108,12 @@ void content_perlin(HttpRequest* rq, HttpResponse* res) {
 	size_t n = PGRIDSIZE(w,h);
     if(n > res->body.size - res->body.len) {
         res->err = HTTP_BAD_REQUEST;
-        content_error(rq, res);
-        return;
+        return content_error(rq, res);
     }
 	res->body.len += perlin_sample_grid(res->body.ptr + res->body.len, res->body.size-res->body.len, w, h, 
 						randf(200.0f), randf(200.0f), randf(0.1f));
     content_end_plaintext_wrap(res);
+    return res->body.len;
 }
 
 enum VariableType {
@@ -109,7 +124,7 @@ enum VariableType {
 };
 
 #define VARIABLE_LEN 128
-void content_archiver(HttpRequest* rq, HttpResponse* res) {
+size_t content_archiver(HttpRequest* rq, HttpResponse* res) {
 
     content_begin_plaintext_wrap(res);
     int fd[2];
@@ -142,8 +157,7 @@ void content_archiver(HttpRequest* rq, HttpResponse* res) {
     if (pipe(fd) == -1) {
         perror("pipe");
         res->err = HTTP_SERVER_ERROR;
-        content_error(rq, res);
-        return;
+        return content_error(rq, res);
     }
 
     pid = fork();
@@ -151,24 +165,21 @@ void content_archiver(HttpRequest* rq, HttpResponse* res) {
     if (pid == -1) {
         perror("fork");
         res->err = HTTP_SERVER_ERROR;
-        content_error(rq, res);
-        return;
-    } else if (pid == 0) {
+        return content_error(rq, res);
+    } 
+    
+    if (pid == 0) {
         // Child process
         close(fd[0]); // Close the read end of the pipe
 
         // Redirect standard output to the write end of the pipe
         if (dup2(fd[1], STDOUT_FILENO) == -1) {
             perror("dup2");
-            res->err = HTTP_SERVER_ERROR;
-            content_error(rq, res);
-            return;
+            exit(-1);
         }
         if (dup2(fd[1], STDERR_FILENO) == -1) {
             perror("dup2");
-            res->err = HTTP_SERVER_ERROR;
-            content_error(rq, res);
-            return;
+            exit(-1);
         }
 
         // Execute the
@@ -188,10 +199,10 @@ void content_archiver(HttpRequest* rq, HttpResponse* res) {
 
         if (execvp("node", args) == -1) {
             perror("execlp");
-            res->err = HTTP_SERVER_ERROR;
-            content_error(rq, res);
+            exit(-1);
         }
         close(fd[1]);
+        exit(0);
     } else {
         // Parent process
         close(fd[1]); // Close the write end of the pipe
@@ -201,8 +212,7 @@ void content_archiver(HttpRequest* rq, HttpResponse* res) {
             if (bytes_read == -1) {
                 perror("read");
                 res->err = HTTP_SERVER_ERROR;
-                content_error(rq, res);
-                return;
+                return content_error(rq, res);
             }
             res->body.len += bytes_read;
         }
@@ -220,5 +230,7 @@ void content_archiver(HttpRequest* rq, HttpResponse* res) {
             content_end_plaintext_wrap(res);
         }
         close(fd[0]);
+        return res->body.len;
     }
+    return 0;
 }

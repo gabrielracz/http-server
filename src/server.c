@@ -1,3 +1,4 @@
+#include <sys/types.h>
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -33,12 +34,17 @@ enum REQ_TYPES {
 	DLOAD
 };
 
+static volatile unsigned long global_bytes_count;
+pthread_mutex_t bytes_lock;
 
 int server_on(int port){
 	int connectionfd;
 	pid_t childpid;
 	socklen_t clilen;
 	struct sockaddr_in 	cliaddr, servaddr;
+
+    pthread_mutexattr_t bytes_attr;
+    pthread_mutex_init(&bytes_lock, &bytes_attr);
 
 	/*bzero(&servaddr, sizeof(servaddr));*/
 	memset(&servaddr, 0, sizeof(servaddr));
@@ -50,7 +56,7 @@ int server_on(int port){
 	/* Prepare the socket */
 	int listenfd;
 	listenfd = socket(AF_INET, SOCK_STREAM, 0);
-	if(listenfd < 0){
+	if(listenfd == -1){
 		log_perror("socket");
 		return 1;
     }
@@ -63,7 +69,7 @@ int server_on(int port){
 	}
 
 	rc = listen(listenfd, 15);
-	if(rc < 0) {
+	if(rc ==-1) {
 		log_perror("listen");
 		return 3;
 	}
@@ -158,12 +164,17 @@ static void* process_request(void* connfd) {
         http_parse(rq, res);
     }
 
-    http_handle_request(rq, res);
+    size_t bytes_sent = 0;
+    while(rq->status != REQUEST_COMPLETE) {
+        http_handle_request(rq, res);
 
-    size_t bytes_sent = sendmsg(connectionfd, &res->msg, 0) ;
+        size_t b = sendmsg(connectionfd, &res->msg, 0) ;
+        bytes_sent += b;
+    }
+
     log_info("%-7.*s%-40.*s%.3s %-10zu - %s", 
-              rq->method_str.len, rq->method_str.ptr, rq->path.len, rq->path.ptr, 
-              http_status_code(res), bytes_sent, rq->addr);
+             rq->method_str.len, rq->method_str.ptr, rq->path.len, rq->path.ptr, 
+             http_status_code(res), bytes_sent, rq->addr);
 
 connection_exit:
 	http_destroy_request(rq);

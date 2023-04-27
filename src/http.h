@@ -69,10 +69,16 @@ typedef struct  {
     StaticVariableBuffer value;
 } HttpVariable;
 
-enum ParseIndex {
+enum ParseStatus {
     PARSE_HEADERS = 0,
     PARSE_BODY,
     PARSE_COMPLETE
+};
+
+enum RequestStatus {
+    REQUEST_PROCESSING,
+    REQUEST_RESPONDING,
+    REQUEST_COMPLETE
 };
 
 typedef struct {
@@ -84,32 +90,30 @@ typedef struct {
     struct iovec iov[2];    //vector of io blocks to be stitched together by 'sendmsg()'
 } HttpResponse;
 
-typedef struct
-{
-    enum HttpMethod method;
-    enum HttpRoute route;
-    HttpVariable variables[MAX_VARIABLES];
-    int n_variables;
-    enum ParseIndex parse_status;
-
+typedef struct {
     StringView raw_request;
     StringView path;
     StringView body;
     StringView method_str;
-
     size_t content_length;
+
+    size_t target_output_length;
+    size_t output_length;
 
     struct phr_header headers[100];
     size_t n_headers;
+    HttpVariable variables[MAX_VARIABLES];
+    size_t n_variables;
+
+    enum HttpMethod method;
+    enum HttpRoute route;
+    enum ParseStatus parse_status;
+    enum RequestStatus status;
 
     int minor_version;
     int major_version;
-
-    bool parsed;
-    bool done;
-    bool wait_for_body;
-
     char addr[INET_ADDRSTRLEN];
+
 } HttpRequest;
 
 HttpRequest* http_create_request(Buffer request_buffer, const char* client_address);

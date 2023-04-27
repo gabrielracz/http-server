@@ -5,4 +5,5 @@ srv
 compile_commands.json
 logs/*
 resources/data/*
+resources/*
 
