@@ -365,7 +365,8 @@ static const struct {
     enum HttpRoute route;
 } routes[] = {
     {"/perlin"          , ROUTE_PERLIN          },
-    {"/spotify-archiver", ROUTE_SPOTIFY_ARCHIVER}
+    {"/spotify-archiver", ROUTE_SPOTIFY_ARCHIVER},
+    {"/sha256", ROUTE_SHA256}
 };
 
 static void http_route(HttpRequest* rq, HttpResponse* res) {
@@ -399,6 +400,9 @@ static void http_fill_body(HttpRequest* rq, HttpResponse* res) {
             break;
         case ROUTE_SPOTIFY_ARCHIVER:
             bytes = content_archiver(rq, res);
+            break;
+        case ROUTE_SHA256:
+            bytes = content_sha256(rq, res);
             break;
         default:
             break;

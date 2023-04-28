@@ -17,14 +17,6 @@ static const uint32_t k[] = {
     0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208, 0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2
 };
 
-/*first 32 bits of fractional part of the square roots of first 8 primes*/
-static uint32_t hash[] = {
-	0x6a09e667, 0xbb67ae85, 0x3c6ef372, 0xa54ff53a, 
-	0x510e527f, 0x9b05688c, 0x1f83d9ab, 0x5be0cd19
-};
-
-unsigned char g_show_output = 0;
-
 //-------------------Compound Functions-------------------
 int SHR(uint32_t num, int shift){
 	return num >> shift;
@@ -112,7 +104,7 @@ void create_message_schedule(uint32_t* sched, uint32_t* chunk){
 }
 
 //Compression of message schedule into 8 registers using compound functions.
-void compression(uint32_t* sched){
+void compression(uint32_t* sched, uint32_t hash[]){
 	uint32_t a = hash[0];
 	uint32_t b = hash[1];
 	uint32_t c = hash[2];
@@ -149,7 +141,7 @@ void compression(uint32_t* sched){
 
 }
 
-void produce_output(char* out) {
+void produce_output(char* out, uint32_t hash[]) {
 	uint32_t a = hash[0];
 	uint32_t b = hash[1];
 	uint32_t c = hash[2];
@@ -201,24 +193,29 @@ void produce_output(char* out) {
 }
 
 //main sha256 routine
-void sha256(uint8_t* buffer, size_t buflen, char* output){
-	
+size_t sha256(const char* buffer, size_t buflen, char* output){
+    /*first 32 bits of fractional part of the square roots of first 8 primes*/
+    uint32_t hash[] = {
+        0x6a09e667, 0xbb67ae85, 0x3c6ef372, 0xa54ff53a, 
+        0x510e527f, 0x9b05688c, 0x1f83d9ab, 0x5be0cd19
+    };
+
 	size_t l = buflen*8 + 1 + 64;						//64 bit length encoding plus 0b1 seperator
 	size_t msglen = l + (512 - (l % 512));			//nearest multiple of 512 to our desired length
 	size_t num_blocks = msglen / 512;
 
-	uint32_t* message = calloc(msglen/sizeof(uint32_t), sizeof(uint32_t));
-	process_input(buffer, buflen, message, msglen/32);
+	uint32_t* message = (uint32_t*) calloc(msglen/sizeof(uint32_t), sizeof(uint32_t));
+	process_input((uint8_t*) buffer, buflen, message, msglen/32);
 
 	uint32_t message_schedule[64] = {0};
 
 	for(size_t i = 0; i < num_blocks; i++){
 		create_message_schedule(message_schedule, message+i*512/32);
-		compression(message_schedule + i);
+		compression(message_schedule + i, hash);
 	}
-	produce_output(output);
+	produce_output(output, hash);
 	free(message);
 
-	return;
+	return 65;
 }
 

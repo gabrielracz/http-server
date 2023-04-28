@@ -61,6 +61,7 @@ enum HttpRoute {
     ROUTE_ERROR,
     ROUTE_PERLIN,
     ROUTE_SPOTIFY_ARCHIVER,
+    ROUTE_SHA256,
     ROUTE_N_ROUTES
 };
 

@@ -9,6 +9,7 @@
 #include "content.h"
 #include "perlin.h"
 #include "util.h"
+#include "libsha.h"
 
 void content_init() {
     perlinit(1337);
@@ -32,8 +33,9 @@ static void content_begin_plaintext_wrap(HttpResponse* res) {
 }
 
 static void content_end_plaintext_wrap(HttpResponse* res) {
-    strcpy(res->body.ptr + res->body.len, "</pre></body>");
-    res->body.len += 14;
+    const char footer[] = "</pre></body>";
+    strcpy(res->body.ptr + res->body.len, footer);
+    res->body.len += sizeof(footer);
     strcpy(res->content_type, "text/html");
 }
 
@@ -87,8 +89,13 @@ size_t content_read_file(HttpRequest* rq, HttpResponse* res)
 size_t content_error(HttpRequest* rq, HttpResponse* res) {
     const char* status_code_str = http_status_code(res);
     res->body.len = sprintf(res->body.ptr,
+           "<!DOCTYPE html>"
            "<html>"
-           "<head><title>%s</title><link rel=\"stylesheet\" href=\"/style.css\"></head>"
+           "<head>"
+                "<meta charset=\"UTF-8\">"
+                "<title>%s</title>"
+                "<link rel=\"stylesheet\" href=\"/style.css\">"
+           "</head>"
            "<body>"
            "<center><h1>%s</h1></center>"
            "<hr><center>naoko/2.0</center>"
@@ -233,4 +240,24 @@ size_t content_archiver(HttpRequest* rq, HttpResponse* res) {
         return res->body.len;
     }
     return 0;
+}
+
+size_t content_sha256(HttpRequest* rq, HttpResponse* res) {
+    StringView input = {.ptr = NULL};
+    for(int i = 0; i < rq->n_variables; i++) {
+        if(strncmp("sha_input", rq->variables[i].key.ptr, rq->variables[i].key.len) == 0) {
+            input.ptr = rq->variables[i].value.ptr;
+            input.len = rq->variables[i].value.len;
+        }
+    }
+    if(!input.ptr) {
+        res->err = HTTP_BAD_REQUEST;
+        return content_error(rq, res);
+    }
+
+    // content_begin_plaintext_wrap(res);
+    size_t bytes = sha256(input.ptr, input.len, res->body.ptr + res->body.len);
+    res->body.len += bytes;
+    // content_end_plaintext_wrap(res);
+    return res->body.len;
 }
