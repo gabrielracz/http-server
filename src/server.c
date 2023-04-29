@@ -168,7 +168,11 @@ static void* process_request(void* connfd) {
     while(rq->status != REQUEST_COMPLETE) {
         http_handle_request(rq, res);
 
-        size_t b = sendmsg(connectionfd, &res->msg, 0) ;
+        size_t b = sendmsg(connectionfd, &res->msg, MSG_NOSIGNAL);
+		if(b == -1) {
+			log_perror("sendmsg");
+			goto connection_exit;
+		}
         bytes_sent += b;
     }
 

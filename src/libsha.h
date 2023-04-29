@@ -189,7 +189,7 @@ void produce_output(char* out, uint32_t hash[]) {
 	for(int i =0; i < 32; i++){
 		sprintf(out + i*2, "%02x", output[i]);
 	}
-	out[64] = '\0';
+	//out[64] = '\0';
 }
 
 //main sha256 routine
@@ -216,6 +216,6 @@ size_t sha256(const char* buffer, size_t buflen, char* output){
 	produce_output(output, hash);
 	free(message);
 
-	return 65;
+	return 64;
 }
 
