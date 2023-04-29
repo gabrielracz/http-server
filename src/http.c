@@ -383,13 +383,13 @@ static void http_route(HttpRequest* rq, HttpResponse* res) {
             return;
         }
     }
-    rq->route = ROUTE_DISK;  //default to serving file off disk
+    rq->route = ROUTE_FILE;  //default to serving file off disk
 }
 
 static void http_fill_body(HttpRequest* rq, HttpResponse* res) {
     size_t bytes = 0;
     switch(rq->route) {
-        case ROUTE_DISK:
+        case ROUTE_FILE:
             bytes = content_read_file(rq, res);
             break;
         case ROUTE_ERROR:

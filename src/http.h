@@ -57,7 +57,7 @@ enum HttpError {
 };
 
 enum HttpRoute {
-    ROUTE_DISK = 0,
+    ROUTE_FILE = 0,
     ROUTE_ERROR,
     ROUTE_PERLIN,
     ROUTE_SPOTIFY_ARCHIVER,

@@ -26,13 +26,6 @@
 
 /*Thread work*/
 static void* process_request(void* connfd);
-static size_t readmsg(int connectionfd, char* buffer, size_t buflen);
-
-enum REQ_TYPES {
-	HTTP,
-	LINK,
-	DLOAD
-};
 
 static volatile unsigned long global_bytes_count;
 pthread_mutex_t bytes_lock;
@@ -187,8 +180,4 @@ connection_exit:
 	close(connectionfd);
     pthread_exit(0);
 	return 0;
-}
-
-static size_t readmsg(int connectionfd, char* buffer, size_t buflen){
-	return recv(connectionfd, buffer, buflen, 0);
 }
