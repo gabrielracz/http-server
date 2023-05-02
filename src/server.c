@@ -38,6 +38,8 @@ int server_on(int port){
 	socklen_t clilen;
 	struct sockaddr_in 	cliaddr, servaddr;
 
+    signal(SIGPIPE, SIG_IGN);
+
     pthread_mutexattr_t bytes_attr;
     pthread_mutex_init(&bytes_lock, &bytes_attr);
 

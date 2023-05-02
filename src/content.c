@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <sys/wait.h>
 #include <sys/stat.h>
+#include <fcntl.h>
 
 #include "http.h"
 #include "logger.h"
@@ -42,14 +43,13 @@ static void content_end_plaintext_wrap(HttpResponse* res) {
 
 size_t content_read_file(HttpRequest* rq, HttpResponse* res)
 {
-    FILE* fp;
+    int fd;
     char filename[1024] = "resources/";
     strncat(filename, rq->path.ptr, rq->path.len);
 
     struct stat fstat;
     if(stat(filename, &fstat) == -1) {
-        res->err = HTTP_SERVER_ERROR;
-        log_perror("stat");
+        res->err = HTTP_NOT_FOUND;
         return content_error(rq, res);
     }
 
@@ -61,29 +61,34 @@ size_t content_read_file(HttpRequest* rq, HttpResponse* res)
     size_t file_length = fstat.st_size;
     rq->target_output_length = file_length;
 
-    fp = fopen(filename, "r");
-    if (fp == NULL) {
-        res->err = HTTP_NOT_FOUND;
-        log_perror("fopen");
+    fd = open(filename, O_RDONLY);
+    if (fd == -1) {
+        res->err = HTTP_SERVER_ERROR;
+        log_perror("open");
         return content_error(rq, res);
     }
+    res->sendfile = true;
+    res->file.fd = fd;
+    res->file.offset = 0;
+    res->file.length = file_length;
+    return file_length;
 
-    if (file_length > res->body.size) {
-        // if(file_length > )
-        //
-        //Transfer encoding chunked support goes here
-        res->err = HTTP_CONTENT_TOO_LARGE;
-        fclose(fp);
-        return content_error(rq, res);
-    }
+    // if (file_length > res->body.size) {
+    //     // if(file_length > )
+    //     //
+    //     //Transfer encoding chunked support goes here
+    //     res->err = HTTP_CONTENT_TOO_LARGE;
+    //     fclose(fp);
+    //     return content_error(rq, res);
+    // }
 
-    size_t bytes_read;
-    bytes_read = fread(res->body.ptr, 1, file_length, fp);
+    // size_t bytes_read;
+    // bytes_read = fread(res->body.ptr, 1, file_length, fp);
 
-    res->body.ptr[bytes_read] = '\0';
-    res->body.len = bytes_read;
-    fclose(fp);
-    return bytes_read;
+    // res->body.ptr[bytes_read] = '\0';
+    // res->body.len = bytes_read;
+    // fclose(fp);
+    // return bytes_read;
 }
 
 size_t content_error(HttpRequest* rq, HttpResponse* res) {

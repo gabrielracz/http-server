@@ -446,7 +446,7 @@ static void http_set_response_header(HttpResponse* res) {
             "Content-Type: %s;\r\n"
             "Connection: close\r\n\r\n",
             http_status_code(res),
-            res->body.len,
+            res->sendfile ? res->file.length : res->body.len,
             res->content_type);
 }
 
