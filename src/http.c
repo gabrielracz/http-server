@@ -49,19 +49,29 @@ void http_destroy_request(HttpRequest* rq) {
 
 HttpResponse* http_create_response() {
     HttpResponse* res = malloc(sizeof(HttpResponse));
-    res->body.ptr = malloc(RESPONSE_BUFFER_SIZE);
-    res->body.size = RESPONSE_BUFFER_SIZE;
-    res->body.len = 0;
 
     res->header.ptr = malloc(HEADER_BUFFER_SIZE);
     res->header.size = HEADER_BUFFER_SIZE;
     res->header.len = 0;
+
+    res->body.ptr = malloc(RESPONSE_BUFFER_SIZE);
+    res->body.size = RESPONSE_BUFFER_SIZE;
+    res->body.len = 0;
+
+    res->file.fd = -1;
+    res->file.length = 0;
+    res->file.offset = 0;
+    
+    res->sendfile = false;
     return res;
 }
 
 void http_destroy_response(HttpResponse* res) {
-    free(res->body.ptr);
     free(res->header.ptr);
+    free(res->body.ptr);
+    if(res->sendfile) {
+        close(res->file.fd);
+    }
     free(res);
 }
 

@@ -83,10 +83,18 @@ enum RequestStatus {
 };
 
 typedef struct {
+    int fd;
+    off_t offset;
+    size_t length;
+} FileView;
+
+typedef struct {
     enum HttpError err;
     char content_type[64];
     Buffer header;
     Buffer body;
+    FileView file;
+    bool sendfile;
     struct msghdr msg;
     struct iovec iov[2];    //vector of io blocks to be stitched together by 'sendmsg()'
 } HttpResponse;

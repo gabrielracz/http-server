@@ -39,6 +39,7 @@ static void content_end_plaintext_wrap(HttpResponse* res) {
     strcpy(res->content_type, "text/html");
 }
 
+
 size_t content_read_file(HttpRequest* rq, HttpResponse* res)
 {
     FILE* fp;
@@ -66,7 +67,6 @@ size_t content_read_file(HttpRequest* rq, HttpResponse* res)
         log_perror("fopen");
         return content_error(rq, res);
     }
-
 
     if (file_length > res->body.size) {
         // if(file_length > )

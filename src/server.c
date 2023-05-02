@@ -17,6 +17,7 @@
 #include<sys/types.h>  //pid_t
 #include<arpa/inet.h>  //inet_ptons
 #include<netinet/in.h> //sockaddr_in, htons, INADDR_ANY
+#include<sys/sendfile.h>
 
 #include "http.h"
 #include "content.h"
@@ -25,10 +26,11 @@
 #define LOGGING 1
 
 /*Thread work*/
-static void* process_request(void* connfd);
+static void* server_process_connection(void* connfd);
+static ssize_t server_send_http_response(int connectionfd, HttpResponse* res);
 
-static volatile unsigned long global_bytes_count;
-pthread_mutex_t bytes_lock;
+static volatile unsigned long global_bytes_count = 0;
+pthread_mutex_t bytes_lock; 
 
 int server_on(int port){
 	int connectionfd;
@@ -53,7 +55,6 @@ int server_on(int port){
 		log_perror("socket");
 		return 1;
     }
-	
 
 	int rc;
 	while ((rc = bind(listenfd, (struct sockaddr*) &servaddr, sizeof(servaddr)))){
@@ -121,13 +122,13 @@ int server_on(int port){
 		int i = thread_index++ % num_workers;
 		request_count++;
 		pthread_t* next_thread = thread_pool[i];
-		pthread_create(next_thread,  NULL, &process_request, (void*) cfd_ptr);
+		pthread_create(next_thread,  NULL, &server_process_connection, (void*) cfd_ptr);
 	}
 	return 0;
 }
 
 /*Thread Main*/
-static void* process_request(void* connfd) {
+static void* server_process_connection(void* connfd) {
 	/*thread init*/
 	int connectionfd = *((int*)connfd);
 	free(connfd);
@@ -157,17 +158,16 @@ static void* process_request(void* connfd) {
         http_parse(rq, res);
     }
 
-    size_t bytes_sent = 0;
-    while(rq->status != REQUEST_COMPLETE) {
-        http_handle_request(rq, res);
+    http_handle_request(rq, res);
 
-        size_t b = sendmsg(connectionfd, &res->msg, MSG_NOSIGNAL);
-		if(b == -1) {
-			log_perror("sendmsg");
-			goto connection_exit;
-		}
-        bytes_sent += b;
+    ssize_t bytes_sent = server_send_http_response(connectionfd, res);
+    if(bytes_sent == -1) {
+        goto connection_exit; //client connection close
     }
+
+    pthread_mutex_unlock(&bytes_lock);
+    global_bytes_count += bytes_sent;
+    pthread_mutex_lock(&bytes_lock);
 
     log_info("%-7.*s%-40.*s%.3s %-10zu - %s", 
              rq->method_str.len, rq->method_str.ptr, rq->path.len, rq->path.ptr, 
@@ -180,4 +180,26 @@ connection_exit:
 	close(connectionfd);
     pthread_exit(0);
 	return 0;
+}
+
+ssize_t server_send_http_response(int connectionfd, HttpResponse* res) {
+    ssize_t bytes_sent = 0;
+    size_t sendfile_sent = 0;
+    ssize_t b = 0;
+
+    while(bytes_sent < res->header.len + res->body.len) {
+        b = sendmsg(connectionfd, &res->msg, MSG_NOSIGNAL);
+        if(b == -1) { return -1; }
+        bytes_sent += b;
+    }
+
+    if(res->sendfile) {
+        while(sendfile_sent < res->file.length) {
+            b = sendfile(connectionfd, res->file.fd, &res->file.offset, res->file.length - sendfile_sent);
+            if(b == -1) { return -1; }
+            sendfile_sent += b;
+        }
+    }
+
+    return bytes_sent + sendfile_sent;
 }
