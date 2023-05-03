@@ -57,6 +57,10 @@ HttpResponse* http_create_response() {
     res->header.size = HEADER_BUFFER_SIZE;
     res->header.len = 0;
 
+    res->add_headers.ptr = malloc(HEADER_BUFFER_SIZE/4);
+    res->add_headers.size = HEADER_BUFFER_SIZE/4;
+    res->add_headers.len = 0;
+
     res->body.ptr = malloc(RESPONSE_BUFFER_SIZE);
     res->body.size = RESPONSE_BUFFER_SIZE;
     res->body.len = 0;
@@ -72,9 +76,7 @@ HttpResponse* http_create_response() {
 void http_destroy_response(HttpResponse* res) {
     free(res->header.ptr);
     free(res->body.ptr);
-    if(res->sendfile) {
-        close(res->file.fd);
-    }
+    if(res->sendfile) { close(res->file.fd); }
     free(res);
 }
 
@@ -454,6 +456,8 @@ const char* http_status_code(HttpResponse* res) {
     switch(res->err) {
         case HTTP_OK:
             return "200 OK";
+        case HTTP_PARTIAL_CONTENT:
+            return "206 Partial Content";
         case HTTP_BAD_REQUEST:
             return "400 Bad Request";
         case HTTP_FORBIDDEN:
@@ -470,16 +474,23 @@ const char* http_status_code(HttpResponse* res) {
 }
 
 static void http_set_response_header(HttpResponse* res) {
-    res->header.len = sprintf(res->header.ptr,
+    res->header.len += sprintf(res->header.ptr,
             "HTTP/1.1 %s\r\n"
-            "Content-Length: %ld\r\n"
+            "Content-Length: %zu\r\n"
             "Content-Type: %s;\r\n"
             "Accept-Ranges: bytes\r\n"
-            "Connection: close\r\n"
-            "\r\n",
+            "Connection: close\r\n",
             http_status_code(res),
             res->sendfile ? res->file.length : res->body.len,
             res->content_type);
+    
+    if(res->header.size - res->header.len > res->add_headers.len + 2) {
+        strncpy(res->header.ptr + res->header.len, res->add_headers.ptr, res->add_headers.len);
+        res->header.len += res->add_headers.len;
+    }
+
+    strncpy(res->header.ptr + res->header.len, "\r\n", 2);
+    res->header.len += 2;
 }
 
 static void http_format_response(HttpRequest* rq, HttpResponse* res) {

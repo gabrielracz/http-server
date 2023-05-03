@@ -8,6 +8,8 @@
 #define RESPONSE_BUFFER_SIZE 30 * 1024 * 1024
 #define HEADER_BUFFER_SIZE 8192
 #define MAX_VARIABLES 16
+#define SINGLE_HEADER_SIZE 64
+#define MAX_HTTP_HEADERS 128
 
 typedef struct {
     char* ptr;
@@ -53,6 +55,7 @@ enum HttpMethod {
 
 enum HttpError {
     HTTP_OK,
+    HTTP_PARTIAL_CONTENT,
     HTTP_NOT_FOUND,
     HTTP_BAD_REQUEST,
     HTTP_FORBIDDEN,
@@ -99,6 +102,7 @@ typedef struct {
     bool sendfile;
 
     Buffer header;
+    Buffer add_headers;
     Buffer body;
     FileView file;
 

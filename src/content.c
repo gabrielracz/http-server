@@ -67,11 +67,24 @@ size_t content_read_file(HttpRequest* rq, HttpResponse* res)
         log_perror("open");
         return content_error(rq, res);
     }
+    
+    size_t output_length = file_length;
+    size_t file_offset = 0;
+    if(rq->range_request) {
+        if(rq->range.end< rq->range.begin) { rq->range.end = file_length; }
+        file_offset   = rq->range.begin;
+        output_length = rq->range.end - rq->range.begin + 1;
+        // add the partial content header and status code.
+        res->err = HTTP_PARTIAL_CONTENT;
+        res->add_headers.len += sprintf(res->add_headers.ptr, "Content-Range: bytes %zu-%zu/%zu\r\n",
+                                        rq->range.begin, rq->range.end-1, file_length);
+    }
+
     res->sendfile = true;
     res->file.fd = fd;
-    res->file.offset = 0;
-    res->file.length = file_length;
-    return file_length;
+    res->file.offset = file_offset;
+    res->file.length = output_length;
+    return output_length;
 
     // if (file_length > res->body.size) {
     //     // if(file_length > )
