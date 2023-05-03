@@ -30,7 +30,8 @@ static void* server_process_connection(void* connfd);
 static ssize_t server_send_http_response(int connectionfd, HttpResponse* res);
 
 static volatile unsigned long global_bytes_count = 0;
-pthread_mutex_t bytes_lock; 
+static volatile unsigned long global_requests_served = 0;
+pthread_mutex_t global_stats_lock = PTHREAD_MUTEX_INITIALIZER; 
 
 int server_on(int port){
 	int connectionfd;
@@ -39,9 +40,6 @@ int server_on(int port){
 	struct sockaddr_in 	cliaddr, servaddr;
 
     signal(SIGPIPE, SIG_IGN);
-
-    pthread_mutexattr_t bytes_attr;
-    pthread_mutex_init(&bytes_lock, &bytes_attr);
 
 	/*bzero(&servaddr, sizeof(servaddr));*/
 	memset(&servaddr, 0, sizeof(servaddr));
@@ -167,9 +165,10 @@ static void* server_process_connection(void* connfd) {
         goto connection_exit; //client connection close
     }
 
-    pthread_mutex_unlock(&bytes_lock);
+    pthread_mutex_lock(&global_stats_lock);
     global_bytes_count += bytes_sent;
-    pthread_mutex_lock(&bytes_lock);
+    global_requests_served++;
+    pthread_mutex_unlock(&global_stats_lock);
 
     log_info("%-7.*s%-40.*s%.3s %-10zu - %s", 
              rq->method_str.len, rq->method_str.ptr, rq->path.len, rq->path.ptr, 

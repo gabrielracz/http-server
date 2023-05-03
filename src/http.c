@@ -36,6 +36,9 @@ HttpRequest* http_create_request(Buffer request_buffer, const char *client_addre
 
     rq->content_length = 0;
     rq->n_variables = 0;
+    rq->range_request = false;
+    rq->range.begin = 0;
+    rq->range.end = 0;
 
     rq->status = REQUEST_PROCESSING;
     rq->parse_status = PARSE_HEADERS;
@@ -290,15 +293,42 @@ static void http_set_content_type(HttpRequest* rq, HttpResponse* res) {
     res->content_type[sizeof("text/plain")-1] = '\0';
 }
 
-static void http_interpret_headers(HttpRequest* rq, HttpResponse* res) {
-    //potential skip for GET, etc.
+static int http_strtoll(const char* begin, char** end, size_t* result) {
+    long long l = strtoll(begin, end, 10);
+
+    bool conversion_error =  errno == EINVAL || errno == ERANGE;
+    bool no_conversion = end != NULL && begin == *end;
+    if( conversion_error || no_conversion ) { return -1; }
+
+    *result = l;
+    return 0;
+}
+
+static void http_parse_headers(HttpRequest* rq, HttpResponse* res) {
     for(int i = 0; i < rq->n_headers; i++) {
+        if(rq->headers[i].name_len == 0 || rq->headers[i].value_len == 0) { continue; }
+        // printf("%.*s: %.*s\n", rq->headers[i].name_len, rq->headers[i].name, rq->headers[i].value_len, rq->headers[i].value);
+
         if(strncmp("Content-Length", rq->headers[i].name, rq->headers[i].name_len) == 0) {
-            rq->content_length = strtol(rq->headers[i].value, NULL, 10);
+            rq->content_length = strtoll(rq->headers[i].value, NULL, 10);
             if( errno == EINVAL || errno == ERANGE) {
                 res->err = HTTP_BAD_REQUEST;
                 return;
             }
+        } else if (strncmp("Range", rq->headers[i].name, rq->headers[i].name_len) == 0) {
+            /* Range: bytes=1024-2048 */
+            const char* type_sep = memchr(rq->headers[i].value, '=', rq->headers[i].value_len);
+            if(type_sep == NULL) { continue; }
+
+            char* range_sep;
+            if(http_strtoll(type_sep+1, &range_sep, &rq->range.begin) == -1) { continue; }
+            if(*range_sep != '-') { continue; }
+            rq->range_request = true; // after this point we have a valid range
+
+            bool has_end = range_sep+1 - rq->headers[i].value < rq->headers[i].value_len;
+            if(!has_end) { continue; }
+
+            if(http_strtoll(range_sep+1, NULL, &rq->range.end) ==-1) { continue; }
         }
     }
 }
@@ -334,7 +364,7 @@ void http_parse(HttpRequest* rq, HttpResponse* res) {
                                 rq->headers, &rq->n_headers, 0);
         if(prc == -2) { // incomplete header parse, wait for more
             return;
-        } else if(prc == -1) { //header parse error, skip and send error
+        } else if(prc == -1) { // header parse error, skip and send error
             res->err = HTTP_BAD_REQUEST;
             return;
         }
@@ -342,7 +372,7 @@ void http_parse(HttpRequest* rq, HttpResponse* res) {
         http_parse_method(rq, res);
         http_translate_path(rq);
         http_set_content_type(rq, res);
-        http_interpret_headers(rq, res);
+        http_parse_headers(rq, res);
 
         /* prc (# bytes consumed) indicates first character of request body */
         rq->body.ptr = rq->raw_request.ptr + prc;
@@ -353,7 +383,7 @@ void http_parse(HttpRequest* rq, HttpResponse* res) {
 
     if(rq->parse_status == PARSE_BODY) {
         if(rq->content_length > 0 && rq->body.len < rq->content_length) {
-            return; //not ready yet, need more data
+            return; // haven't received the entire body yet, wait for more
         }
         http_parse_body(rq, res);
         rq->parse_status++;
@@ -444,7 +474,9 @@ static void http_set_response_header(HttpResponse* res) {
             "HTTP/1.1 %s\r\n"
             "Content-Length: %ld\r\n"
             "Content-Type: %s;\r\n"
-            "Connection: close\r\n\r\n",
+            "Accept-Ranges: bytes\r\n"
+            "Connection: close\r\n"
+            "\r\n",
             http_status_code(res),
             res->sendfile ? res->file.length : res->body.len,
             res->content_type);

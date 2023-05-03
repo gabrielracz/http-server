@@ -38,6 +38,11 @@ typedef struct {
     size_t len;
 } StringView;
 
+typedef struct {
+    size_t begin;
+    size_t end;
+} RangeTuple;
+
 
 enum HttpMethod {
     GET,
@@ -91,10 +96,12 @@ typedef struct {
 typedef struct {
     enum HttpError err;
     char content_type[64];
+    bool sendfile;
+
     Buffer header;
     Buffer body;
     FileView file;
-    bool sendfile;
+
     struct msghdr msg;
     struct iovec iov[2];    //vector of io blocks to be stitched together by 'sendmsg()'
 } HttpResponse;
@@ -105,6 +112,8 @@ typedef struct {
     StringView body;
     StringView method_str;
     size_t content_length;
+    bool range_request;
+    RangeTuple range;
 
     size_t target_output_length;
     size_t output_length;
