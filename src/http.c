@@ -75,6 +75,7 @@ HttpResponse* http_create_response() {
 
 void http_destroy_response(HttpResponse* res) {
     free(res->header.ptr);
+    free(res->add_headers.ptr);
     free(res->body.ptr);
     if(res->sendfile) { close(res->file.fd); }
     free(res);
@@ -474,6 +475,7 @@ const char* http_status_code(HttpResponse* res) {
 }
 
 static void http_set_response_header(HttpResponse* res) {
+    // TODO: create an add_header api with fmt string and vargs
     res->header.len += sprintf(res->header.ptr,
             "HTTP/1.1 %s\r\n"
             "Content-Length: %zu\r\n"
