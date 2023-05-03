@@ -73,8 +73,7 @@ size_t content_read_file(HttpRequest* rq, HttpResponse* res)
     if(rq->range_request) {
         if(rq->range.end< rq->range.begin) { rq->range.end = file_length; }
         file_offset   = rq->range.begin;
-        output_length = rq->range.end - rq->range.begin + 1;
-        // add the partial content header and status code.
+        output_length = rq->range.end - rq->range.begin + 1; // range is inclusive
         res->err = HTTP_PARTIAL_CONTENT;
         res->add_headers.len += sprintf(res->add_headers.ptr, "Content-Range: bytes %zu-%zu/%zu\r\n",
                                         rq->range.begin, rq->range.end-1, file_length);
