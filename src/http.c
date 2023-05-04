@@ -396,6 +396,21 @@ void http_parse(HttpRequest* rq, HttpResponse* res) {
 static void http_validate(HttpRequest* rq, HttpResponse* res) {
     //check that rq.path is valid (ex. no '..' no leading '.' or invalid characters)
     bool is_valid = true;
+
+    char* path = malloc(rq->path.len+1);
+    strncpy(path, rq->path.ptr, rq->path.len);
+
+    char* saveptr;
+    char* token = strtok_r(path, "/", &saveptr);
+    while(token != NULL) {
+        if(strcmp("..", token) == 0) {
+            is_valid = false;
+            break;
+        }
+        token = strtok_r(NULL, "/", &saveptr);
+    }
+    free(path);
+
     if(is_valid) {
         res->err = HTTP_OK;
     }else {
@@ -409,7 +424,7 @@ static const struct {
 } routes[] = {
     {"/perlin"          , ROUTE_PERLIN          },
     {"/spotify-archiver", ROUTE_SPOTIFY_ARCHIVER},
-    {"/sha256", ROUTE_SHA256}
+    {"/sha256"          , ROUTE_SHA256}
 };
 
 static void http_route(HttpRequest* rq, HttpResponse* res) {
@@ -423,7 +438,8 @@ static void http_route(HttpRequest* rq, HttpResponse* res) {
         int route_len = strlen(routes[i].path);
         if(route_len == rq->path.len && strncmp(rq->path.ptr, routes[i].path, route_len) == 0) {
             rq->route = routes[i].route;
-            return;
+            return;              
+
         }
     }
     rq->route = ROUTE_FILE;  //default to serving file off disk
@@ -480,6 +496,7 @@ static void http_set_response_header(HttpResponse* res) {
             "HTTP/1.1 %s\r\n"
             "Content-Length: %zu\r\n"
             "Content-Type: %s;\r\n"
+            "Server: "SERVER_NAME"\r\n"
             "Accept-Ranges: bytes\r\n"
             "Connection: close\r\n",
             http_status_code(res),

@@ -115,7 +115,7 @@ size_t content_error(HttpRequest* rq, HttpResponse* res) {
            "</head>"
            "<body>"
            "<center><h1>%s</h1></center>"
-           "<hr><center>naoko/2.0</center>"
+           "<hr><center>"SERVER_NAME"</center>"
            "</body>"
            "</html>",
            status_code_str,

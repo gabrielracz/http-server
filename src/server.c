@@ -19,6 +19,9 @@
 #include<netinet/in.h> //sockaddr_in, htons, INADDR_ANY
 #include<sys/sendfile.h>
 
+#include<linux/tcp.h>
+#include<linux/socket.h>
+
 #include "http.h"
 #include "content.h"
 #include "logger.h"
@@ -72,6 +75,9 @@ int server_on(int port){
 	int en = 1;
 	setsockopt(listenfd, SOL_SOCKET, SO_REUSEADDR, (const char*)&en, sizeof(int));
 	setsockopt(listenfd, SOL_SOCKET, SO_REUSEPORT, (const char*)&en, sizeof(int));
+
+    // enable kernel-level tls on this socket (ktls)
+    // setsockopt(listenfd, IPPROTO_TCP, TCP_ULP, "tls", sizeof("tls"));
 
 	struct linger lin;
 	lin.l_onoff = 0;
