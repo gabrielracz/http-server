@@ -11,5 +11,6 @@ size_t content_not_found(HttpRequest* rq, HttpResponse* res);
 size_t content_perlin(HttpRequest* rq, HttpResponse* res);
 size_t content_archiver(HttpRequest* rq, HttpResponse* res);
 size_t content_sha256(HttpRequest* rq, HttpResponse* res);
+size_t content_stats(HttpRequest* rq, HttpResponse* res);
 
 #endif

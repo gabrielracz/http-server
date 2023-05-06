@@ -5,12 +5,23 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
+#include "server.h"
 #include "http.h"
 #include "logger.h"
 #include "content.h"
 #include "perlin.h"
 #include "util.h"
 #include "libsha.h"
+
+const ContentHandler default_file_handler = content_read_file;
+const ContentHandler default_error_handler = content_error;
+const ContentRoute content_routes[] = {
+    {"/perlin"          , content_perlin},
+    {"/spotify-archiver", content_archiver},
+    {"/sha256"          , content_sha256},
+    {"/stats"           , content_stats}
+};
+const size_t num_routes = sizeof(content_routes)/sizeof(content_routes[0]);
 
 void content_init() {
     perlinit(1337);
@@ -276,5 +287,46 @@ size_t content_sha256(HttpRequest* rq, HttpResponse* res) {
     size_t bytes = sha256(input.ptr, input.len, res->body.ptr + res->body.len);
     res->body.len += bytes;
     // content_end_plaintext_wrap(res);
+    return res->body.len;
+}
+
+size_t content_format_size(size_t size, char buf[]) {
+    size_t scaled = size;
+    char unit = '\0';
+
+    if(size > 1024 * 1024) {
+        scaled = size / (1024 * 1024);
+        unit = 'M';
+    }
+
+    sprintf(buf, "%zu%c", scaled, unit);
+    return 0;
+}
+
+size_t content_stats(HttpRequest* rq, HttpResponse* res) {
+    size_t served_bytes, requests_served;
+    server_get_stats(&served_bytes, &requests_served);
+
+    size_t virtual_pages;
+    long page_size = sysconf(_SC_PAGE_SIZE); // get page size
+    FILE* statm_file = fopen("/proc/self/statm", "r");
+    fscanf(statm_file, "%lu", &virtual_pages); // read virtual memory size in pages (first entry)
+    fclose(statm_file);
+
+    char virtual_memory_str[64];
+    content_format_size(virtual_pages * page_size, virtual_memory_str);
+
+    content_begin_plaintext_wrap(res);
+    res->body.len += sprintf(res->body.ptr + res->body.len,
+        "%s\n\n"
+        "transferred: %zu\n"
+        "requests:    %zu\n"
+        "memory:      %s\n\n",
+        server_get_start_time(),
+        served_bytes,
+        requests_served,
+        virtual_memory_str
+    );
+    content_end_plaintext_wrap(res);
     return res->body.len;
 }

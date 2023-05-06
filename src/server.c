@@ -4,6 +4,7 @@
 #include<string.h>
 #include<strings.h>
 #include<sys/stat.h>
+#include<sys/time.h>
 
 #include<unistd.h>
 #include<memory.h>
@@ -31,12 +32,14 @@
 /*Thread work*/
 static void* server_process_connection(void* connfd);
 static ssize_t server_send_http_response(int connectionfd, HttpResponse* res);
+static void server_set_start_time();
 
-static volatile unsigned long global_bytes_count = 0;
-static volatile unsigned long global_requests_served = 0;
+char server_start_time_str[64];
+static size_t global_bytes_count = 0;
+static size_t global_requests_served = 0;
 pthread_mutex_t global_stats_lock = PTHREAD_MUTEX_INITIALIZER; 
 
-int server_on(int port){
+void server_on(int port){
 	int connectionfd;
 	pid_t childpid;
 	socklen_t clilen;
@@ -56,7 +59,7 @@ int server_on(int port){
 	listenfd = socket(AF_INET, SOCK_STREAM, 0);
 	if(listenfd == -1){
 		log_perror("socket");
-		return 1;
+		return;
     }
 
 	int rc;
@@ -68,7 +71,7 @@ int server_on(int port){
 	rc = listen(listenfd, 15);
 	if(rc ==-1) {
 		log_perror("listen");
-		return 3;
+		return;
 	}
 
 	//try to stop server from waiting on port
@@ -100,16 +103,16 @@ int server_on(int port){
 
 
     content_init();
-
-	int server_on = 1;
+    
+    server_set_start_time();
 	log_info("server on...");
 	log_break();
-	while(server_on){
+	while(1){
 		int* cfd_ptr;
 		cfd_ptr = malloc(sizeof(cfd_ptr));
 		if(cfd_ptr == NULL) {
 			log_perror("cfd malloc");
-			return 4;
+			return;
 		}
 
 		clilen = sizeof(cliaddr);
@@ -130,7 +133,7 @@ int server_on(int port){
 		pthread_t* next_thread = thread_pool[i];
 		pthread_create(next_thread,  NULL, &server_process_connection, (void*) cfd_ptr);
 	}
-	return 0;
+	return;
 }
 
 /*Thread Main*/
@@ -187,7 +190,7 @@ connection_exit:
 	return 0;
 }
 
-ssize_t server_send_http_response(int connectionfd, HttpResponse* res) {
+static ssize_t server_send_http_response(int connectionfd, HttpResponse* res) {
     ssize_t bytes_sent = 0;
     size_t sendfile_sent = 0;
     ssize_t b = 0;
@@ -207,4 +210,24 @@ ssize_t server_send_http_response(int connectionfd, HttpResponse* res) {
     }
 
     return bytes_sent + sendfile_sent;
+}
+
+void server_get_stats(size_t* bytes, size_t* requests) {
+    pthread_mutex_lock(&global_stats_lock);
+    *bytes = global_bytes_count;
+    *requests = global_requests_served;
+    pthread_mutex_unlock(&global_stats_lock);
+}
+
+static void server_set_start_time() {
+	struct timeval tv;
+	struct tm timeinfo;
+	gettimeofday(&tv, NULL);
+	if((localtime_r(&tv.tv_sec, &timeinfo))){
+		strftime(server_start_time_str, 64, "%d/%b/%y %H:%M", &timeinfo);
+    }
+}
+
+const char* server_get_start_time() {
+    return server_start_time_str;
 }

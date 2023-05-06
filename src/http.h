@@ -64,15 +64,6 @@ enum HttpError {
     HTTP_SERVER_ERROR
 };
 
-enum HttpRoute {
-    ROUTE_FILE = 0,
-    ROUTE_ERROR,
-    ROUTE_PERLIN,
-    ROUTE_SPOTIFY_ARCHIVER,
-    ROUTE_SHA256,
-    ROUTE_N_ROUTES
-};
-
 typedef struct  {
     StaticVariableBuffer key;
     StaticVariableBuffer value;
@@ -110,7 +101,11 @@ typedef struct {
     struct iovec iov[2];    //vector of io blocks to be stitched together by 'sendmsg()'
 } HttpResponse;
 
-typedef struct {
+typedef struct HttpRequest HttpRequest;
+typedef struct ContentRoute_t ContentRoute;
+typedef size_t (*ContentHandler)(HttpRequest*, HttpResponse*);
+
+struct HttpRequest{
     StringView raw_request;
     StringView path;
     StringView body;
@@ -128,7 +123,8 @@ typedef struct {
     size_t n_variables;
 
     enum HttpMethod method;
-    enum HttpRoute route;
+    ContentHandler content_handler;
+
     enum ParseStatus parse_status;
     enum RequestStatus status;
 
@@ -136,7 +132,17 @@ typedef struct {
     int major_version;
     char addr[INET_ADDRSTRLEN];
 
-} HttpRequest;
+};
+
+struct ContentRoute_t {
+    const char* path;
+    size_t (*handler)(HttpRequest*, HttpResponse*);
+};
+
+extern const ContentRoute content_routes[];
+extern const size_t num_routes;
+extern const ContentHandler default_file_handler;
+extern const ContentHandler default_error_handler;
 
 HttpRequest* http_create_request(Buffer request_buffer, const char* client_address);
 void http_destroy_request(HttpRequest* rq);

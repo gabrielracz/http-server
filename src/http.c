@@ -417,56 +417,24 @@ static void http_validate(HttpRequest* rq, HttpResponse* res) {
         res->err = HTTP_BAD_REQUEST;
     }
 }
-
-static const struct {
-    const char* path;
-    enum HttpRoute route;
-} routes[] = {
-    {"/perlin"          , ROUTE_PERLIN          },
-    {"/spotify-archiver", ROUTE_SPOTIFY_ARCHIVER},
-    {"/sha256"          , ROUTE_SHA256}
-};
-
 static void http_route(HttpRequest* rq, HttpResponse* res) {
     if(res->err != HTTP_OK) {
-        rq->route = ROUTE_ERROR;
+        rq->content_handler = default_error_handler;
         return;
     }
 
-    int n_routes = sizeof(routes)/sizeof(routes[0]);
-    for(int i = 0; i < n_routes; i++) {
-        int route_len = strlen(routes[i].path);
-        if(route_len == rq->path.len && strncmp(rq->path.ptr, routes[i].path, route_len) == 0) {
-            rq->route = routes[i].route;
+    for(int i = 0; i < num_routes; i++) {
+        int route_len = strlen(content_routes[i].path);
+        if(route_len == rq->path.len && strncmp(rq->path.ptr, content_routes[i].path, route_len) == 0) {
+            rq->content_handler = content_routes[i].handler;
             return;              
-
         }
     }
-    rq->route = ROUTE_FILE;  //default to serving file off disk
+    rq->content_handler = default_file_handler;
 }
 
 static void http_fill_body(HttpRequest* rq, HttpResponse* res) {
-    size_t bytes = 0;
-    switch(rq->route) {
-        case ROUTE_FILE:
-            bytes = content_read_file(rq, res);
-            break;
-        case ROUTE_ERROR:
-            bytes = content_error(rq, res);
-            break;
-        case ROUTE_PERLIN:
-            bytes = content_perlin(rq, res);
-            break;
-        case ROUTE_SPOTIFY_ARCHIVER:
-            bytes = content_archiver(rq, res);
-            break;
-        case ROUTE_SHA256:
-            bytes = content_sha256(rq, res);
-            break;
-        default:
-            break;
-    }
-    rq->output_length = bytes;
+    rq->output_length = rq->content_handler(rq, res);
 }
 
 const char* http_status_code(HttpResponse* res) {
