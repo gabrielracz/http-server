@@ -4,8 +4,11 @@
 
 #define MAX_FILE_SIZE 10 * 1024 * 1024 * 1024
 
+
+
 void content_init();
-size_t content_read_file(HttpRequest* rq, HttpResponse* res);
+size_t content_sendfile(HttpRequest* rq, HttpResponse* res);
+size_t content_readfile(HttpRequest* rq, HttpResponse* res);
 size_t content_error(HttpRequest* rq, HttpResponse* res);
 size_t content_not_found(HttpRequest* rq, HttpResponse* res);
 size_t content_perlin(HttpRequest* rq, HttpResponse* res);
