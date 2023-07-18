@@ -1,5 +1,5 @@
 CXX      = gcc
-CXXFLAGS = -g
+CXXFLAGS = -g -fsanitize=address
 LDFLAGS  =
 LIBS= -lpthread -lm
 

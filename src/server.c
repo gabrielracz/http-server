@@ -157,10 +157,14 @@ static void* server_process_connection(void* connfd) {
 
     HttpRequest* rq = http_create_request(rcv_buffer, cliaddr_str);
     HttpResponse* res = http_create_response();
-
+	
+	int bytes_received = 0;
     while(rq->parse_status != PARSE_COMPLETE) {
-        int bytes_received =  recv(connectionfd, rcv_buffer.ptr + rcv_buffer.len, rcv_buffer.size - rcv_buffer.len, 0);
-        if(bytes_received == 0) { goto connection_exit; } //client disconnect
+        bytes_received =  recv(connectionfd, rcv_buffer.ptr + rcv_buffer.len, rcv_buffer.size - rcv_buffer.len, 0);
+        if(bytes_received <= 0 || bytes_received + rcv_buffer.len > rcv_buffer.size) { 
+			log_perror("client disconnected");
+			goto connection_exit; 
+		}
 
         rcv_buffer.len += bytes_received;
         http_update_request_buffer(rq, rcv_buffer);
@@ -170,7 +174,10 @@ static void* server_process_connection(void* connfd) {
     http_handle_request(rq, res);
 
     ssize_t bytes_sent = server_send_http_response(connectionfd, res);
-    if(bytes_sent == -1) { goto connection_exit; } // client disconnect before send complete
+    if(bytes_sent == -1) { 
+		log_perror("http send failed");
+		goto connection_exit; 
+	} // client disconnect before send complete
 
     pthread_mutex_lock(&global_stats_lock);
     global_bytes_count += bytes_sent;
@@ -182,9 +189,9 @@ static void* server_process_connection(void* connfd) {
              http_status_code(res), bytes_sent, rq->addr);
 
 connection_exit:
+	free(rcv_buffer.ptr);
 	http_destroy_request(rq);
     http_destroy_response(res);
-	free(rcv_buffer.ptr);
 	close(connectionfd);
     pthread_exit(0);
 	return 0;

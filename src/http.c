@@ -168,6 +168,7 @@ static const struct {
     const char* mime;
     const int mime_size;
 } content_types[] = {
+    { "7z",         2, "application/x-7z-compressed"            , sizeof("application/x-7z-compressed" )},
     { "ai",         2, "application/postscript"                 , sizeof("application/postscript"      )},
     { "aif",        3, "audio/x-aiff"                           , sizeof("audio/x-aiff"                )},
     { "aifc",       4, "audio/x-aiff"                           , sizeof("audio/x-aiff"                )},
@@ -365,7 +366,8 @@ void http_parse(HttpRequest* rq, HttpResponse* res) {
                                 &rq->path.ptr, &rq->path.len, 
                                 &rq->minor_version, 
                                 rq->headers, &rq->n_headers, 0);
-        if(prc == -2) { // incomplete header parse, wait for more
+        if(prc == -2) {
+			log_info("incomplete phr header parse, waiting for more");
             return;
         } else if(prc == -1) { // header parse error, skip and send error
             res->err = HTTP_BAD_REQUEST;
