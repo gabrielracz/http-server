@@ -211,7 +211,7 @@ size_t sha256(const char* buffer, size_t buflen, char* output){
 
 	for(size_t i = 0; i < num_blocks; i++){
 		create_message_schedule(message_schedule, message+i*512/32);
-		compression(message_schedule + i, hash);
+		compression(message_schedule, hash);
 	}
 	produce_output(output, hash);
 	free(message);
