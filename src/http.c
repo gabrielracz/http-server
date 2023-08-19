@@ -154,7 +154,12 @@ void http_parse_body(HttpRequest* rq, HttpResponse* res) {
     }
 }
 
-static void http_translate_path(HttpRequest* rq) {
+static void http_parse_path(HttpRequest* rq, HttpResponse* res) {
+    char* query_char = memchr(rq->path.ptr, '?', rq->path.len);
+    if(query_char) {
+        rq->path.len = query_char - rq->path.ptr;
+    }
+
     if(rq->path.len == 1 && strncmp("/"          , rq->path.ptr, rq->path.len) == 0 ||
        rq->path.len == 11 && strncmp("/index.html", rq->path.ptr, rq->path.len) == 0) {
         rq->path.ptr = index_path;
@@ -375,7 +380,7 @@ void http_parse(HttpRequest* rq, HttpResponse* res) {
         }
 
         http_parse_method(rq, res);
-        http_translate_path(rq);
+        http_parse_path(rq, res);
         http_set_content_type(rq, res);
         http_parse_headers(rq, res);
 
@@ -401,6 +406,7 @@ static void http_validate(HttpRequest* rq, HttpResponse* res) {
 
     char* path = malloc(rq->path.len+1);
     strncpy(path, rq->path.ptr, rq->path.len);
+	path[rq->path.len] = '\0';
 
     char* saveptr;
     char* token = strtok_r(path, "/", &saveptr);
@@ -509,7 +515,6 @@ static void http_format_response(HttpRequest* rq, HttpResponse* res) {
 void http_handle_request(HttpRequest* rq, HttpResponse* res) {
     if(rq->status == REQUEST_PROCESSING) {
         http_validate(rq, res);
-        http_translate_path(rq);
         http_route(rq, res);
         rq->status = REQUEST_RESPONDING;
     }
