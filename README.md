@@ -8,7 +8,7 @@ Check out [gsracz.com](https://gsracz.com) to get served fresh to order
  |  bind()    |   |                    |  http_parse()          |
  |  listen()  |   |                    |  http_handle_request() |---+
  |            |   |                    |                        |   |
- |  accept()  |   |               +--->|  send_response()       |   |
+ |  accept()  |   |               +--->|  send_response()       |---|-------------------------->
  |  pthread() |---+               |    |                        |   |
  |            |                   |    +------------------------+   |
  +------------+                   |                                 |
